@@ -1,0 +1,45 @@
+{
+  "name": "@nighttrax/little-helper",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "TDD helpers",
+  "keywords": [
+    "tdd",
+    "helper",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiGhTTraX/little-helper.git"
+  },
+  "author": "Andrei Picus",
+  "license": "MIT",
+  "homepage": "https://github.com/NiGhTTraX/little-helper/tree/master/packages/little-helper",
+  "main": "dist/cjs/index",
+  "module": "dist/esm/index",
+  "types": "dist/cjs/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "npm run compile:cjs && npm run compile:esm",
+    "compile:cjs": "tsc -p tsconfig.cjs.json",
+    "compile:esm": "tsc -p tsconfig.esm.json",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "@types/chai": "~4.1.7",
+    "@types/jest": "~24.0.15",
+    "chai": "~4.2.0"
+  },
+  "devDependencies": {
+    "typescript": "~3.5.0"
+  }
+}

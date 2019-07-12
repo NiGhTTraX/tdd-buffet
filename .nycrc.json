@@ -1,0 +1,19 @@
+{
+  "all": true,
+  "extension": [".ts", ".tsx"],
+  "include": [
+    "**/src/**/*"
+  ],
+  "exclude": [
+    "**/*.d.ts",
+    "**/tests/**/*",
+    "**/vendor/**/*"
+  ],
+
+  "reporter": ["html", "text"],
+  "report-dir": "tests/results/coverage",
+
+  "lines": 100,
+  "branches": 100,
+  "check-coverage": false
+}

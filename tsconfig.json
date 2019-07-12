@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.esm.json",
+
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "@nighttrax/*": ["*/src"]
+    }
+  }
+}
