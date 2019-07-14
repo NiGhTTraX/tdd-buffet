@@ -4,7 +4,7 @@
     "access": "public"
   },
   "version": "0.0.2-alpha.0",
-  "description": "TDD helpers",
+  "description": "TDD helpers and configs",
   "keywords": [
     "tdd",
     "helper",
