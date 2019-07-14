@@ -22,7 +22,7 @@ module.exports = {
   extraGlobals: ['Math'],
 
   collectCoverageFrom: [
-    '**/src/**/*',
+    '**/src/**/*.ts',
     '!**/*.d.ts',
     '!**/tests/**/*',
     '!**/vendor/**/*'

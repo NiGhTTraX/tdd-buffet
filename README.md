@@ -2,7 +2,9 @@
 
 ----
 
-## Node test suite
+## Test suites
+
+### Node
 
 Create a Jest test suite with Chai assertions:
 
@@ -14,4 +16,15 @@ describe('Node suite', () => {
     expect(1).to.equal(1); 
   });
 });
+```
+
+
+## Configs
+
+### TypeScript
+
+```json
+{
+  "extends": "@nighttrax/little-helper/config/tsconfig.json"
+}
 ```
