@@ -1,6 +1,6 @@
-import { describe, expect, it, before, after, beforeEach, afterEach } from '../src/node/suite';
+import { describe, expect, it, before, after, beforeEach, afterEach } from '../src/suite/node';
 
-describe('Hooks', () => {
+describe('Node hooks', () => {
   let count = 0;
 
   const increment = () => {

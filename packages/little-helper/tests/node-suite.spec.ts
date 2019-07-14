@@ -1,6 +1,6 @@
-import { describe, expect, it } from '../src/node/suite';
+import { describe, expect, it } from '../src/suite/node';
 
-describe('Suite', () => {
+describe('Node suite', () => {
   it('empty test', () => {});
 
   it('pending test');
