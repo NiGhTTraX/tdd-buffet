@@ -4,7 +4,7 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "pub": "npm run build && lerna publish && npm run clean",
+    "pub": "npm run build && lerna publish --contents dist && npm run clean",
     "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
     "test:node": "jest --config tests/jest.config.js --coverage",
