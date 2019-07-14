@@ -17,18 +17,15 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/little-helper/tree/master/packages/little-helper",
-  "main": "dist/cjs/index",
-  "module": "dist/esm/index",
-  "types": "dist/cjs/index",
+  "main": "dist/index",
+  "types": "dist/index",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "npm run compile:cjs && npm run compile:esm",
-    "compile:cjs": "tsc -p tsconfig.cjs.json",
-    "compile:esm": "tsc -p tsconfig.esm.json",
+    "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
