@@ -13,6 +13,7 @@ module.exports = {
   moduleNameMapper: {
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' })
   },
+  modulePathIgnorePatterns: ['dist'],
 
   // Improves speed by 100%.
   extraGlobals: ['Math'],
