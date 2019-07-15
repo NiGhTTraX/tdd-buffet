@@ -28,3 +28,14 @@ describe('Node suite', () => {
   "extends": "tdd-buffet/config/tsconfig.json"
 }
 ```
+
+
+## React
+
+```typescript jsx
+import React from 'react';
+import { $render } from '@tdd-buffet/react';
+
+const $component = $render(<span>foobar</span>);
+console.log($component.text()); // foobar
+```

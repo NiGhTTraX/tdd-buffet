@@ -21,6 +21,12 @@ describe('$render', () => {
     expect(Component.renderedWith({ foo: 'bar' })).to.be.true;
   });
 
+  it('should return a jquery element', () => {
+    const $component = $render(<span>foobar</span>);
+
+    expect($component.text()).to.equal('foobar');
+  });
+
   let rerendered;
 
   class Rerenderable extends React.Component {
