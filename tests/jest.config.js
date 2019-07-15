@@ -10,12 +10,8 @@ module.exports = {
 
   rootDir,
   testMatch: ['**/tests/**/*.spec.ts'],
-  // For some reason Jest will complain that this is duplicating the packages/mugshot/package.json.
-  modulePathIgnorePatterns: ['<rootDir>/package.json'],
   moduleNameMapper: {
-    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' }),
-    // For some reason the ts-jest helper doesn't pick this one up.
-    '^mugshot/(.*)$': '<rootDir>/packages/mugshot/$1'
+    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' })
   },
 
   // Improves speed by 100%.
