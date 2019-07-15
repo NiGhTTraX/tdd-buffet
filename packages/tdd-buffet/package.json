@@ -1,10 +1,10 @@
 {
-  "name": "@nighttrax/little-helper",
+  "name": "tdd-buffet",
   "publishConfig": {
     "access": "public"
   },
   "version": "0.0.3-alpha.0",
-  "description": "TDD helpers and configs",
+  "description": "All you can eat delicious TDD helpers, healthy configs, React desserts and TypeScript beverages",
   "keywords": [
     "tdd",
     "helper",
@@ -12,11 +12,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NiGhTTraX/little-helper.git"
+    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git"
   },
   "author": "Andrei Picus",
   "license": "MIT",
-  "homepage": "https://github.com/NiGhTTraX/little-helper/tree/master/packages/little-helper",
+  "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",

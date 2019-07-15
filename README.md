@@ -1,4 +1,4 @@
-> TDD helpers
+> All you can eat delicious TDD helpers, healthy configs, React desserts and TypeScript beverages
 
 ----
 
@@ -9,7 +9,7 @@
 Create a Jest test suite with Chai assertions:
 
 ```typescript
-import { describe, it, expect } from '@nighttrax/little-helper/suite/node';
+import { describe, it, expect } from 'tdd-buffet/suite/node';
 
 describe('Node suite', () => {
   it('should run a test', () => {
@@ -25,6 +25,6 @@ describe('Node suite', () => {
 
 ```json
 {
-  "extends": "@nighttrax/little-helper/config/tsconfig.json"
+  "extends": "tdd-buffet/config/tsconfig.json"
 }
 ```
