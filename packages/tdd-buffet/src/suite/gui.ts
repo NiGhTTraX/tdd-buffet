@@ -71,8 +71,10 @@ export function beforeEach(definition: TestDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
-export function it(name: string, definition: TestDefinition = () => {}) {
-  runnerIt(name, () => Promise.resolve(definition(rootSuiteBrowser)));
+export function it(name: string, definition?: TestDefinition) {
+  runnerIt(name, definition
+    ? () => Promise.resolve(definition(rootSuiteBrowser))
+    : undefined);
 }
 
 function setupHooks() {

@@ -21,7 +21,7 @@ describe('Gui suite', () => {
     expect(viewportSize).toEqual({ width: 600, height: 600 });
   });
 
-  it('pending');
+  it('pending test');
 
   describe('nested', () => {
     it('should preserve session', async browser => {
