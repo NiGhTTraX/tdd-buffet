@@ -30,7 +30,8 @@
   "dependencies": {
     "@types/chai": "~4.1.7",
     "@types/jest": "~24.0.15",
-    "chai": "~4.2.0"
+    "chai": "~4.2.0",
+    "webdriverio": "~5.11.2"
   },
   "devDependencies": {
     "typescript": "~3.5.0"

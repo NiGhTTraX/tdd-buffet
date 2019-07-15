@@ -18,6 +18,20 @@ describe('Node suite', () => {
 });
 ```
 
+### GUI
+
+Create a Jest suite that automatically starts a Selenium session. Browser name and selenium host are read from the environment variables `BROWSER` and `SELENIUM_HOST` respectively.
+
+```typescript
+import { describe, it } from 'tdd-buffet/suite/gui';
+
+describe('Gui suite', () => {
+  it('should run a test', async browser => {
+    await browser.url('http://github.com');
+  });
+});
+```
+
 
 ## Configs
 

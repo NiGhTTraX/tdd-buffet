@@ -4,15 +4,7 @@ set -e
 
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
-# nyc will create the report relative to cwd so we need to be in root.
-cd ..
-
-rm -rf .nyc_output tests/results tests/node/results tests/gui/results
-mkdir .nyc_output
+npm run selenium
 
 # --silent so we don't get the npm err epilogue.
-npm run test:node --silent
-cp tests/results/coverage-final.json .nyc_output/node.json
-
-npx nyc report
-npx nyc check-coverage
+npm run _test --silent
