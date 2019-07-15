@@ -4,7 +4,8 @@
   "compilerOptions": {
     "baseUrl": "./packages",
     "paths": {
-      "@nighttrax/*": ["*/src"]
+      "tdd-buffet/*": ["tdd-buffet/src"],
+      "@tdd-buffet/*": ["*/src"]
     }
   }
 }
