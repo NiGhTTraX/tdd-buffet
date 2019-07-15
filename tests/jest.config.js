@@ -6,10 +6,10 @@ const rootDir = path.join(__dirname, '../');
 
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
 
   rootDir,
-  testMatch: ['**/tests/**/*.spec.ts'],
+  testMatch: ['**/tests/**/*.spec.{ts,tsx}'],
   moduleNameMapper: {
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' })
   },
@@ -18,7 +18,7 @@ module.exports = {
   extraGlobals: ['Math'],
 
   collectCoverageFrom: [
-    '**/src/**/*.ts',
+    '**/src/**/*.{ts,tsx}',
     '!**/*.d.ts',
     '!**/tests/**/*',
     '!**/vendor/**/*'

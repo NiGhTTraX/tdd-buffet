@@ -2,6 +2,7 @@
   "extends": "./tsconfig.build.json",
 
   "compilerOptions": {
+    "jsx": "react",
     "baseUrl": "./packages",
     "paths": {
       "tdd-buffet/*": ["tdd-buffet/src"],
