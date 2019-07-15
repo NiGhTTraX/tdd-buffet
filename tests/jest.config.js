@@ -25,7 +25,13 @@ module.exports = {
     '!**/vendor/**/*'
   ],
   coverageDirectory: path.join(rootDir, 'tests/results'),
-  coverageReporters: ['json', 'html'],
+  coverageReporters: ['json', 'text', 'html'],
+  coverageThreshold: {
+    global: {
+      lines: 100,
+      branches: 100
+    }
+  },
 
   globals: {
     'ts-jest': {
