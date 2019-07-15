@@ -1,0 +1,29 @@
+{
+  "name": "@tdd-buffet/selenium",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "Spin up a Selenium grid with Chrome and Firefox nodes + VNC debugging",
+  "keywords": [
+    "selenium",
+    "tests",
+    "docker",
+    "vnc"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git"
+  },
+  "author": "Andrei Picus",
+  "license": "MIT",
+  "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/selenium",
+  "bin": {
+    "tdd-buffet-selenium": "./scripts/index.sh"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "mkdir dist && cp -r scripts src/index.js package.json ./dist",
+    "prepublishOnly": "npm run build"
+  }
+}

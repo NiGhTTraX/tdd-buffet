@@ -39,3 +39,10 @@ import { $render } from '@tdd-buffet/react';
 const $component = $render(<span>foobar</span>);
 console.log($component.text()); // foobar
 ```
+
+
+## Selenium
+
+```shell script
+npx tdd-buffet-selenium start
+```
