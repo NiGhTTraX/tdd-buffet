@@ -7,7 +7,7 @@
     "pub": "npm run build && lerna publish --contents dist && npm run clean",
     "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
-    "_test": "jest --config tests/jest.config.js --coverage",
+    "_test": "jest --config packages/tdd-buffet/src/config/jest.config.js --coverage",
     "selenium": "./packages/selenium/scripts/index.sh start",
     "selenium:debug": "./packages/selenium/scripts/index.sh debug",
     "report-coverage": "codecov -f tests/results/coverage/coverage-final.json"
