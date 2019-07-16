@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import { ReactElement } from 'react';
-import { waitForElement } from '@testing-library/dom';
+import waitForExpect from 'wait-for-expect';
 
 let componentContainer: HTMLDivElement;
 
@@ -13,14 +13,26 @@ function getJQueryContainer() {
  * Wait for a condition to be fulfilled.
  *
  * @param cb Receives the currently mounted component wrapped in JQuery and will
- *   wait for it until it returns a truthy value.
+ *   wait for it until it either returns a truthy value or undefined.
+ *   Returning a falsy value or throwing an exception will cause this
+ *   to keep waiting.
  * @param timeout Time in ms to wait until condition is fulfilled.
+ *
+ * @example
+ * ```
+ * await wait(() => 1 === 1);
+ * await wait(() => { expect(1).to.equal(1); }
+ * await wait($container => $container.text() === 'foobar');
+ * ```
  */
 export function wait(cb: ($container: JQuery) => any, timeout = 1500) {
-  return waitForElement(() => cb(getJQueryContainer()), {
-    container: componentContainer,
-    timeout
-  });
+  return waitForExpect(() => {
+    const result = cb(getJQueryContainer());
+
+    if (result !== true && result !== undefined) {
+      throw new Error('Condition not met');
+    }
+  }, timeout);
 }
 
 /**

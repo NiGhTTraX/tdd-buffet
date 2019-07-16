@@ -29,9 +29,9 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "@testing-library/dom": "~5.6.0",
     "@types/jquery": "~3.3.30",
-    "jquery": "~3.4.1"
+    "jquery": "~3.4.1",
+    "wait-for-expect": "~1.2.0"
   },
   "devDependencies": {
     "@types/react": "~16.8.23",
