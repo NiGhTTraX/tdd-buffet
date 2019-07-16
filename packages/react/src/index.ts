@@ -6,7 +6,7 @@ import waitForExpect from 'wait-for-expect';
 let componentContainer: HTMLDivElement;
 
 function getJQueryContainer() {
-  return $(componentContainer).children().eq(0);
+  return $(componentContainer);
 }
 
 /**

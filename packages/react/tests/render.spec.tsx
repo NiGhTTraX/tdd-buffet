@@ -55,6 +55,23 @@ describe('$render', () => {
     expect(rerendered).to.be.false;
   });
 
+  it('should update the container', () => {
+    const Foo = (props: { done?: boolean }) => (props.done ? <span>done</span> : null);
+
+    const $component = $render(<Foo />);
+    $render(<Foo done />, true);
+
+    expect($component.text()).to.equal('done');
+  });
+
+  it('should wrap all children', () => {
+    const Bar = () => <React.Fragment><p>1</p><p>2</p></React.Fragment>;
+
+    const $component = $render(<Bar />);
+
+    expect($component.text()).to.equal('12');
+  });
+
   it('should unmount component', () => {
     let unmounted = false;
 
