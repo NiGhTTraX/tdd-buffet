@@ -8,21 +8,25 @@
 - docker-compose
 
 
-## Usage
-
-Spin up a Selenium server listening at `0.0.0.0:4444` and 2*N browser nodes (N Chrome and N Firefox) that connect to it:
+## Start a grid with Chrome and Firefox
 
 ```sh
 npx tdd-buffet-selenium start [N=1]
 ```
 
-Spin up a Selenium server listening at `0.0.0.0:4444` and 2 debug nodes (Chrome and Firefox) that have VNC listening at `0.0.0.0:5900` and `0.0.0.0:5901`:
+The hub will listen at `0.0.0.0:4444` and it will have 2*N browser nodes (N Chrome and N Firefox):
+
+
+## Start a grid with debug nodes with VNC
 
 ```sh
 npx tdd-buffet-selenium debug
 ```
 
-Stop everything:
+The same hub as above will spin up, but this time only 2 nodes (Chrome and Firefox) with VNC enabled will connect. VNC is available at `0.0.0.0:5900` (Chrome) and `0.0.0.0:5901` (Firefox).
+
+
+## Stop everything
 
 ```sh
 npx tdd-buffet-selenium stop

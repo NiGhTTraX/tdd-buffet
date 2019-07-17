@@ -2,6 +2,22 @@
 
 ----
 
+### Today's menu
+
+- [Test suites](#test-suites)
+  - [Node](#node)
+  - [GUI](#gui)
+- [Configs](#configs)
+  - [TypeScript](#typescript)
+  - [Jest](#jest)
+- [React](./packages/react)
+  - [Render components into a test container](./packages/react/README.md#render-components-into-a-test-container)
+- [Selenium](./packages/selenium)
+  - [Start a grid with Chrome and Firefox](./packages/selenium/README.md#start-a-grid-with-chrome-and-firefox)
+  - [Start a debug grid with VNC](./packages/selenium/README.md#start-a-grid-with-debug-nodes-with-vnc)
+  - [Stop everything](./packages/selenium/README.md#stop-everything)
+  
+
 ## Test suites
 
 ### Node
@@ -43,20 +59,12 @@ describe('Gui suite', () => {
 }
 ```
 
+### Jest
 
-## React
+```js
+const baseConfig = require('tdd-buffet/config/jest.config.js');
 
-```typescript jsx
-import React from 'react';
-import { $render } from '@tdd-buffet/react';
-
-const $component = $render(<span>foobar</span>);
-console.log($component.text()); // foobar
-```
-
-
-## Selenium
-
-```shell script
-npx tdd-buffet-selenium start
+module.exports = {
+  ...baseConfig
+};
 ```
