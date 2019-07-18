@@ -48,7 +48,9 @@ async function waitForNodes(expectedNodes: number, retries: number, port: number
     });
 
     if (actualNodes < expectedNodes) {
-      await new Promise(waitTimeout);
+      if (pings < retries) {
+        await new Promise(waitTimeout);
+      }
     } else {
       bar.terminate();
       return;
