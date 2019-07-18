@@ -7,7 +7,7 @@ import {
   runnerIt
 } from '../jest-runner';
 
-const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost' } = process.env;
+const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost', SELENIUM_PORT = '4444' } = process.env;
 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
@@ -81,6 +81,7 @@ function setupHooks() {
   runnerBefore(async function connectToSelenium() {
     const options: WebDriver.Options = {
       hostname: SELENIUM_HOST,
+      port: parseInt(SELENIUM_PORT, 10),
       capabilities: { browserName: BROWSER },
       logLevel: 'error'
     };

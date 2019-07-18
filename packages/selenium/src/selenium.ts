@@ -76,6 +76,7 @@ export async function start(nodes: number, retries: number, port: number) {
     {
       cwd: __dirname,
       env: {
+        HUB_PORT: `${port}`,
         COMPOSE_PROJECT_NAME: 'tdd-buffet'
       },
       stdio: 'inherit'

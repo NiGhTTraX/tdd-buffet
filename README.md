@@ -37,7 +37,7 @@ describe('Node suite', () => {
 
 ### GUI
 
-Create a Jest suite that automatically starts a Selenium session. Browser name and selenium host are read from the environment variables `BROWSER` and `SELENIUM_HOST` respectively.
+Create a Jest suite that automatically starts a Selenium session. Browser name and selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
 
 ```typescript
 import { describe, it } from 'tdd-buffet/suite/gui';
