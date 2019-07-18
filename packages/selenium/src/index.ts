@@ -11,17 +11,12 @@ const cli = meow(`
     $ stop       Stop the grid and any connected nodes.
     
   Options
-    --host [0.0.0.0] The host where the Selenium hub is listening.
     --port [4444]    The port where the Selenium hub is listening.
     --retries [15]   Number of times to retry waiting for all nodes to connect.
                      There's a 1 second wait between retries.
 `, {
   // @ts-ignore
   flags: {
-    host: {
-      type: 'string',
-      default: '0.0.0.0'
-    },
     port: {
       type: 'number',
       default: 4444
@@ -37,13 +32,20 @@ const cli = meow(`
   switch (cli.input[0]) {
     case 'start':
       await stop();
-      await start(parseInt(cli.input[1] || '1', 10), parseInt(cli.flags.retries, 10), cli.flags.host, parseInt(cli.flags.port, 10));
+      await start(
+        parseInt(cli.input[1] || '1', 10),
+        parseInt(cli.flags.retries, 10),
+        parseInt(cli.flags.port, 10)
+      );
       break;
     case 'stop':
       await stop();
       break;
     case 'debug':
-      await debug(parseInt(cli.flags.retries, 10), cli.flags.host, parseInt(cli.flags.port, 10));
+      await debug(
+        parseInt(cli.flags.retries, 10),
+        parseInt(cli.flags.port, 10)
+      );
       break;
     default:
       console.error(cli.help);

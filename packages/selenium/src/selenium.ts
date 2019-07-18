@@ -6,15 +6,15 @@ import ProgressBar from 'progress';
 const TIMEOUT = 1000;
 const waitTimeout = (resolve: (...args: any[]) => void) => setTimeout(resolve, TIMEOUT);
 
-async function getCurrentlyConnectedNodes(hostname: string, port: number) {
-  const url = `http://${hostname}:${port}/grid/api/hub`;
+async function getCurrentlyConnectedNodes(port: number) {
+  const url = `http://0.0.0.0:${port}/grid/api/hub`;
 
   const response = await got(url);
 
   return JSON.parse(response.body).slotCounts.free;
 }
 
-async function waitForNodes(expectedNodes: number, retries: number, host: string, port: number) {
+async function waitForNodes(expectedNodes: number, retries: number, port: number) {
   let pings = 0;
 
   const bar = new ProgressBar(':bar Nodes: :actual/:expected Retries: :pings/:retries', {
@@ -35,7 +35,7 @@ async function waitForNodes(expectedNodes: number, retries: number, host: string
     let actualNodes = 0;
 
     try {
-      actualNodes = await getCurrentlyConnectedNodes(host, port);
+      actualNodes = await getCurrentlyConnectedNodes(port);
     } catch (e) {
       bar.interrupt(e.message);
     }
@@ -70,25 +70,28 @@ async function down(config: string, composeProjectName: string) {
   });
 }
 
-export async function start(nodes: number, retries: number, host: string, port: number) {
-  await execa.command(`docker-compose -f ./docker-compose.yml up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`, {
-    cwd: __dirname,
-    env: {
-      COMPOSE_PROJECT_NAME: 'tdd-buffet'
-    },
-    stdio: 'inherit'
-  });
+export async function start(nodes: number, retries: number, port: number) {
+  await execa.command(
+    `docker-compose -f ./docker-compose.yml up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`,
+    {
+      cwd: __dirname,
+      env: {
+        COMPOSE_PROJECT_NAME: 'tdd-buffet'
+      },
+      stdio: 'inherit'
+    }
+  );
 
   console.log(`Waiting for ${nodes * 2} nodes to connect`);
-  await waitForNodes(nodes * 2, retries, host, port);
+  await waitForNodes(nodes * 2, retries, port);
   console.log('Hub is ready');
 }
 
-export async function debug(retries: number, host: string, port: number) {
+export async function debug(retries: number, port: number) {
   try {
     console.log('Checking to see if hub is already ready');
     // TODO: this actually tries 2 times
-    await waitForNodes(2, 1, host, port);
+    await waitForNodes(2, 1, port);
 
     console.log('Hub was already ready');
     process.exit(0);
@@ -102,7 +105,7 @@ export async function debug(retries: number, host: string, port: number) {
     });
 
     console.log('Waiting for 2 debug nodes to connect');
-    await waitForNodes(2, retries, host, port);
+    await waitForNodes(2, retries, port);
     console.log('Hub is ready');
   }
 }
