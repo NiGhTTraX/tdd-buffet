@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* istanbul ignore file */
 /* eslint-disable no-console */
 import meow from 'meow';
 import { debug, start, stop } from './selenium';

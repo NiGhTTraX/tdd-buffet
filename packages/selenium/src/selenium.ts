@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 /* eslint-disable no-console, no-await-in-loop */
 import got from 'got';
 import execa from 'execa';
