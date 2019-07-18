@@ -1,23 +1,53 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
 'use strict';
 
 const meow = require('meow');
-const execa = require('execa');
+const { start, stop, debug } = require('./selenium');
 
-// TODO: add flags for hostname, port, wait
 const cli = meow(`
   Usage
-    $ start <nodes>
-    $ debug
-    $ stop
-`);
+    $ start [N]  Start the grid and connect 2*N nodes.
+    $ debug      Start the grid and connect 2 nodes with VNC.
+    $ stop       Stop the grid and any connected nodes.
+    
+  Options
+    --host [0.0.0.0] The host where the Selenium hub is listening.
+    --port [4444]    The port where the Selenium hub is listening.
+    --retries [15]   Number of times to retry waiting for all nodes to connect.
+                     There's a 1 second wait between retries.
+`, {
+  flags: {
+    host: {
+      type: 'string',
+      default: '0.0.0.0'
+    },
+    port: {
+      type: 'number',
+      default: 4444
+    },
+    retries: {
+      type: 'number',
+      default: 15
+    }
+  }
+});
 
 (async () => {
-  const cmd = execa(`./scripts/${cli.input[0]}.js`, cli.input.slice(1), {
-    cwd: __dirname,
-    stdio: 'inherit'
-  });
-
-  await cmd;
+  switch (cli.input[0]) {
+    case 'start':
+      await stop();
+      await start(parseInt(cli.input[1] || '1', 10), parseInt(cli.flags.retries, 10), cli.flags.host, parseInt(cli.flags.port, 10));
+      break;
+    case 'stop':
+      await stop();
+      break;
+    case 'debug':
+      await debug(parseInt(cli.flags.retries, 10), cli.flags.host, parseInt(cli.flags.port, 10));
+      break;
+    default:
+      console.error(cli.help);
+      process.exit(1);
+  }
 })();
