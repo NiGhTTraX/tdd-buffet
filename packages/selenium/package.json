@@ -18,12 +18,16 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/selenium",
-  "bin": {
-    "tdd-buffet-selenium": "./scripts/index.sh"
-  },
+  "bin": "./index.js",
   "scripts": {
-    "clean": "rm -rf dist",
-    "build": "mkdir dist && cp -r scripts src/index.js package.json ./dist",
-    "prepublishOnly": "npm run build"
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "package": "cp package.json ./dist",
+    "compile": "mkdir dist && cp -r src/* ./dist",
+    "prepublishOnly": "npm run build && npm run package"
+  },
+  "dependencies": {
+    "execa": "~2.0.3",
+    "meow": "~5.0.0"
   }
 }

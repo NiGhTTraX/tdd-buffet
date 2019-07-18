@@ -8,9 +8,9 @@
     "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
     "_test": "jest --config packages/tdd-buffet/src/config/jest.config.js --coverage",
-    "selenium": "./packages/selenium/scripts/index.sh start",
-    "selenium:debug": "./packages/selenium/scripts/index.sh debug",
-    "selenium:stop": "./packages/selenium/scripts/index.sh stop",
+    "selenium": "packages/selenium/src/index.js start",
+    "selenium:debug": "packages/selenium/src/index.js debug",
+    "selenium:stop": "packages/selenium/src/index.js stop",
     "report-coverage": "codecov -f tests/results/coverage/coverage-final.json"
   },
   "husky": {
