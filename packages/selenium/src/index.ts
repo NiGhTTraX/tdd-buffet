@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 /* eslint-disable no-console */
+import meow from 'meow';
+import { debug, start, stop } from './selenium';
 
-'use strict';
-
-const meow = require('meow');
-const { start, stop, debug } = require('./selenium');
 
 const cli = meow(`
   Usage
@@ -18,6 +16,7 @@ const cli = meow(`
     --retries [15]   Number of times to retry waiting for all nodes to connect.
                      There's a 1 second wait between retries.
 `, {
+  // @ts-ignore
   flags: {
     host: {
       type: 'string',

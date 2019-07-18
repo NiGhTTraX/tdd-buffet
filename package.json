@@ -8,9 +8,9 @@
     "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
     "_test": "jest --config packages/tdd-buffet/src/config/jest.config.js --coverage",
-    "selenium": "packages/selenium/src/index.js start",
-    "selenium:debug": "packages/selenium/src/index.js debug",
-    "selenium:stop": "packages/selenium/src/index.js stop",
+    "selenium": "ts-node packages/selenium/src/index.ts start",
+    "selenium:debug": "ts-node packages/selenium/src/index.ts debug",
+    "selenium:stop": "ts-node packages/selenium/src/index.ts stop",
     "report-coverage": "codecov -f tests/results/coverage/coverage-final.json"
   },
   "husky": {
@@ -37,6 +37,7 @@
     "lerna": "~3.15.0",
     "lint-staged": "~9.2.0",
     "ts-jest": "~24.0.2",
+    "ts-node": "~8.3.0",
     "typescript": "~3.5.0"
   }
 }
