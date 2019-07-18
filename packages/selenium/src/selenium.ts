@@ -75,7 +75,7 @@ async function down(config: string, composeProjectName: string) {
 
 export async function start(nodes: number, retries: number, port: number) {
   await execa.command(
-    `docker-compose -f ./docker-compose.yml up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`,
+    `docker-compose -f ./config/docker-compose.yml up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`,
     {
       cwd: __dirname,
       env: {
@@ -99,7 +99,7 @@ export async function debug(retries: number, port: number) {
     console.log('Hub was already ready');
     process.exit(0);
   } catch (e) {
-    await execa.command('docker-compose -f ./docker-compose.debug.yml up -d selenium', {
+    await execa.command('docker-compose -f ./config/docker-compose.debug.yml up -d selenium', {
       cwd: __dirname,
       env: {
         HUB_PORT: `${port}`,
@@ -116,8 +116,8 @@ export async function debug(retries: number, port: number) {
 
 export async function stop(theDebug?: 'debug') {
   if (!theDebug) {
-    await down('./docker-compose.yml', 'tdd-buffet');
+    await down('./config/docker-compose.yml', 'tdd-buffet');
   } else {
-    await down('./docker-compose.debug.yml', 'tdd-buffet:debug');
+    await down('./config/docker-compose.debug.yml', 'tdd-buffet:debug');
   }
 }
