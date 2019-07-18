@@ -5,7 +5,7 @@ set -e
 cd "$( dirname "${BASH_SOURCE[0]}" )"
 
 # Clean up first.
-./stop.sh
+./stop.js
 
 NR_NODES=${1:-1}
 
