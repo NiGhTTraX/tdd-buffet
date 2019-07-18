@@ -40,6 +40,7 @@ const cli = meow(`
       break;
     case 'stop':
       await stop();
+      await stop('debug');
       break;
     case 'debug':
       await debug(

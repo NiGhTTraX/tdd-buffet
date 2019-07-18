@@ -99,6 +99,7 @@ export async function debug(retries: number, port: number) {
     await execa.command('docker-compose -f ./docker-compose.debug.yml up -d selenium', {
       cwd: __dirname,
       env: {
+        HUB_PORT: `${port}`,
         COMPOSE_PROJECT_NAME: 'tdd-buffet:debug'
       },
       stdio: 'inherit'
@@ -110,7 +111,10 @@ export async function debug(retries: number, port: number) {
   }
 }
 
-export async function stop() {
-  await down('./docker-compose.yml', 'tdd-buffet');
-  await down('./docker-compose.debug.yml', 'tdd-buffet:debug');
+export async function stop(theDebug?: 'debug') {
+  if (!theDebug) {
+    await down('./docker-compose.yml', 'tdd-buffet');
+  } else {
+    await down('./docker-compose.debug.yml', 'tdd-buffet:debug');
+  }
 }
