@@ -9,15 +9,25 @@ services:
       # Try to prevent Selenium from blocking when creating sessions due to
       # limited entropy.
       - /dev/urandom:/dev/random
+    volumes:
+      - /dev/shm:/dev/shm
 
   chrome:
     image: selenium/node-chrome:3.141.59-neon
+    volumes:
+      - /dev/shm:/dev/shm
 
   firefox:
     image: selenium/node-firefox:3.141.59-neon
+    volumes:
+      - /dev/shm:/dev/shm
 
   debug_chrome:
     image: "selenium/node-chrome-debug:3.141.59-neon"
+    volumes:
+      - /dev/shm:/dev/shm
 
   debug_firefox:
     image: "selenium/node-firefox-debug:3.141.59-neon"
+    volumes:
+      - /dev/shm:/dev/shm
