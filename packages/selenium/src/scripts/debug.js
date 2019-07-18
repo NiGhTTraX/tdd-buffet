@@ -1,14 +1,15 @@
 #!/usr/bin/env node
-/* eslint-disable no-await-in-loop,no-console */
+/* eslint-disable no-console */
 
 'use strict';
 
 const meow = require('meow');
+const execa = require('execa');
 const { waitForNodes } = require('../selenium');
 
 const cli = meow(`
   Usage
-    $ wait-for-nodes <nodes>
+    $ debug
     
   Options
     --host [0.0.0.0] The host where the Selenium hub is listening.
@@ -32,12 +33,25 @@ const cli = meow(`
   }
 });
 
-
-const expectedNodes = parseInt(cli.input[0], 10);
 const { retries, host, port } = cli.flags;
 
 (async () => {
-  await waitForNodes(expectedNodes, retries, host, port);
+  try {
+    console.log('Checking to see if hub is already ready');
+    await waitForNodes(2, 1, host, port);
 
-  console.log('Hub is ready');
+    console.log('Hub was already ready');
+    process.exit(0);
+  } catch (e) {
+    await execa.command('docker-compose -f docker-compose.debug.yml up -d selenium', {
+      env: {
+        COMPOSE_PROJECT_NAME: 'tdd-buffet:debug'
+      },
+      stdio: 'inherit'
+    });
+
+    console.log('Waiting for 2 debug nodes to connect');
+    await waitForNodes(2, retries, host, port);
+    console.log('Hub is ready');
+  }
 })();
