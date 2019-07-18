@@ -73,6 +73,20 @@ async function down(config: string, composeProjectName: string) {
   });
 }
 
+export async function createVolume(name: string, hostPath: string) {
+  await removeVolume(name);
+
+  await execa.command(`docker volume create --driver local \
+      --opt type=none \
+      --opt device=${path.resolve(process.cwd(), hostPath)} \
+      --opt o=bind \
+      ${name}`, { stdio: 'inherit' });
+}
+
+export async function removeVolume(name: string) {
+  await execa.command(`docker volume rm -f ${name}`, { stdio: 'inherit' });
+}
+
 export async function start(nodes: number, retries: number, port: number) {
   const configPath = path.join(__dirname, 'config/docker-compose.yml');
 

@@ -28,6 +28,17 @@ npx @tdd-buffet/selenium debug --port 3333 --retries 15
 The same hub as above will spin up, but this time only 2 nodes (Chrome and Firefox) with VNC enabled will connect. VNC is available at `0.0.0.0:5900` (Chrome) and `0.0.0.0:5901` (Firefox).
 
 
+## Mount files inside the nodes
+
+You can mount files inside the node containers at `/var/ww/html` using the `--html` option:
+
+```sh
+npx @tdd-buffet/selenium start --html my-host-dir
+```
+
+The path is resolved relative to the current working directory.
+
+
 ## Stop everything
 
 ```sh

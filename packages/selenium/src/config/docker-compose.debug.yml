@@ -26,3 +26,7 @@ services:
       service: debug_firefox
     ports:
       - '5901:5900' # VNC
+
+volumes:
+  html:
+    external: true

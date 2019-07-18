@@ -11,11 +11,13 @@ services:
       - /dev/urandom:/dev/random
     volumes:
       - /dev/shm:/dev/shm
+      - html:/var/www/html
 
   chrome:
     image: selenium/node-chrome:3.141.59-neon
     volumes:
       - /dev/shm:/dev/shm
+      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=selenium
@@ -24,6 +26,7 @@ services:
     image: selenium/node-firefox:3.141.59-neon
     volumes:
       - /dev/shm:/dev/shm
+      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=selenium
@@ -32,6 +35,7 @@ services:
     image: "selenium/node-chrome-debug:3.141.59-neon"
     volumes:
       - /dev/shm:/dev/shm
+      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=selenium
@@ -41,6 +45,7 @@ services:
     image: "selenium/node-firefox-debug:3.141.59-neon"
     volumes:
       - /dev/shm:/dev/shm
+      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=selenium

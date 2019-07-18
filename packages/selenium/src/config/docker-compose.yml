@@ -18,3 +18,7 @@ services:
     extends:
       file: docker-compose.base.yml
       service: firefox
+
+volumes:
+  html:
+    external: true
