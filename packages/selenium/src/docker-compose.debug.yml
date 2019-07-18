@@ -17,11 +17,6 @@ services:
     extends:
       file: docker-compose.base.yml
       service: debug_chrome
-    environment:
-      # These are legacy compose links env vars that the image is relying on.
-      - HUB_PORT_4444_TCP_PORT=4444
-      - HUB_PORT_4444_TCP_ADDR=selenium
-      - SE_OPTS=-debug
     ports:
       - '5900:5900' # VNC
 
@@ -29,10 +24,5 @@ services:
     extends:
       file: docker-compose.base.yml
       service: debug_firefox
-    environment:
-      # These are legacy compose links env vars that the image is relying on.
-      - HUB_PORT_4444_TCP_PORT=4444
-      - HUB_PORT_4444_TCP_ADDR=selenium
-      - SE_OPTS=-debug
     ports:
       - '5901:5900' # VNC

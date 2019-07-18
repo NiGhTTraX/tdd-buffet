@@ -16,18 +16,32 @@ services:
     image: selenium/node-chrome:3.141.59-neon
     volumes:
       - /dev/shm:/dev/shm
+    environment:
+      - HUB_PORT=4444
+      - HUB_HOST=selenium
 
   firefox:
     image: selenium/node-firefox:3.141.59-neon
     volumes:
       - /dev/shm:/dev/shm
+    environment:
+      - HUB_PORT=4444
+      - HUB_HOST=selenium
 
   debug_chrome:
     image: "selenium/node-chrome-debug:3.141.59-neon"
     volumes:
       - /dev/shm:/dev/shm
+    environment:
+      - HUB_PORT=4444
+      - HUB_HOST=selenium
+      - SE_OPTS=-debug
 
   debug_firefox:
     image: "selenium/node-firefox-debug:3.141.59-neon"
     volumes:
       - /dev/shm:/dev/shm
+    environment:
+      - HUB_PORT=4444
+      - HUB_HOST=selenium
+      - SE_OPTS=-debug
