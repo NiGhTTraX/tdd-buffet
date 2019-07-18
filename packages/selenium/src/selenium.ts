@@ -3,6 +3,7 @@
 import got from 'got';
 import execa from 'execa';
 import ProgressBar from 'progress';
+import path from 'path';
 
 const TIMEOUT = 1000;
 const waitTimeout = (resolve: (...args: any[]) => void) => setTimeout(resolve, TIMEOUT);
@@ -65,7 +66,6 @@ async function waitForNodes(expectedNodes: number, retries: number, port: number
 
 async function down(config: string, composeProjectName: string) {
   await execa.command(`docker-compose -f ${config} down`, {
-    cwd: __dirname,
     env: {
       COMPOSE_PROJECT_NAME: composeProjectName
     },
@@ -74,10 +74,11 @@ async function down(config: string, composeProjectName: string) {
 }
 
 export async function start(nodes: number, retries: number, port: number) {
+  const configPath = path.join(__dirname, 'config/docker-compose.yml');
+
   await execa.command(
-    `docker-compose -f ./config/docker-compose.yml up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`,
+    `docker-compose -f ${configPath} up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`,
     {
-      cwd: __dirname,
       env: {
         HUB_PORT: `${port}`,
         COMPOSE_PROJECT_NAME: 'tdd-buffet'
@@ -99,8 +100,9 @@ export async function debug(retries: number, port: number) {
     console.log('Hub was already ready');
     process.exit(0);
   } catch (e) {
-    await execa.command('docker-compose -f ./config/docker-compose.debug.yml up -d selenium', {
-      cwd: __dirname,
+    const configPath = path.join(__dirname, 'config/docker-compose.debug.yml');
+
+    await execa.command(`docker-compose -f ${configPath} up -d selenium`, {
       env: {
         HUB_PORT: `${port}`,
         COMPOSE_PROJECT_NAME: 'tdd-buffet:debug'
@@ -116,8 +118,8 @@ export async function debug(retries: number, port: number) {
 
 export async function stop(theDebug?: 'debug') {
   if (!theDebug) {
-    await down('./config/docker-compose.yml', 'tdd-buffet');
+    await down(path.join(__dirname, 'config/docker-compose.yml'), 'tdd-buffet');
   } else {
-    await down('./config/docker-compose.debug.yml', 'tdd-buffet:debug');
+    await down(path.join(__dirname, 'config/docker-compose.debug.yml'), 'tdd-buffet:debug');
   }
 }
