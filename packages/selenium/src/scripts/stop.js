@@ -6,6 +6,7 @@ const execa = require('execa');
 
 async function down(config, composeProjectName) {
   await execa.command(`docker-compose -f ${config} down`, {
+    cwd: __dirname,
     env: {
       COMPOSE_PROJECT_NAME: composeProjectName
     },

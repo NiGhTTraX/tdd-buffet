@@ -4,7 +4,6 @@
 'use strict';
 
 const execa = require('execa');
-
 const meow = require('meow');
 const { waitForNodes } = require('../selenium');
 
@@ -38,9 +37,13 @@ const nodes = parseInt(cli.input[0] || '1', 10);
 const { retries, host, port } = cli.flags;
 
 (async () => {
-  await execa('./stop.js', { stdio: 'inherit' });
+  await execa('./stop.js', {
+    cwd: __dirname,
+    stdio: 'inherit'
+  });
 
   await execa.command(`docker-compose up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`, {
+    cwd: __dirname,
     env: {
       COMPOSE_PROJECT_NAME: 'tdd-buffet'
     },

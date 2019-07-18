@@ -4,7 +4,6 @@
 
 const meow = require('meow');
 const execa = require('execa');
-const path = require('path');
 
 // TODO: add flags for hostname, port, wait
 const cli = meow(`
@@ -15,7 +14,8 @@ const cli = meow(`
 `);
 
 (async () => {
-  const cmd = execa(path.join(__dirname, `./scripts/${cli.input[0]}.sh`), cli.input.slice(1), {
+  const cmd = execa(`./scripts/${cli.input[0]}.js`, cli.input.slice(1), {
+    cwd: __dirname,
     stdio: 'inherit'
   });
 
