@@ -17,7 +17,7 @@ async function getCurrentlyConnectedNodes(port: number) {
 async function waitForNodes(expectedNodes: number, retries: number, port: number) {
   let pings = 0;
 
-  const bar = new ProgressBar(':bar Nodes: :actual/:expected Retries: :pings/:retries', {
+  const bar = new ProgressBar(':bar Nodes: :actual/:expected Attempts: :pings/:retries', {
     total: retries,
     width: 60,
     clear: true
@@ -31,7 +31,7 @@ async function waitForNodes(expectedNodes: number, retries: number, port: number
     retries
   });
 
-  while (pings++ <= retries) {
+  while (pings++ < retries) {
     let actualNodes = 0;
 
     try {
@@ -91,7 +91,6 @@ export async function start(nodes: number, retries: number, port: number) {
 export async function debug(retries: number, port: number) {
   try {
     console.log('Checking to see if hub is already ready');
-    // TODO: this actually tries 2 times
     await waitForNodes(2, 1, port);
 
     console.log('Hub was already ready');
