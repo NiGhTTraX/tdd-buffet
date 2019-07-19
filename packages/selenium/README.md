@@ -39,7 +39,7 @@ npx @tdd-buffet/selenium start --html my-host-dir
 The path is resolved relative to the current working directory.
 
 
-## Connecting other containers
+## Connect other containers
 
 When spinning up the grid a network named `tdd-buffet` is created. You can make other containers visible to the grid nodes by having them join the same network - they will then be accessible through their name. Here's an example using `docker-compose`:
 

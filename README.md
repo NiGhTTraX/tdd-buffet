@@ -20,6 +20,7 @@ This is a collection of libraries extracted from my personal open source project
   - [Start a grid with Chrome and Firefox](./packages/selenium/README.md#start-a-grid-with-chrome-and-firefox)
   - [Start a debug grid with VNC](./packages/selenium/README.md#start-a-grid-with-debug-nodes-with-vnc)
   - [Mount files inside the nodes](./packages/selenium/README.md#mount-files-inside-the-nodes)
+  - [Connect other containers](./packages/selenium/README.md#connect-other-containers)
   - [Stop everything](./packages/selenium/README.md#stop-everything)
   
 
