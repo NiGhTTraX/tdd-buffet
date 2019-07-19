@@ -11,7 +11,7 @@
     "selenium": "ts-node packages/selenium/src/index.ts start --port 4444",
     "selenium:debug": "ts-node packages/selenium/src/index.ts debug --port 3333",
     "selenium:stop": "ts-node packages/selenium/src/index.ts stop",
-    "report-coverage": "codecov -f tests/results/coverage/coverage-final.json"
+    "report-coverage": "codecov -f tests/results/coverage-final.json"
   },
   "husky": {
     "hooks": {
