@@ -16,8 +16,8 @@ const cli = meow(`
     --port [4444]    The port where the Selenium hub is listening.
     --retries [15]   Number of times to retry waiting for all nodes to connect.
                      There's a 1 second wait between retries.
-    --html path      Absolute path to a folder that will be mounted inside the
-                     browser nodes at /var/www/html.
+    --html path      Path to a folder that will be mounted inside the browser 
+                     nodes at /var/www/html. Will be resolved relative to cwd.
 `, {
   // @ts-ignore
   flags: {
@@ -37,6 +37,8 @@ const cli = meow(`
 });
 
 (async () => {
+  const htmlPath = path.resolve(process.cwd(), cli.flags.html);
+
   switch (cli.input[0]) {
     case 'start':
       await stop();
@@ -45,7 +47,7 @@ const cli = meow(`
         parseInt(cli.input[1] || '1', 10),
         parseInt(cli.flags.retries, 10),
         parseInt(cli.flags.port, 10),
-        cli.flags.html
+        htmlPath
       );
       break;
     case 'stop':
@@ -55,7 +57,7 @@ const cli = meow(`
       await debug(
         parseInt(cli.flags.retries, 10),
         parseInt(cli.flags.port, 10),
-        cli.flags.html
+        htmlPath
       );
       break;
     default:
