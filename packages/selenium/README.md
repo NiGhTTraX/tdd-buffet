@@ -6,8 +6,8 @@
 
 ## Requirements
 
-- Docker
-- docker-compose
+- Docker 1.12.0+
+- docker-compose 1.18.0+
 
 
 ## Start a grid with Chrome and Firefox
