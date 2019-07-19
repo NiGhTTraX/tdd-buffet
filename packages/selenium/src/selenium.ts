@@ -79,7 +79,7 @@ export async function removeVolume(name: string) {
   await execa.command(`docker volume rm -f ${name}`, { stdio: 'inherit' });
 }
 
-export async function start(nodes: number, retries: number, port: number) {
+export async function start(nodes: number, retries: number, port: number, htmlPath: string) {
   const configPath = path.join(__dirname, 'config/docker-compose.yml');
 
   await execa.command(
@@ -87,6 +87,7 @@ export async function start(nodes: number, retries: number, port: number) {
     {
       env: {
         HUB_PORT: `${port}`,
+        HTML_PATH: `${htmlPath}`,
         COMPOSE_PROJECT_NAME
       },
       stdio: 'inherit'
@@ -98,7 +99,7 @@ export async function start(nodes: number, retries: number, port: number) {
   console.log('Hub is ready');
 }
 
-export async function debug(retries: number, port: number) {
+export async function debug(retries: number, port: number, htmlPath: string) {
   try {
     console.log('Checking to see if hub is already ready');
     await waitForNodes(2, 1, port);
@@ -111,6 +112,7 @@ export async function debug(retries: number, port: number) {
     await execa.command(`docker-compose -f ${configPath} up -d debug_hub`, {
       env: {
         HUB_PORT: `${port}`,
+        HTML_PATH: `${htmlPath}`,
         COMPOSE_PROJECT_NAME
       },
       stdio: 'inherit'
@@ -124,7 +126,7 @@ export async function debug(retries: number, port: number) {
 
 export async function stop() {
   await execa.command(
-    `docker-compose -f ${(path.join(__dirname, 'config/docker-compose.yml'))} down`, {
+    `docker-compose -f ${(path.join(__dirname, 'config/docker-compose.yml'))} down -v`, {
       env: {
         COMPOSE_PROJECT_NAME
       },

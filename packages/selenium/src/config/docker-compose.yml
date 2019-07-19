@@ -75,4 +75,8 @@ services:
 
 volumes:
   html:
-    external: true
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${HTML_PATH}

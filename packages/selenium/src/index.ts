@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 import meow from 'meow';
 import path from 'path';
-import { createVolume, debug, removeVolume, start, stop } from './selenium';
+import { debug, start, stop } from './selenium';
 
 
 const cli = meow(`
@@ -41,25 +41,21 @@ const cli = meow(`
     case 'start':
       await stop();
 
-      await createVolume('html', cli.flags.html);
-
       await start(
         parseInt(cli.input[1] || '1', 10),
         parseInt(cli.flags.retries, 10),
-        parseInt(cli.flags.port, 10)
+        parseInt(cli.flags.port, 10),
+        cli.flags.html
       );
       break;
     case 'stop':
       await stop();
-
-      await removeVolume('html');
       break;
     case 'debug':
-      await createVolume('html', cli.flags.html);
-
       await debug(
         parseInt(cli.flags.retries, 10),
-        parseInt(cli.flags.port, 10)
+        parseInt(cli.flags.port, 10),
+        cli.flags.html
       );
       break;
     default:
