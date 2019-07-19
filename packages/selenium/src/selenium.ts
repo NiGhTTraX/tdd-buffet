@@ -6,6 +6,7 @@ import ProgressBar from 'progress';
 import path from 'path';
 
 const TIMEOUT = 1000;
+const COMPOSE_PROJECT_NAME = 'tdd-buffet';
 const waitTimeout = (resolve: (...args: any[]) => void) => setTimeout(resolve, TIMEOUT);
 
 async function getCurrentlyConnectedNodes(port: number) {
@@ -64,15 +65,6 @@ async function waitForNodes(expectedNodes: number, retries: number, port: number
   throw new Error('Hub was not ready in time');
 }
 
-async function down(config: string, composeProjectName: string) {
-  await execa.command(`docker-compose -f ${config} down`, {
-    env: {
-      COMPOSE_PROJECT_NAME: composeProjectName
-    },
-    stdio: 'inherit'
-  });
-}
-
 export async function createVolume(name: string, hostPath: string) {
   await removeVolume(name);
 
@@ -91,11 +83,11 @@ export async function start(nodes: number, retries: number, port: number) {
   const configPath = path.join(__dirname, 'config/docker-compose.yml');
 
   await execa.command(
-    `docker-compose -f ${configPath} up -d --scale chrome=${nodes} --scale firefox=${nodes} selenium`,
+    `docker-compose -f ${configPath} up -d --scale chrome=${nodes} --scale firefox=${nodes} hub`,
     {
       env: {
         HUB_PORT: `${port}`,
-        COMPOSE_PROJECT_NAME: 'tdd-buffet'
+        COMPOSE_PROJECT_NAME
       },
       stdio: 'inherit'
     }
@@ -114,12 +106,12 @@ export async function debug(retries: number, port: number) {
     console.log('Hub was already ready');
     process.exit(0);
   } catch (e) {
-    const configPath = path.join(__dirname, 'config/docker-compose.debug.yml');
+    const configPath = path.join(__dirname, 'config/docker-compose.yml');
 
-    await execa.command(`docker-compose -f ${configPath} up -d selenium`, {
+    await execa.command(`docker-compose -f ${configPath} up -d debug_hub`, {
       env: {
         HUB_PORT: `${port}`,
-        COMPOSE_PROJECT_NAME: 'tdd-buffet:debug'
+        COMPOSE_PROJECT_NAME
       },
       stdio: 'inherit'
     });
@@ -130,10 +122,13 @@ export async function debug(retries: number, port: number) {
   }
 }
 
-export async function stop(theDebug?: 'debug') {
-  if (!theDebug) {
-    await down(path.join(__dirname, 'config/docker-compose.yml'), 'tdd-buffet');
-  } else {
-    await down(path.join(__dirname, 'config/docker-compose.debug.yml'), 'tdd-buffet:debug');
-  }
+export async function stop() {
+  await execa.command(
+    `docker-compose -f ${(path.join(__dirname, 'config/docker-compose.yml'))} down`, {
+      env: {
+        COMPOSE_PROJECT_NAME
+      },
+      stdio: 'inherit'
+    }
+  );
 }

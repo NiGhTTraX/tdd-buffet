@@ -51,7 +51,6 @@ const cli = meow(`
       break;
     case 'stop':
       await stop();
-      await stop('debug');
 
       await removeVolume('html');
       break;
