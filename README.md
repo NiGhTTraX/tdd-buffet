@@ -3,6 +3,9 @@
 [![Build Status](https://travis-ci.com/NiGhTTraX/tdd-buffet.svg?branch=master)](https://travis-ci.com/NiGhTTraX/tdd-buffet) [![codecov](https://codecov.io/gh/NiGhTTraX/tdd-buffet/branch/master/graph/badge.svg)](https://codecov.io/gh/NiGhTTraX/tdd-buffet) ![npm type definitions](https://img.shields.io/npm/types/tdd-buffet.svg)
 ----
 
+This is a collection of libraries extracted from my personal open source projects. They help me bootstrap new projects easily and keep things consistent between them. You can mix and match as little or as much as you like from the project, and if you have any feature requests or suggestions for improvements please open an issue/PR.
+
+
 ### Today's menu
 
 - [Test suites](#test-suites)
@@ -16,6 +19,7 @@
 - [Selenium](./packages/selenium)
   - [Start a grid with Chrome and Firefox](./packages/selenium/README.md#start-a-grid-with-chrome-and-firefox)
   - [Start a debug grid with VNC](./packages/selenium/README.md#start-a-grid-with-debug-nodes-with-vnc)
+  - [Mount files inside the nodes](./packages/selenium/README.md#mount-files-inside-the-nodes)
   - [Stop everything](./packages/selenium/README.md#stop-everything)
   
 
