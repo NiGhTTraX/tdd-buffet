@@ -16,16 +16,12 @@ services:
   hub:
     extends:
       service: selenium
-    networks:
-      - tdd-buffet
     depends_on:
       - chrome
       - firefox
 
   chrome:
     image: selenium/node-chrome:3.141.59-neon
-    networks:
-      - tdd-buffet
     volumes:
       - /dev/shm:/dev/shm
       - html:/var/www/html
@@ -35,8 +31,6 @@ services:
 
   firefox:
     image: selenium/node-firefox:3.141.59-neon
-    networks:
-      - tdd-buffet
     volumes:
       - /dev/shm:/dev/shm
       - html:/var/www/html
@@ -47,8 +41,6 @@ services:
   debug_hub:
     extends:
       service: selenium
-    networks:
-      - tdd-buffet
     environment:
       - SE_OPTS=-debug
       - GRID_TIMEOUT=0
@@ -59,8 +51,6 @@ services:
 
   debug_chrome:
     image: "selenium/node-chrome-debug:3.141.59-neon"
-    networks:
-      - tdd-buffet
     volumes:
       - /dev/shm:/dev/shm
       - html:/var/www/html
@@ -73,8 +63,6 @@ services:
 
   debug_firefox:
     image: "selenium/node-firefox-debug:3.141.59-neon"
-    networks:
-      - tdd-buffet
     volumes:
       - /dev/shm:/dev/shm
       - html:/var/www/html
@@ -94,5 +82,6 @@ volumes:
       device: ${HTML_PATH}
 
 networks:
-  tdd-buffet:
+  default:
+    # Explicitly name the default network so that others can join it.
     name: tdd-buffet
