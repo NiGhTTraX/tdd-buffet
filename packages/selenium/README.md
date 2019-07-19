@@ -39,6 +39,36 @@ npx @tdd-buffet/selenium start --html my-host-dir
 The path is resolved relative to the current working directory.
 
 
+## Connecting other containers
+
+When spinning up the grid a network named `tdd-buffet` is created. You can make other containers visible to the grid nodes by having them join the same network - they will then be accessible through their name. Here's an example using `docker-compose`:
+
+```yaml
+version: '2.1'
+
+services:
+  my-service:
+    image: nginxdemos/hello
+    networks:
+      - tdd-buffet
+    expose:
+      - 80
+
+networks:
+  tdd-buffet:
+    external: true # this tells docker-compose that the
+                   # network was created outside this project
+```
+
+```sh
+npx @tdd-buffet/selenium start
+docker-compose up -d
+# Now you can tell the hub to access http://my-service
+```
+
+![network](./network.png)
+
+
 ## Stop everything
 
 ```sh
