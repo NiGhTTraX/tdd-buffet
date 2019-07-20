@@ -65,38 +65,42 @@ async function waitForNodes(expectedNodes: number, retries: number, port: number
   throw new Error('Hub was not ready in time');
 }
 
-export async function createVolume(name: string, hostPath: string) {
-  await removeVolume(name);
-
-  await execa.command(`docker volume create --driver local \
-      --opt type=none \
-      --opt device=${path.resolve(process.cwd(), hostPath)} \
-      --opt o=bind \
-      ${name}`, { stdio: 'inherit' });
-}
-
-export async function removeVolume(name: string) {
-  await execa.command(`docker volume rm -f ${name}`, { stdio: 'inherit' });
-}
-
-export async function start(nodes: number, retries: number, port: number, htmlPath: string) {
-  const configPath = path.join(__dirname, 'config/docker-compose.yml');
-
-  await execa.command(
-    `docker-compose -f ${configPath} up -d --scale chrome=${nodes} --scale firefox=${nodes} hub`,
-    {
+async function up(
+  configPath: string,
+  services: string,
+  port: number,
+  htmlPath: string,
+  expectedNodes: number,
+  retries: number
+) {
+  try {
+    await execa.command(`docker-compose -f ${configPath} up -d ${services}`, {
       env: {
         HUB_PORT: `${port}`,
         HTML_PATH: `${htmlPath}`,
         COMPOSE_PROJECT_NAME
       },
       stdio: 'inherit'
-    }
-  );
+    });
 
-  console.log(`Waiting for ${nodes * 2} nodes to connect`);
-  await waitForNodes(nodes * 2, retries, port);
-  console.log('Hub is ready');
+    console.log(`Waiting for ${expectedNodes} debug nodes to connect`);
+    await waitForNodes(expectedNodes, retries, port);
+    console.log('Hub is ready');
+  } catch (e) {
+    await stop();
+
+    throw e;
+  }
+}
+
+export async function start(nodes: number, retries: number, port: number, htmlPath: string) {
+  await up(
+    path.join(__dirname, 'config/docker-compose.yml'),
+    `--scale chrome=${nodes} --scale firefox=${nodes} hub`, port,
+    htmlPath,
+    nodes * 2,
+    retries
+  );
 }
 
 export async function debug(retries: number, port: number, htmlPath: string) {
@@ -107,20 +111,14 @@ export async function debug(retries: number, port: number, htmlPath: string) {
     console.log('Hub was already ready');
     process.exit(0);
   } catch (e) {
-    const configPath = path.join(__dirname, 'config/docker-compose.yml');
-
-    await execa.command(`docker-compose -f ${configPath} up -d debug_hub`, {
-      env: {
-        HUB_PORT: `${port}`,
-        HTML_PATH: `${htmlPath}`,
-        COMPOSE_PROJECT_NAME
-      },
-      stdio: 'inherit'
-    });
-
-    console.log('Waiting for 2 debug nodes to connect');
-    await waitForNodes(2, retries, port);
-    console.log('Hub is ready');
+    await up(
+      path.join(__dirname, 'config/docker-compose.yml'),
+      'debug_hub',
+      port,
+      htmlPath,
+      2,
+      retries
+    );
   }
 }
 
