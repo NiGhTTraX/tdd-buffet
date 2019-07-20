@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 import meow from 'meow';
 import path from 'path';
-import { debug, start, stop } from './selenium';
+import { debug, start, stop } from '../selenium';
 
 
 const cli = meow(`
@@ -31,7 +31,7 @@ const cli = meow(`
     },
     html: {
       type: 'string',
-      default: path.join(__dirname, 'config/html')
+      default: path.join(__dirname, '../config/html')
     }
   }
 });

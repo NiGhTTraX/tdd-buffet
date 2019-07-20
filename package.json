@@ -8,9 +8,9 @@
     "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
     "_test": "jest --config packages/tdd-buffet/src/config/jest.config.js --coverage",
-    "selenium": "ts-node packages/selenium/src/index.ts start --port 4444",
-    "selenium:debug": "ts-node packages/selenium/src/index.ts debug --port 3333",
-    "selenium:stop": "ts-node packages/selenium/src/index.ts stop",
+    "selenium": "ts-node packages/selenium/src/bin/index.ts start --port 4444",
+    "selenium:debug": "ts-node packages/selenium/src/bin/index.ts debug --port 3333",
+    "selenium:stop": "ts-node packages/selenium/src/bin/index.ts stop",
     "report-coverage": "codecov -f tests/results/coverage-final.json"
   },
   "husky": {
