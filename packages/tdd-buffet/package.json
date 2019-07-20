@@ -1,7 +1,8 @@
 {
   "name": "tdd-buffet",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "directory": "dist"
   },
   "version": "0.1.0",
   "description": "All you can eat delicious TDD helpers, healthy configs and TypeScript beverages",

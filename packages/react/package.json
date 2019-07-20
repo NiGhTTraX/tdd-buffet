@@ -17,12 +17,16 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/react",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "package": "cp package.json ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "npm run build && npm run package"
+    "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
     "react": "^16.8.6",

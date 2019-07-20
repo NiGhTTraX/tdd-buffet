@@ -18,11 +18,14 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/selenium",
-  "bin": "./index.js",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "package": "cp -r package.json src/config ./dist",
+    "package": "cp -r src/config ./dist",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build && npm run package"
   },
