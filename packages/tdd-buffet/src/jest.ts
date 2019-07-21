@@ -41,7 +41,7 @@ export type JestOptions = {
 
 /* istanbul ignore next because this is hard to run through jest because it is running jest */
 export async function run(config: string, { coverage, maxWorkers, runInBand }: JestOptions) {
-  let command = `jest --config ${config} --maxWorkers=${maxWorkers}`;
+  let command = `jest --config ${config}`;
 
   if (coverage) {
     command += ' --coverage';
@@ -49,6 +49,8 @@ export async function run(config: string, { coverage, maxWorkers, runInBand }: J
 
   if (runInBand) {
     command += ' --runInBand';
+  } else {
+    command += ` --maxWorkers=${maxWorkers}`;
   }
 
   // eslint-disable-next-line no-console
