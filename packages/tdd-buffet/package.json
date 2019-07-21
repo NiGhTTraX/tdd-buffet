@@ -28,9 +28,6 @@
   },
   "dependencies": {
     "@types/chai": "~4.1.7",
-    "@types/jest": "~24.0.15",
-    "@types/meow": "~5.0.0",
-    "@types/node": "~12.6.8",
     "chai": "~4.2.0",
     "execa": "~2.0.3",
     "jest": "^24.8.0",
@@ -39,6 +36,9 @@
     "webdriverio": "~5.11.2"
   },
   "devDependencies": {
+    "@types/jest": "~24.0.15",
+    "@types/meow": "~5.0.0",
+    "@types/node": "~12.6.8",
     "typescript": "~3.5.0"
   }
 }
