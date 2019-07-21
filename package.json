@@ -7,7 +7,7 @@
     "pub": "npm run build && lerna publish && npm run clean",
     "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
-    "_test": "jest --config packages/tdd-buffet/src/config/jest.config.js --coverage",
+    "_test": "npm run ts-node -- packages/tdd-buffet/src/bin/index.ts test --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "selenium": "npm run ts-node -- packages/selenium/src/bin/index.ts start --port 4444",
     "selenium:debug": "npm run ts-node -- packages/selenium/src/bin/index.ts debug --port 3333",

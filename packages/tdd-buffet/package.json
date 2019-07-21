@@ -18,6 +18,7 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
+  "bin": "./bin/index.js",
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
@@ -25,13 +26,14 @@
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build && npm run package"
   },
-  "peerDependencies": {
-    "jest": "^24.8.0"
-  },
   "dependencies": {
     "@types/chai": "~4.1.7",
     "@types/jest": "~24.0.15",
+    "@types/meow": "~5.0.0",
     "chai": "~4.2.0",
+    "execa": "~2.0.3",
+    "jest": "^24.8.0",
+    "meow": "~5.0.0",
     "webdriverio": "~5.11.2"
   },
   "devDependencies": {

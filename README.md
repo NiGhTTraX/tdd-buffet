@@ -8,9 +8,10 @@ This is a collection of libraries extracted from my personal open source project
 
 ### Today's menu
 
-- [Test suites](#test-suites)
-  - [Node](#node)
-  - [GUI](#gui)
+- [Testing](#testing)
+  - [Run the tests](#run-the-tests)
+  - [Create a Node test](#create-a-node-test)
+  - [Create a GUI test](#create-a-gui-test)
 - [Configs](#configs)
   - [TypeScript](#typescript)
   - [Jest](#jest)
@@ -24,11 +25,19 @@ This is a collection of libraries extracted from my personal open source project
   - [Stop everything](./packages/selenium/README.md#stop-everything)
   
 
-## Test suites
+## Testing
 
-### Node
+This package exposes both a way to define tests and a way to run them. The current test runner is [Jest](https://jestjs.io).
 
-Create a Jest test suite with Chai assertions:
+### Run the tests
+
+```sh
+npx tdd-buffet test
+```
+
+This will run all the tests matched by the default [Jest config](#jest). You can pass your own config through the `--config` option.
+
+### Create a Node test
 
 ```typescript
 import { describe, it, expect } from 'tdd-buffet/suite/node';
@@ -40,9 +49,9 @@ describe('Node suite', () => {
 });
 ```
 
-### GUI
+The `expect` assertion helper is [Chai](https://www.chaijs.com/).
 
-Create a Jest suite that automatically starts a Selenium session. Browser name and selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
+### Create a GUI test
 
 ```typescript
 import { describe, it } from 'tdd-buffet/suite/gui';
@@ -53,6 +62,8 @@ describe('Gui suite', () => {
   });
 });
 ```
+
+The suite automatically connects to a running Selenium server (see the [selenium package](./packages/selenium) on how to start one) and gives you a [WebdriverIO](https://webdriver.io) client. Browser name and Selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
 
 
 ## Configs
