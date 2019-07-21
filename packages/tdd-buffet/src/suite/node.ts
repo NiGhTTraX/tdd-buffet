@@ -1,5 +1,3 @@
-export { expect } from 'chai';
-
 export {
   runnerIt as it,
   runnerBefore as before,

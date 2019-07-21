@@ -1,7 +1,8 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
 import createReactMock from 'react-mock-component';
-import { describe, expect, it } from '../../tdd-buffet/src/suite/node';
+import { describe, it } from '../../tdd-buffet/src/suite/node';
+import { expect } from '../../tdd-buffet/src/suite/expect';
 import { $render, unmount } from '../src';
 
 describe('$render', () => {

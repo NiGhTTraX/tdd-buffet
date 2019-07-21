@@ -40,7 +40,8 @@ This will run all the tests matched by the default [Jest config](#jest). You can
 ### Create a Node test
 
 ```typescript
-import { describe, it, expect } from 'tdd-buffet/suite/node';
+import { describe, it } from 'tdd-buffet/suite/node';
+import { expect } from 'tdd-buffet/suite/expect';
 
 describe('Node suite', () => {
   it('should run a test', () => {

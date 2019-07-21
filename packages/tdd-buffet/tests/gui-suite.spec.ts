@@ -1,4 +1,5 @@
 import { beforeEach, describe, it, setViewportSize } from '../src/suite/gui';
+import { expect } from '../../tdd-buffet/src/suite/expect';
 
 describe('Gui suite', () => {
   beforeEach(async browser => {
@@ -18,14 +19,14 @@ describe('Gui suite', () => {
 
     const viewportSize = await browser.execute(getViewportSize);
 
-    expect(viewportSize).toEqual({ width: 600, height: 600 });
+    expect(viewportSize).to.deep.equal({ width: 600, height: 600 });
   });
 
   it('pending test');
 
   describe('nested', () => {
     it('should preserve session', async browser => {
-      expect(await browser.getUrl()).toEqual('about:blank');
+      expect(await browser.getUrl()).to.equal('about:blank');
     });
   });
 });

@@ -1,4 +1,6 @@
-import { describe, expect, it } from '../src/suite/node';
+import { describe, it } from '../src/suite/node';
+import { expect } from '../../tdd-buffet/src/suite/expect';
+
 
 describe('Node suite', () => {
   it('empty test', () => {});

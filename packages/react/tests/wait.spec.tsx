@@ -1,6 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 import React from 'react';
-import { describe, expect, it } from '../../tdd-buffet/src/suite/node';
+import { describe, it } from '../../tdd-buffet/src/suite/node';
+import { expect } from '../../tdd-buffet/src/suite/expect';
 import { $render, wait } from '../src';
 
 describe('wait', () => {
