@@ -13,3 +13,5 @@ import { $render } from '@tdd-buffet/react';
 const $component = $render(<span>foobar</span>);
 console.log($component.text()); // foobar
 ```
+
+The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
