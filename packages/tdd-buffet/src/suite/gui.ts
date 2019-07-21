@@ -6,7 +6,7 @@ const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost', SELENIUM_PORT = '4444' 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
 
-type Browser = ReturnType<typeof remote>;
+export type Browser = ReturnType<typeof remote>;
 export type TestDefinition = (browser: Browser) => Promise<any> | void;
 
 /* istanbul ignore next */
