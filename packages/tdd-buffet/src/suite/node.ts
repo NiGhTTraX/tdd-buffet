@@ -7,4 +7,4 @@ export {
   runnerAfterEach as afterEach,
   runnerBeforeEach as beforeEach,
   runnerDescribe as describe
-} from '../jest-runner';
+} from '../jest';

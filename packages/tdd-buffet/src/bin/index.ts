@@ -3,7 +3,7 @@
 /* eslint-disable no-console */
 import meow from 'meow';
 import path from 'path';
-import { run } from '../jest-runner';
+import { run } from '../jest';
 
 const cli = meow(`
   Usage

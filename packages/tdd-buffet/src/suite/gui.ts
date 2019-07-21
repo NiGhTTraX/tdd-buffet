@@ -1,11 +1,5 @@
 import { remote } from 'webdriverio';
-import {
-  runnerAfter,
-  runnerBefore,
-  runnerBeforeEach,
-  runnerDescribe,
-  runnerIt
-} from '../jest-runner';
+import { runnerAfter, runnerBefore, runnerBeforeEach, runnerDescribe, runnerIt } from '../jest';
 
 const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost', SELENIUM_PORT = '4444' } = process.env;
 
