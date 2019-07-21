@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Spin up a Selenium grid with Chrome and Firefox nodes + VNC debugging",
   "keywords": [
     "selenium",
