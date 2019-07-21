@@ -12,6 +12,8 @@ const cli = meow(`
   Options
     --config path  Path to Jest config.
     --coverage     Whether to generate coverage reports.
+    --maxWorkers   Number of workers to spawn.
+    --runInBand    Run tests serially without spawning workers.
 `, {
   // @ts-ignore
   flags: {
@@ -22,6 +24,14 @@ const cli = meow(`
     coverage: {
       type: 'boolean',
       default: false
+    },
+    maxWorkers: {
+      type: 'string',
+      default: '50%'
+    },
+    runInBand: {
+      type: 'boolean',
+      default: false
     }
   }
 });
@@ -29,7 +39,11 @@ const cli = meow(`
 (async () => {
   switch (cli.input[0]) {
     case 'test':
-      await run(cli.flags.config, cli.flags.coverage);
+      await run(cli.flags.config, {
+        coverage: cli.flags.coverage,
+        maxWorkers: cli.flags.maxWorkers,
+        runInBand: cli.flags.runInBand
+      });
       break;
     default:
       throw new Error('Unknown command');

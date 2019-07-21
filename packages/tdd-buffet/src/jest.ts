@@ -33,13 +33,25 @@ export function runnerAfter(definition: () => Promise<any>|void) {
   afterAll(definition, TIMEOUT);
 }
 
+export type JestOptions = {
+  coverage: boolean,
+  maxWorkers: string,
+  runInBand: boolean
+};
+
 /* istanbul ignore next because this is hard to run through jest because it is running jest */
-export async function run(config: string, coverage: boolean) {
-  let command = `jest --config ${config}`;
+export async function run(config: string, { coverage, maxWorkers, runInBand }: JestOptions) {
+  let command = `jest --config ${config} --maxWorkers=${maxWorkers}`;
 
   if (coverage) {
     command += ' --coverage';
   }
 
+  if (runInBand) {
+    command += ' --runInBand';
+  }
+
+  // eslint-disable-next-line no-console
+  console.log(command);
   await execa.command(command, { stdio: 'inherit' });
 }
