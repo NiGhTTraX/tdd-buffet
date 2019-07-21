@@ -4,7 +4,7 @@
 
 ----
 
-This is a collection of libraries extracted from my personal open source projects. They help me bootstrap new projects easily and keep things consistent between them. You can mix and match as little or as much as you like from the project, and if you have any feature requests or suggestions for improvements please open an issue/PR.
+This is a collection of libraries and scripts extracted from my personal open source projects. They help me bootstrap new projects easily and keep things consistent between them. You can mix and match as little or as much as you like from the project, and if you have any feature requests or suggestions for improvements please open an issue/PR.
 
 
 ### Today's menu
