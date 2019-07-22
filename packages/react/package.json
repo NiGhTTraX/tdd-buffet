@@ -38,6 +38,7 @@
     "wait-for-expect": "~1.2.0"
   },
   "devDependencies": {
+    "@nighttrax/eslint-config-tsx": "~3.0.0",
     "@types/react": "~16.8.23",
     "@types/react-dom": "~16.8.4",
     "react": "~16.8.6",
