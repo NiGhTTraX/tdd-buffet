@@ -16,7 +16,6 @@ This is a collection of libraries and scripts extracted from my personal open so
 - [Configs](./packages/tdd-buffet/README.md#configs)
   - [TypeScript](./packages/tdd-buffet/README.md#typescript)
   - [Jest](./packages/tdd-buffet/README.md#jest)
-- [Linting](./packages/tdd-buffet/README.md#linting)
 - [React](./packages/react)
   - [Render components into a test container](./packages/react/README.md#render-components-into-a-test-container)
 - [Selenium](./packages/selenium)

@@ -4,12 +4,10 @@
 import meow from 'meow';
 import path from 'path';
 import { run } from '../jest';
-import { lint } from '../eslint';
 
 const cli = meow(`
   Usage
     $ test       Run the tests.
-    $ lint [files]     Lint the project.
     
   Options
     --config path  Path to Jest config.
@@ -46,9 +44,6 @@ const cli = meow(`
         maxWorkers: cli.flags.maxWorkers,
         runInBand: cli.flags.runInBand
       });
-      break;
-    case 'lint':
-      await lint(cli.input.slice(1));
       break;
     default:
       throw new Error('Unknown command');

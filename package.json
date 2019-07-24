@@ -1,18 +1,17 @@
 {
   "private": true,
   "scripts": {
-    "_ts-node": "ts-node -O '{\"target\": \"es6\"}'",
-    "_lint": "npm run _ts-node -- packages/tdd-buffet/src/bin/index.ts lint",
     "bootstrap": "lerna bootstrap --hoist",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "pub": "npm run build && lerna publish && npm run clean",
-    "lint": "npm run _lint .",
+    "lint": "eslint --ext ts,tsx,js .",
     "test": "./tests/run.sh",
-    "_test": "npm run _ts-node -- packages/tdd-buffet/src/bin/index.ts test --coverage",
-    "selenium": "npm run _ts-node -- packages/selenium/src/bin/index.ts start --port 4444",
-    "selenium:debug": "npm run _ts-node -- packages/selenium/src/bin/index.ts debug --port 3333",
-    "selenium:stop": "npm run _ts-node -- packages/selenium/src/bin/index.ts stop",
+    "_test": "npm run ts-node -- packages/tdd-buffet/src/bin/index.ts test --coverage",
+    "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
+    "selenium": "npm run ts-node -- packages/selenium/src/bin/index.ts start --port 4444",
+    "selenium:debug": "npm run ts-node -- packages/selenium/src/bin/index.ts debug --port 3333",
+    "selenium:stop": "npm run ts-node -- packages/selenium/src/bin/index.ts stop",
     "report-coverage": "codecov -f tests/results/coverage-final.json"
   },
   "husky": {
@@ -21,12 +20,16 @@
     }
   },
   "lint-staged": {
-    "*.tsx?": "npm run _lint",
-    "*.js": "npm run _lint"
+    "*.tsx?": "eslint",
+    "*.js": "eslint"
   },
   "devDependencies": {
-    "@nighttrax/eslint-config-ts": "~3.0.0",
+    "@nighttrax/eslint-config-tsx": "~2.0.3",
+    "@typescript-eslint/eslint-plugin": "~1.13.0",
     "codecov": "~3.5.0",
+    "eslint": "~5.16.0",
+    "eslint-plugin-jsx-a11y": "~6.2.3",
+    "eslint-plugin-react": "~7.14.2",
     "husky": "~3.0.0",
     "lerna": "~3.16.0",
     "lint-staged": "~9.2.0",

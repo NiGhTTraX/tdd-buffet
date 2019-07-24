@@ -63,14 +63,3 @@ module.exports = {
   ...baseConfig
 };
 ```
-
-### ESLint
-
-See [NiGhTTraX/eslint-config](https://github.com/NiGhTTraX/eslint-config). They're not included here because the monorepo's path aliases don't work inside the `extend` option of the configs.
-
-
-## Linting
-
-```sh
-npx tdd-buffet lint
-```

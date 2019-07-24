@@ -2,6 +2,6 @@ module.exports = {
   'root': true,
 
   'extends': [
-    '@nighttrax/eslint-config-ts'
+    '@nighttrax/eslint-config-tsx'
   ]
 };
