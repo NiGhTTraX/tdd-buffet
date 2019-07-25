@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "All you can eat delicious TDD helpers, healthy configs and TypeScript beverages",
   "keywords": [
     "tdd",
