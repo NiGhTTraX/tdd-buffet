@@ -8,9 +8,9 @@ module.exports = {
 
   rootDir: process.cwd(),
   testMatch: ['**/tests/**/*.spec.{ts,tsx}'],
-  moduleNameMapper: {
+  moduleNameMapper: compilerOptions.paths ? {
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' })
-  },
+  } : null,
   modulePathIgnorePatterns: ['dist'],
 
   // Improves speed by 100%.
