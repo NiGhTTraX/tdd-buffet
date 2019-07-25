@@ -26,7 +26,7 @@ let rootSuiteBrowser: Browser;
  * });
  * ```
  */
-export function bindBrowser(cb: (browser: Browser, ...args: any[]) => Promise<any>) {
+export function bindBrowser<A extends any[], R>(cb: (browser: Browser, ...args: A) => Promise<R>) {
   return cb.bind(null, rootSuiteBrowser);
 }
 

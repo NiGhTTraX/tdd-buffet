@@ -24,15 +24,15 @@ describe('Gui suite', () => {
 
   it('should bind the browser to a helper', async browser => {
     const writeSomeText = bindBrowser(
-      async (boundBrowser: Browser, text: string) => boundBrowser.execute(function(t: string) {
-        document.body.textContent = t;
-      }, text)
+      async (boundBrowser: Browser, x: number, y: number) => boundBrowser.execute(function(a, b) {
+        document.body.textContent = `${a + b}`;
+      }, x, y)
     );
 
-    await writeSomeText('foobar');
+    await writeSomeText(1, 2);
 
     const body = await browser.$('body');
-    expect(await body.getText()).to.equal('foobar');
+    expect(await body.getText()).to.equal('3');
   });
 
   it('pending test');
