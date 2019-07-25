@@ -83,7 +83,7 @@ async function up(
       stdio: 'inherit'
     });
 
-    console.log(`Waiting for ${expectedNodes} debug nodes to connect`);
+    console.log(`Waiting for ${expectedNodes} nodes to connect`);
     await waitForNodes(expectedNodes, retries, port);
     console.log('Hub is ready');
   } catch (e) {
