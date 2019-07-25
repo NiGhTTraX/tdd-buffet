@@ -6,6 +6,30 @@ const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost', SELENIUM_PORT = '4444' 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
 
+/**
+ * You can use this to simplify writing custom functions that work
+ * with the browser e.g. navigation helpers.
+ *
+ * @example
+ * ```
+ * import { describe, it, bindBrowser, Browser } from 'tdd-buffet/suite/gui';
+ *
+ * const loadFixture = bindBrowser(
+ *   async (browser: Browser, path: string) => await browser.url(`/fixtures/${path}`)
+ * );
+ *
+ * describe('My suite', () => {
+ *   it('my test', async browser => {
+ *     await loadFixture('foobar');
+ *     await browser.click('.something');
+ *   });
+ * });
+ * ```
+ */
+export function bindBrowser(cb: (browser: Browser, ...args: any[]) => Promise<any>) {
+  return cb.bind(null, rootSuiteBrowser);
+}
+
 export type Browser = ReturnType<typeof remote>;
 export type TestDefinition = (browser: Browser) => Promise<any> | void;
 
