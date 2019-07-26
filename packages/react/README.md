@@ -4,6 +4,13 @@
 
 ----
 
+## Install
+
+```sh
+npm install tdd-buffet @tdd-buffet/react
+```
+
+
 ## Render components into a test container
 
 ```typescript jsx

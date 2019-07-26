@@ -2,6 +2,13 @@
 
 ----
 
+## Install
+
+```sh
+npm install tdd-buffet
+```
+
+
 ## Testing
 
 This package exposes both a way to define tests and a way to run them. The current test runner is [Jest](https://jestjs.io).

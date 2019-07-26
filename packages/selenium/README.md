@@ -10,6 +10,13 @@
 - docker-compose 1.18.0+
 
 
+## Install
+
+```sh
+npm install @tdd-buffet/selenium
+```
+
+
 ## Start a grid with Chrome and Firefox
 
 ```sh
