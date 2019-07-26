@@ -5,7 +5,7 @@
     "jsx": "react",
     "baseUrl": "./packages",
     "paths": {
-      "tdd-buffet/*": ["tdd-buffet/src"],
+      "tdd-buffet/*": ["tdd-buffet/src/*"],
       "@tdd-buffet/*": ["*/src"]
     }
   }
