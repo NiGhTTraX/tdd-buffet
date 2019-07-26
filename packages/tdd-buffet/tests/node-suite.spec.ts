@@ -12,6 +12,8 @@ describe('Node suite', () => {
   });
 
   describe('nested', () => {
-    it('nested test', () => {});
+    it('full name', (testName: string) => {
+      expect(testName).to.equal('Node suite nested full name');
+    });
   });
 });

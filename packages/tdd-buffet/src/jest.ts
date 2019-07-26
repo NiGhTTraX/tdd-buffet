@@ -9,9 +9,14 @@ export function runnerDescribe(name: string, definition: () => void) {
   describe(name, definition);
 }
 
-export function runnerIt(name: string, definition?: () => Promise<any>|void) {
+export function runnerIt(name: string, definition?: (testName: string) => Promise<any>|void) {
   if (definition) {
-    it(name, definition, TIMEOUT);
+    // @ts-ignore because @types/jest doesn't expose this
+    const test: { getFullName: () => string } = it(
+      name,
+      () => definition(test.getFullName()),
+      TIMEOUT
+    );
   } else {
     it.todo(name);
   }
