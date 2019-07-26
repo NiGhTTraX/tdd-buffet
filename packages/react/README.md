@@ -15,10 +15,17 @@ npm install tdd-buffet @tdd-buffet/react
 
 ```typescript jsx
 import React from 'react';
+import { describe, it } from 'tdd-buffet/suite/node';
+import { expect } from 'tdd-buffet/suite/expect';
 import { $render } from '@tdd-buffet/react';
 
-const $component = $render(<span>foobar</span>);
-console.log($component.text()); // foobar
+describe('My component', () => {
+  it('should contain foobar', () => {
+    const $component = $render(<span>foobar</span>);
+  
+    expect($component.text()).to.equal('foobar');
+  });
+});
 ```
 
 The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
