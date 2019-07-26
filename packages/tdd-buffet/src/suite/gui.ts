@@ -31,7 +31,8 @@ export function bindBrowser<A extends any[], R>(cb: (browser: Browser, ...args: 
 }
 
 export type Browser = ReturnType<typeof remote>;
-export type TestDefinition = (browser: Browser) => Promise<any> | void;
+export type HookDefinition = (browser: Browser) => Promise<any> | void;
+export type TestDefinition = (browser: Browser, testName: string) => Promise<any> | void;
 
 /* istanbul ignore next */
 function getBrowserChromeSize() {
@@ -85,13 +86,13 @@ export function describe(name: string, definition: () => void) {
   suiteNesting--;
 }
 
-export function beforeEach(definition: TestDefinition) {
+export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition
-    ? () => Promise.resolve(definition(rootSuiteBrowser))
+    ? testName => definition(rootSuiteBrowser, testName.replace(`:${BROWSER}`, ''))
     : undefined);
 }
 

@@ -1,0 +1,42 @@
+{
+  "name": "@tdd-buffet/visual",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "Visual testing add-on for tdd-buffet",
+  "keywords": [
+    "tdd",
+    "visual",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git"
+  },
+  "author": "Andrei Picus",
+  "license": "MIT",
+  "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/visual",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "tdd-buffet": "^0.5.1"
+  },
+  "dependencies": {
+    "@mugshot/webdriverio": "~1.1.2",
+    "mugshot": "~2.2.0"
+  },
+  "devDependencies": {
+    "tdd-buffet": "^0.5.1",
+    "typescript": "~3.5.0"
+  }
+}

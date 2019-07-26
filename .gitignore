@@ -3,3 +3,5 @@ dist
 results
 .nyc_output
 *.tsbuildinfo
+*.diff.png
+*.actual.png

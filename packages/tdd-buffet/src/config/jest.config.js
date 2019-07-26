@@ -13,7 +13,7 @@ module.exports = {
   } : null,
   modulePathIgnorePatterns: ['dist'],
 
-  // Improves speed by 100%.
+  // Improves speed by 100% for visual tests.
   extraGlobals: ['Math'],
 
   collectCoverageFrom: [
