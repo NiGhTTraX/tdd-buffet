@@ -5,7 +5,7 @@
     "directory": "dist"
   },
   "version": "0.5.1",
-  "description": "All you can eat delicious TDD helpers, healthy configs and TypeScript beverages",
+  "description": "All you can eat TDD tools and libraries",
   "keywords": [
     "tdd",
     "helper",

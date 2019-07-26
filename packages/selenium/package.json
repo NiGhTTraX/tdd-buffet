@@ -4,7 +4,7 @@
     "access": "public"
   },
   "version": "0.3.1",
-  "description": "Spin up a Selenium grid with Chrome and Firefox nodes + VNC debugging",
+  "description": "Selenium tools for tdd-buffet",
   "keywords": [
     "selenium",
     "tests",

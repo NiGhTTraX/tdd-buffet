@@ -4,7 +4,7 @@
     "access": "public"
   },
   "version": "0.1.6",
-  "description": "React desserts for tdd-buffet",
+  "description": "React testing for tdd-buffet",
   "keywords": [
     "tdd",
     "react",
