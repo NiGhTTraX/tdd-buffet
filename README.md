@@ -18,6 +18,7 @@ This is a collection of libraries and tools extracted from my personal open sour
       - [Run the tests](./packages/tdd-buffet/README.md#run-the-tests)
       - [Create a Node test](./packages/tdd-buffet/README.md#create-a-node-test)
       - [Create a GUI test](./packages/tdd-buffet/README.md#create-a-gui-test)
+      - [Coverage](./packages/tdd-buffet/README.md#coverage)
 - Side dishes
     - [React testing](./packages/react)
       - [Render components into a test container](./packages/react/README.md#render-components-into-a-test-container)

@@ -60,5 +60,10 @@ export async function run(config: string, { coverage, maxWorkers, runInBand }: J
 
   // eslint-disable-next-line no-console
   console.log(command);
-  await execa.command(command, { stdio: 'inherit' });
+  await execa.command(command, {
+    stdio: 'inherit',
+    env: {
+      TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined
+    }
+  });
 }

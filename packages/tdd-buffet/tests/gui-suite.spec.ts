@@ -1,5 +1,15 @@
-import { beforeEach, bindBrowser, Browser, describe, it, setViewportSize } from '../src/suite/gui';
+import {
+  beforeEach,
+  bindBrowser,
+  Browser,
+  collectCoverage,
+  describe,
+  it,
+  setViewportSize
+} from '../src/suite/gui';
 import { expect } from '../../tdd-buffet/src/suite/expect';
+import { mkdtemp, readFile } from 'fs-extra';
+import path from 'path';
 
 describe('Gui suite', () => {
   beforeEach(async browser => {
@@ -33,6 +43,20 @@ describe('Gui suite', () => {
 
     const body = await browser.$('body');
     expect(await body.getText()).to.equal('3');
+  });
+
+  it('should collect coverage', async browser => {
+    await browser.execute(function() {
+      // @ts-ignore
+      // eslint-disable-next-line no-underscore-dangle
+      window.__coverage__ = 'foobar';
+    });
+
+    const coveragePath = path.join(await mkdtemp('/tmp/tdd-buffet'), 'foobar.json');
+
+    await collectCoverage(browser, coveragePath);
+
+    expect(await readFile(coveragePath, { encoding: 'utf-8' })).to.equal('foobar');
   });
 
   it('pending test');

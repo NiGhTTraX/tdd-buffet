@@ -1,5 +1,7 @@
 import { remote } from 'webdriverio';
 import { runnerAfter, runnerBefore, runnerBeforeEach, runnerDescribe, runnerIt } from '../jest';
+import { outputFile } from 'fs-extra';
+import path from 'path';
 
 const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost', SELENIUM_PORT = '4444' } = process.env;
 
@@ -40,6 +42,13 @@ function getBrowserChromeSize() {
     width: window.outerWidth - window.innerWidth,
     height: window.outerHeight - window.innerHeight
   };
+}
+
+/* istanbul ignore next because it's stringified and sent to the browser */
+function getCoverage() {
+  // @ts-ignore
+  // eslint-disable-next-line no-underscore-dangle
+  return window.__coverage__;
 }
 
 export async function setViewportSize(width: number, height: number) {
@@ -90,9 +99,29 @@ export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
+/**
+ * If process.env.TDD_BUFFET_COVERAGE is truthy then the istanbul coverage
+ * report will be read from inside the browser and written to
+ * `tests/gui/results/${fullTestName}.json`.
+ */
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition
-    ? testName => definition(rootSuiteBrowser, testName.replace(`:${BROWSER}`, ''))
+    ? async testName => {
+      const testNameWithoutBrowser = testName.replace(`:${BROWSER}`, '');
+
+      await definition(rootSuiteBrowser, testNameWithoutBrowser);
+
+      /* istanbul ignore else because when ran in CI this will always be true */
+      if (process.env.TDD_BUFFET_COVERAGE) {
+        await collectCoverage(
+          rootSuiteBrowser,
+          path.join(
+            process.cwd(),
+            `tests/gui/results/${BROWSER}_${getSafeFilename(testNameWithoutBrowser)}.json`
+          )
+        );
+      }
+    }
     : undefined);
 }
 
@@ -113,4 +142,20 @@ function setupHooks() {
   runnerAfter(function endSession() {
     return rootSuiteBrowser.deleteSession();
   });
+}
+
+export async function collectCoverage(browser: Browser, coveragePath: string) {
+  const coverage = await browser.execute(getCoverage);
+
+  await outputFile(coveragePath, coverage);
+}
+
+/**
+ * Turn the given file name into something that's safe to save on the FS.
+ */
+function getSafeFilename(fileName: string): string {
+  return fileName
+    .replace(/\//g, '_')
+    .replace(/ /g, '_')
+    .toLowerCase();
 }
