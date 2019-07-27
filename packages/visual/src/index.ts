@@ -35,6 +35,7 @@ async function checkForVisualChanges(browser: Browser, name: string, selector: s
     getSafeFilename(name), selector
   );
 
+  /* istanbul ignore next because it's hard to test this through vit */
   if (!result.matches) {
     throw new Error('Visual changes detected. Check screenshots');
   }
