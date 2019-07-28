@@ -64,9 +64,17 @@ describe('Gui suite', () => {
 
   it('should not collect coverage when the flag is not set', async browser => {
     await browser.execute(function() {
+      // @ts-ignore
+      // eslint-disable-next-line no-underscore-dangle
+      window.__coverageCollected = false;
+
       Object.defineProperty(window, '__coverage__', {
         get() {
-          throw new Error('Coverage not supposed to be collected');
+          // @ts-ignore
+          // eslint-disable-next-line no-underscore-dangle
+          window.__coverageCollected = true;
+
+          return ':don-t read me:';
         }
       });
     });
@@ -75,8 +83,13 @@ describe('Gui suite', () => {
     // because it's hard to test parts of the runner.
     const test = await createTest(() => {}, false, ':irrelevant:', ':irrelevant:');
 
-    // This shouldn't throw.
     await test('foobar');
+
+    expect(await browser.execute(function() {
+      // @ts-ignore
+      // eslint-disable-next-line no-underscore-dangle
+      return window.__coverageCollected;
+    })).to.be.false;
   });
 
   it('pending test');
