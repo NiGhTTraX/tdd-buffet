@@ -9,7 +9,7 @@
     "test": "./tests/run.sh",
     "_test": "npm run ts-node -- packages/tdd-buffet/src/bin/index.ts test --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
-    "selenium": "npm run ts-node -- packages/selenium/src/bin/index.ts start --port 4444",
+    "selenium": "npm run ts-node -- packages/selenium/src/bin/index.ts start --port 4444 --retries 30",
     "selenium:debug": "npm run ts-node -- packages/selenium/src/bin/index.ts debug --port 3333",
     "selenium:stop": "npm run ts-node -- packages/selenium/src/bin/index.ts stop",
     "report-coverage": "codecov -f tests/results/coverage-final.json"
