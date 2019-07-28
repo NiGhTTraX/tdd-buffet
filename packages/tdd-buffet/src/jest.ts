@@ -60,8 +60,6 @@ export async function run(configPath: string, { coverage, maxWorkers, runInBand 
     command += ` --maxWorkers=${maxWorkers}`;
   }
 
-  // eslint-disable-next-line no-console
-  console.log(command);
   await execa.command(command, {
     stdio: 'inherit',
     env: {
