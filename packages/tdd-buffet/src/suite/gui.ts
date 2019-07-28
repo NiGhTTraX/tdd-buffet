@@ -161,7 +161,7 @@ function setupHooks() {
 async function collectCoverage(coveragePath: string) {
   const coverage = await rootSuiteBrowser.execute(getCoverage);
 
-  await outputFile(coveragePath, coverage);
+  await outputFile(coveragePath, JSON.stringify(coverage));
 }
 
 /**

@@ -60,7 +60,7 @@ describe('Gui suite', () => {
     await test(testName);
 
     const coveragePath = path.join(coverageDir, `gui/browser/${testName}.json`);
-    expect(await readFile(coveragePath, { encoding: 'utf-8' })).to.equal('foobar');
+    expect(await readFile(coveragePath, { encoding: 'utf-8' })).to.equal(JSON.stringify('foobar'));
   });
 
   it('should not collect coverage when the flag is not set', async browser => {
