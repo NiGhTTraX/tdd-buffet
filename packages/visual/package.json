@@ -25,7 +25,8 @@
   "scripts": {
     "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist",
-    "compile": "tsc -p tsconfig.build.json",
+    "link": "rm -rf node_modules/tdd-buffet && cd ../tdd-buffet && ln -s \"$(pwd)/dist\" ../visual/node_modules/tdd-buffet",
+    "compile": "npm run link && tsc -p tsconfig.build.json",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
