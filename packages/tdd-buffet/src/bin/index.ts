@@ -39,7 +39,7 @@ const cli = meow(`
 (async () => {
   switch (cli.input[0]) {
     case 'test':
-      await run(cli.flags.config, {
+      await run(path.resolve(process.cwd(), cli.flags.config), {
         coverage: cli.flags.coverage,
         maxWorkers: cli.flags.maxWorkers,
         runInBand: cli.flags.runInBand
