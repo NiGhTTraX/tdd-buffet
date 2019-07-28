@@ -29,7 +29,7 @@ let rootSuiteBrowser: Browser;
  * ```
  */
 export function bindBrowser<A extends any[], R>(cb: (browser: Browser, ...args: A) => R) {
-  return cb.bind(null, rootSuiteBrowser);
+  return (...args: A) => cb(rootSuiteBrowser, ...args);
 }
 
 export type Browser = ReturnType<typeof remote>;

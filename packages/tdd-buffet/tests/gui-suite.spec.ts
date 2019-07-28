@@ -32,13 +32,14 @@ describe('Gui suite', () => {
     expect(viewportSize).to.deep.equal({ width: 600, height: 600 });
   });
 
-  it('should bind the browser to a helper', async browser => {
-    const writeSomeText = bindBrowser(
-      async (boundBrowser: Browser, x: number, y: number) => boundBrowser.execute(function(a, b) {
-        document.body.textContent = `${a + b}`;
-      }, x, y)
-    );
+  // Keep this here to test the closure over rootSuiteBrowser.
+  const writeSomeText = bindBrowser(
+    async (boundBrowser: Browser, x: number, y: number) => boundBrowser.execute(function(a, b) {
+      document.body.textContent = `${a + b}`;
+    }, x, y)
+  );
 
+  it('should bind the browser to a helper', async browser => {
     await writeSomeText(1, 2);
 
     const body = await browser.$('body');
