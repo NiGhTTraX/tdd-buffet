@@ -1,4 +1,4 @@
-import { Browser, HookDefinition, it } from 'tdd-buffet/suite/gui';
+import { Browser, it, TestDefinition } from 'tdd-buffet/suite/gui';
 import Mugshot from 'mugshot';
 import WebdriverIOAdapter from '@mugshot/webdriverio';
 import path from 'path';
@@ -15,9 +15,9 @@ const { BROWSER = 'chrome' } = process.env;
  * @param definition
  * @param selector Defaults to the first child of body.
  */
-export function vit(name: string, definition: HookDefinition, selector:string = 'body > *') {
+export function vit(name: string, definition: TestDefinition, selector:string = 'body > *') {
   it(name, async (browser, testName) => {
-    await definition(browser);
+    await definition(browser, testName);
 
     await checkForVisualChanges(browser, testName, selector);
   });
