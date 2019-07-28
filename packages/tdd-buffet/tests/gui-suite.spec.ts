@@ -2,7 +2,7 @@ import {
   beforeEach,
   bindBrowser,
   Browser,
-  collectCoverage,
+  createTest,
   describe,
   it,
   setViewportSize
@@ -45,18 +45,38 @@ describe('Gui suite', () => {
     expect(await body.getText()).to.equal('3');
   });
 
-  it('should collect coverage', async browser => {
+  it('should collect coverage when the flag is set', async browser => {
     await browser.execute(function() {
       // @ts-ignore
       // eslint-disable-next-line no-underscore-dangle
       window.__coverage__ = 'foobar';
     });
 
-    const coveragePath = path.join(await mkdtemp('/tmp/tdd-buffet'), 'foobar.json');
+    const testName = 'foobar';
+    const coverageDir = await mkdtemp('/tmp/tdd-buffet');
 
-    await collectCoverage(browser, coveragePath);
+    const test = await createTest(() => {}, true, coverageDir, 'browser');
+    await test(testName);
 
+    const coveragePath = path.join(coverageDir, `gui/browser/${testName}.json`);
     expect(await readFile(coveragePath, { encoding: 'utf-8' })).to.equal('foobar');
+  });
+
+  it('should not collect coverage when the flag is not set', async browser => {
+    await browser.execute(function() {
+      Object.defineProperty(window, '__coverage__', {
+        get() {
+          throw new Error('Coverage not supposed to be collected');
+        }
+      });
+    });
+
+    // TODO: the irrelevant details are an eye sore, but might be necessary
+    // because it's hard to test parts of the runner.
+    const test = await createTest(() => {}, false, ':irrelevant:', ':irrelevant:');
+
+    // This shouldn't throw.
+    await test('foobar');
   });
 
   it('pending test');

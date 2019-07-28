@@ -45,8 +45,10 @@ export type JestOptions = {
 };
 
 /* istanbul ignore next because this is hard to run through jest because it is running jest */
-export async function run(config: string, { coverage, maxWorkers, runInBand }: JestOptions) {
-  let command = `jest --config ${config}`;
+export async function run(configPath: string, { coverage, maxWorkers, runInBand }: JestOptions) {
+  let command = `jest --config ${configPath}`;
+
+  const config = await import(configPath);
 
   if (coverage) {
     command += ' --coverage';
@@ -63,7 +65,9 @@ export async function run(config: string, { coverage, maxWorkers, runInBand }: J
   await execa.command(command, {
     stdio: 'inherit',
     env: {
-      TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined
+      TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined,
+      // TODO: would be nice if we could get the <rootDir> expansion from Jest
+      TDD_BUFFET_COVERAGE_DIR: config.coverageDirectory.replace('<rootDir>', process.cwd())
     }
   });
 }

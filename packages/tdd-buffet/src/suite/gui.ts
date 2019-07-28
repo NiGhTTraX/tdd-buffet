@@ -99,29 +99,43 @@ export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
+export function createTest(
+  definition: TestDefinition,
+  coverage: boolean,
+  coverageDir: string,
+  browserName: string
+) {
+  return async (testName: string) => {
+    const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
+
+    await definition(rootSuiteBrowser, testNameWithoutBrowser);
+
+    /* istanbul ignore else because when ran in CI this will always be true */
+    if (coverage) {
+      await collectCoverage(path.join(
+        coverageDir,
+        'gui',
+        browserName,
+        `${getSafeFilename(testNameWithoutBrowser)}.json`
+      ));
+    }
+  };
+}
+
 /**
- * If process.env.TDD_BUFFET_COVERAGE is truthy then the istanbul coverage
+ * If the --config option is passed to Jest then the istanbul coverage
  * report will be read from inside the browser and written to
- * `tests/gui/results/${fullTestName}.json`.
+ * `${coverageDirectory}/gui/${browser}/${fullTestName}.json` where
+ * `coverageDirectory` is read from the Jest config.
  */
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition
-    ? async testName => {
-      const testNameWithoutBrowser = testName.replace(`:${BROWSER}`, '');
-
-      await definition(rootSuiteBrowser, testNameWithoutBrowser);
-
-      /* istanbul ignore else because when ran in CI this will always be true */
-      if (process.env.TDD_BUFFET_COVERAGE) {
-        await collectCoverage(
-          rootSuiteBrowser,
-          path.join(
-            process.cwd(),
-            `tests/gui/results/${BROWSER}_${getSafeFilename(testNameWithoutBrowser)}.json`
-          )
-        );
-      }
-    }
+    ? createTest(
+      definition,
+      !!process.env.TDD_BUFFET_COVERAGE,
+      process.env.TDD_BUFFET_COVERAGE_DIR!,
+      BROWSER
+    )
     : undefined);
 }
 
@@ -144,8 +158,8 @@ function setupHooks() {
   });
 }
 
-export async function collectCoverage(browser: Browser, coveragePath: string) {
-  const coverage = await browser.execute(getCoverage);
+async function collectCoverage(coveragePath: string) {
+  const coverage = await rootSuiteBrowser.execute(getCoverage);
 
   await outputFile(coveragePath, coverage);
 }
