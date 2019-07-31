@@ -29,18 +29,22 @@
   "dependencies": {
     "@types/chai": "~4.1.7",
     "@types/fs-extra": "~8.0.0",
+    "@types/istanbul-lib-coverage": "~2.0.1",
     "chai": "~4.2.0",
     "execa": "~2.0.3",
     "fs-extra": "~8.1.0",
+    "istanbul-lib-coverage": "~2.0.5",
     "jest": "^24.8.0",
     "meow": "~5.0.0",
     "ts-jest": "~24.0.2",
     "webdriverio": "~5.11.2"
   },
   "devDependencies": {
+    "@babel/core": "~7.5.5",
     "@types/jest": "~24.0.15",
     "@types/meow": "~5.0.0",
     "@types/node": "~12.6.8",
+    "babel-plugin-istanbul": "~5.2.0",
     "typescript": "~3.5.0"
   }
 }

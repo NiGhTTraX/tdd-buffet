@@ -1,15 +1,5 @@
-import {
-  beforeEach,
-  bindBrowser,
-  Browser,
-  createTest,
-  describe,
-  it,
-  setViewportSize
-} from '../src/suite/gui';
+import { beforeEach, bindBrowser, Browser, describe, it, setViewportSize } from '../src/suite/gui';
 import { expect } from '../../tdd-buffet/src/suite/expect';
-import { mkdtemp, readFile } from 'fs-extra';
-import path from 'path';
 
 describe('Gui suite', () => {
   beforeEach(async browser => {
@@ -44,53 +34,6 @@ describe('Gui suite', () => {
 
     const body = await browser.$('body');
     expect(await body.getText()).to.equal('3');
-  });
-
-  it('should collect coverage when the flag is set', async browser => {
-    await browser.execute(function() {
-      // @ts-ignore
-      // eslint-disable-next-line no-underscore-dangle
-      window.__coverage__ = 'foobar';
-    });
-
-    const testName = 'foobar';
-    const coverageDir = await mkdtemp('/tmp/tdd-buffet');
-
-    const test = await createTest(() => {}, true, coverageDir, 'browser');
-    await test(testName);
-
-    const coveragePath = path.join(coverageDir, `gui/browser/${testName}.json`);
-    expect(await readFile(coveragePath, { encoding: 'utf-8' })).to.equal(JSON.stringify('foobar'));
-  });
-
-  it('should not collect coverage when the flag is not set', async browser => {
-    await browser.execute(function() {
-      // @ts-ignore
-      // eslint-disable-next-line no-underscore-dangle
-      window.__coverageCollected = false;
-
-      Object.defineProperty(window, '__coverage__', {
-        get() {
-          // @ts-ignore
-          // eslint-disable-next-line no-underscore-dangle
-          window.__coverageCollected = true;
-
-          return ':don-t read me:';
-        }
-      });
-    });
-
-    // TODO: the irrelevant details are an eye sore, but might be necessary
-    // because it's hard to test parts of the runner.
-    const test = await createTest(() => {}, false, ':irrelevant:', ':irrelevant:');
-
-    await test('foobar');
-
-    expect(await browser.execute(function() {
-      // @ts-ignore
-      // eslint-disable-next-line no-underscore-dangle
-      return window.__coverageCollected;
-    })).to.be.false;
   });
 
   it('pending test');

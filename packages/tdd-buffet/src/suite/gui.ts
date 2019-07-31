@@ -1,12 +1,26 @@
+/* eslint-disable no-underscore-dangle */
 import { remote } from 'webdriverio';
 import { runnerAfter, runnerBefore, runnerBeforeEach, runnerDescribe, runnerIt } from '../jest';
-import { outputFile } from 'fs-extra';
-import path from 'path';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
+import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
 
-const { BROWSER = 'chrome', SELENIUM_HOST = 'localhost', SELENIUM_PORT = '4444' } = process.env;
+/* istanbul ignore next: I'm not going to run the tests twice to cover these */
+const {
+  BROWSER = 'chrome',
+  SELENIUM_HOST = 'localhost',
+  SELENIUM_PORT = '4444'
+} = process.env;
 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
+
+declare global {
+  namespace NodeJS {
+    interface Global {
+      __coverage__: { [key: string]: FileCoverageData };
+    }
+  }
+}
 
 /**
  * You can use this to simplify writing custom functions that work
@@ -99,10 +113,9 @@ export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
-export function createTest(
+function createTest(
   definition: TestDefinition,
   coverage: boolean,
-  coverageDir: string,
   browserName: string
 ) {
   return async (testName: string) => {
@@ -112,30 +125,22 @@ export function createTest(
 
     /* istanbul ignore else because when ran in CI this will always be true */
     if (coverage) {
-      await collectCoverage(path.join(
-        coverageDir,
-        'gui',
-        browserName,
-        `${getSafeFilename(testNameWithoutBrowser)}.json`
-      ));
+      await collectCoverage();
     }
   };
 }
 
 /**
- * If the --config option is passed to Jest then the istanbul coverage
- * report will be read from inside the browser and written to
- * `${coverageDirectory}/gui/${browser}/${fullTestName}.json` where
- * `coverageDirectory` is read from the Jest config.
+ * If `tdd-buffet test` is run with the `--coverage` option then
+ * these tests will gather coverage reports from withing the browser.
+ * The coder that runs there needs to be instrumented with
+ * `babel-plugin-istanbul` and it needs to be transpiled the same way
+ * Jest would.
  */
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition
-    ? createTest(
-      definition,
-      !!process.env.TDD_BUFFET_COVERAGE,
-      process.env.TDD_BUFFET_COVERAGE_DIR!,
-      BROWSER
-    )
+    // TODO: have a separate flag for GUI coverage
+    ? createTest(definition, !!process.env.TDD_BUFFET_COVERAGE, BROWSER)
     : undefined);
 }
 
@@ -158,18 +163,37 @@ function setupHooks() {
   });
 }
 
-async function collectCoverage(coveragePath: string) {
-  const coverage = await rootSuiteBrowser.execute(getCoverage);
+async function collectCoverage() {
+  const browserCoverage = await rootSuiteBrowser.execute(getCoverage);
 
-  await outputFile(coveragePath, JSON.stringify(coverage));
+  if (!browserCoverage) {
+    return;
+  }
+
+  /* istanbul ignore else: we can't hit this in CI */
+  if (global.__coverage__) {
+    mergeCoverageIntoGlobal(browserCoverage);
+  } else {
+    // This branch makes sense for
+    // 1. running the tdd-buffet tests locally without coverage.
+    // 2. running user tests where no instrumented file (that would
+    // generate the global store) is present.
+    global.__coverage__ = browserCoverage;
+  }
 }
 
-/**
- * Turn the given file name into something that's safe to save on the FS.
- */
-function getSafeFilename(fileName: string): string {
-  return fileName
-    .replace(/\//g, '_')
-    .replace(/ /g, '_')
-    .toLowerCase();
+/* istanbul ignore next: because we don't want the coverage to
+   increment while we update it */
+function mergeCoverageIntoGlobal(browserCoverage: CoverageMapData) {
+  const mergedCoverage = createCoverageMap(
+    // @ts-ignore the runtime only wants CoverageMapData.data
+    global.__coverage__
+  );
+  mergedCoverage.merge(browserCoverage);
+
+  mergedCoverage.files().forEach(filepath => {
+    const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
+
+    global.__coverage__[filepath] = fileCoverage.data;
+  });
 }
