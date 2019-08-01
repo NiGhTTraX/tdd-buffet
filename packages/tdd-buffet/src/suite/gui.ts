@@ -14,10 +14,12 @@ const {
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
 
+export type CoverageObject = { [key: string]: FileCoverageData };
+
 declare global {
   namespace NodeJS {
     interface Global {
-      __coverage__: { [key: string]: FileCoverageData };
+      __coverage__: CoverageObject;
     }
   }
 }
@@ -113,20 +115,22 @@ export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
-function createTest(
+export function createTest(
   definition: TestDefinition,
+  getBrowser: () => Browser,
   browserName: string,
   coverage: boolean,
+  coverageObject: CoverageObject,
   rootDir: string
 ) {
   return async (testName: string) => {
     const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
 
-    await definition(rootSuiteBrowser, testNameWithoutBrowser);
+    await definition(getBrowser(), testNameWithoutBrowser);
 
     /* istanbul ignore else because when ran in CI this will always be true */
     if (coverage) {
-      await collectCoverage(rootDir);
+      await collectCoverage(coverageObject, getBrowser(), rootDir);
     }
   };
 }
@@ -139,12 +143,23 @@ function createTest(
  * Jest would.
  */
 export function it(name: string, definition?: TestDefinition) {
+  let coverageObject = global.__coverage__;
+
+  /* istanbul ignore next: because it will always be present in CI,
+     but it might not be present locally or when no instrumented
+     file (that would create it) is run through Jest */
+  if (!coverageObject) {
+    // eslint-disable-next-line no-multi-assign
+    coverageObject = global.__coverage__ = {};
+  }
+
   runnerIt(name, definition
     ? createTest(
       definition,
+      () => rootSuiteBrowser,
       BROWSER,
-      // TODO: have a separate flag for GUI coverage
       !!process.env.TDD_BUFFET_COVERAGE,
+      coverageObject,
       process.env.TDD_BUFFET_ROOT_DIR!
     )
     : undefined);
@@ -169,37 +184,37 @@ function setupHooks() {
   });
 }
 
-async function collectCoverage(rootDir: string) {
-  const browserCoverage = await rootSuiteBrowser.execute(getCoverage);
+async function collectCoverage(
+  coverageObject: CoverageObject,
+  browser: Browser,
+  rootDir: string
+) {
+  const browserCoverage = await browser.execute(getCoverage);
 
   if (!browserCoverage) {
     return;
   }
 
-  /* istanbul ignore else: we can't hit this in CI */
-  if (global.__coverage__) {
-    mergeCoverageIntoGlobal(browserCoverage, rootDir);
-  } else {
-    // This branch makes sense for
-    // 1. running the tdd-buffet tests locally without coverage.
-    // 2. running user tests where no instrumented file (that would
-    // generate the global store) is present.
-    global.__coverage__ = browserCoverage;
-  }
+  mergeCoverage(browserCoverage, coverageObject, rootDir);
 }
 
 /* istanbul ignore next: because we don't want the coverage to
    increment while we update it */
-function mergeCoverageIntoGlobal(browserCoverage: CoverageMapData, rootDir: string) {
+function mergeCoverage(
+  browserCoverage: CoverageMapData,
+  coverageObject: CoverageObject,
+  rootDir: string
+) {
   const mergedCoverage = createCoverageMap(
     // @ts-ignore the runtime only wants CoverageMapData.data
-    global.__coverage__
+    coverageObject
   );
   mergedCoverage.merge(browserCoverage);
 
   mergedCoverage.files().forEach(filepath => {
     const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
 
-    global.__coverage__[filepath.replace('/usr/src/app', rootDir)] = fileCoverage.data;
+    // eslint-disable-next-line no-param-reassign
+    coverageObject[filepath.replace('/usr/src/app', rootDir)] = fileCoverage.data;
   });
 }

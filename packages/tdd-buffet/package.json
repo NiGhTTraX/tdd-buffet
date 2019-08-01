@@ -45,6 +45,7 @@
     "@types/meow": "~5.0.0",
     "@types/node": "~12.6.8",
     "babel-plugin-istanbul": "~5.2.0",
+    "strong-mock": "~1.0.0",
     "typescript": "~3.5.0"
   }
 }
