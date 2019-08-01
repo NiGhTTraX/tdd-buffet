@@ -5,10 +5,8 @@ module.exports = {
 
   collectCoverageFrom: [
     ...baseConfig.collectCoverageFrom,
-    '**/tests/coverage/original.ts'
-  ],
-
-  forceCoverageMatch: [
-    '**/tests/coverage/original.ts'
+    '**/tests/coverage/simple.ts',
+    '**/tests/coverage/docker.ts',
+    '!usr/src/app/**/*'
   ]
 };

@@ -64,8 +64,8 @@ export async function run(configPath: string, { coverage, maxWorkers, runInBand 
     stdio: 'inherit',
     env: {
       TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined,
-      // TODO: would be nice if we could get the <rootDir> expansion from Jest
-      TDD_BUFFET_COVERAGE_DIR: config.coverageDirectory.replace('<rootDir>', process.cwd())
+      // TODO: would be nice if we could get this from Jest
+      TDD_BUFFET_ROOT_DIR: config.rootDir || process.cwd()
     }
   });
 }

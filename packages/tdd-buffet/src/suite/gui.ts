@@ -115,8 +115,9 @@ export function beforeEach(definition: HookDefinition) {
 
 function createTest(
   definition: TestDefinition,
+  browserName: string,
   coverage: boolean,
-  browserName: string
+  rootDir: string
 ) {
   return async (testName: string) => {
     const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
@@ -125,7 +126,7 @@ function createTest(
 
     /* istanbul ignore else because when ran in CI this will always be true */
     if (coverage) {
-      await collectCoverage();
+      await collectCoverage(rootDir);
     }
   };
 }
@@ -139,8 +140,13 @@ function createTest(
  */
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition
-    // TODO: have a separate flag for GUI coverage
-    ? createTest(definition, !!process.env.TDD_BUFFET_COVERAGE, BROWSER)
+    ? createTest(
+      definition,
+      BROWSER,
+      // TODO: have a separate flag for GUI coverage
+      !!process.env.TDD_BUFFET_COVERAGE,
+      process.env.TDD_BUFFET_ROOT_DIR!
+    )
     : undefined);
 }
 
@@ -163,7 +169,7 @@ function setupHooks() {
   });
 }
 
-async function collectCoverage() {
+async function collectCoverage(rootDir: string) {
   const browserCoverage = await rootSuiteBrowser.execute(getCoverage);
 
   if (!browserCoverage) {
@@ -172,7 +178,7 @@ async function collectCoverage() {
 
   /* istanbul ignore else: we can't hit this in CI */
   if (global.__coverage__) {
-    mergeCoverageIntoGlobal(browserCoverage);
+    mergeCoverageIntoGlobal(browserCoverage, rootDir);
   } else {
     // This branch makes sense for
     // 1. running the tdd-buffet tests locally without coverage.
@@ -184,7 +190,7 @@ async function collectCoverage() {
 
 /* istanbul ignore next: because we don't want the coverage to
    increment while we update it */
-function mergeCoverageIntoGlobal(browserCoverage: CoverageMapData) {
+function mergeCoverageIntoGlobal(browserCoverage: CoverageMapData, rootDir: string) {
   const mergedCoverage = createCoverageMap(
     // @ts-ignore the runtime only wants CoverageMapData.data
     global.__coverage__
@@ -194,6 +200,6 @@ function mergeCoverageIntoGlobal(browserCoverage: CoverageMapData) {
   mergedCoverage.files().forEach(filepath => {
     const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
 
-    global.__coverage__[filepath] = fileCoverage.data;
+    global.__coverage__[filepath.replace('/usr/src/app', rootDir)] = fileCoverage.data;
   });
 }
