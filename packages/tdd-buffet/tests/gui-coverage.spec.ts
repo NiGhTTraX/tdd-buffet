@@ -3,8 +3,9 @@ import Mock from 'strong-mock';
 import { Browser, CoverageObject, createTest } from 'tdd-buffet/suite/gui';
 import { expect } from 'tdd-buffet/suite/expect';
 
-function createCoverageObject(filepath: string) {
-  return {
+function createCoverageObject(filepaths: string[]): CoverageObject {
+  return filepaths.reduce((acc, filepath) => ({
+    ...acc,
     [filepath]: {
       statementMap: {
         0: {
@@ -27,7 +28,7 @@ function createCoverageObject(filepath: string) {
         0: 1
       }
     }
-  };
+  }), {});
 }
 
 function createBrowserWithCoverage(browserCoverage: CoverageObject) {
@@ -48,30 +49,7 @@ function createBrowserWithCoverage(browserCoverage: CoverageObject) {
 describe('Gui suite', () => {
   it('should collect coverage', async () => {
     const filepath = '/path/to/file';
-    const browserCoverage: CoverageObject = {
-      [filepath]: {
-        statementMap: {
-          0: {
-            start: {
-              line: 1,
-              column: 1
-            },
-            end: {
-              line: 1,
-              column: 10
-            }
-          }
-        },
-        branchMap: {},
-        fnMap: {},
-        path: filepath,
-        b: {},
-        f: {},
-        s: {
-          0: 1
-        }
-      }
-    };
+    const browserCoverage: CoverageObject = createCoverageObject([filepath]);
     const browser = createBrowserWithCoverage(browserCoverage);
     const expectedCoverage: CoverageObject = {};
 
@@ -91,9 +69,9 @@ describe('Gui suite', () => {
 
   it('should update coverage', async () => {
     const filepath = '/path/to/file';
-    const browserCoverage: CoverageObject = createCoverageObject(filepath);
+    const browserCoverage: CoverageObject = createCoverageObject([filepath]);
     const browser = createBrowserWithCoverage(browserCoverage);
-    const expectedCoverage: CoverageObject = createCoverageObject(filepath);
+    const expectedCoverage: CoverageObject = createCoverageObject([filepath]);
 
     const test = createTest(
       () => {},
@@ -108,9 +86,10 @@ describe('Gui suite', () => {
     expect(expectedCoverage[filepath].s[0]).to.equal(2);
   });
 
-  it('should translate paths', async () => {
-    const filepath = '/usr/src/app/file';
-    const browserCoverage: CoverageObject = createCoverageObject(filepath);
+  it('should collect coverage for multiple files', async () => {
+    const browserCoverage: CoverageObject = createCoverageObject([
+      '/path/to/file1', '/path/to/file2'
+    ]);
     const browser = createBrowserWithCoverage(browserCoverage);
     const expectedCoverage: CoverageObject = {};
 
@@ -118,12 +97,37 @@ describe('Gui suite', () => {
       () => {},
       () => browser.stub,
       'browser',
-      true, expectedCoverage,
+      true,
+      expectedCoverage,
+      ':irrelevant:'
+    );
+
+    await test(':irrelevant:');
+
+    expect(expectedCoverage['/path/to/file1'].s[0]).to.equal(1);
+    expect(expectedCoverage['/path/to/file2'].s[0]).to.equal(1);
+  });
+
+
+  it('should translate paths', async () => {
+    const browserCoverage: CoverageObject = createCoverageObject([
+      '/usr/src/app/file1', '/usr/src/app/file2'
+    ]);
+    const browser = createBrowserWithCoverage(browserCoverage);
+    const expectedCoverage: CoverageObject = {};
+
+    const test = createTest(
+      () => {},
+      () => browser.stub,
+      'browser',
+      true,
+      expectedCoverage,
       '/new/dir'
     );
 
     await test(':irrelevant:');
 
-    expect(expectedCoverage['/new/dir/file'].s[0]).to.equal(1);
+    expect(expectedCoverage['/new/dir/file1'].s[0]).to.equal(1);
+    expect(expectedCoverage['/new/dir/file2'].s[0]).to.equal(1);
   });
 });

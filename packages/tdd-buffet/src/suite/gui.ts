@@ -213,8 +213,12 @@ function mergeCoverage(
 
   mergedCoverage.files().forEach(filepath => {
     const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
+    const translatedPath = filepath.replace(
+      /^\/usr\/src\/app/g,
+      rootDir
+    );
 
     // eslint-disable-next-line no-param-reassign
-    coverageObject[filepath.replace('/usr/src/app', rootDir)] = fileCoverage.data;
+    coverageObject[translatedPath] = fileCoverage.data;
   });
 }
