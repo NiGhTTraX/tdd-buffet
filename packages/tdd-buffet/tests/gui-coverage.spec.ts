@@ -108,7 +108,6 @@ describe('Gui suite', () => {
     expect(expectedCoverage['/path/to/file2'].s[0]).to.equal(1);
   });
 
-
   it('should translate paths', async () => {
     const browserCoverage: CoverageObject = createCoverageObject([
       '/usr/src/app/file1', '/usr/src/app/file2'
@@ -129,5 +128,28 @@ describe('Gui suite', () => {
 
     expect(expectedCoverage['/new/dir/file1'].s[0]).to.equal(1);
     expect(expectedCoverage['/new/dir/file2'].s[0]).to.equal(1);
+  });
+
+  it('should translate paths before merging', async () => {
+    const browserCoverage: CoverageObject = createCoverageObject([
+      '/usr/src/app/file'
+    ]);
+    const browser = createBrowserWithCoverage(browserCoverage);
+    const expectedCoverage: CoverageObject = createCoverageObject([
+      '/new/dir/file'
+    ]);
+
+    const test = createTest(
+      () => {},
+      () => browser.stub,
+      'browser',
+      true,
+      expectedCoverage,
+      '/new/dir'
+    );
+
+    await test(':irrelevant:');
+
+    expect(expectedCoverage['/new/dir/file'].s[0]).to.equal(2);
   });
 });

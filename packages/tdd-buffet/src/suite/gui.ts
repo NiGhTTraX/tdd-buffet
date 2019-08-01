@@ -209,16 +209,26 @@ function mergeCoverage(
     // @ts-ignore the runtime only wants CoverageMapData.data
     coverageObject
   );
-  mergedCoverage.merge(browserCoverage);
+
+  mergedCoverage.merge(
+    // @ts-ignore the runtime only wants CoverageMapData.data
+    translateCoveragePaths(browserCoverage, rootDir)
+  );
 
   mergedCoverage.files().forEach(filepath => {
     const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
-    const translatedPath = filepath.replace(
-      /^\/usr\/src\/app/g,
-      rootDir
-    );
 
     // eslint-disable-next-line no-param-reassign
-    coverageObject[translatedPath] = fileCoverage.data;
+    coverageObject[filepath] = fileCoverage.data;
   });
+}
+
+function translateCoveragePaths(
+  coverageObject: CoverageObject,
+  rootDir: string
+): CoverageObject {
+  return Object.keys(coverageObject).reduce((acc, key) => ({
+    ...acc,
+    [key.replace(/^\/usr\/src\/app/g, rootDir)]: coverageObject[key]
+  }), {});
 }
