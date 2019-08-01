@@ -127,7 +127,9 @@ describe('Gui suite', () => {
     await test(':irrelevant:');
 
     expect(expectedCoverage['/new/dir/file1'].s[0]).to.equal(1);
+    expect(expectedCoverage['/new/dir/file1'].path).to.equal('/new/dir/file1');
     expect(expectedCoverage['/new/dir/file2'].s[0]).to.equal(1);
+    expect(expectedCoverage['/new/dir/file2'].path).to.equal('/new/dir/file2');
   });
 
   it('should translate paths before merging', async () => {

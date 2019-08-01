@@ -227,8 +227,22 @@ function translateCoveragePaths(
   coverageObject: CoverageObject,
   rootDir: string
 ): CoverageObject {
-  return Object.keys(coverageObject).reduce((acc, key) => ({
-    ...acc,
-    [key.replace(/^\/usr\/src\/app/g, rootDir)]: coverageObject[key]
-  }), {});
+  return Object.keys(coverageObject).reduce((acc, key) => {
+    const translatedPath = key.replace(/^\/usr\/src\/app/g, rootDir);
+
+    const data = coverageObject[key];
+
+    return {
+      ...acc,
+      [translatedPath]: {
+        s: data.s,
+        b: data.b,
+        f: data.f,
+        statementMap: data.statementMap,
+        fnMap: data.fnMap,
+        branchMap: data.branchMap,
+        path: translatedPath
+      }
+    };
+  }, {});
 }
