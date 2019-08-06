@@ -43,7 +43,7 @@
     "@babel/core": "~7.5.5",
     "@types/jest": "~24.0.15",
     "@types/meow": "~5.0.0",
-    "@types/node": "~12.6.8",
+    "@types/node": "~12.7.0",
     "babel-plugin-istanbul": "~5.2.0",
     "strong-mock": "~1.0.0",
     "typescript": "~3.5.0"
