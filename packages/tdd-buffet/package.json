@@ -27,7 +27,7 @@
     "prepublishOnly": "npm run build && npm run package"
   },
   "dependencies": {
-    "@types/chai": "~4.1.7",
+    "@types/chai": "~4.2.0",
     "@types/fs-extra": "~8.0.0",
     "@types/istanbul-lib-coverage": "~2.0.1",
     "chai": "~4.2.0",
