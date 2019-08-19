@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@types/react": "~16.9.0",
-    "@types/react-dom": "~16.8.4",
+    "@types/react-dom": "~16.9.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-mock-component": "~1.0.1",
