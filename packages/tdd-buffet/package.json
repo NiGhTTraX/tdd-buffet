@@ -20,11 +20,11 @@
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
   "bin": "./bin/index.js",
   "scripts": {
-    "build": "npm run clean && npm run compile",
+    "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
     "package": "cp -r package.json src/config ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "npm run build && npm run package"
+    "prepublishOnly": "yarn run build && yarn run package"
   },
   "dependencies": {
     "@types/chai": "~4.2.0",

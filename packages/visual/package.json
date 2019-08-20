@@ -23,11 +23,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "npm run clean && npm run compile",
+    "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
     "link": "rm -rf node_modules/tdd-buffet && cd ../tdd-buffet && ln -s \"$(pwd)/dist\" ../visual/node_modules/tdd-buffet",
-    "compile": "npm run link && tsc -p tsconfig.build.json",
-    "prepublishOnly": "npm run build"
+    "compile": "yarn run link && tsc -p tsconfig.build.json",
+    "prepublishOnly": "yarn run build"
   },
   "peerDependencies": {
     "tdd-buffet": "^0.7.1"
