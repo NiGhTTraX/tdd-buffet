@@ -33,6 +33,23 @@ describe('My component', () => {
 The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
 
 
+## Firing events
+
+The package exposes convenience methods for firing events targeted at elements inside the currently rendered component. The methods are just wrappers over [testing-library/dom](https://github.com/testing-library/dom-testing-library).
+
+```typescript jsx
+import React from 'react';
+import { $render, click } from '@tdd-buffet/react';
+
+const $component = $render(<button onClick={() => console.log('clicked')}>
+  click me
+</button>);
+
+click('button'); // will log 'clicked'
+click($component.find('button')); // will log 'clicked'
+```
+
+
 ## Waiting for conditions
 
 ```typescript jsx
