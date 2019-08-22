@@ -13,6 +13,10 @@ describe('wait', () => {
     await wait(() => { expect(1).to.equal(1); });
   });
 
+  it('should wait for an already met assertion', async () => {
+    await wait(() => expect(1).to.equal(1));
+  });
+
   it('should wait for a pending condition', async () => {
     let pending = false;
 

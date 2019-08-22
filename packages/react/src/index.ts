@@ -21,7 +21,8 @@ function getJQueryContainer() {
  * @example
  * ```
  * await wait(() => 1 === 1);
- * await wait(() => { expect(1).to.equal(1); }
+ * await wait(() => expect(1).to.equal(1))
+ * await wait(() => { expect(1).to.equal(1); })
  * await wait($container => $container.text() === 'foobar');
  * ```
  */
@@ -29,7 +30,7 @@ export function wait(cb: ($container: JQuery) => any, timeout = 1500) {
   return waitForExpect(() => {
     const result = cb(getJQueryContainer());
 
-    if (result !== true && result !== undefined) {
+    if (result !== undefined && !result) {
       throw new Error('Condition not met');
     }
   }, timeout);
