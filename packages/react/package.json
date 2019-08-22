@@ -33,7 +33,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@testing-library/dom": "^6.1.0",
+    "@testing-library/dom": "~6.1.0",
     "@types/jquery": "~3.3.30",
     "jquery": "~3.4.1",
     "wait-for-expect": "~2.0.0"
@@ -44,7 +44,7 @@
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
     "react-mock-component": "~1.0.1",
-    "strong-mock": "^1.0.0",
+    "strong-mock": "~1.0.0",
     "typescript": "~3.5.0"
   }
 }

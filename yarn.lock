@@ -1487,7 +1487,7 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@^6.1.0":
+"@testing-library/dom@~6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.1.0.tgz#8d5a954158e81ecd7c994907f4ec240296ed823b"
   integrity sha512-qivqFvnbVIH3DyArFofEU/jlOhkGIioIemOy9A9M/NQTpPyDDQmtVkAfoB18RKN581f0s/RJMRBbq9WfMIhFTw==
@@ -8009,7 +8009,7 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-strong-mock@^1.0.0, strong-mock@~1.0.0:
+strong-mock@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-1.0.0.tgz#dbc7c6855bc078299a48b4d7670797a07a54764a"
   integrity sha512-/1OVkwMDH10ARSUcBVz8vToVGRrjlEAYigE2dXYx60+j8Imtd7nrKs6egeDgKM3NtjOZ9TJA0M7GtORcXuy6CA==
