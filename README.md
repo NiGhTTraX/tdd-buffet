@@ -22,6 +22,7 @@ This is a collection of libraries and tools extracted from my personal open sour
 - Side dishes
     - [React testing](./packages/react)
       - [Render components into a test container](./packages/react/README.md#render-components-into-a-test-container)
+      - [Waiting for conditions](./packages/react/README.md#waiting-for-conditions)
     - [Visual testing](./packages/visual)
       - [Create a visual test](./packages/visual/README.md#create-a-visual-test)
 - Desserts

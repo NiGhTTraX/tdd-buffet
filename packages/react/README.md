@@ -4,6 +4,8 @@
 
 ----
 
+This package can be used independently of `tdd-buffet`.
+
 ## Install
 
 ```sh
@@ -29,3 +31,33 @@ describe('My component', () => {
 ```
 
 The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
+
+
+## Waiting for conditions
+
+```typescript jsx
+import React from 'react';
+import Simulate from 'react-dom/test-utils';
+import { describe, it } from 'tdd-buffet/suite/node';
+import { expect } from 'tdd-buffet/suite/expect';
+import { $render, wait } from '@tdd-buffet/react';
+
+class MyComponent extends React.Component {
+  state = { done: false };
+
+  render() {
+    return <button onClick={() => this.setState({ done: true })}>
+      {this.state.done ? 'done' : 'loading'}
+    </button>;
+  }
+}
+
+describe('My component', () => {
+  it('should display a message when clicking', async () => {
+    const $component = $render(<MyComponent />);
+    Simulate.click($component.find('button')[0]);
+  
+    await wait(() => expect($component.text()).to.equal('done'));
+  });
+});
+```
