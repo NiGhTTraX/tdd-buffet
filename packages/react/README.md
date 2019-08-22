@@ -13,7 +13,7 @@ npm install tdd-buffet @tdd-buffet/react
 ```
 
 
-## Render components into a test container
+## Render components
 
 ```typescript jsx
 import React from 'react';
@@ -33,7 +33,7 @@ describe('My component', () => {
 The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
 
 
-## Firing events
+## Fire events
 
 The package exposes convenience methods for firing events targeted at elements inside the currently rendered component. The methods are just wrappers over [testing-library/dom](https://github.com/testing-library/dom-testing-library).
 
@@ -50,7 +50,7 @@ click($component.find('button')); // will log 'clicked'
 ```
 
 
-## Waiting for conditions
+## Wait for conditions
 
 ```typescript jsx
 import React from 'react';

@@ -21,9 +21,9 @@ This is a collection of libraries and tools extracted from my personal open sour
       - [Coverage](./packages/tdd-buffet/README.md#coverage)
 - Side dishes
     - [React testing](./packages/react)
-      - [Render components into a test container](./packages/react/README.md#render-components-into-a-test-container)
-      - [Firing events](./packages/react/README.md#firing-events)
-      - [Waiting for conditions](./packages/react/README.md#waiting-for-conditions)
+      - [Render components](./packages/react/README.md#render-components)
+      - [Fire events](./packages/react/README.md#fire-events)
+      - [Wait for conditions](./packages/react/README.md#wait-for-conditions)
     - [Visual testing](./packages/visual)
       - [Create a visual test](./packages/visual/README.md#create-a-visual-test)
 - Desserts
