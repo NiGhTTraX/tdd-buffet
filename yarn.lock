@@ -1669,11 +1669,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.30.tgz#4c2b4f0015f214f8158a347350481322b3b29b2f"
   integrity sha512-nsqTN6zUcm9xtdJiM9OvOJ5EF0kOI8f1Zuug27O/rgtxCRJHGqncSWfCMZUP852dCKPsDsYXGvBhxfRjDBkF5Q==
 
-"@types/node@~12.0.10":
-  version "12.0.12"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.0.12.tgz#cc791b402360db1eaf7176479072f91ee6c6c7ca"
-  integrity sha512-Uy0PN4R5vgBUXFoJrKryf5aTk3kJ8Rv3PdlHjl6UaX+Cqp1QE0yPQ68MPXGrZOfG7gZVNDIJZYyot0B9ubXUrQ==
-
 "@types/normalize-package-data@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
@@ -8009,12 +8004,12 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-strong-mock@~1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-1.0.0.tgz#dbc7c6855bc078299a48b4d7670797a07a54764a"
-  integrity sha512-/1OVkwMDH10ARSUcBVz8vToVGRrjlEAYigE2dXYx60+j8Imtd7nrKs6egeDgKM3NtjOZ9TJA0M7GtORcXuy6CA==
+strong-mock@~3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-3.0.0.tgz#50d3fb45dc76b0eaf8474ed49b25363aee4d9d3e"
+  integrity sha512-+R206HYULevzSPYvNHxUiVOBCix4XPpl1sVzLS/LMR1H4jo7qSp9B9Q84rSNB7qwSYdpFClmPU0ch4wM77LCQg==
   dependencies:
-    "@types/node" "~12.0.10"
+    "@types/node" "~12.7.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
