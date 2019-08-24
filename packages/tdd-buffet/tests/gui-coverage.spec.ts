@@ -37,12 +37,12 @@ function createBrowserWithCoverage(browserCoverage: CoverageObject) {
     .when(b => b.execute)
     // eslint-disable-next-line no-eval
     .returns((fnOrString: ((...args: any[]) => any) | string) => eval(`
-        var window = { 
-          __coverage__: ${JSON.stringify(browserCoverage)}
-        };
-        ${fnOrString.toString()}
-        ${typeof fnOrString === 'function' ? `${fnOrString.name}()` : ''}
-      `));
+      var window = { 
+        __coverage__: ${JSON.stringify(browserCoverage)}
+      };
+      ${fnOrString.toString()}
+      ${typeof fnOrString === 'function' ? `${fnOrString.name}()` : ''}
+    `));
   return browser;
 }
 
