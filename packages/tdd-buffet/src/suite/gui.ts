@@ -1,8 +1,16 @@
 /* eslint-disable no-underscore-dangle */
 import { remote } from 'webdriverio';
-import { runnerAfter, runnerBefore, runnerBeforeEach, runnerDescribe, runnerIt } from '../jest';
+import {
+  registerSourceMap,
+  runnerAfter,
+  runnerBefore,
+  runnerBeforeEach,
+  runnerDescribe,
+  runnerIt
+} from '../jest';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
+import { pathExistsSync } from 'fs-extra';
 
 /* istanbul ignore next: I'm not going to run the tests twice to cover these */
 const {
@@ -216,6 +224,11 @@ function mergeCoverage(
   );
 
   mergedCoverage.files().forEach(filepath => {
+    // TODO: we're running tests with fake file paths
+    if (pathExistsSync(filepath)) {
+      registerSourceMap(filepath);
+    }
+
     const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
 
     // eslint-disable-next-line no-param-reassign

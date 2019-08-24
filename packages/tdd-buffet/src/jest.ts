@@ -38,6 +38,10 @@ export function runnerAfter(definition: () => Promise<any>|void) {
   afterAll(definition, TIMEOUT);
 }
 
+export function registerSourceMap(filename: string) {
+  // @ts-ignore
+  jest.registerExternalCoverage(filename);
+}
 export type JestOptions = {
   coverage: boolean,
   maxWorkers: string,

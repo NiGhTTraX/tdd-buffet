@@ -6,6 +6,9 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
 
+  // Our custom runtime that exposes a way to add coverage from external sources.
+  moduleLoader: path.join(__dirname, './jest-runtime.js'),
+
   rootDir: process.cwd(),
   testMatch: ['**/tests/**/*.spec.{ts,tsx}'],
   moduleNameMapper: compilerOptions.paths ? {
