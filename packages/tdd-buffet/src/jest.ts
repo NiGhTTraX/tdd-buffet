@@ -1,6 +1,9 @@
+/* eslint-disable no-underscore-dangle */
 // TODO: https://github.com/facebook/jest/pull/7571
 import 'jest';
 import execa from 'execa';
+import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
+import { pathExistsSync } from 'fs-extra';
 
 // TODO: move to config after https://github.com/facebook/jest/pull/8456 ships
 const TIMEOUT = 20 * 1000;
@@ -38,10 +41,95 @@ export function runnerAfter(definition: () => Promise<any>|void) {
   afterAll(definition, TIMEOUT);
 }
 
-export function registerSourceMap(filename: string) {
-  // @ts-ignore
-  jest.registerExternalCoverage(filename);
+export type CoverageObject = { [key: string]: FileCoverageData };
+
+declare global {
+  namespace NodeJS {
+    interface Global {
+      __coverage__: CoverageObject;
+    }
+  }
 }
+
+/**
+ * Add coverage data to the current report.
+ *
+ * @param coverage Istanbul coverage data.
+ * @param rootDir jest's rootDir option. TODO: get from runtime
+ */
+export function addCoverageData(coverage: CoverageMapData, rootDir: string) {
+  let coverageObject = global.__coverage__;
+
+  /* istanbul ignore next: because it will always be present in CI,
+     but it might not be present locally or when no instrumented
+     file (that would create it) is run through Jest */
+  if (!coverageObject) {
+    // eslint-disable-next-line no-multi-assign
+    coverageObject = global.__coverage__ = {};
+  }
+
+  mergeCoverage(coverage, coverageObject, rootDir);
+}
+
+/* istanbul ignore next: because we don't want the coverage to
+   increment while we update it */
+function mergeCoverage(
+  source: CoverageMapData,
+  dest: CoverageObject,
+  rootDir: string
+) {
+  const mergedCoverage = createCoverageMap(
+    // @ts-ignore the runtime only wants CoverageMapData.data
+    dest
+  );
+
+  mergedCoverage.merge(
+    // @ts-ignore the runtime only wants CoverageMapData.data
+    translateCoveragePaths(source, rootDir)
+  );
+
+  mergedCoverage.files().forEach(filepath => {
+    // TODO: we're running tests with fake file paths
+    if (pathExistsSync(filepath)) {
+      registerSourceMap(filepath);
+    }
+
+    const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
+
+    // eslint-disable-next-line no-param-reassign
+    dest[filepath] = fileCoverage.data;
+  });
+}
+
+function translateCoveragePaths(
+  coverageObject: CoverageObject,
+  rootDir: string
+): CoverageObject {
+  return Object.keys(coverageObject).reduce((acc, key) => {
+    const translatedPath = key.replace(/^\/usr\/src\/app/g, rootDir);
+
+    const data = coverageObject[key];
+
+    return {
+      ...acc,
+      [translatedPath]: {
+        s: data.s,
+        b: data.b,
+        f: data.f,
+        statementMap: data.statementMap,
+        fnMap: data.fnMap,
+        branchMap: data.branchMap,
+        path: translatedPath
+      }
+    };
+  }, {});
+}
+
+function registerSourceMap(filename: string) {
+  // @ts-ignore TODO: add global type
+  jest.addCoverageFor(filename);
+}
+
 export type JestOptions = {
   coverage: boolean,
   maxWorkers: string,

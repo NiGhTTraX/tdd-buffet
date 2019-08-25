@@ -1,16 +1,13 @@
 /* eslint-disable no-underscore-dangle */
 import { remote } from 'webdriverio';
 import {
-  registerSourceMap,
+  addCoverageData,
   runnerAfter,
   runnerBefore,
   runnerBeforeEach,
   runnerDescribe,
   runnerIt
 } from '../jest';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
-import { pathExistsSync } from 'fs-extra';
 
 /* istanbul ignore next: I'm not going to run the tests twice to cover these */
 const {
@@ -21,16 +18,6 @@ const {
 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
-
-export type CoverageObject = { [key: string]: FileCoverageData };
-
-declare global {
-  namespace NodeJS {
-    interface Global {
-      __coverage__: CoverageObject;
-    }
-  }
-}
 
 /**
  * You can use this to simplify writing custom functions that work
@@ -128,7 +115,6 @@ export function createTest(
   getBrowser: () => Browser,
   browserName: string,
   coverage: boolean,
-  coverageObject: CoverageObject,
   rootDir: string
 ) {
   return async (testName: string) => {
@@ -138,7 +124,7 @@ export function createTest(
 
     /* istanbul ignore else because when ran in CI this will always be true */
     if (coverage) {
-      await collectCoverage(coverageObject, getBrowser(), rootDir);
+      await collectCoverage(getBrowser(), rootDir);
     }
   };
 }
@@ -151,25 +137,9 @@ export function createTest(
  * Jest would.
  */
 export function it(name: string, definition?: TestDefinition) {
-  let coverageObject = global.__coverage__;
-
-  /* istanbul ignore next: because it will always be present in CI,
-     but it might not be present locally or when no instrumented
-     file (that would create it) is run through Jest */
-  if (!coverageObject) {
-    // eslint-disable-next-line no-multi-assign
-    coverageObject = global.__coverage__ = {};
-  }
-
   runnerIt(name, definition
-    ? createTest(
-      definition,
-      () => rootSuiteBrowser,
-      BROWSER,
-      !!process.env.TDD_BUFFET_COVERAGE,
-      coverageObject,
-      process.env.TDD_BUFFET_ROOT_DIR!
-    )
+    ? createTest(definition, () => rootSuiteBrowser, BROWSER, !!process.env.TDD_BUFFET_COVERAGE,
+      process.env.TDD_BUFFET_ROOT_DIR!)
     : undefined);
 }
 
@@ -193,7 +163,6 @@ function setupHooks() {
 }
 
 async function collectCoverage(
-  coverageObject: CoverageObject,
   browser: Browser,
   rootDir: string
 ) {
@@ -203,59 +172,5 @@ async function collectCoverage(
     return;
   }
 
-  mergeCoverage(browserCoverage, coverageObject, rootDir);
-}
-
-/* istanbul ignore next: because we don't want the coverage to
-   increment while we update it */
-function mergeCoverage(
-  browserCoverage: CoverageMapData,
-  coverageObject: CoverageObject,
-  rootDir: string
-) {
-  const mergedCoverage = createCoverageMap(
-    // @ts-ignore the runtime only wants CoverageMapData.data
-    coverageObject
-  );
-
-  mergedCoverage.merge(
-    // @ts-ignore the runtime only wants CoverageMapData.data
-    translateCoveragePaths(browserCoverage, rootDir)
-  );
-
-  mergedCoverage.files().forEach(filepath => {
-    // TODO: we're running tests with fake file paths
-    if (pathExistsSync(filepath)) {
-      registerSourceMap(filepath);
-    }
-
-    const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
-
-    // eslint-disable-next-line no-param-reassign
-    coverageObject[filepath] = fileCoverage.data;
-  });
-}
-
-function translateCoveragePaths(
-  coverageObject: CoverageObject,
-  rootDir: string
-): CoverageObject {
-  return Object.keys(coverageObject).reduce((acc, key) => {
-    const translatedPath = key.replace(/^\/usr\/src\/app/g, rootDir);
-
-    const data = coverageObject[key];
-
-    return {
-      ...acc,
-      [translatedPath]: {
-        s: data.s,
-        b: data.b,
-        f: data.f,
-        statementMap: data.statementMap,
-        fnMap: data.fnMap,
-        branchMap: data.branchMap,
-        path: translatedPath
-      }
-    };
-  }, {});
+  addCoverageData(browserCoverage, rootDir);
 }

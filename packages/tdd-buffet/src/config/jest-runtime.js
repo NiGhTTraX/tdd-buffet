@@ -27,11 +27,11 @@ module.exports = class JestRuntime extends Runtime {
 
     return {
       ...jestObject,
-      registerExternalCoverage: this.registerExternalCoverage.bind(this)
+      addCoverageFor: this.addCoverageFor.bind(this)
     };
   }
 
-  registerExternalCoverage(filename) {
+  addCoverageFor(filename) {
     // This is copied from jest's guts.
     const transformedFile = this._scriptTransformer.transform(
       filename,
