@@ -56,9 +56,51 @@ The suite automatically connects to a running Selenium server (see the [selenium
 
 You can pass the `--coverage` option to generate coverage with the options specified in the Jest config.
 
-Moreover, the GUI tests will collect **coverage from within the browser**. This requires your code to be instrumented with [istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) and to be **transpiled in the same way Jest would do it**. For example a `ts-jest` Jest environment translates to `ts-loader` + `babel-loader` with `babel-plugin-istanbul` for Webpack. Make sure the transpiling options are identical between the two.
+Moreover, the GUI tests will collect **coverage from within the browser**. This requires your code to be instrumented with [istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) and to be **transpiled in the same way Jest would do it**. For example, the config in this package translates to the following Webpack config:
 
-Since the instrumented files inside the browser might have different path names, tdd-buffet will try to map the coverage reports to the correct host paths. Right now there is only 1 transformation done: the files are assumed to be inside a Docker container at `/usr/src/app` so that path is replaced with Jest's `rootDir`.
+```js
+const babelLoader = {
+  loader: 'babel-loader',
+  options: {
+    auxiliaryCommentBefore: ' istanbul ignore next ',
+    babelrc: false,
+    caller: {
+      name: '@jest/transform',
+      supportsStaticESM: false
+    },
+    configFile: false,
+    plugins: [[
+      'istanbul', {
+        compact: false,
+        exclude: [],
+        useInlineSourceMaps: false
+      }
+    ]]
+  }
+};
+
+const tsLoader = {
+  loader: 'ts-loader',
+  options: {
+    transpileOnly: true,
+    compilerOptions: {
+      target: 'es6'
+    }
+  }
+};
+
+module.exports = {
+  module: {
+    rules: [{
+      test: /\.tsx?$/,
+      exclude: /node_modules/,
+      use: [babelLoader, tsLoader]
+    }]
+  }
+};
+```
+
+When you instrument the files make sure to do it from the **same path as your project** because the path will be injected into the coverage data and it will be used when creating the coverage report. If you're instrumenting the files inside a Docker container you can put them in `/usr/src/app` and `tdd-buffet` will map that path to Jest's `rootDir`.
 
 
 ## Configs
