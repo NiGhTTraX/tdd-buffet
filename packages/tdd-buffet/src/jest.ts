@@ -5,9 +5,6 @@ import execa from 'execa';
 import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
 import { pathExistsSync } from 'fs-extra';
 
-// TODO: move to config after https://github.com/facebook/jest/pull/8456 ships
-const TIMEOUT = 20 * 1000;
-
 export function runnerDescribe(name: string, definition: () => void) {
   describe(name, definition);
 }
@@ -17,8 +14,7 @@ export function runnerIt(name: string, definition?: (testName: string) => Promis
     // @ts-ignore because @types/jest doesn't expose this
     const test: { getFullName: () => string } = it(
       name,
-      () => definition(test.getFullName()),
-      TIMEOUT
+      () => definition(test.getFullName())
     );
   } else {
     it.todo(name);
@@ -26,19 +22,19 @@ export function runnerIt(name: string, definition?: (testName: string) => Promis
 }
 
 export function runnerBeforeEach(definition: () => Promise<any>|void) {
-  beforeEach(definition, TIMEOUT);
+  beforeEach(definition);
 }
 
 export function runnerAfterEach(definition: () => Promise<any>|void) {
-  afterEach(definition, TIMEOUT);
+  afterEach(definition);
 }
 
 export function runnerBefore(definition: () => Promise<any>|void) {
-  beforeAll(definition, TIMEOUT);
+  beforeAll(definition);
 }
 
 export function runnerAfter(definition: () => Promise<any>|void) {
-  afterAll(definition, TIMEOUT);
+  afterAll(definition);
 }
 
 export type CoverageObject = { [key: string]: FileCoverageData };
