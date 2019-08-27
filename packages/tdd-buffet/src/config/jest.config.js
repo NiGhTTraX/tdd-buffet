@@ -37,8 +37,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       tsConfig: {
-        // Sourcemaps are kinda broken so we avoid transpiling,
-        // plus it's not needed since tests run in latest node.
+        // Minimise transpilation since tests run in modern Node.
         target: 'es6'
       }
     }
