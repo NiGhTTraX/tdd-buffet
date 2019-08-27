@@ -1,5 +1,4 @@
 /* eslint-disable no-underscore-dangle */
-// TODO: https://github.com/facebook/jest/pull/7571
 import 'jest';
 import execa from 'execa';
 import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
