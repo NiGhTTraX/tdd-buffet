@@ -55,9 +55,8 @@ declare global {
  * Add coverage data to the current report.
  *
  * @param coverage Istanbul coverage data.
- * @param rootDir jest's rootDir option. TODO: get from runtime
  */
-export function addCoverageData(coverage: CoverageMapData, rootDir: string) {
+export function addCoverageData(coverage: CoverageMapData) {
   let coverageObject = global.__coverage__;
 
   /* istanbul ignore next: because it will always be present in CI,
@@ -68,15 +67,14 @@ export function addCoverageData(coverage: CoverageMapData, rootDir: string) {
     coverageObject = global.__coverage__ = {};
   }
 
-  mergeCoverage(coverage, coverageObject, rootDir);
+  mergeCoverage(coverage, coverageObject);
 }
 
 /* istanbul ignore next: because we don't want the coverage to
    increment while we update it */
 function mergeCoverage(
   source: CoverageMapData,
-  dest: CoverageObject,
-  rootDir: string
+  dest: CoverageObject
 ) {
   const mergedCoverage = createCoverageMap(
     // @ts-ignore the runtime only wants CoverageMapData.data
@@ -85,7 +83,7 @@ function mergeCoverage(
 
   mergedCoverage.merge(
     // @ts-ignore the runtime only wants CoverageMapData.data
-    translateCoveragePaths(source, rootDir)
+    translateCoveragePaths(source)
   );
 
   mergedCoverage.files().forEach(filepath => {
@@ -102,11 +100,14 @@ function mergeCoverage(
 }
 
 function translateCoveragePaths(
-  coverageObject: CoverageObject,
-  rootDir: string
+  coverageObject: CoverageObject
 ): CoverageObject {
   return Object.keys(coverageObject).reduce((acc, key) => {
-    const translatedPath = key.replace(/^\/usr\/src\/app/g, rootDir);
+    const translatedPath = key.replace(
+      /^\/usr\/src\/app/g,
+      // @ts-ignore
+      jest.config.rootDir
+    );
 
     const data = coverageObject[key];
 
@@ -140,8 +141,6 @@ export type JestOptions = {
 export async function run(configPath: string, { coverage, maxWorkers, runInBand }: JestOptions) {
   let command = `jest --config ${configPath}`;
 
-  const config = await import(configPath);
-
   if (coverage) {
     command += ' --coverage';
   }
@@ -155,9 +154,7 @@ export async function run(configPath: string, { coverage, maxWorkers, runInBand 
   await execa.command(command, {
     stdio: 'inherit',
     env: {
-      TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined,
-      // TODO: would be nice if we could get this from Jest
-      TDD_BUFFET_ROOT_DIR: config.rootDir || process.cwd()
+      TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined
     }
   });
 }

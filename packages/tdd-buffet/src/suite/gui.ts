@@ -114,8 +114,7 @@ export function createTest(
   definition: TestDefinition,
   getBrowser: () => Browser,
   browserName: string,
-  coverage: boolean,
-  rootDir: string
+  coverage: boolean
 ) {
   return async (testName: string) => {
     const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
@@ -124,7 +123,7 @@ export function createTest(
 
     /* istanbul ignore else because when ran in CI this will always be true */
     if (coverage) {
-      await collectCoverage(getBrowser(), rootDir);
+      await collectCoverage(getBrowser());
     }
   };
 }
@@ -138,8 +137,7 @@ export function createTest(
  */
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition
-    ? createTest(definition, () => rootSuiteBrowser, BROWSER, !!process.env.TDD_BUFFET_COVERAGE,
-      process.env.TDD_BUFFET_ROOT_DIR!)
+    ? createTest(definition, () => rootSuiteBrowser, BROWSER, !!process.env.TDD_BUFFET_COVERAGE)
     : undefined);
 }
 
@@ -162,15 +160,12 @@ function setupHooks() {
   });
 }
 
-async function collectCoverage(
-  browser: Browser,
-  rootDir: string
-) {
+async function collectCoverage(browser: Browser) {
   const browserCoverage = await browser.execute(getCoverage);
 
   if (!browserCoverage) {
     return;
   }
 
-  addCoverageData(browserCoverage, rootDir);
+  addCoverageData(browserCoverage);
 }

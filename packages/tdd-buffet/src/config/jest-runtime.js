@@ -19,6 +19,7 @@ module.exports = class JestRuntime extends Runtime {
   ) {
     super(config, environment, resolver, cacheFS, coverageOptions);
 
+    this.config = config;
     this._createJestObjectFor = this.createCustomJestObjectFor;
   }
 
@@ -27,6 +28,7 @@ module.exports = class JestRuntime extends Runtime {
 
     return {
       ...jestObject,
+      config: this.config,
       addCoverageFor: this.addCoverageFor.bind(this)
     };
   }
