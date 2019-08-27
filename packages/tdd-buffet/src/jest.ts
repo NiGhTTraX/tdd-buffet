@@ -1,8 +1,23 @@
-/* eslint-disable no-underscore-dangle */
 import 'jest';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
+import { Config } from '@jest/types';
 import execa from 'execa';
 import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
 import { pathExistsSync } from 'fs-extra';
+
+/* eslint-disable no-underscore-dangle */
+declare global {
+  namespace jest {
+    export function addCoverageFor(filename: string): void;
+    export const config: Config.ProjectConfig;
+  }
+
+  namespace NodeJS {
+    interface Global {
+      __coverage__: CoverageObject;
+    }
+  }
+}
 
 export function runnerDescribe(name: string, definition: () => void) {
   describe(name, definition);
@@ -37,14 +52,6 @@ export function runnerAfter(definition: () => Promise<any>|void) {
 }
 
 export type CoverageObject = { [key: string]: FileCoverageData };
-
-declare global {
-  namespace NodeJS {
-    interface Global {
-      __coverage__: CoverageObject;
-    }
-  }
-}
 
 /**
  * Add coverage data to the current report.
@@ -100,7 +107,6 @@ function translateCoveragePaths(
   return Object.keys(coverageObject).reduce((acc, key) => {
     const translatedPath = key.replace(
       /^\/usr\/src\/app/g,
-      // @ts-ignore
       jest.config.rootDir
     );
 
@@ -122,7 +128,6 @@ function translateCoveragePaths(
 }
 
 function registerSourceMap(filename: string) {
-  // @ts-ignore TODO: add global type
   jest.addCoverageFor(filename);
 }
 
