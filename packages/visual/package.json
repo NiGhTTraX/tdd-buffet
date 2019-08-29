@@ -38,6 +38,6 @@
   },
   "devDependencies": {
     "tdd-buffet": "^0.8.1",
-    "typescript": "~3.5.0"
+    "typescript": "~3.6.0"
   }
 }

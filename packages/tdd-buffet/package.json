@@ -47,6 +47,6 @@
     "@types/node": "~12.7.0",
     "babel-plugin-istanbul": "~5.2.0",
     "strong-mock": "~3.0.0",
-    "typescript": "~3.5.0"
+    "typescript": "~3.6.0"
   }
 }
