@@ -32,5 +32,4 @@ This is a collection of libraries and tools extracted from my personal open sour
       - [Start a grid with Chrome and Firefox](./packages/selenium/README.md#start-a-grid-with-chrome-and-firefox)
       - [Start a debug grid with VNC](./packages/selenium/README.md#start-a-grid-with-debug-nodes-with-vnc)
       - [Connect other containers](./packages/selenium/README.md#connect-other-containers)
-      - [Mount files inside the nodes](./packages/selenium/README.md#mount-files-inside-the-nodes)
       - [Stop everything](./packages/selenium/README.md#stop-everything)

@@ -2,9 +2,7 @@
 /* istanbul ignore file */
 /* eslint-disable no-console */
 import meow from 'meow';
-import path from 'path';
 import { debug, start, stop } from '../selenium';
-
 
 const cli = meow(`
   Usage
@@ -16,8 +14,6 @@ const cli = meow(`
     --port [4444]    The port where the Selenium hub is listening.
     --retries [15]   Number of times to retry waiting for all nodes to connect.
                      There's a 1 second wait between retries.
-    --html path      Path to a folder that will be mounted inside the browser 
-                     nodes at /var/www/html. Will be resolved relative to cwd.
 `, {
   // @ts-ignore
   flags: {
@@ -28,17 +24,11 @@ const cli = meow(`
     retries: {
       type: 'number',
       default: 15
-    },
-    html: {
-      type: 'string',
-      default: path.join(__dirname, '../config/html')
     }
   }
 });
 
 (async () => {
-  const htmlPath = path.resolve(process.cwd(), cli.flags.html);
-
   switch (cli.input[0]) {
     case 'start':
       await stop();
@@ -46,8 +36,7 @@ const cli = meow(`
       await start(
         parseInt(cli.input[1] || '1', 10),
         parseInt(cli.flags.retries, 10),
-        parseInt(cli.flags.port, 10),
-        htmlPath
+        parseInt(cli.flags.port, 10)
       );
       break;
     case 'stop':
@@ -56,8 +45,7 @@ const cli = meow(`
     case 'debug':
       await debug(
         parseInt(cli.flags.retries, 10),
-        parseInt(cli.flags.port, 10),
-        htmlPath
+        parseInt(cli.flags.port, 10)
       );
       break;
     default:

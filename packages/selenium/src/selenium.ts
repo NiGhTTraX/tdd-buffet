@@ -69,7 +69,6 @@ async function up(
   configPath: string,
   services: string,
   port: number,
-  htmlPath: string,
   expectedNodes: number,
   retries: number
 ) {
@@ -77,7 +76,6 @@ async function up(
     await execa.command(`docker-compose -f ${configPath} up -d ${services}`, {
       env: {
         HUB_PORT: `${port}`,
-        HTML_PATH: `${htmlPath}`,
         COMPOSE_PROJECT_NAME
       },
       stdio: 'inherit'
@@ -93,17 +91,17 @@ async function up(
   }
 }
 
-export async function start(nodes: number, retries: number, port: number, htmlPath: string) {
+export async function start(nodes: number, retries: number, port: number) {
   await up(
     path.join(__dirname, 'config/docker-compose.yml'),
-    `--scale chrome=${nodes} --scale firefox=${nodes} hub`, port,
-    htmlPath,
-    nodes * 2,
-    retries
+    `--scale chrome=${nodes} --scale firefox=${nodes} hub`,
+    port,
+    nodes
+    * 2, retries
   );
 }
 
-export async function debug(retries: number, port: number, htmlPath: string) {
+export async function debug(retries: number, port: number) {
   try {
     console.log('Checking to see if hub is already ready');
     await waitForNodes(2, 1, port);
@@ -115,7 +113,6 @@ export async function debug(retries: number, port: number, htmlPath: string) {
       path.join(__dirname, 'config/docker-compose.yml'),
       'debug_hub',
       port,
-      htmlPath,
       2,
       retries
     );

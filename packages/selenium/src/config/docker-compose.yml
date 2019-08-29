@@ -11,7 +11,6 @@ services:
       - /dev/urandom:/dev/random
     volumes:
       - /dev/shm:/dev/shm
-      - html:/var/www/html
 
   hub:
     extends:
@@ -24,7 +23,6 @@ services:
     image: selenium/node-chrome:3.141.59-neon
     volumes:
       - /dev/shm:/dev/shm
-      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=hub
@@ -33,7 +31,6 @@ services:
     image: selenium/node-firefox:3.141.59-neon
     volumes:
       - /dev/shm:/dev/shm
-      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=hub
@@ -53,7 +50,6 @@ services:
     image: "selenium/node-chrome-debug:3.141.59-neon"
     volumes:
       - /dev/shm:/dev/shm
-      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=debug_hub
@@ -65,21 +61,12 @@ services:
     image: "selenium/node-firefox-debug:3.141.59-neon"
     volumes:
       - /dev/shm:/dev/shm
-      - html:/var/www/html
     environment:
       - HUB_PORT=4444
       - HUB_HOST=debug_hub
       - SE_OPTS=-debug
     ports:
       - '5901:5900' # VNC
-
-volumes:
-  html:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ${HTML_PATH}
 
 networks:
   default:

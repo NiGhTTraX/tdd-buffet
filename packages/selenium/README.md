@@ -65,16 +65,6 @@ docker-compose up -d
 ![network](./network.png)
 
 
-## Mount files inside the nodes
-You can mount files inside the node containers at `/var/ww/html` using the `--html` option:
-
-```sh
-npx @tdd-buffet/selenium start --html my-host-dir
-```
-
-The path is resolved relative to the current working directory.
-
-
 ## Stop everything
 
 ```sh
