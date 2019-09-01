@@ -27,6 +27,7 @@
     "prepublishOnly": "yarn run build && yarn run package"
   },
   "dependencies": {
+    "@jest/types": "~24.9.0",
     "@types/chai": "~4.2.0",
     "@types/fs-extra": "~8.0.0",
     "@types/istanbul-lib-coverage": "~2.0.1",
