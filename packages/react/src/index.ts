@@ -80,6 +80,8 @@ export function unmount() {
   ReactDOM.unmountComponentAtNode(componentContainer);
 }
 
+export type Selector = string | JQuery | HTMLElement;
+
 /**
  * Simulate a left click.
  *
@@ -94,7 +96,7 @@ export function unmount() {
  * click($component.find('button')[2])
  * ```
  */
-export function click(selector: string | JQuery | HTMLElement) {
+export function click(selector: Selector) {
   fireEvent.click(getElement(selector));
 }
 
@@ -113,14 +115,14 @@ export function click(selector: string | JQuery | HTMLElement) {
  * change($component.find('input')[2], 'foobar')
  * ```
  */
-export function change(selector: string | JQuery | HTMLElement, value: string) {
+export function change(selector: Selector, value: string) {
   fireEvent.change(getElement(selector), { target: { value } });
 }
 
 /**
  * Get the first element that matches the selector from the currently rendered component.
  */
-function getElement(selector: string | JQuery | HTMLElement) {
+function getElement(selector: Selector) {
   if (typeof selector === 'string') {
     return getJQueryContainer().find(selector)[0];
   }
