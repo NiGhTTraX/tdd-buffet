@@ -30,7 +30,7 @@
     "prepublishOnly": "yarn run build"
   },
   "peerDependencies": {
-    "tdd-buffet": "^0.7.1"
+    "tdd-buffet": "^0.8.1"
   },
   "dependencies": {
     "@mugshot/webdriverio": "~1.1.2",
