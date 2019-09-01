@@ -1,8 +1,8 @@
-import $ from 'jquery';
-import ReactDOM from 'react-dom';
-import { ReactElement } from 'react';
-import waitForExpect from 'wait-for-expect';
 import { fireEvent } from '@testing-library/dom';
+import $ from 'jquery';
+import { ReactElement } from 'react';
+import ReactDOM from 'react-dom';
+import waitForExpect from 'wait-for-expect';
 
 let componentContainer: HTMLDivElement;
 
@@ -27,7 +27,7 @@ function getJQueryContainer() {
  * await wait($container => $container.text() === 'foobar');
  * ```
  */
-export function wait(cb: ($container: JQuery) => any, timeout = 1500) {
+export function wait(cb: ($container: JQuery<HTMLElement>) => any, timeout = 1500) {
   return waitForExpect(() => {
     const result = cb(getJQueryContainer());
 
@@ -55,7 +55,7 @@ export function wait(cb: ($container: JQuery) => any, timeout = 1500) {
  * $render(<MyComponent foo="baz" />, true); // will cause the component to receive new props
  * ```
  */
-export function $render(element: ReactElement<any>, rerender = false): JQuery {
+export function $render(element: ReactElement<any>, rerender = false): JQuery<HTMLElement> {
   if (!rerender) {
     // Tidy up the document in case users want to inspect it.
     if (componentContainer) {
@@ -80,7 +80,7 @@ export function unmount() {
   ReactDOM.unmountComponentAtNode(componentContainer);
 }
 
-export type Selector = string | JQuery | HTMLElement;
+export type Selector = string | HTMLElement | JQuery<HTMLElement>;
 
 /**
  * Simulate a left click.
