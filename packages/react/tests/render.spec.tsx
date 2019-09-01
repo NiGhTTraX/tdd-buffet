@@ -1,5 +1,5 @@
 /* eslint-disable react/no-multi-comp */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { describe, it } from '../../tdd-buffet/src/suite/node';
 import { expect } from '../../tdd-buffet/src/suite/expect';
@@ -12,6 +12,21 @@ describe('$render', () => {
     $render(<Component />);
 
     expect(Component.rendered).to.be.true;
+  });
+
+  it('should render a component built with hooks', () => {
+    const HookyComponent = () => {
+      const [wtf, setWtf] = useState(false);
+      useEffect(() => { setWtf(true); }, []);
+
+      return <button type="button" onClick={() => setWtf(true)}>
+        {wtf ? 'wtf' : 'bbq'}
+      </button>;
+    };
+
+    const $component = $render(<HookyComponent />);
+
+    expect($component.text()).to.equal('bbq');
   });
 
   it('should render a component with props', () => {
