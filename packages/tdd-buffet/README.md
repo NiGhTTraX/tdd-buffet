@@ -36,8 +36,6 @@ describe('Node suite', () => {
 });
 ```
 
-The `expect` assertion helper is [Chai](https://www.chaijs.com/).
-
 ### Create a GUI test
 
 ```typescript
@@ -52,7 +50,33 @@ describe('Gui suite', () => {
 
 The suite automatically connects to a running Selenium server (see the [selenium package](../selenium) on how to start one) and gives you a [WebdriverIO](https://webdriver.io) client. Browser name and Selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
 
-#### Coverage
+### Assertions
+
+You can choose between [jest's](https://jestjs.io/docs/en/expect) builtin assertions or [chai's](https://www.chaijs.com/) assertions.
+
+```typescript
+import { describe, it } from 'tdd-buffet/suite/node';
+import { expect as chaiExpect } from 'tdd-buffet/expect/chai';
+import { expect as jestExpect } from 'tdd-buffet/expect/jest';
+
+describe('Expect', () => {
+  describe('chai', () => {
+    it('should compare things', () => {
+      chaiExpect(1).to.equal(1);
+      chaiExpect({ foo: 'bar' }).to.deep.equal({ foo: 'bar' });
+    });
+  });
+
+  describe('jest', () => {
+    it('should compare things', () => {
+      jestExpect(1).toEqual(1);
+      jestExpect({ foo: 'bar' }).toEqual({ foo: 'bar' });
+    });
+  });
+});
+```
+
+### Coverage
 
 You can pass the `--coverage` option to generate coverage with the options specified in the Jest config.
 
