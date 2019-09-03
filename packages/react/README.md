@@ -18,7 +18,7 @@ npm install @tdd-buffet/react
 
 ```typescript jsx
 import React from 'react';
-import { expect } from 'tdd-buffet/suite/expect';
+import { expect } from 'tdd-buffet/suite/chai';
 import { $render } from '@tdd-buffet/react';
 
 const $component = $render(<span>foobar</span>);
@@ -58,7 +58,7 @@ Note that React doesn't guarantee that a render happens synchronously so it's sa
 
 ```typescript jsx
 import React from 'react';
-import { expect } from 'tdd-buffet/suite/expect';
+import { expect } from 'tdd-buffet/suite/chai';
 import { $render, wait, click } from '@tdd-buffet/react';
 
 class MyComponent extends React.Component {

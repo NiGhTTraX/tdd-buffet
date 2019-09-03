@@ -1,5 +1,5 @@
+import { expect } from 'tdd-buffet/expect/chai';
 import { beforeEach, bindBrowser, Browser, describe, it, setViewportSize } from '../src/suite/gui';
-import { expect } from '../../tdd-buffet/src/suite/expect';
 
 describe('Gui suite', () => {
   beforeEach(async browser => {

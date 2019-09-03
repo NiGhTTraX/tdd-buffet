@@ -1,5 +1,5 @@
+import { expect } from 'tdd-buffet/expect/chai';
 import { after, afterEach, before, beforeEach, describe, it } from '../src/suite/node';
-import { expect } from '../../tdd-buffet/src/suite/expect';
 
 describe('Node hooks', () => {
   let count = 0;

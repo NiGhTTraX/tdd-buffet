@@ -1,5 +1,5 @@
+import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from '../src/suite/node';
-import { expect } from '../../tdd-buffet/src/suite/expect';
 
 
 describe('Node suite', () => {
