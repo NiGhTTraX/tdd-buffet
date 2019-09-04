@@ -36,8 +36,8 @@
     "execa": "~2.0.3",
     "fs-extra": "~8.1.0",
     "istanbul-lib-coverage": "~2.0.5",
-    "jest": "^24.8.0",
-    "jest-runtime": "^24.9.0",
+    "jest": "~24.9.0",
+    "jest-runtime": "~24.9.0",
     "meow": "~5.0.0",
     "ts-jest": "~24.0.2",
     "webdriverio": "~5.12.0"
