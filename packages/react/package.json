@@ -33,7 +33,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@testing-library/dom": "~6.1.0",
+    "@testing-library/dom": "~6.2.0",
     "@types/jquery": "~3.3.30",
     "jquery": "~3.4.1",
     "wait-for-expect": "~2.0.0"
