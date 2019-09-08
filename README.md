@@ -4,7 +4,7 @@
 
 ----
 
-This is a collection of libraries and tools extracted from my personal open source projects. You can mix and match as little or as much as you like from the project, and if you have any feature requests or suggestions for improvements please open an issue/PR.
+This is an opinionated collection of libraries and tools for writing tests and enabling TDD. You can mix and match as little or as much as you like from the project, and if you have any feature requests or suggestions for improvements please open an issue/PR.
 
 
 ### Today's menu
