@@ -15,10 +15,10 @@ This is a collection of libraries and tools extracted from my personal open sour
       - [Jest](./packages/tdd-buffet/README.md#jest)
 - Main courses
     - [Testing](./packages/tdd-buffet/README.md#testing)
-      - [Run the tests](./packages/tdd-buffet/README.md#run-the-tests)
       - [Create a Node test](./packages/tdd-buffet/README.md#create-a-node-test)
       - [Create a GUI test](./packages/tdd-buffet/README.md#create-a-gui-test)
       - [Assertions](./packages/tdd-buffet/README.md#assertions)
+      - [Run the tests](./packages/tdd-buffet/README.md#run-the-tests)
 - Specials
     - [Merge coverage from node and GUI tests](./packages/tdd-buffet/README.md#coverage)
 - Side dishes

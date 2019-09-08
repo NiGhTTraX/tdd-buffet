@@ -15,14 +15,6 @@ npm install tdd-buffet
 
 This package exposes both a way to define tests and a way to run them. The current test runner is [Jest](https://jestjs.io).
 
-### Run the tests
-
-```sh
-npx tdd-buffet test
-```
-
-This will run all the tests matched by the default [Jest config](#jest). You can pass your own config through the `--config` option.
-
 ### Create a Node test
 
 ```typescript
@@ -75,6 +67,14 @@ describe('Expect', () => {
   });
 });
 ```
+
+### Run the tests
+
+```sh
+npx tdd-buffet test
+```
+
+This will run all the tests matched by the default [Jest config](#jest). You can pass your own config through the `--config` option.
 
 ### Coverage
 
