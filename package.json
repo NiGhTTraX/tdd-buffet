@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@nighttrax/eslint-config-tsx": "~3.0.0",
-    "@typescript-eslint/eslint-plugin": "~2.1.0",
+    "@typescript-eslint/eslint-plugin": "~2.2.0",
     "codecov": "~3.5.0",
     "eslint": "~6.3.0",
     "eslint-plugin-import": "~2.18.2",
