@@ -83,7 +83,7 @@ export function unmount() {
 export type Selector = string | HTMLElement | JQuery<HTMLElement>;
 
 /**
- * Simulate a left click.
+ * Simulate a left click. Can be used to toggle checkboxes/radios.
  *
  * @param selector If it's a string, the first element identified
  *   by this will receive the event. If it's a jQuery collection
@@ -92,6 +92,8 @@ export type Selector = string | HTMLElement | JQuery<HTMLElement>;
  * @example
  * ```
  * click('button')
+ * click('input[type=checkbox]')
+ * click('input[type=radio]')
  * click($component.find('button.primary'))
  * click($component.find('button')[2])
  * ```

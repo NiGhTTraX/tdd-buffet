@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { describe, it } from 'tdd-buffet/suite/node';
 import { $render, change, click } from '@tdd-buffet/react';
+import * as React from 'react';
 import Mock from 'strong-mock';
+import { describe, it } from 'tdd-buffet/suite/node';
 
 describe('Firing events', () => {
   it('click', () => {
@@ -33,6 +33,39 @@ describe('Firing events', () => {
     const $component = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
 
     click($component.find('button')[0]);
+
+    cb.verifyAll();
+  });
+
+  it('click.checkbox.check', () => {
+    const cb = new Mock<(s: boolean) => void>();
+    cb.when(c => c(true)).returns(undefined);
+
+    $render(<input type="checkbox" onChange={e => cb.stub(e.currentTarget.checked)} />);
+
+    click('input');
+
+    cb.verifyAll();
+  });
+
+  it('click.checkbox.uncheck', () => {
+    const cb = new Mock<(s: boolean) => void>();
+    cb.when(c => c(false)).returns(undefined);
+
+    $render(<input type="checkbox" checked onChange={e => cb.stub(e.currentTarget.checked)} />);
+
+    click('input');
+
+    cb.verifyAll();
+  });
+
+  it('click.radio.check', () => {
+    const cb = new Mock<(s: boolean) => void>();
+    cb.when(c => c(true)).returns(undefined);
+
+    $render(<input type="radio" onChange={e => cb.stub(e.currentTarget.checked)} />);
+
+    click('input');
 
     cb.verifyAll();
   });
