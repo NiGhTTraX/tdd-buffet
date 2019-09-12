@@ -18,7 +18,10 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
-  "bin": "./bin/index.js",
+  "bin": {
+    "tdd-buffet": "./bin/index.js",
+    "jest": "./bin/jest.js"
+  },
   "scripts": {
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
