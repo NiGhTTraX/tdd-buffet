@@ -1,9 +1,9 @@
-import 'jest';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 import { Config } from '@jest/types';
-import execa from 'execa';
-import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
 import { pathExistsSync } from 'fs-extra';
+import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
+import { run as runJest } from 'jest';
+import path from 'path';
 
 /* eslint-disable no-underscore-dangle */
 declare global {
@@ -131,30 +131,16 @@ function registerSourceMap(filename: string) {
   jest.addCoverageFor(filename);
 }
 
-export type JestOptions = {
-  coverage: boolean,
-  maxWorkers: string,
-  runInBand: boolean
-};
-
 /* istanbul ignore next because this is hard to run through jest because it is running jest */
-export async function run(configPath: string, { coverage, maxWorkers, runInBand }: JestOptions) {
-  let command = `jest --config ${configPath}`;
-
-  if (coverage) {
-    command += ' --coverage';
+export async function run(argv: string[]) {
+  // Push our config if there isn't one specified.
+  if (!argv.includes('--config')) {
+    argv.push('--config', path.join(__dirname, './config/jest.config.js'));
   }
 
-  if (runInBand) {
-    command += ' --runInBand';
-  } else {
-    command += ` --maxWorkers=${maxWorkers}`;
+  if (argv.includes('--coverage')) {
+    process.env.TDD_BUFFET_COVERAGE = '1';
   }
 
-  await execa.command(command, {
-    stdio: 'inherit',
-    env: {
-      TDD_BUFFET_COVERAGE: coverage ? 'true' : undefined
-    }
-  });
+  return runJest(argv);
 }
