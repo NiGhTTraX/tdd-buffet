@@ -26,6 +26,8 @@ This is an opinionated collection of libraries and tools for writing tests and e
       - [Render components](./packages/react/README.md#render-components)
       - [Fire events](./packages/react/README.md#fire-events)
       - [Wait for conditions](./packages/react/README.md#wait-for-conditions)
+      - [Unmount](./packages/react/README.md#unmount)
+      - [Rerender](./packages/react/README.md#rerender)
     - [Visual testing](./packages/visual)
       - [Create a visual test](./packages/visual/README.md#create-a-visual-test)
 - Desserts

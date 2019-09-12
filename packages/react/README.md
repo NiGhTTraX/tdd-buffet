@@ -78,3 +78,33 @@ class MyComponent extends React.Component {
   await wait($container => expect($container.text()).to.equal('done'));
 })();
 ```
+
+
+## Unmount
+
+If your component has cleanup logic e.g. clearing timers in `componentWillUnmount` you can check them in your tests by manually unmounting the component.
+
+```typescript jsx
+import React from 'react';
+import { expect } from 'tdd-buffet/suite/chai';
+
+import { $render, unmount } from '@tdd-buffet/react';
+
+const $container = $render(<span>foobar</span>);
+unmount();
+
+expect($container.text()).to.equal('');
+```
+
+
+## Rerender
+
+Rerendering a component with new props can be useful if you want to check that it reacts to the new props e.g. `getDerivedStateFromProps`.
+
+```typescript jsx
+import React from 'react';
+import { $render, $rerender } from '@tdd-buffet/react';
+
+$render(<span>foobar</span>);
+$rerender(<span>potato</span>);
+```
