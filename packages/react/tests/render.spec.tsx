@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from '../../tdd-buffet/src/suite/node';
-import { $render, unmount } from '../src';
+import { $render, $rerender, unmount } from '../src';
 
 describe('$render', () => {
   it('should render a component', () => {
@@ -57,7 +57,7 @@ describe('$render', () => {
     rerendered = false;
 
     $render(<Rerenderable />);
-    $render(<Rerenderable />, true);
+    $rerender(<Rerenderable />);
 
     expect(rerendered).to.be.true;
   });
@@ -66,7 +66,7 @@ describe('$render', () => {
     rerendered = false;
 
     $render(<Rerenderable />);
-    $render(<Rerenderable />, false);
+    $render(<Rerenderable />);
 
     expect(rerendered).to.be.false;
   });
@@ -75,7 +75,7 @@ describe('$render', () => {
     const Foo = (props: { done?: boolean }) => (props.done ? <span>done</span> : null);
 
     const $component = $render(<Foo />);
-    $render(<Foo done />, true);
+    $rerender(<Foo done />,);
 
     expect($component.text()).to.equal('done');
   });
@@ -103,5 +103,14 @@ describe('$render', () => {
     unmount();
 
     expect(unmounted).to.be.true;
+  });
+
+  it('should recreate container after unmounting', () => {
+    const $container = $render(<span>bar</span>);
+    unmount();
+    const $newContainer = $render(<span>baz</span>);
+
+    expect($container.text()).to.be.empty;
+    expect($newContainer.text()).to.equal('baz');
   });
 });

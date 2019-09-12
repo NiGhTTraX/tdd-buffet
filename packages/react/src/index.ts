@@ -40,32 +40,33 @@ export function wait(cb: ($container: JQuery<HTMLElement>) => any, timeout = 150
 /**
  * Render the given component in a freshly created DOM container.
  *
- * @param element
- * @param rerender If `true` the target DOM container won't be cleared before rendering.
- *   Useful for sending new props to an already rendered component.
- *
  * @example
  * ```
  * $render(<span>foobar<span>);
  * ```
+ */
+export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
+  if (componentContainer) {
+    document.body.removeChild(componentContainer);
+  }
+
+  componentContainer = document.createElement('div');
+  document.body.appendChild(componentContainer);
+
+  ReactDOM.render(element, componentContainer);
+
+  return getJQueryContainer();
+}
+
+/**
+ * Render the same component with different props.
  *
  * @example
  * ```
  * $render(<MyComponent foo="bar" />);
- * $render(<MyComponent foo="baz" />, true); // will cause the component to receive new props
- * ```
+ * $rerender(<MyComponent foo="potato" />);
  */
-export function $render(element: ReactElement<any>, rerender = false): JQuery<HTMLElement> {
-  if (!rerender) {
-    // Tidy up the document in case users want to inspect it.
-    if (componentContainer) {
-      document.body.removeChild(componentContainer);
-    }
-
-    componentContainer = document.createElement('div');
-    document.body.appendChild(componentContainer);
-  }
-
+export function $rerender(element: ReactElement<any>): JQuery<HTMLElement> {
   ReactDOM.render(element, componentContainer);
 
   return getJQueryContainer();
