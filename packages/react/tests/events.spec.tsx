@@ -20,9 +20,9 @@ describe('Firing events', () => {
     const cb = new Mock<() => void>();
     cb.when(c => c()).returns(undefined);
 
-    const $component = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
+    const $container = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
 
-    click($component.find('button'));
+    click($container.find('button'));
 
     cb.verifyAll();
   });
@@ -31,14 +31,14 @@ describe('Firing events', () => {
     const cb = new Mock<() => void>();
     cb.when(c => c()).returns(undefined);
 
-    const $component = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
+    const $container = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
 
-    click($component.find('button')[0]);
+    click($container.find('button')[0]);
 
     cb.verifyAll();
   });
 
-  it('click non-existent selector', () => {
+  it('selector.non-existent query', () => {
     $render(<span />);
 
     expect(() => {
@@ -46,7 +46,7 @@ describe('Firing events', () => {
     }).to.throw('Element does not exist');
   });
 
-  it('click non-existent dom', () => {
+  it('selector.non-existent dom', () => {
     const $container = $render(<span />);
 
     expect(() => {
@@ -54,7 +54,7 @@ describe('Firing events', () => {
     }).to.throw('Element does not exist');
   });
 
-  it('click non-existent jQuery', () => {
+  it('selector.non-existent jQuery', () => {
     const $container = $render(<span />);
 
     expect(() => {
@@ -62,7 +62,7 @@ describe('Firing events', () => {
     }).to.throw('Element does not exist');
   });
 
-  it('click multiple selector', () => {
+  it('selector.multiple query', () => {
     const cb = new Mock<(x: number) => void>();
     cb.when(c => c(1)).returns(undefined);
 
@@ -76,7 +76,7 @@ describe('Firing events', () => {
     cb.verifyAll();
   });
 
-  it('click multiple jQuery', () => {
+  it('selector.multiple jQuery', () => {
     const cb = new Mock<(x: number) => void>();
     cb.when(c => c(1)).returns(undefined);
 
