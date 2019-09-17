@@ -62,6 +62,34 @@ describe('Firing events', () => {
     }).to.throw('Element does not exist');
   });
 
+  it('click multiple selector', () => {
+    const cb = new Mock<(x: number) => void>();
+    cb.when(c => c(1)).returns(undefined);
+
+    $render(<>
+      <button type="button" onClick={() => cb.stub(1)}>click me</button>
+      <button type="button" onClick={() => cb.stub(2)}>click me</button>
+      </>);
+
+    click('button');
+
+    cb.verifyAll();
+  });
+
+  it('click multiple jQuery', () => {
+    const cb = new Mock<(x: number) => void>();
+    cb.when(c => c(1)).returns(undefined);
+
+    const $container = $render(<>
+      <button type="button" onClick={() => cb.stub(1)}>click me</button>
+      <button type="button" onClick={() => cb.stub(2)}>click me</button>
+      </>);
+
+    click($container.find('button'));
+
+    cb.verifyAll();
+  });
+
   it('click.checkbox.check', () => {
     const cb = new Mock<(s: boolean) => void>();
     cb.when(c => c(true)).returns(undefined);
