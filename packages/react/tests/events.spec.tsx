@@ -1,6 +1,7 @@
 import { $render, change, click } from '@tdd-buffet/react';
 import * as React from 'react';
 import Mock from 'strong-mock';
+import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
 
 describe('Firing events', () => {
@@ -35,6 +36,30 @@ describe('Firing events', () => {
     click($component.find('button')[0]);
 
     cb.verifyAll();
+  });
+
+  it('click non-existent selector', () => {
+    $render(<span />);
+
+    expect(() => {
+      click('non-existent');
+    }).to.throw('Element does not exist');
+  });
+
+  it('click non-existent dom', () => {
+    const $container = $render(<span />);
+
+    expect(() => {
+      click($container.find('non-existent')[0]);
+    }).to.throw('Element does not exist');
+  });
+
+  it('click non-existent jQuery', () => {
+    const $container = $render(<span />);
+
+    expect(() => {
+      click($container.find('non-existent'));
+    }).to.throw('Element does not exist');
   });
 
   it('click.checkbox.check', () => {

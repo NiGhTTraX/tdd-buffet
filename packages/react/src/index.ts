@@ -126,9 +126,19 @@ export function change(selector: Selector, value: string) {
  * Get the first element that matches the selector from the currently rendered component.
  */
 function getElement(selector: Selector) {
+  let element: HTMLElement;
+
   if (typeof selector === 'string') {
-    return getJQueryContainer().find(selector)[0];
+    // eslint-disable-next-line prefer-destructuring
+    element = getJQueryContainer().find(selector)[0];
+  } else {
+    // eslint-disable-next-line prefer-destructuring
+    element = $(selector)[0];
   }
 
-  return $(selector)[0];
+  if (!element) {
+    throw new Error('Element does not exist');
+  }
+
+  return element;
 }
