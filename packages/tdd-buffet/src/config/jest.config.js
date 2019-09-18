@@ -10,7 +10,7 @@ module.exports = {
   moduleLoader: path.join(__dirname, './jest-runtime.js'),
 
   rootDir: process.cwd(),
-  testMatch: ['**/tests/**/*.spec.{ts,tsx}'],
+  testMatch: ['**/*.(spec|test).{ts,tsx}'],
   moduleNameMapper: compilerOptions.paths ? {
     ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' })
   } : null,
