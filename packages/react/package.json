@@ -43,7 +43,7 @@
     "@types/react-dom": "~16.9.0",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
-    "react-mock-component": "~1.0.1",
+    "react-mock-component": "~2.0.0",
     "strong-mock": "~3.0.0",
     "typescript": "~3.6.0"
   }
