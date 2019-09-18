@@ -43,6 +43,12 @@ describe('$render', () => {
     expect($component.text()).to.equal('foobar');
   });
 
+  it('should wrap the container, not the component', () => {
+    const $component = $render(<span>foobar</span>);
+
+    expect($component.html()).to.equal('<span>foobar</span>');
+  });
+
   let rerendered;
 
   class Rerenderable extends React.Component {

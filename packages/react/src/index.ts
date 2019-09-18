@@ -40,9 +40,13 @@ export function wait(cb: ($container: JQuery<HTMLElement>) => any, timeout = 150
 /**
  * Render the given component in a freshly created DOM container.
  *
+ * @returns A jQuery wrapper over the container (not the component itself).
+ *
  * @example
  * ```
- * $render(<span>foobar<span>);
+ * const $container = $render(<span>foobar<span>);
+ * console.log($container.text()) // foobar
+ * console.log($container.html()) // <span>foobar</span>
  * ```
  */
 export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
