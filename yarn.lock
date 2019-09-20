@@ -1487,10 +1487,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@~6.2.0":
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.2.0.tgz#6eeee738af12a2f02e74dc8cbadeaed1fc4223e5"
-  integrity sha512-YaaoAIDTNV8AfC19XLa6KNeBB5KuSxWYPrgYN1vBu1i+czQlfWJSCS0A3yd2V3BUH9di9C1BD+7OoyVBpZCh2Q==
+"@testing-library/dom@~6.3.0":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.3.0.tgz#27376ddb61094cb43177af4c5def17aaedddd99b"
+  integrity sha512-CNtBr4JycDQznfpSK5oID5uhJhkmA2TH13gbyFNyaX+BFaOUzC6PQGLcVDvzxOm5EN1gvu4B8Oe8e8a3CfUIGw==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@sheerun/mutationobserver-shim" "^0.3.2"
