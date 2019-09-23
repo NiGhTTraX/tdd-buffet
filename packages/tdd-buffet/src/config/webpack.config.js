@@ -14,7 +14,7 @@ const babelLoader = {
     },
     configFile: false,
     plugins: [[
-      'istanbul', {
+      require.resolve('babel-plugin-istanbul'), {
         compact: false,
         exclude: [],
         useInlineSourceMaps: false
