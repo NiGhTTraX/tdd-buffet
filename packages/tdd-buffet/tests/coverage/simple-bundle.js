@@ -2,12 +2,12 @@
 
 /* istanbul ignore next */
 var cov_1mrzpmafei = function () {
-  var path = "/usr/src/app/tests/coverage/simple.ts";
+  var path = "/usr/src/app/packages/tdd-buffet/tests/coverage/simple.ts";
   var hash = "e8a7a8a363ddb9f7826748c77eafcfb82841b0fe";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/usr/src/app/tests/coverage/simple.ts",
+    path: "/usr/src/app/packages/tdd-buffet/tests/coverage/simple.ts",
     statementMap: {
       "0": {
         start: {

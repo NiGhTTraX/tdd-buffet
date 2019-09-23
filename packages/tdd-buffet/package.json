@@ -24,7 +24,8 @@
     "clean": "rm -rf ./dist",
     "package": "cp -r README.md package.json src/config ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn run build && yarn run package"
+    "prepublishOnly": "yarn run build && yarn run package",
+    "webpack": "COVERAGE=1 webpack --config ./src/config/webpack.config.js ./tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
   },
   "dependencies": {
     "@babel/core": "~7.6.0",
@@ -51,6 +52,7 @@
     "@types/meow": "~5.0.0",
     "@types/node": "~12.7.0",
     "strong-mock": "~3.0.0",
-    "typescript": "~3.6.0"
+    "typescript": "~3.6.0",
+    "webpack-cli": "~3.3.9"
   }
 }

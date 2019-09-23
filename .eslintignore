@@ -1,4 +1,4 @@
 node_modules
 dist
 **/*.d.ts
-tests/coverage/**/*
+**/tests/coverage/**/*

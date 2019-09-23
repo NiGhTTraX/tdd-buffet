@@ -97,13 +97,13 @@
 
 
 /* istanbul ignore next */
-var cov_1o5bouztyl = function () {
-  var path = "/home/nightcrawler/github/tdd-buffet/tests/coverage/webpack.ts";
-  var hash = "e52957a8107bf0be8c60273762c5209cc884ae4e";
+var cov_1ni36m0j7w = function () {
+  var path = "/home/nightcrawler/github/tdd-buffet/packages/tdd-buffet/tests/coverage/webpack.ts";
+  var hash = "f76a225473a98ad05c2acc323895853efb8cd3cb";
   var global = new Function("return this")();
   var gcv = "__coverage__";
   var coverageData = {
-    path: "/home/nightcrawler/github/tdd-buffet/tests/coverage/webpack.ts",
+    path: "/home/nightcrawler/github/tdd-buffet/packages/tdd-buffet/tests/coverage/webpack.ts",
     statementMap: {
       "0": {
         start: {
@@ -184,7 +184,7 @@ var cov_1o5bouztyl = function () {
     },
     b: {},
     _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-    hash: "e52957a8107bf0be8c60273762c5209cc884ae4e"
+    hash: "f76a225473a98ad05c2acc323895853efb8cd3cb"
   };
   var coverage = global[gcv] || (global[gcv] = {});
 
@@ -197,22 +197,22 @@ var cov_1o5bouztyl = function () {
 
 function doTheFoo() {
   /* istanbul ignore next */
-  cov_1o5bouztyl.f[0]++;
+  cov_1ni36m0j7w.f[0]++;
   let x =
   /* istanbul ignore next */
-  (cov_1o5bouztyl.s[0]++, 0);
+  (cov_1ni36m0j7w.s[0]++, 0);
 
   /* istanbul ignore next */
-  cov_1o5bouztyl.s[1]++;
+  cov_1ni36m0j7w.s[1]++;
   x = x + 1;
 
   /* istanbul ignore next */
-  cov_1o5bouztyl.s[2]++;
+  cov_1ni36m0j7w.s[2]++;
   return x;
 }
 
 /* istanbul ignore next */
-cov_1o5bouztyl.s[3]++;
+cov_1ni36m0j7w.s[3]++;
 doTheFoo();
 
 /***/ })
