@@ -1,6 +1,10 @@
 const path = require('path');
 const { NoEmitOnErrorsPlugin, HotModuleReplacementPlugin } = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const postcssNormalize = require('postcss-normalize');
+const PostCssPresetEnv = require('postcss-preset-env');
+const PostCssFlexFixes = require('postcss-flexbugs-fixes');
 
 const babelLoader = {
   loader: require.resolve('babel-loader'),
@@ -35,6 +39,50 @@ const tsLoader = {
   }
 };
 
+/**
+ * Get a list of loaders to process styles.
+ *
+ * Always includes PostCSS and css-loader. In dev it will emit <style> tags,
+ * in prod it will emit a single CSS bundle.
+ *
+ * @param isProd
+ * @param customLoader If passed, we will add it at the end of the list.
+ */
+function getStyleLoaders(isProd, customLoader) {
+  return [
+    // Add <style> tags in dev, <link> in prod.
+    !isProd ? require.resolve('style-loader') : {
+      loader: MiniCssExtractPlugin.loader
+    }, {
+      loader: require.resolve('css-loader'),
+      options: {
+        sourceMap: true
+      }
+    }, {
+      loader: require.resolve('postcss-loader'),
+      options: {
+        ident: 'postcss',
+        plugins: () => [
+          PostCssFlexFixes,
+          PostCssPresetEnv({
+            autoprefixer: {
+              flexbox: 'no-2009'
+            },
+            stage: 3
+          }),
+          postcssNormalize()
+        ],
+        sourceMap: true
+      }
+    }, customLoader && {
+      loader: require.resolve(customLoader),
+      options: {
+        sourceMap: true
+      }
+    }
+  ].filter(Boolean);
+}
+
 module.exports = webpackEnv => {
   const isProd = webpackEnv === 'production';
 
@@ -66,10 +114,10 @@ module.exports = webpackEnv => {
         }, {
           test: /\.less$/,
           exclude: /node_modules/,
-          use: ['style-loader', 'css-loader', 'less-loader']
+          use: getStyleLoaders(isProd, 'less-loader')
         }, {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: getStyleLoaders()
         }]
     },
 
