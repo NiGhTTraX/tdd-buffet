@@ -38,6 +38,7 @@
     "lerna": "~3.16.0",
     "lint-staged": "~9.3.0",
     "ts-node": "~8.4.0",
-    "typescript": "~3.6.0"
+    "typescript": "~3.6.0",
+    "webpack-cli": "3.3.9"
   }
 }

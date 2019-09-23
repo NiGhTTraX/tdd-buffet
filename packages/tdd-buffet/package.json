@@ -27,20 +27,25 @@
     "prepublishOnly": "yarn run build && yarn run package"
   },
   "dependencies": {
+    "@babel/core": "~7.6.0",
     "@jest/types": "~24.9.0",
     "@types/chai": "~4.2.0",
     "@types/fs-extra": "~8.0.0",
     "@types/istanbul-lib-coverage": "~2.0.1",
     "@types/jest": "~24.0.18",
+    "babel-loader": "~8.0.6",
     "chai": "~4.2.0",
     "execa": "~2.0.3",
+    "fork-ts-checker-webpack-plugin": "~1.5.0",
     "fs-extra": "~8.1.0",
     "istanbul-lib-coverage": "~2.0.5",
     "jest": "~24.9.0",
     "jest-runtime": "~24.9.0",
     "meow": "~5.0.0",
     "ts-jest": "~24.1.0",
-    "webdriverio": "~5.13.0"
+    "ts-loader": "~6.1.2",
+    "webdriverio": "~5.13.0",
+    "webpack": "~4.40.2"
   },
   "devDependencies": {
     "@types/meow": "~5.0.0",
