@@ -13,6 +13,7 @@ This is an opinionated collection of libraries and tools for writing tests and e
     - [Configs](./packages/tdd-buffet/README.md#configs)
       - [TypeScript](./packages/tdd-buffet/README.md#typescript)
       - [Jest](./packages/tdd-buffet/README.md#jest)
+      - [Webpack](./packages/tdd-buffet/README.md#webpack)
 - Main courses
     - [Testing](./packages/tdd-buffet/README.md#testing)
       - [Create a Node test](./packages/tdd-buffet/README.md#create-a-node-test)
