@@ -4,7 +4,7 @@ module.exports = {
   ...baseConfig,
 
   forceCoverageMatch: [
-    '**/tests/coverage/**.ts',
-    '**/tests/coverage/**.tsx'
+    '**/tests/coverage/*.ts',
+    '**/tests/coverage/*.tsx'
   ]
 };
