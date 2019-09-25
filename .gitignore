@@ -5,6 +5,3 @@ results
 *.tsbuildinfo
 *.diff.png
 *.actual.png
-# We produce instrumented artifacts to check the coverage logic.
-**/coverage/*.js
-**/coverage/*.map
