@@ -3,7 +3,11 @@ const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const { compilerOptions } = require(path.join(process.cwd(), 'tsconfig'));
 
 module.exports = {
-  preset: 'ts-jest',
+  // Work around a quirk in how jest resolves the preset: it uses its own
+  // module resolution instead of Node's so it breaks in yarn workspaces.
+  // If we give it an absolute path then it will look for a `jest-preset.js`
+  // in that path.
+  preset: __dirname,
   testEnvironment: 'jsdom',
 
   // Our custom runtime that exposes a way to add coverage from external sources.
