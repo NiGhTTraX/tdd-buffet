@@ -12,7 +12,10 @@ const cli = meow(`
 (async () => {
   switch (cli.input[0]) {
     case 'test':
-      await run(process.argv.slice(2));
+      // [0] is the node executable
+      // [1] is this script
+      // [2] is the `test` command
+      await run(process.argv.slice(3));
       break;
     default:
       throw new Error('Unknown command');
