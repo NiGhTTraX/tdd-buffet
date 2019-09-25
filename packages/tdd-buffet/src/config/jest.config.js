@@ -1,6 +1,12 @@
 const path = require('path');
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const { compilerOptions } = require(path.join(process.cwd(), 'tsconfig'));
+const ts = require('typescript');
+
+const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
+const { config: configContent } = ts.readConfigFile(configName, ts.sys.readFile);
+const {
+  options: compilerOptions
+} = ts.parseJsonConfigFileContent(configContent, ts.sys, process.cwd());
 
 module.exports = {
   // Work around a quirk in how jest resolves the preset: it uses its own
@@ -14,9 +20,11 @@ module.exports = {
   moduleLoader: path.join(__dirname, './jest-runtime.js'),
 
   rootDir: process.cwd(),
-  testMatch: ['**/*.(spec|test).{ts,tsx}'],
   moduleNameMapper: compilerOptions.paths ? {
-    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/packages/' })
+    ...pathsToModuleNameMapper(compilerOptions.paths, {
+      // The prefix must have a trailing slash.
+      prefix: path.join(compilerOptions.baseUrl, '/')
+    })
   } : null,
   modulePathIgnorePatterns: ['dist'],
 
@@ -29,6 +37,7 @@ module.exports = {
   // Improves speed by 100% for visual tests.
   extraGlobals: ['Math'],
 
+  testMatch: ['**/*.(spec|test).{ts,tsx}'],
   collectCoverageFrom: [
     '**/src/**/*.{ts,tsx}',
     '!**/*.d.ts',
