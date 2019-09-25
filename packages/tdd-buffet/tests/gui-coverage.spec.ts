@@ -34,20 +34,4 @@ describe('Gui coverage', () => {
       ${content}
     `);
   });
-
-  it('should cover a bundle from our Webpack config', async browser => {
-    const content = await readFile(
-      path.join(__dirname, './coverage/webpack-bundle.js'),
-      { encoding: 'utf-8' }
-    );
-
-    await browser.url('about:blank');
-    await browser.execute(`
-      var div = document.createElement('div');
-      div.id = 'root';
-      document.body.appendChild(div);
-      
-      ${content}
-    `);
-  });
 });

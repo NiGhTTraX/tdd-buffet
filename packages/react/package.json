@@ -26,17 +26,32 @@
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "yarn run build",
+    "webpack": "COVERAGE=1 webpack --config ./src/config/webpack.config.js ./tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
   },
   "peerDependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
   "dependencies": {
+    "@babel/core": "~7.6.0",
     "@testing-library/dom": "~6.4.0",
     "@types/jquery": "~3.3.30",
+    "babel-loader": "~8.0.6",
+    "babel-plugin-istanbul": "~5.2.0",
+    "css-loader": "~3.2.0",
+    "fork-ts-checker-webpack-plugin": "~1.5.0",
     "jquery": "~3.4.1",
-    "wait-for-expect": "~3.0.0"
+    "less": "~3.10.3",
+    "less-loader": "~5.0.0",
+    "mini-css-extract-plugin": "~0.8.0",
+    "postcss-flexbugs-fixes": "~4.1.0",
+    "postcss-loader": "~3.0.0",
+    "postcss-normalize": "~8.0.1",
+    "postcss-preset-env": "~6.7.0",
+    "style-loader": "~1.0.0",
+    "wait-for-expect": "~3.0.0",
+    "webpack": "~4.41.0"
   },
   "devDependencies": {
     "@types/react": "~16.9.0",
@@ -45,6 +60,7 @@
     "react-dom": "~16.9.0",
     "react-mock-component": "~2.0.0",
     "strong-mock": "~3.0.0",
-    "typescript": "~3.6.0"
+    "typescript": "~3.6.0",
+    "webpack-cli": "~3.3.9"
   }
 }

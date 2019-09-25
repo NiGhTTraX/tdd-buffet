@@ -84,7 +84,7 @@ npx tdd-buffet test --runInBand tests/my-test.spec.tsx
 
 You can pass the `--coverage` option to generate coverage with the options specified in the Jest config.
 
-Moreover, the GUI tests will collect **coverage from within the browser**. This requires your code to be instrumented with [istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) and to be **transpiled in the same way Jest would do it**. The [Webpack config](#webpack) in this package takes care of everything for you.
+Moreover, the GUI tests will collect **coverage from within the browser**. This requires your code to be instrumented with [istanbul](https://github.com/istanbuljs/babel-plugin-istanbul) and to be **transpiled in the same way Jest would do it**. The [Webpack config](../react/README.md#webpack) in the react package takes care of everything for you.
 
 When you instrument the files make sure to do it from the **same path as your project** because the path will be injected into the coverage data and it will be used when creating the coverage report. If you're instrumenting the files inside a Docker container you can put them in `/usr/src/app` and `tdd-buffet` will map that path to Jest's `rootDir`.
 
@@ -108,16 +108,3 @@ module.exports = {
   ...baseConfig
 };
 ```
-
-
-### Webpack
-
-```js
-const baseConfig = require('tdd-buffet/config/webpack.config.js');
-
-module.exports = {
-  ...baseConfig
-}
-```
-
-Setting `COVERAGE=1` in your environment will instrument your code for coverage and is needed to [aggregate reports](#coverage).

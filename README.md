@@ -13,7 +13,6 @@ This is an opinionated collection of libraries and tools for writing tests and e
     - [Configs](./packages/tdd-buffet/README.md#configs)
       - [TypeScript](./packages/tdd-buffet/README.md#typescript)
       - [Jest](./packages/tdd-buffet/README.md#jest)
-      - [Webpack](./packages/tdd-buffet/README.md#webpack)
 - Main courses
     - [Testing](./packages/tdd-buffet/README.md#testing)
       - [Create a Node test](./packages/tdd-buffet/README.md#create-a-node-test)
@@ -23,12 +22,14 @@ This is an opinionated collection of libraries and tools for writing tests and e
 - Specials
     - [Merge coverage from node and GUI tests](./packages/tdd-buffet/README.md#coverage)
 - Side dishes
-    - [React testing](./packages/react)
+    - [Testing React apps](./packages/react/README.md#testing)
       - [Render components](./packages/react/README.md#render-components)
       - [Fire events](./packages/react/README.md#fire-events)
       - [Wait for conditions](./packages/react/README.md#wait-for-conditions)
       - [Unmount](./packages/react/README.md#unmount)
       - [Rerender](./packages/react/README.md#rerender)
+    - [Building React apps](./packages/react/README.md#building)
+      - [Webpack](./packages/react/README.md#webpack)
     - [Visual testing](./packages/visual)
       - [Create a visual test](./packages/visual/README.md#create-a-visual-test)
 - Desserts

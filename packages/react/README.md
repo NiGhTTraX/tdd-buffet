@@ -13,8 +13,9 @@
 npm install @tdd-buffet/react
 ```
 
+## Testing
 
-## Render components
+### Render components
 
 ```typescript jsx
 import React from 'react';
@@ -29,7 +30,7 @@ expect($component.text()).to.equal('foobar');
 The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
 
 
-## Fire events
+### Fire events
 
 The package exposes convenience methods for firing events targeted at elements inside the currently rendered component.
 
@@ -50,7 +51,7 @@ The methods are just wrappers over [testing-library/dom](https://github.com/test
 - `change`.
 
 
-## Wait for conditions
+### Wait for conditions
 
 If your component contains async logic like waiting for a promise or for a timer you can use the `wait` function to wait for a condition to be satisfied such as an element becoming visible.
 
@@ -80,7 +81,7 @@ class MyComponent extends React.Component {
 ```
 
 
-## Unmount
+### Unmount
 
 If your component has cleanup logic e.g. clearing timers in `componentWillUnmount` you can check them in your tests by manually unmounting the component.
 
@@ -97,7 +98,7 @@ expect($container.text()).to.equal('');
 ```
 
 
-## Rerender
+### Rerender
 
 Rerendering a component with new props can be useful if you want to check that it reacts to the new props e.g. `getDerivedStateFromProps`.
 
@@ -108,3 +109,19 @@ import { $render, $rerender } from '@tdd-buffet/react';
 $render(<span>foobar</span>);
 $rerender(<span>potato</span>);
 ```
+
+
+## Building
+
+### Webpack
+
+
+```js
+const baseConfig = require('tdd-buffet/config/webpack.config.js');
+
+module.exports = {
+  ...baseConfig
+}
+```
+
+Setting `COVERAGE=1` in your environment will instrument your code for coverage and is needed to [aggregate reports](../tdd-buffet/README.md#coverage).
