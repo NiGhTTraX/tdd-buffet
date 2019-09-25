@@ -14,7 +14,7 @@
     "selenium": "yarn run ts-node packages/selenium/src/bin/index.ts start --port 4444 --retries 30",
     "selenium:debug": "yarn run ts-node packages/selenium/src/bin/index.ts debug --port 3333",
     "selenium:stop": "yarn run ts-node packages/selenium/src/bin/index.ts stop",
-    "report-coverage": "codecov"
+    "report-coverage": "codecov -f \"packages/**/coverage-final.json\""
   },
   "husky": {
     "hooks": {
