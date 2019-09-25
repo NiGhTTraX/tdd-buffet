@@ -23,6 +23,9 @@
     "dist"
   ],
   "scripts": {
+    "test": "yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
+    "pretest": "yarn run webpack",
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
     "compile": "tsc -p tsconfig.build.json",
