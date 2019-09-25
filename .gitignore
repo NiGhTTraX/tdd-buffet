@@ -5,5 +5,6 @@ results
 *.tsbuildinfo
 *.diff.png
 *.actual.png
-# We produce webpack bundles and we version the JS, but we want to ignore the source maps.
-*.map
+# We produce instrumented artifacts to check the coverage logic.
+**/coverage/*.js
+**/coverage/*.map
