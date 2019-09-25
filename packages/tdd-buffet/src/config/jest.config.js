@@ -6,7 +6,7 @@ const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
 const { config: configContent } = ts.readConfigFile(configName, ts.sys.readFile);
 const {
   options: compilerOptions
-} = ts.parseJsonConfigFileContent(configContent, ts.sys, process.cwd());
+} = ts.parseJsonConfigFileContent(configContent, ts.sys, path.dirname(configName));
 
 module.exports = {
   // Work around a quirk in how jest resolves the preset: it uses its own
