@@ -9,7 +9,9 @@ module.exports = {
   'plugins': ['import'],
 
   'rules': {
-    'import/no-extraneous-dependencies': 'error'
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: false
+    }]
   },
 
   'settings': {
