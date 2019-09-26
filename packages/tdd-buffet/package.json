@@ -43,12 +43,12 @@
     "meow": "~5.0.0",
     "ts-jest": "~24.1.0",
     "ts-loader": "~6.1.2",
+    "typescript": "~3.6.0",
     "webdriverio": "~5.13.0"
   },
   "devDependencies": {
     "@types/meow": "~5.0.0",
     "@types/node": "~12.7.0",
-    "strong-mock": "~3.0.0",
-    "typescript": "~3.6.0"
+    "strong-mock": "~3.0.0"
   }
 }
