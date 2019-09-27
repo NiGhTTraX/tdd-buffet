@@ -1,4 +1,4 @@
-import { $render, change, click } from '@tdd-buffet/react';
+import { $render, change, click, keyDown } from '@tdd-buffet/react';
 import * as React from 'react';
 import Mock from 'strong-mock';
 import { expect } from 'tdd-buffet/expect/chai';
@@ -141,6 +141,26 @@ describe('Firing events', () => {
     $render(<input type="text" onChange={e => cb.stub(e.currentTarget.value)} />);
 
     change('input', 'foobar');
+
+    cb.verifyAll();
+  });
+
+  it('keydown', () => {
+    const cb = new Mock<(char: string, which: number) => void>();
+
+    $render(<div onKeyDown={e => cb.stub(e.key, e.which)} />);
+
+    cb.when(c => c('A', 65)).returns(undefined);
+    keyDown('div', 'A');
+
+    cb.when(c => c('A', 100)).returns(undefined);
+    keyDown('div', 'A', 100);
+
+    cb.when(c => c('Enter', 69)).returns(undefined);
+    keyDown('div', 'Enter');
+
+    cb.when(c => c('Enter', 13)).returns(undefined);
+    keyDown('div', 'Enter', 13);
 
     cb.verifyAll();
   });

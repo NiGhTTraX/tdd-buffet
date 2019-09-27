@@ -127,6 +127,36 @@ export function change(selector: Selector, value: string) {
 }
 
 /**
+ * Simulate a keyDown event.
+ *
+ * @param selector If it's a string, the first element identified
+ *   by this will receive the event. If it's a jQuery collection
+ *   then the first element in it will receive the event.
+ * @param key See `key` from https://keycode.info/.
+ * @param keyCode See `which` from https://keycode.info/. If not provided
+ *   it will default to the char code for the first char in `key`.
+ *
+ * @example
+ * ```
+ * keyDown('input', 'a')
+ * keyDown('input', 'A', 65)
+ * keyDown('input', 'Enter', 13)
+ * ```
+ */
+export function keyDown(
+  selector: Selector,
+  key: string,
+  keyCode: number = key.charCodeAt(0)
+) {
+  fireEvent.keyDown(getElement(selector), {
+    key,
+    keyCode,
+    charCode: keyCode,
+    which: keyCode
+  });
+}
+
+/**
  * Get the first element that matches the selector from the currently rendered component.
  */
 function getElement(selector: Selector) {
