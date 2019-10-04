@@ -33,8 +33,7 @@
     "webpack": "COVERAGE=1 webpack --config ./src/config/webpack.config.js ./tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
   },
   "peerDependencies": {
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.8.0"
   },
   "dependencies": {
     "@babel/core": "~7.6.0",
