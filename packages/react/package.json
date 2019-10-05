@@ -25,14 +25,14 @@
   "scripts": {
     "test": "yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
-    "pretest": "yarn run webpack:build-coverage-bundle",
+    "pretest": "yarn run webpack:build-coverage-bundle && yarn run webpack:start-dev-server",
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn run build",
     "webpack:build-coverage-bundle": "COVERAGE=1 webpack --config ./src/config/webpack.config.js ./tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js",
     "webpack:start-dev-server": "docker-compose -f tests/webpack/docker-compose.yml up -d --build",
-    "webpack:_start-dev-server": "webpack-dev-server --config tests/webpack/webpack.config.js"
+    "webpack:_start-dev-server": "yarn run ts-node src/bin/index.ts start --config tests/webpack/webpack.config.js"
   },
   "peerDependencies": {
     "react": "^16.8.0"
@@ -49,24 +49,28 @@
     "jquery": "~3.4.1",
     "less": "~3.10.3",
     "less-loader": "~5.0.0",
+    "meow": "~5.0.0",
     "mini-css-extract-plugin": "~0.8.0",
     "postcss-flexbugs-fixes": "~4.1.0",
     "postcss-loader": "~3.0.0",
     "postcss-normalize": "~8.0.1",
     "postcss-preset-env": "~6.7.0",
+    "react-dev-utils": "~9.1.0",
     "style-loader": "~1.0.0",
     "wait-for-expect": "~3.0.0",
-    "webpack": "~4.41.0"
+    "webpack": "~4.41.0",
+    "webpack-dev-server": "~3.8.2"
   },
   "devDependencies": {
     "@types/react": "~16.9.0",
     "@types/react-dom": "~16.9.0",
+    "@types/webpack": "~4.39.2",
+    "@types/webpack-dev-server": "~3.1.7",
     "react": "~16.10.0",
     "react-dom": "~16.10.0",
     "react-mock-component": "~2.0.0",
     "strong-mock": "~3.0.0",
     "typescript": "~3.6.0",
-    "webpack-cli": "~3.3.9",
-    "webpack-dev-server": "~3.8.2"
+    "webpack-cli": "~3.3.9"
   }
 }
