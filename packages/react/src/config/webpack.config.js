@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssNormalize = require('postcss-normalize');
 const PostCssPresetEnv = require('postcss-preset-env');
 const PostCssFlexFixes = require('postcss-flexbugs-fixes');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const babelLoader = {
   loader: require.resolve('babel-loader'),
@@ -86,7 +87,7 @@ function getStyleLoaders(isProd, customLoader) {
 module.exports = webpackEnv => {
   const isProd = webpackEnv === 'production';
 
-  return ({
+  return {
     output: {
       filename: isProd ? '[name].[contentHash].js' : '[name].js',
       path: path.join(process.cwd(), 'build')
@@ -95,7 +96,7 @@ module.exports = webpackEnv => {
     mode: isProd ? 'production' : 'development',
     devtool: isProd ? 'sourcemap' : 'cheap-module-source-map',
 
-    ...(isProd ? {
+    ...(!isProd ? {
       devServer: {
         host: '0.0.0.0',
         port: 3000,
@@ -135,7 +136,10 @@ module.exports = webpackEnv => {
           '!**/?(*.)(spec|test).*'
         ]
       }),
-      ...(isProd ? [new HotModuleReplacementPlugin()] : [])
+      new HtmlWebpackPlugin({
+        template: path.join(__dirname, 'index.html')
+      }),
+      ...(!isProd ? [new HotModuleReplacementPlugin()] : [])
     ]
-  });
+  };
 };

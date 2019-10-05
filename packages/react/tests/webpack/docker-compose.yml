@@ -1,0 +1,18 @@
+version: '2.1'
+
+services:
+  webpack:
+    build:
+      context: ../../../../
+      dockerfile: Dockerfile
+    networks:
+      - tdd-buffet
+    expose:
+      - 3000
+    command: ["yarn", "--cwd", "packages/react", "run", "webpack:_start-dev-server"]
+    volumes:
+      - ./:/usr/src/app/packages/react/tests/webpack
+
+networks:
+  tdd-buffet:
+    external: true
