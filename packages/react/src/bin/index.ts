@@ -28,7 +28,7 @@ type ConfigFactory = { default: (webpackEnv: 'development' | 'production') => Co
 
   switch (cli.input[0]) {
     case 'start':
-      return startServer(configFactory);
+      return startServer(configFactory('development'));
     case 'build':
       return buildProd(configFactory('production'));
     default:
