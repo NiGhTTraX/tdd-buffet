@@ -10,6 +10,10 @@ import { startServer } from './start';
 const cli = meow(`
   Usage
     $ start       Start the development server.
+    $ build       Build a production bundle.
+    
+  Options
+    --config      Path to webpack config. Defaults to @tdd-buffet/react/config/webpack.config.js
 `, {
   flags: {
     config: {
