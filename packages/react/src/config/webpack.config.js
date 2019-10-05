@@ -133,7 +133,7 @@ module.exports = webpackEnv => {
         // Don't compile tests and fixtures.
         reportFiles: [
           'src/**/*',
-          '!**/?(*.)(spec|test).*'
+          '!**/?(*.)(spec|test|stories).*'
         ]
       }),
       new HtmlWebpackPlugin({
