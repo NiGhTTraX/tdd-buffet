@@ -3,6 +3,8 @@
 /* istanbul ignore file */
 import meow from 'meow';
 import path from 'path';
+import { Configuration } from 'webpack';
+import { buildProd } from './build';
 import { startServer } from './start';
 
 const cli = meow(`
@@ -17,12 +19,18 @@ const cli = meow(`
   }
 });
 
+type ConfigFactory = { default: (webpackEnv: 'development' | 'production') => Configuration };
+
 (async() => {
+  const { default: configFactory }: ConfigFactory = await import(
+    path.resolve(process.cwd(), cli.flags.config)
+  );
+
   switch (cli.input[0]) {
     case 'start':
-      // eslint-disable-next-line no-case-declarations
-      const configFactory = await import(path.resolve(process.cwd(), cli.flags.config));
-      return startServer(configFactory.default);
+      return startServer(configFactory);
+    case 'build':
+      return buildProd(configFactory('production'));
     default:
       throw new Error('Unknown command');
   }
