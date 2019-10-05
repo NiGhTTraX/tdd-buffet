@@ -139,6 +139,8 @@ export async function run(argv: string[]) {
   }
 
   if (argv.includes('--coverage')) {
+    // TODO: don't automatically set this, let the user set this; that way they can also
+    // disable it if they don't have GUI tests
     process.env.TDD_BUFFET_COVERAGE = '1';
   }
 
