@@ -10,11 +10,10 @@ describe('Webpack config', () => {
     );
 
     await browser.url('about:blank');
+
+    // XXX: I'm not sure why passing in content directly fails with
+    // SyntaxError: Unexpected end of input
     await browser.execute(`
-      var div = document.createElement('div');
-      div.id = 'root';
-      document.body.appendChild(div);
-      
       ${content}
     `);
   });
