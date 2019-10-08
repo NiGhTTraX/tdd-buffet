@@ -1575,10 +1575,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@~6.5.0":
-  version "6.5.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.5.0.tgz#9419fec57a544917bd5e398d40826425be50ee0a"
-  integrity sha512-3lQx248dhJzvV2a76F1VaqehX+iquSVVW27caDaLoQZdUHEZjB370n7FO2WoYwOQQ7NB10AvfPhrARYnNgvf1g==
+"@testing-library/dom@~6.6.0":
+  version "6.6.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.6.0.tgz#74139051e6b6743b244b2590bbba7387f51805c7"
+  integrity sha512-x9Uyww+Ub5d6cSsBixECrPlyNy5wSKXxPQToKdaLYa8KvDBDKXlqBPGo7QoFFTrMocQmOEnY/tHxZLN77+tzAA==
   dependencies:
     "@babel/runtime" "^7.5.5"
     "@sheerun/mutationobserver-shim" "^0.3.2"
