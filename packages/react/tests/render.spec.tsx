@@ -16,17 +16,17 @@ describe('$render', () => {
 
   it('should render a component built with hooks', () => {
     const HookyComponent = () => {
-      const [wtf, setWtf] = useState(false);
-      useEffect(() => { setWtf(true); }, []);
+      const [effectTriggered, setEffectTriggered] = useState(false);
+      useEffect(() => { setEffectTriggered(true); }, []);
 
-      return <button type="button" onClick={() => setWtf(true)}>
-        {wtf ? 'wtf' : 'bbq'}
+      return <button type="button">
+        {effectTriggered ? 'effect triggered' : 'nope'}
       </button>;
     };
 
     const $component = $render(<HookyComponent />);
 
-    expect($component.text()).to.equal('bbq');
+    expect($component.text()).to.equal('effect triggered');
   });
 
   it('should render a component with props', () => {
