@@ -69,7 +69,7 @@ describe('Firing events', () => {
     $render(<>
       <button type="button" onClick={() => cb.stub(1)}>click me</button>
       <button type="button" onClick={() => cb.stub(2)}>click me</button>
-      </>);
+    </>);
 
     click('button');
 
@@ -83,7 +83,7 @@ describe('Firing events', () => {
     const $container = $render(<>
       <button type="button" onClick={() => cb.stub(1)}>click me</button>
       <button type="button" onClick={() => cb.stub(2)}>click me</button>
-      </>);
+    </>);
 
     click($container.find('button'));
 
