@@ -2,6 +2,7 @@ import { fireEvent } from '@testing-library/dom';
 import $ from 'jquery';
 import { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
 import waitForExpect from 'wait-for-expect';
 
 let componentContainer: HTMLDivElement;
@@ -57,7 +58,9 @@ export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
   componentContainer = document.createElement('div');
   document.body.appendChild(componentContainer);
 
-  ReactDOM.render(element, componentContainer);
+  act(() => {
+    ReactDOM.render(element, componentContainer);
+  });
 
   return getJQueryContainer();
 }
