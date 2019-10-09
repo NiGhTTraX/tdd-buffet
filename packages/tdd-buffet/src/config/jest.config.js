@@ -34,6 +34,9 @@ module.exports = {
     '\\.(css|less)$': require.resolve('./style-mock.js')
   },
 
+  // When importing without an extension Jest will try these in order.
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+
   // Improves speed by 100% for visual tests.
   extraGlobals: ['Math'],
 
