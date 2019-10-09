@@ -30,8 +30,9 @@ module.exports = {
 
   // Ignore static assets such as images and stylesheets.
   transform: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': require.resolve('./file-mock.js'),
-    '\\.(css|less)$': require.resolve('./style-mock.js')
+    '\\.(css|less)$': require.resolve('./style-mock.js'),
+    // Treat everything else as a static asset and mock it.
+    '^(?!.*\\.(js|jsx|ts|tsx|css|less|json)$)': require.resolve('./file-mock.js')
   },
 
   // When importing without an extension Jest will try these in order.
