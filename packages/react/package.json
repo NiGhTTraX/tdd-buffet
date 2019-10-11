@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@babel/core": "~7.6.0",
-    "@testing-library/dom": "~6.7.0",
+    "@testing-library/dom": "~6.8.0",
     "@types/jquery": "~3.3.30",
     "babel-loader": "~8.0.6",
     "babel-plugin-istanbul": "~5.2.0",
