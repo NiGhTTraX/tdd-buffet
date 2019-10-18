@@ -1,8 +1,7 @@
-import { fireEvent, wait as rtlWait } from '@testing-library/react';
+import { fireEvent, render as rtlRender, wait as rtlWait } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
-import { act } from 'react-dom/test-utils';
 
 let componentContainer: HTMLDivElement;
 
@@ -57,8 +56,8 @@ export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
   componentContainer = document.createElement('div');
   document.body.appendChild(componentContainer);
 
-  act(() => {
-    ReactDOM.render(element, componentContainer);
+  rtlRender(element, {
+    container: componentContainer
   });
 
   return getJQueryContainer();
