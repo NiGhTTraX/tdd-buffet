@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/chai';
-import { describe, it } from '../../tdd-buffet/src/suite/node';
+import { describe, it } from 'tdd-buffet/suite/node';
 import { $render, $rerender, unmount } from '../src';
 
 describe('$render', () => {

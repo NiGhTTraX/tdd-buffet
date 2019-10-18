@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "version": "0.14.0",
+  "version": "0.14.1",
   "description": "All you can eat TDD tools and libraries",
   "keywords": [
     "tdd",
@@ -35,7 +35,7 @@
     "@types/istanbul-lib-coverage": "~2.0.1",
     "@types/jest": "~24.0.18",
     "chai": "~4.2.0",
-    "execa": "~2.1.0",
+    "execa": "~3.2.0",
     "fs-extra": "~8.1.0",
     "istanbul-lib-coverage": "~2.0.5",
     "jest": "~24.9.0",
@@ -44,12 +44,12 @@
     "ts-jest": "~24.1.0",
     "ts-loader": "~6.2.0",
     "typescript": "~3.6.0",
-    "webdriverio": "~5.14.0",
+    "webdriverio": "~5.15.0",
     "whatwg-fetch": "~3.0.0"
   },
   "devDependencies": {
     "@types/meow": "~5.0.0",
-    "@types/node": "~12.7.0",
+    "@types/node": "~12.11.0",
     "strong-mock": "~3.0.0"
   }
 }

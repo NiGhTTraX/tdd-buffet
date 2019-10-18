@@ -39,7 +39,7 @@
     "mugshot": "~2.2.0"
   },
   "devDependencies": {
-    "tdd-buffet": "^0.14.0",
+    "tdd-buffet": "^0.14.1",
     "typescript": "~3.6.0"
   }
 }
