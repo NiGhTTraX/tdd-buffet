@@ -1,7 +1,7 @@
 /* eslint-disable react/no-multi-comp */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { expect } from 'tdd-buffet/expect/chai';
-import { describe, it } from '../../tdd-buffet/src/suite/node';
+import { afterEach, beforeEach, describe, it } from 'tdd-buffet/suite/node';
 import { $render, wait } from '../src';
 
 describe('wait', () => {
@@ -53,5 +53,38 @@ describe('wait', () => {
     $render(<span>foobar</span>);
 
     await wait($container => $container.text() === 'foobar');
+  });
+
+  describe('effects', () => {
+    const originalError = console.error;
+
+    beforeEach(() => {
+      console.error = (...args: any[]) => {
+        if (/Warning.*not wrapped in act/.test(args[0])) {
+          throw new Error(args[0]);
+        }
+
+        originalError.call(console, ...args);
+      };
+    });
+
+    afterEach(() => {
+      console.error = originalError;
+    });
+
+    it('should wait for async effects', async () => {
+      const HookyComponent = () => {
+        const [effectTriggered, setEffectTriggered] = useState(false);
+        useEffect(() => { setTimeout(() => setEffectTriggered(true), 0); }, []);
+
+        return <button type="button">
+          {effectTriggered ? 'effect triggered' : 'nope'}
+        </button>;
+      };
+
+      const $component = $render(<HookyComponent />);
+
+      await wait(() => expect($component.text()).to.equal('effect triggered'));
+    });
   });
 });

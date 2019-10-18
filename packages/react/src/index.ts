@@ -1,9 +1,8 @@
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent, wait as rtlWait } from '@testing-library/react';
 import $ from 'jquery';
 import { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
-import waitForExpect from 'wait-for-expect';
 
 let componentContainer: HTMLDivElement;
 
@@ -29,13 +28,13 @@ function getJQueryContainer() {
  * ```
  */
 export function wait(cb: ($container: JQuery<HTMLElement>) => any, timeout = 1500) {
-  return waitForExpect(() => {
+  return rtlWait(() => {
     const result = cb(getJQueryContainer());
 
     if (result !== undefined && !result) {
       throw new Error('Condition not met');
     }
-  }, timeout);
+  }, { timeout });
 }
 
 /**
