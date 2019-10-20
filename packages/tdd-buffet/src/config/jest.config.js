@@ -22,9 +22,7 @@ module.exports = {
   testEnvironment: 'jsdom',
   // We polyfill some things commonly found in tests. We don't want to polyfill
   // everything, especially since we only support modern versions of Node.
-  setupFiles: [
-    path.join(__dirname, 'polyfills.js')
-  ],
+  setupFiles: [path.join(__dirname, 'polyfills.js')],
 
   // Our custom runtime that exposes a way to add coverage from external sources.
   moduleLoader: path.join(__dirname, './jest-runtime.js'),
