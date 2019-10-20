@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "version": "0.13.1",
+  "version": "0.14.2",
   "description": "All you can eat TDD tools and libraries",
   "keywords": [
     "tdd",
@@ -44,7 +44,8 @@
     "ts-jest": "~24.1.0",
     "ts-loader": "~6.2.0",
     "typescript": "~3.6.0",
-    "webdriverio": "~5.15.0"
+    "webdriverio": "~5.15.0",
+    "whatwg-fetch": "~3.0.0"
   },
   "devDependencies": {
     "@types/meow": "~5.0.0",
