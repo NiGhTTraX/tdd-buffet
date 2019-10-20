@@ -1,4 +1,8 @@
-import { fireEvent, render as rtlRender, wait as rtlWait } from '@testing-library/react/pure';
+import {
+  fireEvent,
+  render as rtlRender,
+  wait as rtlWait
+} from '@testing-library/react/pure';
 import $ from 'jquery';
 import { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
@@ -26,14 +30,20 @@ function getJQueryContainer() {
  * await wait($container => $container.text() === 'foobar');
  * ```
  */
-export function wait(cb: ($container: JQuery<HTMLElement>) => any, timeout = 1500) {
-  return rtlWait(() => {
-    const result = cb(getJQueryContainer());
+export function wait(
+  cb: ($container: JQuery<HTMLElement>) => any,
+  timeout = 1500
+) {
+  return rtlWait(
+    () => {
+      const result = cb(getJQueryContainer());
 
-    if (result !== undefined && !result) {
-      throw new Error('Condition not met');
-    }
-  }, { timeout });
+      if (result !== undefined && !result) {
+        throw new Error('Condition not met');
+      }
+    },
+    { timeout }
+  );
 }
 
 /**

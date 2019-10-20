@@ -1,5 +1,12 @@
 import { expect } from 'tdd-buffet/expect/chai';
-import { beforeEach, bindBrowser, Browser, describe, it, setViewportSize } from '../src/suite/gui';
+import {
+  beforeEach,
+  bindBrowser,
+  Browser,
+  describe,
+  it,
+  setViewportSize
+} from '../src/suite/gui';
 
 describe('Gui suite', () => {
   beforeEach(async browser => {
@@ -24,9 +31,14 @@ describe('Gui suite', () => {
 
   // Keep this here to test the closure over rootSuiteBrowser.
   const writeSomeText = bindBrowser(
-    async (boundBrowser: Browser, x: number, y: number) => boundBrowser.execute(function(a, b) {
-      document.body.textContent = `${a + b}`;
-    }, x, y)
+    async (boundBrowser: Browser, x: number, y: number) =>
+      boundBrowser.execute(
+        function(a, b) {
+          document.body.textContent = `${a + b}`;
+        },
+        x,
+        y
+      )
   );
 
   it('should bind the browser to a helper', async browser => {

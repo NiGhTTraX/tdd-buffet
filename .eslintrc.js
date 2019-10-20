@@ -3,15 +3,19 @@ module.exports = {
 
   'extends': [
     '@nighttrax/eslint-config-tsx',
-    'plugin:import/errors'
+    'plugin:import/errors',
+    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint'
   ],
 
-  'plugins': ['import'],
+  'plugins': ['import', 'prettier'],
 
   'rules': {
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: false
-    }]
+    }],
+    'prettier/prettier': 'error'
   },
 
   'settings': {

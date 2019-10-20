@@ -1,7 +1,7 @@
-import { Browser, it, TestDefinition } from 'tdd-buffet/suite/gui';
-import Mugshot from 'mugshot';
 import WebdriverIOAdapter from '@mugshot/webdriverio';
+import Mugshot from 'mugshot';
 import path from 'path';
+import { Browser, it, TestDefinition } from 'tdd-buffet/suite/gui';
 
 const { BROWSER = 'chrome' } = process.env;
 
@@ -15,7 +15,11 @@ const { BROWSER = 'chrome' } = process.env;
  * @param definition
  * @param selector Defaults to the first child of body.
  */
-export function vit(name: string, definition: TestDefinition, selector:string = 'body > *') {
+export function vit(
+  name: string,
+  definition: TestDefinition,
+  selector: string = 'body > *'
+) {
   it(name, async (browser, testName) => {
     await definition(browser, testName);
 
@@ -23,7 +27,11 @@ export function vit(name: string, definition: TestDefinition, selector:string = 
   });
 }
 
-async function checkForVisualChanges(browser: Browser, name: string, selector: string) {
+async function checkForVisualChanges(
+  browser: Browser,
+  name: string,
+  selector: string
+) {
   const adapter = new WebdriverIOAdapter(browser);
 
   const mugshot = new Mugshot(
@@ -31,9 +39,7 @@ async function checkForVisualChanges(browser: Browser, name: string, selector: s
     path.join(process.cwd(), `tests/gui/screenshots/${BROWSER}`)
   );
 
-  const result = await mugshot.check(
-    getSafeFilename(name), selector
-  );
+  const result = await mugshot.check(getSafeFilename(name), selector);
 
   /* istanbul ignore next because it's hard to test this through vit */
   if (!result.matches) {

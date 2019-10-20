@@ -4,7 +4,8 @@
 import meow from 'meow';
 import { debug, start, stop } from '../selenium';
 
-const cli = meow(`
+const cli = meow(
+  `
   Usage
     $ start [N]  Start the grid and connect 2*N nodes.
     $ debug      Start the grid and connect 2 nodes with VNC.
@@ -14,19 +15,21 @@ const cli = meow(`
     --port [4444]    The port where the Selenium hub is listening.
     --retries [15]   Number of times to retry waiting for all nodes to connect.
                      There's a 1 second wait between retries.
-`, {
-  // @ts-ignore
-  flags: {
-    port: {
-      type: 'number',
-      default: 4444
-    },
-    retries: {
-      type: 'number',
-      default: 15
+`,
+  {
+    // @ts-ignore
+    flags: {
+      port: {
+        type: 'number',
+        default: 4444
+      },
+      retries: {
+        type: 'number',
+        default: 15
+      }
     }
   }
-});
+);
 
 (async () => {
   switch (cli.input[0]) {

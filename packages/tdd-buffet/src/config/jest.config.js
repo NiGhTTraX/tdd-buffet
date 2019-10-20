@@ -3,10 +3,15 @@ const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const ts = require('typescript');
 
 const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
-const { config: configContent } = ts.readConfigFile(configName, ts.sys.readFile);
-const {
-  options: compilerOptions
-} = ts.parseJsonConfigFileContent(configContent, ts.sys, path.dirname(configName));
+const { config: configContent } = ts.readConfigFile(
+  configName,
+  ts.sys.readFile
+);
+const { options: compilerOptions } = ts.parseJsonConfigFileContent(
+  configContent,
+  ts.sys,
+  path.dirname(configName)
+);
 
 module.exports = {
   // Work around a quirk in how jest resolves the preset: it uses its own
@@ -20,19 +25,23 @@ module.exports = {
   moduleLoader: path.join(__dirname, './jest-runtime.js'),
 
   rootDir: process.cwd(),
-  moduleNameMapper: compilerOptions.paths ? {
-    ...pathsToModuleNameMapper(compilerOptions.paths, {
-      // The prefix must have a trailing slash.
-      prefix: path.join(compilerOptions.baseUrl, '/')
-    })
-  } : null,
+  moduleNameMapper: compilerOptions.paths
+    ? {
+        ...pathsToModuleNameMapper(compilerOptions.paths, {
+          // The prefix must have a trailing slash.
+          prefix: path.join(compilerOptions.baseUrl, '/')
+        })
+      }
+    : null,
   modulePathIgnorePatterns: ['dist'],
 
   // Ignore static assets such as images and stylesheets.
   transform: {
     '\\.(css|less)$': require.resolve('./style-mock.js'),
     // Treat everything else as a static asset and mock it.
-    '^(?!.*\\.(js|jsx|ts|tsx|css|less|json)$)': require.resolve('./file-mock.js')
+    '^(?!.*\\.(js|jsx|ts|tsx|css|less|json)$)': require.resolve(
+      './file-mock.js'
+    )
   },
 
   // When importing without an extension Jest will try these in order.

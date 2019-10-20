@@ -1,7 +1,6 @@
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from '../src/suite/node';
 
-
 describe('Node suite', () => {
   it('empty test', () => {});
 

@@ -1,13 +1,14 @@
 /* istanbul ignore file */
+import execa from 'execa';
 /* eslint-disable no-console, no-await-in-loop */
 import got from 'got';
-import execa from 'execa';
-import ProgressBar from 'progress';
 import path from 'path';
+import ProgressBar from 'progress';
 
 const TIMEOUT = 1000;
 const COMPOSE_PROJECT_NAME = 'tdd-buffet';
-const waitTimeout = (resolve: (...args: any[]) => void) => setTimeout(resolve, TIMEOUT);
+const waitTimeout = (resolve: (...args: any[]) => void) =>
+  setTimeout(resolve, TIMEOUT);
 
 async function getCurrentlyConnectedNodes(port: number) {
   const url = `http://0.0.0.0:${port}/grid/api/hub`;
@@ -17,14 +18,21 @@ async function getCurrentlyConnectedNodes(port: number) {
   return JSON.parse(response.body).slotCounts.free;
 }
 
-async function waitForNodes(expectedNodes: number, retries: number, port: number) {
+async function waitForNodes(
+  expectedNodes: number,
+  retries: number,
+  port: number
+) {
   let pings = 0;
 
-  const bar = new ProgressBar(':bar Nodes: :actual/:expected Attempts: :pings/:retries', {
-    total: retries,
-    width: 60,
-    clear: true
-  });
+  const bar = new ProgressBar(
+    ':bar Nodes: :actual/:expected Attempts: :pings/:retries',
+    {
+      total: retries,
+      width: 60,
+      clear: true
+    }
+  );
 
   // Show the initial empty bar.
   bar.tick(0, {
@@ -96,8 +104,8 @@ export async function start(nodes: number, retries: number, port: number) {
     path.join(__dirname, 'config/docker-compose.yml'),
     `--scale chrome=${nodes} --scale firefox=${nodes} hub`,
     port,
-    nodes
-    * 2, retries
+    nodes * 2,
+    retries
   );
 }
 
@@ -121,7 +129,11 @@ export async function debug(retries: number, port: number) {
 
 export async function stop() {
   await execa.command(
-    `docker-compose -f ${(path.join(__dirname, 'config/docker-compose.yml'))} down -v`, {
+    `docker-compose -f ${path.join(
+      __dirname,
+      'config/docker-compose.yml'
+    )} down -v`,
+    {
       env: {
         COMPOSE_PROJECT_NAME
       },

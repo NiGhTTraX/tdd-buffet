@@ -10,7 +10,9 @@ describe('wait', () => {
   });
 
   it('should wait for an already met expectation', async () => {
-    await wait(() => { expect(1).to.equal(1); });
+    await wait(() => {
+      expect(1).to.equal(1);
+    });
   });
 
   it('should wait for an already met assertion', async () => {
@@ -20,7 +22,9 @@ describe('wait', () => {
   it('should wait for a pending condition', async () => {
     let pending = false;
 
-    setTimeout(() => { pending = true; }, 10);
+    setTimeout(() => {
+      pending = true;
+    }, 10);
 
     await wait(() => pending);
   });
@@ -41,7 +45,9 @@ describe('wait', () => {
     let error!: Error;
 
     try {
-      await wait(() => { expect(1).to.equal(2); }, 10);
+      await wait(() => {
+        expect(1).to.equal(2);
+      }, 10);
     } catch (e) {
       error = e;
     }
@@ -75,11 +81,15 @@ describe('wait', () => {
     it('should wait for async effects', async () => {
       const HookyComponent = () => {
         const [effectTriggered, setEffectTriggered] = useState(false);
-        useEffect(() => { setTimeout(() => setEffectTriggered(true), 0); }, []);
+        useEffect(() => {
+          setTimeout(() => setEffectTriggered(true), 0);
+        }, []);
 
-        return <button type="button">
-          {effectTriggered ? 'effect triggered' : 'nope'}
-        </button>;
+        return (
+          <button type="button">
+            {effectTriggered ? 'effect triggered' : 'nope'}
+          </button>
+        );
       };
 
       const $component = $render(<HookyComponent />);

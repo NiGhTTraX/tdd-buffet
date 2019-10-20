@@ -13,17 +13,14 @@ const Runtime = require('jest-runtime');
  * NOTE: This depends on jest's internals so future versions might break things.
  */
 module.exports = class JestRuntime extends Runtime {
-  constructor(
-    config, environment, resolver,
-    cacheFS, coverageOptions
-  ) {
+  constructor(config, environment, resolver, cacheFS, coverageOptions) {
     super(config, environment, resolver, cacheFS, coverageOptions);
 
     this.config = config;
     this._createJestObjectFor = this.createCustomJestObjectFor;
   }
 
-  createCustomJestObjectFor(from, localRequire,) {
+  createCustomJestObjectFor(from, localRequire) {
     const jestObject = super._createJestObjectFor(from, localRequire);
 
     return {
@@ -38,7 +35,7 @@ module.exports = class JestRuntime extends Runtime {
     const transformedFile = this._scriptTransformer.transform(
       filename,
       this._getFullTransformationOptions(undefined),
-      this._cacheFS[filename],
+      this._cacheFS[filename]
     );
 
     if (transformedFile.sourceMapPath) {

@@ -39,13 +39,18 @@ let rootSuiteBrowser: Browser;
  * });
  * ```
  */
-export function bindBrowser<A extends any[], R>(cb: (browser: Browser, ...args: A) => R) {
+export function bindBrowser<A extends any[], R>(
+  cb: (browser: Browser, ...args: A) => R
+) {
   return (...args: A) => cb(rootSuiteBrowser, ...args);
 }
 
 export type Browser = ReturnType<typeof remote>;
 export type HookDefinition = (browser: Browser) => Promise<any> | void;
-export type TestDefinition = (browser: Browser, testName: string) => Promise<any> | void;
+export type TestDefinition = (
+  browser: Browser,
+  testName: string
+) => Promise<any> | void;
 
 /* istanbul ignore next */
 function getBrowserChromeSize() {
@@ -80,8 +85,7 @@ export async function setViewportSize(width: number, height: number) {
   try {
     await rootSuiteBrowser.setWindowRect(0, 0, actualWidth, actualHeight);
     // eslint-disable-next-line no-empty
-  } catch (e) {
-  }
+  } catch (e) {}
 }
 
 /**
@@ -136,9 +140,17 @@ export function createTest(
  * Jest would.
  */
 export function it(name: string, definition?: TestDefinition) {
-  runnerIt(name, definition
-    ? createTest(definition, () => rootSuiteBrowser, BROWSER, !!process.env.TDD_BUFFET_COVERAGE)
-    : undefined);
+  runnerIt(
+    name,
+    definition
+      ? createTest(
+          definition,
+          () => rootSuiteBrowser,
+          BROWSER,
+          !!process.env.TDD_BUFFET_COVERAGE
+        )
+      : undefined
+  );
 }
 
 function setupHooks() {

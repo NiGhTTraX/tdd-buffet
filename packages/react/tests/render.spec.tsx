@@ -17,11 +17,15 @@ describe('$render', () => {
   it('should render a component built with hooks', () => {
     const HookyComponent = () => {
       const [effectTriggered, setEffectTriggered] = useState(false);
-      useEffect(() => { setEffectTriggered(true); }, []);
+      useEffect(() => {
+        setEffectTriggered(true);
+      }, []);
 
-      return <button type="button">
-        {effectTriggered ? 'effect triggered' : 'nope'}
-      </button>;
+      return (
+        <button type="button">
+          {effectTriggered ? 'effect triggered' : 'nope'}
+        </button>
+      );
     };
 
     const $component = $render(<HookyComponent />);
@@ -52,7 +56,9 @@ describe('$render', () => {
   let rerendered;
 
   class Rerenderable extends React.Component {
-    render() { return null; }
+    render() {
+      return null;
+    }
 
     componentDidUpdate() {
       rerendered = true;
@@ -78,16 +84,22 @@ describe('$render', () => {
   });
 
   it('should update the container', () => {
-    const Foo = (props: { done?: boolean }) => (props.done ? <span>done</span> : null);
+    const Foo = (props: { done?: boolean }) =>
+      props.done ? <span>done</span> : null;
 
     const $component = $render(<Foo />);
-    $rerender(<Foo done />,);
+    $rerender(<Foo done />);
 
     expect($component.text()).to.equal('done');
   });
 
   it('should wrap all children', () => {
-    const Bar = () => <React.Fragment><p>1</p><p>2</p></React.Fragment>;
+    const Bar = () => (
+      <React.Fragment>
+        <p>1</p>
+        <p>2</p>
+      </React.Fragment>
+    );
 
     const $component = $render(<Bar />);
 
@@ -98,7 +110,9 @@ describe('$render', () => {
     let unmounted = false;
 
     class Unmountable extends React.Component {
-      render() { return null; }
+      render() {
+        return null;
+      }
 
       componentWillUnmount() {
         unmounted = true;

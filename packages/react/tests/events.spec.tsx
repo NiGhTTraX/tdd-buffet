@@ -9,7 +9,11 @@ describe('Firing events', () => {
     const cb = new Mock<() => void>();
     cb.when(c => c()).returns(undefined);
 
-    $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
+    $render(
+      <button type="button" onClick={() => cb.stub()}>
+        click me
+      </button>
+    );
 
     click('button');
 
@@ -20,7 +24,11 @@ describe('Firing events', () => {
     const cb = new Mock<() => void>();
     cb.when(c => c()).returns(undefined);
 
-    const $container = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
+    const $container = $render(
+      <button type="button" onClick={() => cb.stub()}>
+        click me
+      </button>
+    );
 
     click($container.find('button'));
 
@@ -31,7 +39,11 @@ describe('Firing events', () => {
     const cb = new Mock<() => void>();
     cb.when(c => c()).returns(undefined);
 
-    const $container = $render(<button type="button" onClick={() => cb.stub()}>click me</button>);
+    const $container = $render(
+      <button type="button" onClick={() => cb.stub()}>
+        click me
+      </button>
+    );
 
     click($container.find('button')[0]);
 
@@ -66,10 +78,16 @@ describe('Firing events', () => {
     const cb = new Mock<(x: number) => void>();
     cb.when(c => c(1)).returns(undefined);
 
-    $render(<>
-      <button type="button" onClick={() => cb.stub(1)}>click me</button>
-      <button type="button" onClick={() => cb.stub(2)}>click me</button>
-    </>);
+    $render(
+      <>
+        <button type="button" onClick={() => cb.stub(1)}>
+          click me
+        </button>
+        <button type="button" onClick={() => cb.stub(2)}>
+          click me
+        </button>
+      </>
+    );
 
     click('button');
 
@@ -80,10 +98,16 @@ describe('Firing events', () => {
     const cb = new Mock<(x: number) => void>();
     cb.when(c => c(1)).returns(undefined);
 
-    const $container = $render(<>
-      <button type="button" onClick={() => cb.stub(1)}>click me</button>
-      <button type="button" onClick={() => cb.stub(2)}>click me</button>
-    </>);
+    const $container = $render(
+      <>
+        <button type="button" onClick={() => cb.stub(1)}>
+          click me
+        </button>
+        <button type="button" onClick={() => cb.stub(2)}>
+          click me
+        </button>
+      </>
+    );
 
     click($container.find('button'));
 
@@ -94,7 +118,9 @@ describe('Firing events', () => {
     const cb = new Mock<(s: boolean) => void>();
     cb.when(c => c(true)).returns(undefined);
 
-    $render(<input type="checkbox" onChange={e => cb.stub(e.currentTarget.checked)} />);
+    $render(
+      <input type="checkbox" onChange={e => cb.stub(e.currentTarget.checked)} />
+    );
 
     click('input');
 
@@ -105,7 +131,13 @@ describe('Firing events', () => {
     const cb = new Mock<(s: boolean) => void>();
     cb.when(c => c(false)).returns(undefined);
 
-    $render(<input type="checkbox" checked onChange={e => cb.stub(e.currentTarget.checked)} />);
+    $render(
+      <input
+        type="checkbox"
+        checked
+        onChange={e => cb.stub(e.currentTarget.checked)}
+      />
+    );
 
     click('input');
 
@@ -116,7 +148,9 @@ describe('Firing events', () => {
     const cb = new Mock<(s: boolean) => void>();
     cb.when(c => c(true)).returns(undefined);
 
-    $render(<input type="radio" onChange={e => cb.stub(e.currentTarget.checked)} />);
+    $render(
+      <input type="radio" onChange={e => cb.stub(e.currentTarget.checked)} />
+    );
 
     click('input');
 
@@ -138,7 +172,9 @@ describe('Firing events', () => {
     const cb = new Mock<(s: string) => void>();
     cb.when(c => c('foobar')).returns(undefined);
 
-    $render(<input type="text" onChange={e => cb.stub(e.currentTarget.value)} />);
+    $render(
+      <input type="text" onChange={e => cb.stub(e.currentTarget.value)} />
+    );
 
     change('input', 'foobar');
 

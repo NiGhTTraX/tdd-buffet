@@ -1,7 +1,11 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 import { Config } from '@jest/types';
 import { pathExistsSync } from 'fs-extra';
-import { CoverageMapData, createCoverageMap, FileCoverageData } from 'istanbul-lib-coverage';
+import {
+  CoverageMapData,
+  createCoverageMap,
+  FileCoverageData
+} from 'istanbul-lib-coverage';
 import { run as runJest } from 'jest';
 import path from 'path';
 
@@ -23,31 +27,33 @@ export function runnerDescribe(name: string, definition: () => void) {
   describe(name, definition);
 }
 
-export function runnerIt(name: string, definition?: (testName: string) => Promise<any>|void) {
+export function runnerIt(
+  name: string,
+  definition?: (testName: string) => Promise<any> | void
+) {
   if (definition) {
     // @ts-ignore because @types/jest doesn't expose this
-    const test: { getFullName: () => string } = it(
-      name,
-      () => definition(test.getFullName())
+    const test: { getFullName: () => string } = it(name, () =>
+      definition(test.getFullName())
     );
   } else {
     it.todo(name);
   }
 }
 
-export function runnerBeforeEach(definition: () => Promise<any>|void) {
+export function runnerBeforeEach(definition: () => Promise<any> | void) {
   beforeEach(definition);
 }
 
-export function runnerAfterEach(definition: () => Promise<any>|void) {
+export function runnerAfterEach(definition: () => Promise<any> | void) {
   afterEach(definition);
 }
 
-export function runnerBefore(definition: () => Promise<any>|void) {
+export function runnerBefore(definition: () => Promise<any> | void) {
   beforeAll(definition);
 }
 
-export function runnerAfter(definition: () => Promise<any>|void) {
+export function runnerAfter(definition: () => Promise<any> | void) {
   afterAll(definition);
 }
 
@@ -74,10 +80,7 @@ export function addCoverageData(coverage: CoverageMapData) {
 
 /* istanbul ignore next: because we don't want the coverage to
    increment while we update it */
-function mergeCoverage(
-  source: CoverageMapData,
-  dest: CoverageObject
-) {
+function mergeCoverage(source: CoverageMapData, dest: CoverageObject) {
   const mergedCoverage = createCoverageMap(
     // @ts-ignore the runtime only wants CoverageMapData.data
     dest
