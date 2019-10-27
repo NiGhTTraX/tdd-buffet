@@ -1753,7 +1753,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.0.tgz#69a23a3ad29caf0097f06eda59b361ee2f0639f6"
   integrity sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
 
-"@types/node@*", "@types/node@~12.7.0":
+"@types/node@*":
   version "12.7.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.7.2.tgz#c4e63af5e8823ce9cc3f0b34f7b998c2171f0c44"
   integrity sha512-dyYO+f6ihZEtNPDcWNR1fkoTDf3zAK3lAABDze3mz6POyIercH0lEUawUFXlG8xaQZmm1yEBON/4TsYv/laDYg==
@@ -9828,12 +9828,12 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-strong-mock@~3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-3.0.0.tgz#50d3fb45dc76b0eaf8474ed49b25363aee4d9d3e"
-  integrity sha512-+R206HYULevzSPYvNHxUiVOBCix4XPpl1sVzLS/LMR1H4jo7qSp9B9Q84rSNB7qwSYdpFClmPU0ch4wM77LCQg==
+strong-mock@~3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-3.1.0.tgz#f4e113e64a244aa31e729299a880db5904fd0dce"
+  integrity sha512-b9iV1ijmioWQgdPyBZ3Bk8exgdhE2ptl+jjBeujB7FYRnv9+6oS1ClAt8r8XDgDEJVB0pTy/eSPzEW2GgYReYQ==
   dependencies:
-    "@types/node" "~12.7.0"
+    "@types/node" "~12.11.0"
 
 style-loader@~1.0.0:
   version "1.0.0"
