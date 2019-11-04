@@ -27,7 +27,7 @@ const $component = $render(<span>foobar</span>);
 expect($component.text()).to.equal('foobar');
 ```
 
-The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) and other stuff.
+The returned `$component` is a JQuery wrapper over the container that holds the component. You can use the familiar JQuery API to query for content (`$component.find('p')`), get text content (`$component.text()`), assert visibility (`$component.find('.class').is(':visible')`) etc.
 
 
 ### Fire events
@@ -45,11 +45,6 @@ $render(<button onClick={() => console.log('clicked')}>
 click('button'); // will log 'clicked'
 ```
 
-The methods are just wrappers over [testing-library/dom](https://github.com/testing-library/dom-testing-library). The following events are currently supported:
-
-- `click`,
-- `change`.
-
 
 ### Wait for conditions
 
@@ -58,18 +53,16 @@ If your component contains async logic like waiting for a promise or for a timer
 Note that React doesn't guarantee that a render happens synchronously so it's safer to wrap your all of your assertions with `wait`.
 
 ```typescript jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { expect } from 'tdd-buffet/suite/chai';
 import { $render, wait, click } from '@tdd-buffet/react';
 
-class MyComponent extends React.Component {
-  state = { done: false };
-
-  render() {
-    return <button onClick={() => this.setState({ done: true })}>
-      {this.state.done ? 'done' : 'loading'}
-    </button>;
-  }
+const MyComponent = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  return <button onClick={() => setIsLoading(false}>
+    {isLoading ? 'loading' : 'done'}
+  </button>;
 }
 
 (async () => {
@@ -88,7 +81,6 @@ If your component has cleanup logic e.g. clearing timers in `componentWillUnmoun
 ```typescript jsx
 import React from 'react';
 import { expect } from 'tdd-buffet/suite/chai';
-
 import { $render, unmount } from '@tdd-buffet/react';
 
 const $container = $render(<span>foobar</span>);
