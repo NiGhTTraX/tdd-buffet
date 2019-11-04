@@ -23,10 +23,23 @@ declare global {
   }
 }
 
+/**
+ * Declare a block of tests.
+ *
+ * You can have nested blocks. You don't need a block in order to define tests.
+ */
 export function runnerDescribe(name: string, definition: () => void) {
   describe(name, definition);
 }
 
+/**
+ * Declare a test.
+ *
+ * You don't need to be inside a `describe` block to declare a test.
+ *
+ * @param name
+ * @param definition Omitting this will create a 'pending' test.
+ */
 export function runnerIt(
   name: string,
   definition?: (testName: string) => Promise<any> | void
@@ -41,18 +54,30 @@ export function runnerIt(
   }
 }
 
+/**
+ * Run some set up code before each test in the current `describe` block.
+ */
 export function runnerBeforeEach(definition: () => Promise<any> | void) {
   beforeEach(definition);
 }
 
+/**
+ * Run some tear down code after each test in the current `describe` block.
+ */
 export function runnerAfterEach(definition: () => Promise<any> | void) {
   afterEach(definition);
 }
 
+/**
+ * Run some set up code __once__ before all the tests in the current `describe` block.
+ */
 export function runnerBefore(definition: () => Promise<any> | void) {
   beforeAll(definition);
 }
 
+/**
+ * Run some tear down code __once__ after all the tests in the current `describe` block.
+ */
 export function runnerAfter(definition: () => Promise<any> | void) {
   afterAll(definition);
 }

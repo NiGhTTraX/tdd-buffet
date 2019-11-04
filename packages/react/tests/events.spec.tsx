@@ -66,7 +66,7 @@ describe('Firing events', () => {
     }).to.throw('Element does not exist');
   });
 
-  it('selector.non-existent jQuery', () => {
+  it.only('selector.non-existent jQuery', () => {
     const $container = $render(<span />);
 
     expect(() => {

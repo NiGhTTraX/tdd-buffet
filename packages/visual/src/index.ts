@@ -8,7 +8,7 @@ const { BROWSER = 'chrome' } = process.env;
 /**
  * Perform a visual test alongside a normal test.
  *
- * The visual test will not be performed if the test in `definition` fails.
+ * The visual test will not be performed if `definition` throws.
  *
  * @param name The name of the test. The screenshot will be taken under
  *   the full test name (including any parent suite's name(s)).

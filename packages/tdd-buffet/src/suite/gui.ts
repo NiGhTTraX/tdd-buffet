@@ -46,7 +46,16 @@ export function bindBrowser<A extends any[], R>(
 }
 
 export type Browser = ReturnType<typeof remote>;
+
+/**
+ * @param browser
+ */
 export type HookDefinition = (browser: Browser) => Promise<any> | void;
+
+/**
+ * @param browser
+ * @param testName The full test name including all of its parent `describe` names.
+ */
 export type TestDefinition = (
   browser: Browser,
   testName: string
@@ -67,6 +76,12 @@ function getCoverage() {
   return window.__coverage__;
 }
 
+/**
+ * Set the browser's viewport size.
+ *
+ * This will take into account the browser's chrome size (toolbars, scrollbars etc.)
+ * and set the entire window's size in order to achieve the given viewport size.
+ */
 export async function setViewportSize(width: number, height: number) {
   const {
     // @ts-ignore because the return type is not properly inferred
@@ -89,9 +104,9 @@ export async function setViewportSize(width: number, height: number) {
 }
 
 /**
- * Run your gui tests in a fresh Selenium session.
+ * Declare a block of tests that will start a fresh Selenium instance. **Mandatory**.
  *
- * Nested calls will preserve the root session.
+ * Nested blocks will preserve the root session.
  *
  * Tests and hooks will receive the browser instance.
  */
@@ -110,6 +125,11 @@ export function describe(name: string, definition: () => void) {
   suiteNesting--;
 }
 
+/**
+ * Run some set up code before each test in the current `describe` block.
+ *
+ * @param definition Will receive the browser instance.
+ */
 export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
@@ -133,11 +153,13 @@ export function createTest(
 }
 
 /**
+ * Declare a test.
+ *
  * If `tdd-buffet test` is run with the `--coverage` option then
  * these tests will gather coverage reports from withing the browser.
- * The coder that runs there needs to be instrumented with
- * `babel-plugin-istanbul` and it needs to be transpiled the same way
- * Jest would.
+ *
+ * @param name
+ * @param definition Omitting this will create a 'pending' test.
  */
 export function it(name: string, definition?: TestDefinition) {
   runnerIt(
