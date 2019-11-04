@@ -73,7 +73,15 @@ module.exports = {
     'ts-jest': {
       tsConfig: {
         // Minimise transpilation since tests run in modern Node.
-        target: 'es6'
+        target: 'es6',
+
+        // Some tsconfigs e.g. the ones owned by create-react-app turn this one
+        // which causes some type errors across file boundaries to be silenced.
+        isolatedModules: false,
+
+        // next.js forces `jsx: 'preserver'` for their toolchain, but Jest wants
+        // the transformer to transpile the syntax.
+        ...(compilerOptions.jsx === ts.JsxEmit.Preserve && { jsx: 'react' })
       }
     }
   }
