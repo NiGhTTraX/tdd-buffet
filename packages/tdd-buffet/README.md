@@ -13,9 +13,11 @@ npm install tdd-buffet
 
 ## Testing
 
-This package exposes both a way to define tests and a way to run them. The current test runner is [Jest](https://jestjs.io).
+This package exposes both a way to define tests and a way to run them. The current test runner is [Jest](https://jestjs.io), but that should be transparent to the user. The global `jest` object is not exposed, for instance.
 
 ### Create a Node test
+
+Ideally you should have many of these since they're fast to run. They execute in a [jsdom](https://github.com/jsdom/jsdom) environment so you can test both your Node libraries and your [React components](../react/README.md). Since they're fast, you should use them to check your code's correctness and achieve satisfactory coverage.
 
 ```typescript
 import { describe, it } from 'tdd-buffet/suite/node';
@@ -30,6 +32,10 @@ describe('Node suite', () => {
 
 ### Create a GUI test
 
+These tests give you a [WebdriverIO](https://webdriver.io) client that connects to a Selenium server (see the [selenium package](../selenium) on how to start one). Browser name and Selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
+
+These tests are slower than Node tests. Therefore, you should not rely on them to exhaustively check the correctness of your code. You can start with them to have some basic coverage, but try to make your down to smaller, faster, more focused tests.
+
 ```typescript
 import { describe, it } from 'tdd-buffet/suite/gui';
 
@@ -39,8 +45,6 @@ describe('Gui suite', () => {
   });
 });
 ```
-
-The suite automatically connects to a running Selenium server (see the [selenium package](../selenium) on how to start one) and gives you a [WebdriverIO](https://webdriver.io) client. Browser name and Selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
 
 ### Assertions
 
@@ -88,18 +92,28 @@ Moreover, the GUI tests will collect **coverage from within the browser**. This 
 
 When you instrument the files make sure to do it from the **same path as your project** because the path will be injected into the coverage data and it will be used when creating the coverage report. If you're instrumenting the files inside a Docker container you can put them in `/usr/src/app` and `tdd-buffet` will map that path to Jest's `rootDir`.
 
+You can control how coverage is collected (output folder, thresholds etc.) through Jest's coverage options.
+
 
 ## Configs
 
 ### TypeScript
 
+The config provides sane defaults for both library and app developers. No `jsx` option is specified so if you're working in a React app you need to turn that on yourself.
+
 ```json
 {
-  "extends": "tdd-buffet/config/tsconfig.json"
+  "extends": "tdd-buffet/config/tsconfig.json",
+
+  "compilerOptions": {
+    "jsx": "react"
+  }
 }
 ```
 
 ### Jest
+
+The config is focused on providing a good developer experience with TypeScript. Tests are type checked before they are run and certain harmful options in `tsconfing.json` files are turned off. You can always inspect the config and override it.
 
 ```js
 const baseConfig = require('tdd-buffet/config/jest.config.js');
