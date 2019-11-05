@@ -44,7 +44,7 @@
     "ts-jest": "~24.1.0",
     "ts-loader": "~6.2.0",
     "typescript": "~3.7.0",
-    "webdriverio": "~5.15.0",
+    "webdriverio": "~5.16.0",
     "whatwg-fetch": "~3.0.0"
   },
   "devDependencies": {
