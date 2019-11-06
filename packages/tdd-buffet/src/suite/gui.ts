@@ -136,18 +136,17 @@ export function beforeEach(definition: HookDefinition) {
 
 export function createTest(
   definition: TestDefinition,
-  getBrowser: () => Browser,
   browserName: string,
   coverage: boolean
 ) {
   return async (testName: string) => {
     const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
 
-    await definition(getBrowser(), testNameWithoutBrowser);
+    await definition(rootSuiteBrowser, testNameWithoutBrowser);
 
     /* istanbul ignore else because when ran in CI this will always be true */
     if (coverage) {
-      await collectCoverage(getBrowser());
+      await collectCoverage(rootSuiteBrowser);
     }
   };
 }
@@ -165,12 +164,7 @@ export function it(name: string, definition?: TestDefinition) {
   runnerIt(
     name,
     definition
-      ? createTest(
-          definition,
-          () => rootSuiteBrowser,
-          BROWSER,
-          !!process.env.GUI_COVERAGE
-        )
+      ? createTest(definition, BROWSER, !!process.env.GUI_COVERAGE)
       : undefined
   );
 }
