@@ -13,7 +13,7 @@ npm install tdd-buffet
 
 ## Testing
 
-This package exposes both a way to define tests and a way to run them. The current test runner is [Jest](https://jestjs.io), but that should be transparent to the user. The global `jest` object is not exposed, for instance.
+This package exposes a wrapper over [Jest](https://jestjs.io) that provides the same building blocks for writing tests (`describe` and `it`) and also provides the same CLI.
 
 ### Create a Node test
 
