@@ -134,6 +134,11 @@ export function beforeEach(definition: HookDefinition) {
   runnerBeforeEach(() => definition(rootSuiteBrowser));
 }
 
+/**
+ * @param definition
+ * @param browserName
+ * @param coverage Whether should collect coverage reports from the browser.
+ */
 export function createTest(
   definition: TestDefinition,
   browserName: string,
