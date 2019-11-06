@@ -166,9 +166,5 @@ export async function run(argv: string[]) {
     argv.push('--config', path.join(__dirname, './config/jest.config.js'));
   }
 
-  if (argv.includes('--coverage')) {
-    process.env.GUI_COVERAGE = '1';
-  }
-
   return runJest(argv);
 }
