@@ -169,7 +169,7 @@ export function it(name: string, definition?: TestDefinition) {
           definition,
           () => rootSuiteBrowser,
           BROWSER,
-          !!process.env.TDD_BUFFET_COVERAGE
+          !!process.env.GUI_COVERAGE
         )
       : undefined
   );

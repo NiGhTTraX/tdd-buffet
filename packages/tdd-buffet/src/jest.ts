@@ -167,7 +167,7 @@ export async function run(argv: string[]) {
   }
 
   if (argv.includes('--coverage')) {
-    process.env.TDD_BUFFET_COVERAGE = '1';
+    process.env.GUI_COVERAGE = '1';
   }
 
   return runJest(argv);
