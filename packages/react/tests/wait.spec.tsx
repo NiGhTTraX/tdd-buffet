@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { expect } from 'tdd-buffet/expect/chai';
 import { afterEach, beforeEach, describe, it } from 'tdd-buffet/suite/node';
-import { $render, wait } from '../src';
+import { $render, $rerender, wait, waitForElement } from '../src';
 
 describe('wait', () => {
   it('should wait for an already satisfied condition', async () => {
@@ -96,5 +96,41 @@ describe('wait', () => {
 
       await wait(() => expect($component.text()).to.equal('effect triggered'));
     });
+  });
+});
+
+describe('waitForElement', () => {
+  it('should not wait for an element that already exists', async () => {
+    $render(<span className="existing" />);
+
+    await waitForElement('.existing');
+    await waitForElement($container => $container.find('.existing'));
+  });
+
+  it('should wait for an element', async () => {
+    $render(<span>foobar</span>);
+
+    setTimeout(() => {
+      $rerender(<span className="soon" />);
+    }, 10);
+
+    await waitForElement('.soon');
+    await waitForElement($container => $container.find('.soon'));
+  });
+
+  it('should throw for an element that does not appear', async () => {
+    try {
+      await waitForElement('.not-found');
+      throw new Error('was supposed to throw');
+    } catch (e) {
+      expect(e.message).to.contain('.not-found');
+    }
+
+    try {
+      await waitForElement($container => $container.find('.not-found'));
+      throw new Error('was supposed to throw');
+    } catch (e) {
+      expect(e.message).to.contain('The collection was empty');
+    }
   });
 });

@@ -30,6 +30,7 @@ This is an opinionated collection of libraries and tools for writing tests and e
       - [Render components](./packages/react/README.md#render-components)
       - [Fire events](./packages/react/README.md#fire-events)
       - [Wait for conditions](./packages/react/README.md#wait-for-conditions)
+      - [Wait for elements](./packages/react/README.md#wait-for-elements)
       - [Unmount](./packages/react/README.md#unmount)
       - [Rerender](./packages/react/README.md#rerender)
     - [Building React apps](./packages/react/README.md#building)

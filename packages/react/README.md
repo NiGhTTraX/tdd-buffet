@@ -60,10 +60,10 @@ import { $render, wait, click } from '@tdd-buffet/react';
 const MyComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
   
-  return <button onClick={() => setIsLoading(false}>
+  return <button onClick={() => setIsLoading(false)}>
     {isLoading ? 'loading' : 'done'}
   </button>;
-}
+};
 
 (async () => {
   $render(<MyComponent />);
@@ -73,6 +73,31 @@ const MyComponent = () => {
 })();
 ```
 
+
+### Wait for elements
+
+The package exposes a shortcut to wait for the condition that an element is present in the container.
+
+```typescript jsx
+import React, { useState } from 'react';
+import { $render, waitForElement, click } from '@tdd-buffet/react';
+
+const MyComponent = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  
+  return <>
+    <button onClick={() => setIsLoading(false)}>Click me</button>
+    {!isLoading && <span className="present">I'm here</span>}
+  </>;
+};
+
+(async () => {
+  $render(<MyComponent />);
+  click('button');
+
+  await waitForElement($container => $container.find('.present'));
+})();
+```
 
 ### Unmount
 
