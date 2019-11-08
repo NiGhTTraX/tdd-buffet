@@ -31,10 +31,7 @@ function getJQueryContainer() {
  * await wait($container => $container.text() === 'foobar');
  * ```
  */
-export function wait(
-  cb: ($container: JQuery<HTMLElement>) => any,
-  timeout = 1500
-) {
+export function wait(cb: ($container: JQuery) => any, timeout = 1500) {
   return rtlWait(
     () => {
       const result = cb(getJQueryContainer());
@@ -124,7 +121,7 @@ export function waitForElement(
  * console.log($container.html()) // <span>foobar</span>
  * ```
  */
-export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
+export function $render(element: ReactElement<any>): JQuery {
   if (componentContainer) {
     document.body.removeChild(componentContainer);
   }
@@ -147,7 +144,7 @@ export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
  * $render(<MyComponent foo="bar" />);
  * $rerender(<MyComponent foo="potato" />);
  */
-export function $rerender(element: ReactElement<any>): JQuery<HTMLElement> {
+export function $rerender(element: ReactElement<any>): JQuery {
   ReactDOM.render(element, componentContainer);
 
   return getJQueryContainer();
@@ -162,7 +159,7 @@ export function unmount() {
   ReactDOM.unmountComponentAtNode(componentContainer);
 }
 
-export type Selector = string | HTMLElement | JQuery<HTMLElement>;
+export type Selector = string | HTMLElement | JQuery;
 
 /**
  * Simulate a left click. Can be used to toggle checkboxes/radios.
