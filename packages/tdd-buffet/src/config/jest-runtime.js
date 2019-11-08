@@ -23,6 +23,7 @@ module.exports = class JestRuntime extends Runtime {
   createCustomJestObjectFor(from, localRequire) {
     const jestObject = super._createJestObjectFor(from, localRequire);
 
+    // TODO: remove dangerous methods like jest.mock?
     return {
       ...jestObject,
       config: this.config,
