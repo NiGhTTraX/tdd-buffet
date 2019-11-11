@@ -61,6 +61,30 @@ describe('wait', () => {
     await wait($container => $container.text() === 'foobar');
   });
 
+  it('should throw a custom error message', async () => {
+    try {
+      await wait(() => false, 'foobar', 10);
+    } catch (e) {
+      expect(e.message).to.equal('foobar');
+    }
+  });
+
+  it('should throw a custom error message over the caught one', async () => {
+    try {
+      await wait(
+        () => {
+          throw new Error('not this');
+        },
+        'foobar',
+        10
+      );
+    } catch (e) {
+      expect(e.message).to.equal('foobar');
+    }
+  });
+
+  it('should preserve the original error message when having a custom one');
+
   describe('effects', () => {
     const originalError = console.error;
 
@@ -120,14 +144,14 @@ describe('waitForElement', () => {
 
   it('should throw for an element that does not appear', async () => {
     try {
-      await waitForElement('.not-found');
+      await waitForElement('.not-found', 10);
       throw new Error('was supposed to throw');
     } catch (e) {
       expect(e.message).to.contain('.not-found');
     }
 
     try {
-      await waitForElement($container => $container.find('.not-found'));
+      await waitForElement($container => $container.find('.not-found'), 10);
       throw new Error('was supposed to throw');
     } catch (e) {
       expect(e.message).to.contain('The collection was empty');

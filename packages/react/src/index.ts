@@ -26,21 +26,68 @@ function getJQueryContainer() {
  * @example
  * ```
  * await wait(() => 1 === 1);
+ * await wait(() => 1 === 1, 2000);
  * await wait(() => expect(1).to.equal(1))
  * await wait(() => { expect(1).to.equal(1); })
  * await wait($container => $container.text() === 'foobar');
  * ```
  */
-export function wait(cb: ($container: JQuery) => any, timeout = 1500) {
+export function wait(
+  cb: ($container: JQuery) => any,
+  timeout?: number
+): Promise<void>;
+/**
+ * Wait for a condition to be fulfilled.
+ *
+ * @param cb Receives the currently mounted component wrapped in JQuery and will
+ *   wait for it until it either returns a truthy value or undefined.
+ *   Returning a falsy value or throwing an exception will cause this
+ *   to keep waiting.
+ * @param message A custom message that will be thrown if the condition is not met.
+ * @param timeout Time in ms to wait until condition is fulfilled.
+ *
+ * @example
+ * ```
+ * await wait(() => 1 === 1, '1 should be 1');
+ * await wait(() => expect(1).to.equal(1), '1 should be 1 before 2 secs', 2000)
+ * ```
+ */
+export function wait(
+  cb: ($container: JQuery) => any,
+  message?: string,
+  timeout?: number
+): Promise<void>;
+export function wait(
+  cb: ($container: JQuery) => any,
+  timeoutOrMessage?: number | string,
+  maybeTimeout = 1500
+): Promise<void> {
   return rtlWait(
     () => {
-      const result = cb(getJQueryContainer());
+      let result;
+
+      try {
+        result = cb(getJQueryContainer());
+      } catch (e) {
+        throw new Error(
+          typeof timeoutOrMessage === 'string'
+            ? timeoutOrMessage
+            : 'Condition not met'
+        );
+      }
 
       if (result !== undefined && !result) {
-        throw new Error('Condition not met');
+        throw new Error(
+          typeof timeoutOrMessage === 'string'
+            ? timeoutOrMessage
+            : 'Condition not met'
+        );
       }
     },
-    { timeout }
+    {
+      timeout:
+        typeof timeoutOrMessage === 'number' ? timeoutOrMessage : maybeTimeout
+    }
   );
 }
 
@@ -121,7 +168,7 @@ export function waitForElement(
  * console.log($container.html()) // <span>foobar</span>
  * ```
  */
-export function $render(element: ReactElement<any>): JQuery {
+export function $render(element: ReactElement): JQuery {
   if (componentContainer) {
     document.body.removeChild(componentContainer);
   }
@@ -144,7 +191,7 @@ export function $render(element: ReactElement<any>): JQuery {
  * $render(<MyComponent foo="bar" />);
  * $rerender(<MyComponent foo="potato" />);
  */
-export function $rerender(element: ReactElement<any>): JQuery {
+export function $rerender(element: ReactElement): JQuery {
   ReactDOM.render(element, componentContainer);
 
   return getJQueryContainer();
