@@ -1785,11 +1785,6 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.30.tgz#4c2b4f0015f214f8158a347350481322b3b29b2f"
   integrity sha512-nsqTN6zUcm9xtdJiM9OvOJ5EF0kOI8f1Zuug27O/rgtxCRJHGqncSWfCMZUP852dCKPsDsYXGvBhxfRjDBkF5Q==
 
-"@types/node@~12.11.0":
-  version "12.11.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.11.0.tgz#7f893924970076b20ca0089df50ab9f171088909"
-  integrity sha512-7v0K9WHdjFpE3LMj1rdRan7PDO2d9Qky51T0cYzzk7fWoqoYKu/fZHnrF7OhNZVx0uKwYoQFMZ3dgVD51s/vYA==
-
 "@types/node@~12.12.0":
   version "12.12.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-12.12.0.tgz#ff3201972d6dc851a9275308a17b9b5094e68057"
@@ -8586,10 +8581,10 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@~1.18.2:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
-  integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
+prettier@~1.19.0:
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.0.tgz#3bec4489d5eebcd52b95ddd2c22467b5c852fde1"
+  integrity sha512-GlAIjk6DjkNT6u/Bw5QCWrbzh9YlLKwwmJT//1YiCR3WDpZDnyss64aXHQZgF8VKeGlWnX6+tGsKSVxsZT/gtA==
 
 pretty-format@^24.3.0, pretty-format@^24.9.0:
   version "24.9.0"
@@ -9855,12 +9850,12 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-strong-mock@~3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-3.1.0.tgz#f4e113e64a244aa31e729299a880db5904fd0dce"
-  integrity sha512-b9iV1ijmioWQgdPyBZ3Bk8exgdhE2ptl+jjBeujB7FYRnv9+6oS1ClAt8r8XDgDEJVB0pTy/eSPzEW2GgYReYQ==
+strong-mock@~3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-3.2.0.tgz#e1ae75efd712a3565c54fd7fe2e80b339676345d"
+  integrity sha512-O59wnYpCzLT3YSTz4Cp58iYK4m/amTPd5BsQLbZRQGpfyROko1woi6iOG3fV/wazKP1WQLPkzKXi7Nm/T5Mi+w==
   dependencies:
-    "@types/node" "~12.11.0"
+    "@types/node" "~12.12.0"
 
 style-loader@~1.0.0:
   version "1.0.0"
@@ -10184,10 +10179,10 @@ ts-loader@~6.2.0:
     micromatch "^4.0.0"
     semver "^6.0.0"
 
-ts-node@~8.4.0:
-  version "8.4.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.4.1.tgz#270b0dba16e8723c9fa4f9b4775d3810fd994b4f"
-  integrity sha512-5LpRN+mTiCs7lI5EtbXmF/HfMeCjzt7DH9CZwtkr6SywStrNQC723wG+aOWFiLNn7zT3kD/RnFqi3ZUfr4l5Qw==
+ts-node@~8.5.0:
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-8.5.0.tgz#bc7d5a39133d222bf25b1693651e4d893785f884"
+  integrity sha512-fbG32iZEupNV2E2Fd2m2yt1TdAwR3GTCrJQBHDevIiEBNy1A8kqnyl1fv7jmRmmbtcapFab2glZXHJvfD1ed0Q==
   dependencies:
     arg "^4.1.0"
     diff "^4.0.1"
