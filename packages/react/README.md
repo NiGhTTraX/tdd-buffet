@@ -50,7 +50,7 @@ click('button'); // will log 'clicked'
 
 If your component contains async logic like waiting for a promise or for a timer you can use the `wait` function to wait for a condition to be satisfied such as an element becoming visible.
 
-Note that React doesn't guarantee that a render happens synchronously so it's safer to wrap your all of your assertions with `wait`.
+Note that React doesn't guarantee that a render happens synchronously so it's safer to wrap all of your assertions with `wait`.
 
 ```typescript jsx
 import React, { useState } from 'react';
