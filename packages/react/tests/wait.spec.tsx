@@ -69,21 +69,27 @@ describe('wait', () => {
     }
   });
 
-  it('should throw a custom error message over the caught one', async () => {
+  it('should throw a default error message', async () => {
+    try {
+      await wait(() => false, 10);
+    } catch (e) {
+      expect(e.message).to.equal('Condition not met');
+    }
+  });
+
+  it('should should not throw the custom error message when the cb throws', async () => {
     try {
       await wait(
         () => {
-          throw new Error('not this');
+          throw new Error('original');
         },
         'foobar',
         10
       );
     } catch (e) {
-      expect(e.message).to.equal('foobar');
+      expect(e.message).to.equal('original');
     }
   });
-
-  it('should preserve the original error message when having a custom one');
 
   describe('effects', () => {
     const originalError = console.error;
