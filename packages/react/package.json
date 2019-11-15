@@ -58,8 +58,8 @@
   "devDependencies": {
     "@types/react": "~16.9.0",
     "@types/react-dom": "~16.9.0",
-    "react": "~16.11.0",
-    "react-dom": "~16.11.0",
+    "react": "~16.12.0",
+    "react-dom": "~16.12.0",
     "react-mock-component": "~2.1.0",
     "strong-mock": "~3.2.0",
     "typescript": "~3.7.0",
