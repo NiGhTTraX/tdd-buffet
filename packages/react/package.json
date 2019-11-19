@@ -29,7 +29,8 @@
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn run build",
+    "prepublishOnly": "yarn run build && yarn run package",
+    "package": "cp -r src/config dist/",
     "webpack": "COVERAGE=1 webpack --config ./src/config/webpack.config.js ./tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
   },
   "peerDependencies": {
