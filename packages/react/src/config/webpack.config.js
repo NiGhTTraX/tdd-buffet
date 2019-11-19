@@ -145,7 +145,7 @@ module.exports = webpackEnv => {
         // Don't compile tests and fixtures.
         reportFiles: ['src/**/*', '!**/?(*.)(spec|test).*']
       }),
-      ...(isProd ? [new HotModuleReplacementPlugin()] : [])
+      ...(!isProd ? [new HotModuleReplacementPlugin()] : [])
     ]
   };
 };
