@@ -1,7 +1,8 @@
 import {
   fireEvent,
   render as rtlRender,
-  wait as rtlWait
+  wait as rtlWait,
+  waitForElement as rtlWaitForElement
 } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { ReactElement } from 'react';
@@ -25,24 +26,123 @@ function getJQueryContainer() {
  * @example
  * ```
  * await wait(() => 1 === 1);
+ * await wait(() => 1 === 1, 2000);
  * await wait(() => expect(1).to.equal(1))
  * await wait(() => { expect(1).to.equal(1); })
  * await wait($container => $container.text() === 'foobar');
  * ```
  */
 export function wait(
-  cb: ($container: JQuery<HTMLElement>) => any,
-  timeout = 1500
-) {
+  cb: ($container: JQuery) => any,
+  timeout?: number
+): Promise<void>;
+/**
+ * Wait for a condition to be fulfilled.
+ *
+ * @param cb Receives the currently mounted component wrapped in JQuery and will
+ *   wait for it until it either returns a truthy value or undefined.
+ *   Returning a falsy value or throwing an exception will cause this
+ *   to keep waiting.
+ * @param message A custom message that will be thrown if the condition is not met.
+ * @param timeout Time in ms to wait until condition is fulfilled.
+ *
+ * @example
+ * ```
+ * await wait(() => 1 === 1, '1 should be 1');
+ * await wait(() => expect(1).to.equal(1), '1 should be 1 before 2 secs', 2000)
+ * ```
+ */
+export function wait(
+  cb: ($container: JQuery) => any,
+  message?: string,
+  timeout?: number
+): Promise<void>;
+export function wait(
+  cb: ($container: JQuery) => any,
+  timeoutOrMessage?: number | string,
+  maybeTimeout = 1500
+): Promise<void> {
   return rtlWait(
     () => {
       const result = cb(getJQueryContainer());
 
       if (result !== undefined && !result) {
-        throw new Error('Condition not met');
+        throw new Error(
+          typeof timeoutOrMessage === 'string'
+            ? timeoutOrMessage
+            : 'Condition not met'
+        );
       }
     },
-    { timeout }
+    {
+      timeout:
+        typeof timeoutOrMessage === 'number' ? timeoutOrMessage : maybeTimeout
+    }
+  );
+}
+
+/**
+ * Wait for an element to exist in the currently rendered component.
+ *
+ * This function listens to mutations in the container via DOMObserver and will
+ * only check that the element is present when a mutation occurs. If no mutation
+ * occurs before `timeout`, or if the element is not present before `timeout`
+ * then it will throw.</p>
+ *
+ * @param selector A CSS selector.
+ * @param timeout
+ *
+ * @example
+ * ```
+ * waitForElement('div.myClass')
+ * waitForElement('div > p + p')
+ * ```
+ */
+export function waitForElement(
+  selector: string,
+  timeout?: number
+): Promise<any>;
+/**
+ * Wait for an element to exist in the currently rendered component.
+ *
+ * This function listens to mutations in the container via DOMObserver and will
+ * only check that the element is present when a mutation occurs. If no mutation
+ * occurs before `timeout`, or if the element is not present before `timeout`
+ * then it will throw.
+ *
+ * @param cb Will receive the container for the currently rendered component,
+ *   wrapped in JQuery, and is supposed to return a JQuery collection. The
+ *   collection will be checked that it has at least one element in it.
+ * @param timeout
+ *
+ * @example
+ * ```
+ * waitForElement($container => $container.find('.foobar'))
+ * waitForElement($container => $container.find('div').children().find('p').get(1))
+ * ```
+ */
+export function waitForElement(
+  cb: ($container: JQuery) => JQuery,
+  timeout?: number
+): Promise<any>;
+export function waitForElement(
+  cbOrSelector: string | (($container: JQuery) => JQuery),
+  timeout = 1500
+): Promise<any> {
+  return rtlWaitForElement(
+    () => {
+      if (typeof cbOrSelector === 'string') {
+        if (!getJQueryContainer().find(cbOrSelector).length) {
+          throw new Error(
+            `Waited for '${cbOrSelector}' to appear, but it never did`
+          );
+        }
+      } else if (!cbOrSelector(getJQueryContainer()).length) {
+        throw new Error('The collection was empty');
+      }
+      return true;
+    },
+    { timeout, container: componentContainer }
   );
 }
 
@@ -58,7 +158,7 @@ export function wait(
  * console.log($container.html()) // <span>foobar</span>
  * ```
  */
-export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
+export function $render(element: ReactElement): JQuery {
   if (componentContainer) {
     document.body.removeChild(componentContainer);
   }
@@ -81,7 +181,7 @@ export function $render(element: ReactElement<any>): JQuery<HTMLElement> {
  * $render(<MyComponent foo="bar" />);
  * $rerender(<MyComponent foo="potato" />);
  */
-export function $rerender(element: ReactElement<any>): JQuery<HTMLElement> {
+export function $rerender(element: ReactElement): JQuery {
   ReactDOM.render(element, componentContainer);
 
   return getJQueryContainer();
@@ -96,7 +196,7 @@ export function unmount() {
   ReactDOM.unmountComponentAtNode(componentContainer);
 }
 
-export type Selector = string | HTMLElement | JQuery<HTMLElement>;
+export type Selector = string | HTMLElement | JQuery;
 
 /**
  * Simulate a left click. Can be used to toggle checkboxes/radios.
