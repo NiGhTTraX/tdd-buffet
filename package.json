@@ -28,7 +28,7 @@
     "@nighttrax/eslint-config-tsx": "~3.0.0",
     "@typescript-eslint/eslint-plugin": "~2.8.0",
     "eslint": "~6.6.0",
-    "eslint-config-prettier": "~6.5.0",
+    "eslint-config-prettier": "~6.7.0",
     "eslint-plugin-import": "~2.18.2",
     "eslint-plugin-prettier": "~3.1.1",
     "eslint-import-resolver-typescript": "~1.1.1",
