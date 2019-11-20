@@ -6,8 +6,7 @@
   "scripts": {
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "pub": "yarn run build && lerna publish from-git",
-    "bump": "lerna version",
+    "pub": "yarn run build && lerna publish && yarn run clean",
     "lint": "eslint --ext ts,tsx,js .",
     "test": "lerna run test",
     "pretest": "yarn run selenium",
