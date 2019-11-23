@@ -13,7 +13,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git"
+    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git",
+    "directory": "packages/selenium"
   },
   "author": "Andrei Picus",
   "license": "MIT",
