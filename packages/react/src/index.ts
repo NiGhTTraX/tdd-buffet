@@ -1,5 +1,6 @@
 import {
-  fireEvent,
+  fireEvent as rtlFireEvent,
+  EventType,
   render as rtlRender,
   wait as rtlWait,
   waitForElement as rtlWaitForElement
@@ -198,6 +199,28 @@ export function unmount() {
 
 export type Selector = string | HTMLElement | JQuery;
 
+type FireObject = {
+  [E in EventType]: (selector: Selector, options?: {}) => void;
+};
+
+/**
+ * @testing-library/react's fireEvent.
+ *
+ * @see https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname
+ */
+export const $fireEvent: FireObject = Object.keys(rtlFireEvent).reduce(
+  (acc, key) => {
+    const event = key as EventType;
+
+    acc[event] = (selector: Selector, options?: {}) => {
+      rtlFireEvent[event](getElement(selector), options);
+    };
+
+    return acc;
+  },
+  {} as FireObject
+);
+
 /**
  * Simulate a left click. Can be used to toggle checkboxes/radios.
  *
@@ -215,7 +238,7 @@ export type Selector = string | HTMLElement | JQuery;
  * ```
  */
 export function click(selector: Selector) {
-  fireEvent.click(getElement(selector));
+  rtlFireEvent.click(getElement(selector));
 }
 
 /**
@@ -234,7 +257,7 @@ export function click(selector: Selector) {
  * ```
  */
 export function change(selector: Selector, value: string) {
-  fireEvent.change(getElement(selector), { target: { value } });
+  rtlFireEvent.change(getElement(selector), { target: { value } });
 }
 
 /**
@@ -259,7 +282,7 @@ export function keyDown(
   key: string,
   keyCode: number = key.charCodeAt(0)
 ) {
-  fireEvent.keyDown(getElement(selector), {
+  rtlFireEvent.keyDown(getElement(selector), {
     key,
     keyCode,
     charCode: keyCode,

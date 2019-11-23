@@ -1,4 +1,4 @@
-import { $render, change, click, keyDown } from '@tdd-buffet/react';
+import { $render, change, click, $fireEvent, keyDown } from '@tdd-buffet/react';
 import * as React from 'react';
 import Mock from 'strong-mock';
 import { expect } from 'tdd-buffet/expect/chai';
@@ -197,6 +197,21 @@ describe('Firing events', () => {
 
     cb.when(c => c('Enter', 13)).returns(undefined);
     keyDown('div', 'Enter', 13);
+
+    cb.verifyAll();
+  });
+
+  it('fireEvent', () => {
+    const cb = new Mock<() => void>();
+    cb.when(f => f()).returns(undefined);
+
+    $render(
+      <button type="button" onDragCapture={cb.stub}>
+        Click me
+      </button>
+    );
+
+    $fireEvent.drag('button');
 
     cb.verifyAll();
   });

@@ -32,7 +32,20 @@ The returned `$component` is a JQuery wrapper over the container that holds the 
 
 ### Fire events
 
-The package exposes convenience methods for firing events targeted at elements inside the currently rendered component.
+The package exposes [@testing-library/react's `fireEvent` object](https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname) wrapped in a helper that can take a DOM element, a CSS selector or a JQuery collection:
+
+```typescript jsx
+import React from 'react';
+import { $render, $fireEvent } from '@tdd-buffet/react';
+
+$render(<button onClick={() => console.log('clicked')}>
+  click me
+</button>);
+
+$fireEvent.click('button'); // will log 'clicked'
+```
+
+Some aliases are also exported for the most common events:
 
 ```typescript jsx
 import React from 'react';
