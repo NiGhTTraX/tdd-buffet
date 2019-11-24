@@ -7,7 +7,7 @@
     "clean": "lerna run clean",
     "build": "lerna run build",
     "version": "lerna version --conventional-commits --no-push",
-    "pub": "yarn run build && lerna publish && yarn run clean",
+    "pub": "yarn run build && lerna publish from-git && yarn run clean",
     "lint": "eslint --ext ts,tsx,js .",
     "test": "lerna run test",
     "pretest": "yarn run selenium",
