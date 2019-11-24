@@ -12,7 +12,10 @@ import path from 'path';
 /* eslint-disable no-underscore-dangle */
 declare global {
   namespace jest {
-    export function addCoverageFor(filename: string): void;
+    /**
+     * @returns true if the coverage data was registered, false if e.g. the file should be ignored.
+     */
+    export function addCoverageFor(filename: string): boolean;
     export const config: Config.ProjectConfig;
   }
 
@@ -119,7 +122,9 @@ function mergeCoverage(source: CoverageMapData, dest: CoverageObject) {
   mergedCoverage.files().forEach(filepath => {
     // TODO: we're running tests with fake file paths
     if (pathExistsSync(filepath)) {
-      registerSourceMap(filepath);
+      if (!registerSourceMap(filepath)) {
+        return;
+      }
     }
 
     const fileCoverage = mergedCoverage.fileCoverageFor(filepath);
@@ -155,8 +160,8 @@ function translateCoveragePaths(
   }, {});
 }
 
-function registerSourceMap(filename: string) {
-  jest.addCoverageFor(filename);
+function registerSourceMap(filename: string): boolean {
+  return jest.addCoverageFor(filename);
 }
 
 /* istanbul ignore next because this is hard to run through jest because it is running jest */

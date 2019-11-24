@@ -1,5 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 const Runtime = require('jest-runtime');
+const { shouldInstrument } = require('@jest/transform');
 
 /**
  * Augment Jest's default runtime with a way to add coverage from external sources.
@@ -32,6 +33,16 @@ module.exports = class JestRuntime extends Runtime {
   }
 
   addCoverageFor(filename) {
+    if (
+      !shouldInstrument(
+        filename,
+        this._getFullTransformationOptions(undefined),
+        this.config
+      )
+    ) {
+      return false;
+    }
+
     // This is copied from jest's guts.
     const transformedFile = this._scriptTransformer.transform(
       filename,
@@ -41,9 +52,12 @@ module.exports = class JestRuntime extends Runtime {
 
     if (transformedFile.sourceMapPath) {
       this._sourceMapRegistry[filename] = transformedFile.sourceMapPath;
+
       if (transformedFile.mapCoverage) {
         this._needsCoverageMapped.add(filename);
       }
     }
+
+    return true;
   }
 };
