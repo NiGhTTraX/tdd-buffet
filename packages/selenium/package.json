@@ -37,7 +37,7 @@
     "@types/progress": "~2.0.3",
     "execa": "~3.4.0",
     "got": "~10.0.0",
-    "meow": "~5.0.0",
+    "meow": "~6.0.0",
     "progress": "~2.0.3"
   },
   "devDependencies": {
