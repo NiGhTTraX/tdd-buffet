@@ -38,18 +38,15 @@ const cli = meow(
 
       await start(
         parseInt(cli.input[1] || '1', 10),
-        parseInt(cli.flags.retries, 10),
-        parseInt(cli.flags.port, 10)
+        cli.flags.retries,
+        cli.flags.port
       );
       break;
     case 'stop':
       await stop();
       break;
     case 'debug':
-      await debug(
-        parseInt(cli.flags.retries, 10),
-        parseInt(cli.flags.port, 10)
-      );
+      await debug(cli.flags.retries, cli.flags.port);
       break;
     default:
       console.error(cli.help);
