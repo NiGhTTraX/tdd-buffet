@@ -183,7 +183,9 @@ export function $render(element: ReactElement): JQuery {
  * $rerender(<MyComponent foo="potato" />);
  */
 export function $rerender(element: ReactElement): JQuery {
-  ReactDOM.render(element, componentContainer);
+  rtlRender(element, {
+    container: componentContainer
+  });
 
   return getJQueryContainer();
 }
