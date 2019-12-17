@@ -147,6 +147,23 @@ export function waitForElement(
   );
 }
 
+function renderAndReturnContainer(element: ReactElement) {
+  rtlRender(element, {
+    container: componentContainer
+  });
+
+  return getJQueryContainer();
+}
+
+function createContainer() {
+  if (componentContainer) {
+    document.body.removeChild(componentContainer);
+  }
+
+  componentContainer = document.createElement('div');
+  document.body.appendChild(componentContainer);
+}
+
 /**
  * Render the given component in a freshly created DOM container.
  *
@@ -160,18 +177,9 @@ export function waitForElement(
  * ```
  */
 export function $render(element: ReactElement): JQuery {
-  if (componentContainer) {
-    document.body.removeChild(componentContainer);
-  }
+  createContainer();
 
-  componentContainer = document.createElement('div');
-  document.body.appendChild(componentContainer);
-
-  rtlRender(element, {
-    container: componentContainer
-  });
-
-  return getJQueryContainer();
+  return renderAndReturnContainer(element);
 }
 
 /**
@@ -183,11 +191,7 @@ export function $render(element: ReactElement): JQuery {
  * $rerender(<MyComponent foo="potato" />);
  */
 export function $rerender(element: ReactElement): JQuery {
-  rtlRender(element, {
-    container: componentContainer
-  });
-
-  return getJQueryContainer();
+  return renderAndReturnContainer(element);
 }
 
 /**
