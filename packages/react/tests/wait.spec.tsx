@@ -1,6 +1,7 @@
 /* eslint-disable react/no-multi-comp */
 import React, { useEffect, useState } from 'react';
 import { expect } from 'tdd-buffet/expect/chai';
+import { expect as jExpect } from 'tdd-buffet/expect/jest';
 import { afterEach, beforeEach, describe, it } from 'tdd-buffet/suite/node';
 import { $render, $rerender, wait, waitForElement } from '../src';
 
@@ -30,29 +31,15 @@ describe('wait', () => {
   });
 
   it('should fail for an unmet condition', async () => {
-    let error!: Error;
-
-    try {
-      await wait(() => false, 0);
-    } catch (e) {
-      error = e;
-    }
-
-    expect(error).to.be.instanceOf(Error);
+    await jExpect(wait(() => false, 0)).rejects.toThrow();
   });
 
   it('should fail for an unmet expectation', async () => {
-    let error!: Error;
-
-    try {
-      await wait(() => {
+    await jExpect(
+      wait(() => {
         expect(1).to.equal(2);
-      }, 10);
-    } catch (e) {
-      error = e;
-    }
-
-    expect(error).to.be.instanceOf(Error);
+      }, 10)
+    ).rejects.toThrow();
   });
 
   it('should wait on the component container', async () => {
@@ -62,33 +49,23 @@ describe('wait', () => {
   });
 
   it('should throw a custom error message', async () => {
-    try {
-      await wait(() => false, 'foobar', 10);
-    } catch (e) {
-      expect(e.message).to.equal('foobar');
-    }
+    await jExpect(wait(() => false, 'foobar', 10)).rejects.toThrow('foobar');
   });
 
   it('should throw a default error message', async () => {
-    try {
-      await wait(() => false, 10);
-    } catch (e) {
-      expect(e.message).to.equal('Condition not met');
-    }
+    await jExpect(wait(() => false, 10)).rejects.toThrow('Condition not met');
   });
 
   it('should should not throw the custom error message when the cb throws', async () => {
-    try {
-      await wait(
+    await jExpect(
+      wait(
         () => {
           throw new Error('original');
         },
         'foobar',
         10
-      );
-    } catch (e) {
-      expect(e.message).to.equal('original');
-    }
+      )
+    ).rejects.toThrow('original');
   });
 
   describe('effects', () => {
@@ -149,18 +126,12 @@ describe('waitForElement', () => {
   });
 
   it('should throw for an element that does not appear', async () => {
-    try {
-      await waitForElement('.not-found', 10);
-      throw new Error('was supposed to throw');
-    } catch (e) {
-      expect(e.message).to.contain('.not-found');
-    }
+    await jExpect(waitForElement('.not-found', 10)).rejects.toThrow(
+      "Waited for '.not-found' to appear, but it never did"
+    );
 
-    try {
-      await waitForElement($container => $container.find('.not-found'), 10);
-      throw new Error('was supposed to throw');
-    } catch (e) {
-      expect(e.message).to.contain('The collection was empty');
-    }
+    await jExpect(
+      waitForElement($container => $container.find('.not-found'), 10)
+    ).rejects.toThrow('The collection was empty');
   });
 });
