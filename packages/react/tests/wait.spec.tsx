@@ -134,4 +134,14 @@ describe('waitForElement', () => {
       waitForElement($container => $container.find('.not-found'), 10)
     ).rejects.toThrow('The collection was empty');
   });
+
+  it('should throw a custom error message', async () => {
+    await jExpect(waitForElement('.not-found', 'foobar', 10)).rejects.toThrow(
+      "foobar: Waited for '.not-found' to appear, but it never did"
+    );
+
+    await jExpect(
+      waitForElement($container => $container.find('.not-found'), 'foobar', 10)
+    ).rejects.toThrow('foobar: The collection was empty');
+  });
 });

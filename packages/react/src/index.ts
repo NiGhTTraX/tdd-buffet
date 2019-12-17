@@ -109,6 +109,29 @@ export function waitForElement(
  * This function listens to mutations in the container via DOMObserver and will
  * only check that the element is present when a mutation occurs. If no mutation
  * occurs before `timeout`, or if the element is not present before `timeout`
+ * then it will throw.</p>
+ *
+ * @param selector A CSS selector.
+ * @param message A custom message that will be thrown if the element does not appear.
+ * @param timeout
+ *
+ * @example
+ * ```
+ * waitForElement('div.myClass')
+ * waitForElement('div > p + p')
+ * ```
+ */
+export function waitForElement(
+  selector: string,
+  message: string,
+  timeout?: number
+): Promise<any>;
+/**
+ * Wait for an element to exist in the currently rendered component.
+ *
+ * This function listens to mutations in the container via DOMObserver and will
+ * only check that the element is present when a mutation occurs. If no mutation
+ * occurs before `timeout`, or if the element is not present before `timeout`
  * then it will throw.
  *
  * @param cb Will receive the container for the currently rendered component,
@@ -126,20 +149,49 @@ export function waitForElement(
   cb: ($container: JQuery) => JQuery,
   timeout?: number
 ): Promise<any>;
+/**
+ * Wait for an element to exist in the currently rendered component.
+ *
+ * This function listens to mutations in the container via DOMObserver and will
+ * only check that the element is present when a mutation occurs. If no mutation
+ * occurs before `timeout`, or if the element is not present before `timeout`
+ * then it will throw.
+ *
+ * @param cb Will receive the container for the currently rendered component,
+ *   wrapped in JQuery, and is supposed to return a JQuery collection. The
+ *   collection will be checked that it has at least one element in it.
+ * @param message A custom message that will be thrown if the element does not appear.
+ * @param timeout
+ *
+ * @example
+ * ```
+ * waitForElement($container => $container.find('.foobar'))
+ * waitForElement($container => $container.find('div').children().find('p').get(1))
+ * ```
+ */
+export function waitForElement(
+  cb: ($container: JQuery) => JQuery,
+  message: string,
+  timeout?: number
+): Promise<any>;
 export function waitForElement(
   cbOrSelector: string | (($container: JQuery) => JQuery),
+  messageOrTimeout?: string | number,
   timeout = 1500
 ): Promise<any> {
+  const errorMessagePrefix =
+    typeof messageOrTimeout === 'string' ? `${messageOrTimeout}: ` : '';
+
   return rtlWaitForElement(
     () => {
       if (typeof cbOrSelector === 'string') {
         if (!getJQueryContainer().find(cbOrSelector).length) {
           throw new Error(
-            `Waited for '${cbOrSelector}' to appear, but it never did`
+            `${errorMessagePrefix}Waited for '${cbOrSelector}' to appear, but it never did`
           );
         }
       } else if (!cbOrSelector(getJQueryContainer()).length) {
-        throw new Error('The collection was empty');
+        throw new Error(`${errorMessagePrefix}The collection was empty`);
       }
       return true;
     },
