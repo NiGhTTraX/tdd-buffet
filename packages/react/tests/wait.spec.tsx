@@ -56,16 +56,32 @@ describe('wait', () => {
     await jExpect(wait(() => false, 10)).rejects.toThrow('Condition not met');
   });
 
-  it('should should not throw the custom error message when the cb throws', async () => {
+  it('should append the custom error message when the cb throws', async () => {
+    const error = new Error('original');
+
     await jExpect(
       wait(
         () => {
-          throw new Error('original');
+          throw error;
         },
-        'foobar',
+        'custom',
         10
       )
-    ).rejects.toThrow('original');
+    ).rejects.toThrow('custom: original');
+  });
+
+  it('should preserve the error with a custom message', async () => {
+    const error = new Error('original');
+
+    await jExpect(
+      wait(
+        () => {
+          throw error;
+        },
+        'custom',
+        10
+      )
+    ).rejects.toThrow(error);
   });
 
   describe('effects', () => {

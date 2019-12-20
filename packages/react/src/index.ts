@@ -65,7 +65,17 @@ export function wait(
 ): Promise<void> {
   return rtlWait(
     () => {
-      const result = cb(getJQueryContainer());
+      let result: any;
+
+      try {
+        result = cb(getJQueryContainer());
+      } catch (e) {
+        if (typeof timeoutOrMessage === 'string') {
+          e.message = `${timeoutOrMessage}: ${e.message}`;
+          throw e;
+        }
+        throw e;
+      }
 
       if (result !== undefined && !result) {
         throw new Error(
