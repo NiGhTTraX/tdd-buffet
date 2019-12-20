@@ -177,7 +177,7 @@ export function waitForElement(
 export function waitForElement(
   cbOrSelector: string | (($container: JQuery) => JQuery),
   messageOrTimeout?: string | number,
-  timeout = 1500
+  maybeTimeout = 1500
 ): Promise<any> {
   const errorMessagePrefix =
     typeof messageOrTimeout === 'string' ? `${messageOrTimeout}: ` : '';
@@ -195,7 +195,11 @@ export function waitForElement(
       }
       return true;
     },
-    { timeout, container: componentContainer }
+    {
+      timeout:
+        typeof messageOrTimeout === 'number' ? messageOrTimeout : maybeTimeout,
+      container: componentContainer
+    }
   );
 }
 
