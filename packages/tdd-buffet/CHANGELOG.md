@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.15.4](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@0.15.3...tdd-buffet@0.15.4) (2019-12-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency execa to v4 ([f62934d](https://github.com/NiGhTTraX/tdd-buffet/commit/f62934d))
+* **deps:** update dependency webdriverio to ~5.17.0 ([cbe32e9](https://github.com/NiGhTTraX/tdd-buffet/commit/cbe32e9))
+* **deps:** update dependency webdriverio to ~5.18.0 ([c60262a](https://github.com/NiGhTTraX/tdd-buffet/commit/c60262a))
+
+
+
+
+
 ## [0.15.3](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@0.15.2...tdd-buffet@0.15.3) (2019-12-20)
 
 

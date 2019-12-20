@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.8.0...@tdd-buffet/react@0.8.1) (2019-12-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency style-loader to ~1.1.0 ([967b578](https://github.com/NiGhTTraX/tdd-buffet/commit/967b578))
+
+
+
+
+
 # [0.8.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.7.0...@tdd-buffet/react@0.8.0) (2019-12-20)
 
 
