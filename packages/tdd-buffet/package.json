@@ -39,7 +39,7 @@
     "chai": "~4.2.0",
     "execa": "~4.0.0",
     "fs-extra": "~8.1.0",
-    "istanbul-lib-coverage": "~2.0.5",
+    "istanbul-lib-coverage": "~3.0.0",
     "jest": "~24.9.0",
     "jest-runtime": "~24.9.0",
     "meow": "~6.0.0",
