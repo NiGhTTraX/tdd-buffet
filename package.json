@@ -26,19 +26,19 @@
     "*.js": "eslint"
   },
   "devDependencies": {
-    "@nighttrax/eslint-config-tsx": "~3.0.0",
-    "@typescript-eslint/eslint-plugin": "~2.13.0",
+    "@nighttrax/eslint-config-tsx": "~4.1.1-alpha.0",
+    "@typescript-eslint/eslint-plugin": "~2.14.0",
     "eslint": "~6.8.0",
-    "eslint-config-prettier": "~6.8.0",
     "eslint-plugin-import": "~2.19.0",
-    "eslint-plugin-prettier": "~3.1.1",
+    "eslint-plugin-prettier": "~3.1.2",
     "eslint-import-resolver-typescript": "~1.1.1",
     "eslint-plugin-jsx-a11y": "~6.2.3",
     "eslint-plugin-react": "~7.17.0",
+    "eslint-plugin-react-hooks": "~2.3.0",
     "husky": "~3.1.0",
     "lerna": "~3.19.0",
     "lint-staged": "~9.5.0",
-    "prettier": "~1.19.0",
+    "prettier": "~1.19.1",
     "ts-node": "~8.5.0",
     "typescript": "~3.7.0"
   }

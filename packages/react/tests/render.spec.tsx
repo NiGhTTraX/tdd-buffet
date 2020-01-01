@@ -1,4 +1,4 @@
-/* eslint-disable react/no-multi-comp */
+// eslint-disable-next-line max-classes-per-file
 import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/chai';
@@ -95,10 +95,10 @@ describe('$render', () => {
 
   it('should wrap all children', () => {
     const Bar = () => (
-      <React.Fragment>
+      <>
         <p>1</p>
         <p>2</p>
-      </React.Fragment>
+      </>
     );
 
     const $component = $render(<Bar />);
