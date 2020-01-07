@@ -43,7 +43,7 @@
     "jest": "~24.9.0",
     "jest-runtime": "~24.9.0",
     "meow": "~6.0.0",
-    "ts-jest": "~24.2.0",
+    "ts-jest": "~24.3.0",
     "ts-loader": "~6.2.0",
     "typescript": "~3.7.0",
     "webdriverio": "~5.18.0",
