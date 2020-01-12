@@ -39,7 +39,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@babel/core": "~7.7.0",
+    "@babel/core": "~7.8.0",
     "@testing-library/react": "~9.4.0",
     "@types/jquery": "~3.3.30",
     "babel-loader": "~8.0.6",
