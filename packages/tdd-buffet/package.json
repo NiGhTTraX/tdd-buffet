@@ -33,7 +33,7 @@
     "@jest/transform": "~25.1.0",
     "@jest/types": "~25.1.0",
     "@types/chai": "~4.2.0",
-    "@types/fs-extra": "~8.0.0",
+    "@types/fs-extra": "~8.1.0",
     "@types/istanbul-lib-coverage": "~2.0.1",
     "@types/jest": "~25.1.0",
     "chai": "~4.2.0",
