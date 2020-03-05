@@ -6478,7 +6478,7 @@ jest-leak-detector@^25.1.0:
     jest-get-type "^25.1.0"
     pretty-format "^25.1.0"
 
-jest-matcher-utils@^25.1.0:
+jest-matcher-utils@^25.1.0, jest-matcher-utils@~25.1.0:
   version "25.1.0"
   resolved "https://registry.yarnpkg.com/jest-matcher-utils/-/jest-matcher-utils-25.1.0.tgz#fa5996c45c7193a3c24e73066fc14acdee020220"
   integrity sha512-KGOAFcSFbclXIFE7bS4C53iYobKI20ZWleAdAFun4W1Wz1Kkej8Ng6RRbhL8leaEvIOjGXhGf/a1JjO8bkxIWQ==
@@ -7210,7 +7210,7 @@ lodash.zip@^4.2.0:
   resolved "https://registry.yarnpkg.com/lodash.zip/-/lodash.zip-4.2.0.tgz#ec6662e4896408ed4ab6c542a3990b72cc080020"
   integrity sha1-7GZi5IlkCO1KtsVCo5kLcswIACA=
 
-lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.2.1:
+lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.2.1, lodash@~4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -10547,12 +10547,13 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-strong-mock@~3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-3.2.0.tgz#e1ae75efd712a3565c54fd7fe2e80b339676345d"
-  integrity sha512-O59wnYpCzLT3YSTz4Cp58iYK4m/amTPd5BsQLbZRQGpfyROko1woi6iOG3fV/wazKP1WQLPkzKXi7Nm/T5Mi+w==
+strong-mock@~4.1.0:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/strong-mock/-/strong-mock-4.1.1.tgz#ea3fbe61a1c97923dd52af6387d117b6e484198a"
+  integrity sha512-HSLIukpA4cC8g+3VlBIoud0Hm+Pmvtk9K8N3ZvT/+QbcsMx/h841DTaEdxDtS4JmQK8w6+NOLXM7834PJWBtBA==
   dependencies:
-    "@types/node" "~12.12.0"
+    jest-matcher-utils "~25.1.0"
+    lodash "~4.17.15"
 
 style-loader@~1.1.0:
   version "1.1.0"
