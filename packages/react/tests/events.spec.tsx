@@ -1,53 +1,53 @@
 import { $render, change, click, $fireEvent, keyDown } from '@tdd-buffet/react';
 import * as React from 'react';
-import Mock from 'strong-mock';
+import { instance, mock, verify, when } from 'strong-mock';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
 
 describe('Firing events', () => {
   it('click', () => {
-    const cb = new Mock<() => void>();
-    cb.when(c => c()).returns(undefined);
+    const cb = mock<() => void>();
+    when(cb()).thenReturn(undefined);
 
     $render(
-      <button type="button" onClick={() => cb.stub()}>
+      <button type="button" onClick={() => instance(cb)()}>
         click me
       </button>
     );
 
     click('button');
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('click.jquery', () => {
-    const cb = new Mock<() => void>();
-    cb.when(c => c()).returns(undefined);
+    const cb = mock<() => void>();
+    when(cb()).thenReturn(undefined);
 
     const $container = $render(
-      <button type="button" onClick={() => cb.stub()}>
+      <button type="button" onClick={() => instance(cb)()}>
         click me
       </button>
     );
 
     click($container.find('button'));
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('click.dom', () => {
-    const cb = new Mock<() => void>();
-    cb.when(c => c()).returns(undefined);
+    const cb = mock<() => void>();
+    when(cb()).thenReturn(undefined);
 
     const $container = $render(
-      <button type="button" onClick={() => cb.stub()}>
+      <button type="button" onClick={() => instance(cb)()}>
         click me
       </button>
     );
 
     click($container.find('button')[0]);
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('selector.non-existent query', () => {
@@ -75,15 +75,15 @@ describe('Firing events', () => {
   });
 
   it('selector.multiple query', () => {
-    const cb = new Mock<(x: number) => void>();
-    cb.when(c => c(1)).returns(undefined);
+    const cb = mock<(x: number) => void>();
+    when(cb(1)).thenReturn(undefined);
 
     $render(
       <>
-        <button type="button" onClick={() => cb.stub(1)}>
+        <button type="button" onClick={() => instance(cb)(1)}>
           click me
         </button>
-        <button type="button" onClick={() => cb.stub(2)}>
+        <button type="button" onClick={() => instance(cb)(2)}>
           click me
         </button>
       </>
@@ -91,19 +91,19 @@ describe('Firing events', () => {
 
     click('button');
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('selector.multiple jQuery', () => {
-    const cb = new Mock<(x: number) => void>();
-    cb.when(c => c(1)).returns(undefined);
+    const cb = mock<(x: number) => void>();
+    when(cb(1)).thenReturn(undefined);
 
     const $container = $render(
       <>
-        <button type="button" onClick={() => cb.stub(1)}>
+        <button type="button" onClick={() => instance(cb)(1)}>
           click me
         </button>
-        <button type="button" onClick={() => cb.stub(2)}>
+        <button type="button" onClick={() => instance(cb)(2)}>
           click me
         </button>
       </>
@@ -111,108 +111,114 @@ describe('Firing events', () => {
 
     click($container.find('button'));
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('click.checkbox.check', () => {
-    const cb = new Mock<(s: boolean) => void>();
-    cb.when(c => c(true)).returns(undefined);
-
-    $render(
-      <input type="checkbox" onChange={e => cb.stub(e.currentTarget.checked)} />
-    );
-
-    click('input');
-
-    cb.verifyAll();
-  });
-
-  it('click.checkbox.uncheck', () => {
-    const cb = new Mock<(s: boolean) => void>();
-    cb.when(c => c(false)).returns(undefined);
+    const cb = mock<(s: boolean) => void>();
+    when(cb(true)).thenReturn(undefined);
 
     $render(
       <input
         type="checkbox"
-        checked
-        onChange={e => cb.stub(e.currentTarget.checked)}
+        onChange={e => instance(cb)(e.currentTarget.checked)}
       />
     );
 
     click('input');
 
-    cb.verifyAll();
+    verify(cb);
   });
 
-  it('click.radio.check', () => {
-    const cb = new Mock<(s: boolean) => void>();
-    cb.when(c => c(true)).returns(undefined);
+  it('click.checkbox.uncheck', () => {
+    const cb = mock<(s: boolean) => void>();
+    when(cb(false)).thenReturn(undefined);
 
     $render(
-      <input type="radio" onChange={e => cb.stub(e.currentTarget.checked)} />
+      <input
+        type="checkbox"
+        checked
+        onChange={e => instance(cb)(e.currentTarget.checked)}
+      />
     );
 
     click('input');
 
-    cb.verifyAll();
+    verify(cb);
+  });
+
+  it('click.radio.check', () => {
+    const cb = mock<(s: boolean) => void>();
+    when(cb(true)).thenReturn(undefined);
+
+    $render(
+      <input
+        type="radio"
+        onChange={e => instance(cb)(e.currentTarget.checked)}
+      />
+    );
+
+    click('input');
+
+    verify(cb);
   });
 
   it('change.target', () => {
-    const cb = new Mock<(s: string) => void>();
-    cb.when(c => c('foobar')).returns(undefined);
+    const cb = mock<(s: string) => void>();
+    when(cb('foobar')).thenReturn(undefined);
 
-    $render(<input type="text" onChange={e => cb.stub(e.target.value)} />);
+    $render(<input type="text" onChange={e => instance(cb)(e.target.value)} />);
 
     change('input', 'foobar');
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('change.currentTarget', () => {
-    const cb = new Mock<(s: string) => void>();
-    cb.when(c => c('foobar')).returns(undefined);
+    const cb = mock<(s: string) => void>();
+    when(cb('foobar')).thenReturn(undefined);
 
     $render(
-      <input type="text" onChange={e => cb.stub(e.currentTarget.value)} />
+      <input type="text" onChange={e => instance(cb)(e.currentTarget.value)} />
     );
 
     change('input', 'foobar');
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('keydown', () => {
-    const cb = new Mock<(char: string, which: number) => void>();
+    const cb = mock<(char: string, which: number) => void>();
 
-    $render(<div onKeyDown={e => cb.stub(e.key, e.which)} />);
+    $render(<div onKeyDown={e => instance(cb)(e.key, e.which)} />);
 
-    cb.when(c => c('A', 65)).returns(undefined);
+    when(cb('A', 65)).thenReturn(undefined);
     keyDown('div', 'A');
 
-    cb.when(c => c('A', 100)).returns(undefined);
+    when(cb('A', 100)).thenReturn(undefined);
     keyDown('div', 'A', 100);
 
-    cb.when(c => c('Enter', 69)).returns(undefined);
+    when(cb('Enter', 69)).thenReturn(undefined);
     keyDown('div', 'Enter');
 
-    cb.when(c => c('Enter', 13)).returns(undefined);
+    when(cb('Enter', 13)).thenReturn(undefined);
     keyDown('div', 'Enter', 13);
 
-    cb.verifyAll();
+    verify(cb);
   });
 
   it('fireEvent', () => {
-    const cb = new Mock<() => void>();
-    cb.when(f => f()).returns(undefined);
+    const cb = mock<() => void>();
+    when(cb()).thenReturn(undefined);
 
     $render(
-      <button type="button" onDragCapture={cb.stub}>
+      <button type="button" onDragCapture={instance(cb)}>
         Click me
       </button>
     );
 
     $fireEvent.drag('button');
 
-    cb.verifyAll();
+    verify(cb);
   });
 });

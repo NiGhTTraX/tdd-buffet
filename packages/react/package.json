@@ -63,7 +63,7 @@
     "react": "~16.13.0",
     "react-dom": "~16.13.0",
     "react-mock-component": "~2.1.0",
-    "strong-mock": "~3.2.0",
+    "strong-mock": "~4.1.1",
     "typescript": "~3.8.0",
     "webpack-cli": "~3.3.9"
   }
