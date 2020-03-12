@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@babel/core": "~7.8.0",
-    "@testing-library/react": "~9.5.0",
+    "@testing-library/react": "~10.0.0",
     "@types/jquery": "~3.3.30",
     "babel-loader": "~8.0.6",
     "babel-plugin-istanbul": "~6.0.0",
