@@ -45,7 +45,7 @@
     "babel-loader": "~8.0.6",
     "babel-plugin-istanbul": "~6.0.0",
     "css-loader": "~3.4.0",
-    "fork-ts-checker-webpack-plugin": "~4.0.0",
+    "fork-ts-checker-webpack-plugin": "~4.1.0",
     "jquery": "~3.4.1",
     "less": "~3.11.0",
     "less-loader": "~5.0.0",
