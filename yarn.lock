@@ -10004,12 +10004,12 @@ semver@~5.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
   integrity sha1-myzl094C0XxgEq0yaqa00M9U+U8=
 
-serialize-error@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-5.0.0.tgz#a7ebbcdb03a5d71a6ed8461ffe0fc1a1afed62ac"
-  integrity sha512-/VtpuyzYf82mHYTtI4QKtwHa79vAdU5OQpNPAmE/0UDdlGT0ZxHwC+J6gXkw29wwoVI8fMPsfcVHOwXtUQYYQA==
+serialize-error@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/serialize-error/-/serialize-error-6.0.0.tgz#ccfb887a1dd1c48d6d52d7863b92544331fd752b"
+  integrity sha512-3vmBkMZLQO+BR4RPHcyRGdE09XCF6cvxzk2N2qn8Er3F91cy8Qt7VvEbZBOpaL53qsBbe2cFOefU6tRY6WDelA==
   dependencies:
-    type-fest "^0.8.0"
+    type-fest "^0.12.0"
 
 serialize-javascript@^2.1.2:
   version "2.1.2"
@@ -11045,6 +11045,11 @@ type-fest@^0.10.0:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.10.0.tgz#7f06b2b9fbfc581068d1341ffabd0349ceafc642"
   integrity sha512-EUV9jo4sffrwlg8s0zDhP0T2WD3pru5Xi0+HTE3zTUmBaZNhfkite9PdSJwdXLwPVW0jnAHT56pZHIOYckPEiw==
 
+type-fest@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.12.0.tgz#f57a27ab81c68d136a51fd71467eff94157fa1ee"
+  integrity sha512-53RyidyjvkGpnWPMF9bQgFtWp+Sl8O2Rp13VavmJgfAP9WWG6q6TkrKU8iyJdnwnfgHI6k2hTlgqH4aSdjoTbg==
+
 type-fest@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
@@ -11060,7 +11065,7 @@ type-fest@^0.6.0:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.6.0.tgz#8d2a2370d3df886eb5c90ada1c5bf6188acf838b"
   integrity sha512-q+MB8nYR1KDLrgr4G5yemftpMC7/QLqVndBmEEdqzmNj5dcFOO4Oo8qlwZE3ULT3+Zim1F8Kq4cBnikNhlCMlg==
 
-type-fest@^0.8.0, type-fest@^0.8.1:
+type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
@@ -11334,10 +11339,10 @@ webdriver@5.19.0:
     lodash.merge "^4.6.1"
     request "^2.83.0"
 
-webdriverio@~5.19.0:
-  version "5.19.0"
-  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.19.0.tgz#8c17dbf3ca8d406f5f5f29dc9d71bc3c481a9670"
-  integrity sha512-0HFKkE9RqfTGlJbZ2XyxpHDH+Seya5x9wHs8USL5PSrxxnEljcrVc6qya85o6zFlcTgGzC5WM6UDycXkfa1cLg==
+webdriverio@~5.20.0:
+  version "5.20.1"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.20.1.tgz#99bf3c3e8e12d55f2addabc1e89933a990f3e702"
+  integrity sha512-uXfksyM4vN3FbHIU6krNhE0dqynZ8vUGOAOcW9u+xejPlIE2g6MyAo0J5JJeR0jkXjT2+4R2ti9jcFV6asY9Ow==
   dependencies:
     "@wdio/config" "5.18.4"
     "@wdio/logger" "5.16.10"
@@ -11352,7 +11357,7 @@ webdriverio@~5.19.0:
     lodash.zip "^4.2.0"
     resq "^1.6.0"
     rgb2hex "^0.1.0"
-    serialize-error "^5.0.0"
+    serialize-error "^6.0.0"
     webdriver "5.19.0"
 
 webidl-conversions@^4.0.2:
