@@ -15,6 +15,8 @@ function getJQueryContainer() {
   return $(componentContainer);
 }
 
+export { $ };
+
 /**
  * Wait for a condition to be fulfilled.
  *
