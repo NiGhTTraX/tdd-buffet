@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { expect } from 'tdd-buffet/expect/chai';
 import { expect as jExpect } from 'tdd-buffet/expect/jest';
 import { afterEach, beforeEach, describe, it } from 'tdd-buffet/suite/node';
-import { $render, $rerender, wait, waitForElement } from '../src';
+import { $render, $rerender } from '../src';
+import { wait, waitForElement } from '../src/wait';
 
 describe('wait', () => {
   it('should wait for an already satisfied condition', async () => {
