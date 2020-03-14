@@ -2,7 +2,7 @@ import * as React from 'react';
 import { instance, mock, verify, when } from 'strong-mock';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
-import { $fireEvent, change, click, keyDown } from '../src/events';
+import { $change, $click, $fireEvent, $keyDown, click } from '../src/events';
 import { $render } from '../src/render';
 
 describe('Firing events', () => {
@@ -16,7 +16,7 @@ describe('Firing events', () => {
       </button>
     );
 
-    click('button');
+    $click('button');
 
     verify(cb);
   });
@@ -31,7 +31,7 @@ describe('Firing events', () => {
       </button>
     );
 
-    click($container.find('button'));
+    $click($container.find('button'));
 
     verify(cb);
   });
@@ -55,7 +55,7 @@ describe('Firing events', () => {
     $render(<span />);
 
     expect(() => {
-      click('non-existent');
+      $click('non-existent');
     }).to.throw('Element does not exist');
   });
 
@@ -63,7 +63,7 @@ describe('Firing events', () => {
     const $container = $render(<span />);
 
     expect(() => {
-      click($container.find('non-existent')[0]);
+      $click($container.find('non-existent')[0]);
     }).to.throw('Element does not exist');
   });
 
@@ -71,7 +71,7 @@ describe('Firing events', () => {
     const $container = $render(<span />);
 
     expect(() => {
-      click($container.find('non-existent'));
+      $click($container.find('non-existent'));
     }).to.throw('Element does not exist');
   });
 
@@ -90,7 +90,7 @@ describe('Firing events', () => {
       </>
     );
 
-    click('button');
+    $click('button');
 
     verify(cb);
   });
@@ -110,7 +110,7 @@ describe('Firing events', () => {
       </>
     );
 
-    click($container.find('button'));
+    $click($container.find('button'));
 
     verify(cb);
   });
@@ -126,7 +126,7 @@ describe('Firing events', () => {
       />
     );
 
-    click('input');
+    $click('input');
 
     verify(cb);
   });
@@ -143,7 +143,7 @@ describe('Firing events', () => {
       />
     );
 
-    click('input');
+    $click('input');
 
     verify(cb);
   });
@@ -159,7 +159,7 @@ describe('Firing events', () => {
       />
     );
 
-    click('input');
+    $click('input');
 
     verify(cb);
   });
@@ -170,7 +170,7 @@ describe('Firing events', () => {
 
     $render(<input type="text" onChange={e => instance(cb)(e.target.value)} />);
 
-    change('input', 'foobar');
+    $change('input', 'foobar');
 
     verify(cb);
   });
@@ -183,7 +183,7 @@ describe('Firing events', () => {
       <input type="text" onChange={e => instance(cb)(e.currentTarget.value)} />
     );
 
-    change('input', 'foobar');
+    $change('input', 'foobar');
 
     verify(cb);
   });
@@ -194,16 +194,16 @@ describe('Firing events', () => {
     $render(<div onKeyDown={e => instance(cb)(e.key, e.which)} />);
 
     when(cb('A', 65)).thenReturn(undefined);
-    keyDown('div', 'A');
+    $keyDown('div', 'A');
 
     when(cb('A', 100)).thenReturn(undefined);
-    keyDown('div', 'A', 100);
+    $keyDown('div', 'A', 100);
 
     when(cb('Enter', 69)).thenReturn(undefined);
-    keyDown('div', 'Enter');
+    $keyDown('div', 'Enter');
 
     when(cb('Enter', 13)).thenReturn(undefined);
-    keyDown('div', 'Enter', 13);
+    $keyDown('div', 'Enter', 13);
 
     verify(cb);
   });
