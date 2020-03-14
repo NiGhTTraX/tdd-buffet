@@ -13,6 +13,13 @@ export type FireObject = {
  * @testing-library/react's fireEvent.
  *
  * @see https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname
+ *
+ * @example
+ * $fireEvent.click('button')
+ * $fireEvent.click('input[type=checkbox]')
+ * $fireEvent.click('input[type=radio]')
+ * $fireEvent.click($component.find('button.primary'))
+ * $fireEvent.click($component.find('button')[2])
  */
 export const $fireEvent: FireObject = Object.keys(rtlFireEvent).reduce(
   (acc, key) => {
