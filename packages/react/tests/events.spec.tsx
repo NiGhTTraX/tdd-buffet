@@ -1,8 +1,8 @@
-import { change, click, $fireEvent, keyDown } from '@tdd-buffet/react';
 import * as React from 'react';
 import { instance, mock, verify, when } from 'strong-mock';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
+import { $fireEvent, change, click, keyDown } from '../src/events';
 import { $render } from '../src/render';
 
 describe('Firing events', () => {
