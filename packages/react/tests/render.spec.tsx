@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
-import { $render, $rerender, unmount } from '../src';
+import { $render, $rerender, unmount } from '../src/render';
 
 describe('$render', () => {
   it('should render a component', () => {

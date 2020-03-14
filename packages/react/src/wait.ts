@@ -2,7 +2,7 @@ import {
   wait as rtlWait,
   waitForElement as rtlWaitForElement
 } from '@testing-library/react/pure';
-import { getJQueryContainer } from './index';
+import { getJQueryContainer } from './render';
 
 /**
  * Wait for a condition to be fulfilled.
