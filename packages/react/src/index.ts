@@ -3,7 +3,7 @@ import {
   EventType,
   render as rtlRender,
   wait as rtlWait,
-  waitForElement as rtlWaitForElement
+  waitForElement as rtlWaitForElement // TODO: replace with waitFor
 } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { ReactElement } from 'react';
