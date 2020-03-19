@@ -18,7 +18,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
@@ -26,6 +27,8 @@
     "*.js": "eslint"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "~8.3.4",
+    "@commitlint/cli": "~8.3.5",
     "@nighttrax/eslint-config-tsx": "~4.1.1-alpha.0",
     "@typescript-eslint/eslint-plugin": "~2.23.0",
     "eslint": "~6.8.0",
