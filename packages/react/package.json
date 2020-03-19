@@ -60,6 +60,7 @@
   "devDependencies": {
     "@types/react": "~16.9.0",
     "@types/react-dom": "~16.9.0",
+    "jest-react-mock": "~1.0.1",
     "react": "~16.13.0",
     "react-dom": "~16.13.0",
     "react-mock-component": "~2.2.0",

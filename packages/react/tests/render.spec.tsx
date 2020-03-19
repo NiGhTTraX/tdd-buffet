@@ -1,7 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
-import { expect } from 'tdd-buffet/expect/chai';
+import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
 import { $render, $rerender, unmount } from '../src/render';
 
@@ -11,7 +11,7 @@ describe('$render', () => {
 
     $render(<Component />);
 
-    expect(Component.rendered).to.be.true;
+    expect(Component).toHaveBeenRendered();
   });
 
   it('should render a component built with hooks', () => {
@@ -30,7 +30,7 @@ describe('$render', () => {
 
     const $component = $render(<HookyComponent />);
 
-    expect($component.text()).to.equal('effect triggered');
+    expect($component.text()).toEqual('effect triggered');
   });
 
   it('should render a component with props', () => {
@@ -38,19 +38,19 @@ describe('$render', () => {
 
     $render(<Component foo="bar" />);
 
-    expect(Component.renderedWith({ foo: 'bar' })).to.be.true;
+    expect(Component).toHaveBeenRenderedWith({ foo: 'bar' });
   });
 
   it('should return a jquery element', () => {
     const $component = $render(<span>foobar</span>);
 
-    expect($component.text()).to.equal('foobar');
+    expect($component.text()).toEqual('foobar');
   });
 
   it('should wrap the container, not the component', () => {
     const $component = $render(<span>foobar</span>);
 
-    expect($component.html()).to.equal('<span>foobar</span>');
+    expect($component.html()).toEqual('<span>foobar</span>');
   });
 
   let rerendered;
@@ -71,7 +71,7 @@ describe('$render', () => {
     $render(<Rerenderable />);
     $rerender(<Rerenderable />);
 
-    expect(rerendered).to.be.true;
+    expect(rerendered).toBeTruthy();
   });
 
   it('should recreate container', () => {
@@ -80,7 +80,7 @@ describe('$render', () => {
     $render(<Rerenderable />);
     $render(<Rerenderable />);
 
-    expect(rerendered).to.be.false;
+    expect(rerendered).toBeFalsy();
   });
 
   it('should update the container', () => {
@@ -90,7 +90,7 @@ describe('$render', () => {
     const $component = $render(<Foo />);
     $rerender(<Foo done />);
 
-    expect($component.text()).to.equal('done');
+    expect($component.text()).toEqual('done');
   });
 
   it('should wrap all children', () => {
@@ -103,7 +103,7 @@ describe('$render', () => {
 
     const $component = $render(<Bar />);
 
-    expect($component.text()).to.equal('12');
+    expect($component.text()).toEqual('12');
   });
 
   it('should unmount component', () => {
@@ -122,7 +122,7 @@ describe('$render', () => {
     $render(<Unmountable />);
     unmount();
 
-    expect(unmounted).to.be.true;
+    expect(unmounted).toBeTruthy();
   });
 
   it('should recreate container after unmounting', () => {
@@ -130,7 +130,7 @@ describe('$render', () => {
     unmount();
     const $newContainer = $render(<span>baz</span>);
 
-    expect($container.text()).to.be.empty;
-    expect($newContainer.text()).to.equal('baz');
+    expect($container.text()).toHaveLength(0);
+    expect($newContainer.text()).toEqual('baz');
   });
 });
