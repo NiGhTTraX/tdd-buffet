@@ -1,3 +1,4 @@
+const { pathExistsSync } = require('fs-extra');
 const path = require('path');
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const ts = require('typescript');
@@ -13,6 +14,17 @@ const { options: compilerOptions } = ts.parseJsonConfigFileContent(
   path.dirname(configName)
 );
 
+// Will be tried in order and the first one that exists will be used.
+const setupTestsFilePaths = [
+  path.join(process.cwd(), 'src', 'setupTests.ts'),
+  path.join(process.cwd(), 'tests', 'setupTests.ts'),
+  path.join(process.cwd(), 'tests', 'setup.ts')
+];
+
+const setupTestsFile = setupTestsFilePaths.find(filePath =>
+  pathExistsSync(filePath)
+);
+
 module.exports = {
   // Work around a quirk in how jest resolves the preset: it uses its own
   // module resolution instead of Node's so it breaks in yarn workspaces.
@@ -20,9 +32,13 @@ module.exports = {
   // in that path.
   preset: __dirname,
   testEnvironment: 'jsdom',
+
   // We polyfill some things commonly found in tests. We don't want to polyfill
   // everything, especially since we only support modern versions of Node.
   setupFiles: [path.join(__dirname, 'polyfills.js')],
+
+  // Here a user could setup e.g. custom jest matchers.
+  setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
 
   // Our custom runtime that exposes a way to add coverage from external sources.
   moduleLoader: path.join(__dirname, './jest-runtime.js'),
