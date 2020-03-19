@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
-import { $render, $rerender, unmount } from '../src/render';
+import { $render, $rerender, $unmount } from '../src/render';
 
 describe('$render', () => {
   it('should render a component', () => {
@@ -120,14 +120,14 @@ describe('$render', () => {
     }
 
     $render(<Unmountable />);
-    unmount();
+    $unmount();
 
     expect(unmounted).toBeTruthy();
   });
 
   it('should recreate container after unmounting', () => {
     const $container = $render(<span>bar</span>);
-    unmount();
+    $unmount();
     const $newContainer = $render(<span>baz</span>);
 
     expect($container.text()).toHaveLength(0);

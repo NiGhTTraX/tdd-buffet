@@ -60,7 +60,11 @@ export function $rerender(element: ReactElement): JQuery {
  * Unmount the currently mounted component.
  *
  * If there's no mounted component nothing will happen.
+ *
+ * @deprecated Please use $unmount instead.
  */
 export function unmount() {
   ReactDOM.unmountComponentAtNode(componentContainer);
 }
+
+export const $unmount = unmount;
