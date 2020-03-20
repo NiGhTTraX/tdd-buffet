@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "~8.3.4",
+    "@commitlint/config-lerna-scopes": "~8.3.4",
     "@commitlint/cli": "~8.3.5",
     "@nighttrax/eslint-config-tsx": "~4.1.1-alpha.0",
     "@typescript-eslint/eslint-plugin": "~2.23.0",
