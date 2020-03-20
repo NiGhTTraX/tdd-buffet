@@ -5,3 +5,4 @@ results
 *.tsbuildinfo
 *.diff.png
 *.actual.png
+lerna-debug.log
