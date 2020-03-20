@@ -28,6 +28,7 @@ This is an opinionated collection of libraries and tools for writing tests and e
 - Side dishes
     - [Testing React apps](./packages/react/README.md#testing)
       - [Render components](./packages/react/README.md#render-components)
+      - [Find elements](./packages/react/README.md#find-elements)
       - [Fire events](./packages/react/README.md#fire-events)
       - [Wait for conditions](./packages/react/README.md#wait-for-conditions)
       - [Wait for elements](./packages/react/README.md#wait-for-elements)

@@ -24,13 +24,11 @@ declare module '@testing-library/react/pure' {
  * @param timeout Time in ms to wait until condition is fulfilled.
  *
  * @example
- * ```
  * await wait(() => 1 === 1);
  * await wait(() => 1 === 1, 2000);
  * await wait(() => expect(1).to.equal(1))
  * await wait(() => { expect(1).to.equal(1); })
  * await wait($container => $container.text() === 'foobar');
- * ```
  */
 export function wait(
   cb: ($container: JQuery) => any,
@@ -47,10 +45,8 @@ export function wait(
  * @param timeout Time in ms to wait until condition is fulfilled.
  *
  * @example
- * ```
  * await wait(() => 1 === 1, '1 should be 1');
  * await wait(() => expect(1).to.equal(1), '1 should be 1 before 2 secs', 2000)
- * ```
  */
 export function wait(
   cb: ($container: JQuery) => any,
@@ -103,10 +99,8 @@ export function wait(
  * @param timeout
  *
  * @example
- * ```
  * waitForElement('div.myClass')
  * waitForElement('div > p + p')
- * ```
  */
 export function waitForElement(
   selector: string,
@@ -125,10 +119,8 @@ export function waitForElement(
  * @param timeout
  *
  * @example
- * ```
  * waitForElement('div.myClass')
  * waitForElement('div > p + p')
- * ```
  */
 export function waitForElement(
   selector: string,
@@ -149,10 +141,8 @@ export function waitForElement(
  * @param timeout
  *
  * @example
- * ```
  * waitForElement($container => $container.find('.foobar'))
  * waitForElement($container => $container.find('div').children().find('p').get(1))
- * ```
  */
 export function waitForElement(
   cb: ($container: JQuery) => JQuery,
@@ -173,10 +163,8 @@ export function waitForElement(
  * @param timeout
  *
  * @example
- * ```
  * waitForElement($container => $container.find('.foobar'))
  * waitForElement($container => $container.find('div').children().find('p').get(1))
- * ```
  */
 export function waitForElement(
   cb: ($container: JQuery) => JQuery,

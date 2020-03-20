@@ -32,11 +32,9 @@ function createContainer() {
  * @returns A jQuery wrapper over the container (not the component itself).
  *
  * @example
- * ```
  * const $container = $render(<span>foobar<span>);
  * console.log($container.text()) // foobar
  * console.log($container.html()) // <span>foobar</span>
- * ```
  */
 export function $render(element: ReactElement): JQuery {
   createContainer();
@@ -48,7 +46,6 @@ export function $render(element: ReactElement): JQuery {
  * Render the same component with different props.
  *
  * @example
- * ```
  * $render(<MyComponent foo="bar" />);
  * $rerender(<MyComponent foo="potato" />);
  */
