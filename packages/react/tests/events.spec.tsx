@@ -2,7 +2,15 @@ import * as React from 'react';
 import { instance, mock, verify, when } from 'strong-mock';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
-import { $change, $click, $fireEvent, $keyDown, click } from '../src/events';
+import {
+  $change,
+  $click,
+  $getByTestId,
+  $getByText,
+  $fireEvent,
+  $keyDown,
+  click
+} from '../src/events';
 import { $render } from '../src/render';
 
 describe('Firing events', () => {
@@ -221,5 +229,26 @@ describe('Firing events', () => {
     $fireEvent.drag('button');
 
     verify(cb);
+  });
+
+  it('getByTestId', () => {
+    $render(<span data-testid="foo">bar</span>);
+
+    expect($getByTestId('foo').text()).to.equal('bar');
+    expect(() => $getByTestId('xxx')).to.throw();
+  });
+
+  it('getByText.string', () => {
+    $render(<span>FoO BaR</span>);
+
+    expect($getByText('FoO').text()).to.equal('FoO BaR');
+    expect(() => $getByText('xxx')).to.throw();
+  });
+
+  it('getByText.regexp', () => {
+    $render(<span>FoO BaR</span>);
+
+    expect($getByText(/foo/i).text()).to.equal('FoO BaR');
+    expect(() => $getByText(/xxx/)).to.throw();
   });
 });

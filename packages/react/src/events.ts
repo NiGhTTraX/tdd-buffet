@@ -107,9 +107,51 @@ export function keyDown(
 export const $keyDown = keyDown;
 
 /**
+ * Find an element in the currently rendered component by its `data-testid` attribute.
+ *
+ * Only the first matching element is returned. If there are no matching elements
+ * an error will be thrown.
+ *
+ * @example
+ * $render(<button data-test="submit">Click me</button>);
+ * $findByTestId('submit').text() === 'Click me'
+ */
+export function $getByTestId(id: string): JQuery {
+  return $(getByTestId(getJQueryContainer()[0], id, {}));
+}
+
+/**
+ * Find an element in the currently rendered component that contains the given text.
+ *
+ * The search is case sensitive.
+ *
+ * Only the first matching element is returned. If there are no matching elements
+ * an error will be thrown.
+ *
+ * @example
+ * $render(<button>Click me</button>);
+ * $findByText('Click').text() === 'Click me'
+ */
+export function $getByText(contains: string): JQuery;
+/**
+ * Find an element in the currently rendered component that matches the given RegExp.
+ *
+ * Only the first matching element is returned. If there are no matching elements
+ * an error will be thrown.
+ *
+ * @example
+ * $render(<button>Click me</button>);
+ * $findByText(/click/).text() === 'Click me'
+ */
+export function $getByText(matches: RegExp): JQuery;
+export function $getByText(match: string | RegExp): JQuery {
+  return $(getByText(getJQueryContainer()[0], match, { exact: false }));
+}
+
+/**
  * Get the first element that matches the selector from the currently rendered component.
  */
-function getElement(selector: Selector) {
+function getElement(selector: Selector): HTMLElement {
   let element: HTMLElement;
 
   if (typeof selector === 'string') {
