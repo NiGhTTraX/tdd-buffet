@@ -26,7 +26,7 @@ export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
     const event = key as EventType;
 
     acc[event] = (selector: Selector, options?: {}) => {
-      fireEvent[event](getElement(selector), options);
+      fireEvent[event](getDOMElement(selector), options);
     };
 
     return acc;
@@ -51,7 +51,7 @@ export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
  * click($component.find('button')[2])
  */
 export function click(selector: Selector) {
-  fireEvent.click(getElement(selector));
+  fireEvent.click(getDOMElement(selector));
 }
 export const $click = click;
 
@@ -71,7 +71,7 @@ export const $click = click;
  * change($component.find('input')[2], 'foobar')
  */
 export function change(selector: Selector, value: string) {
-  fireEvent.change(getElement(selector), { target: { value } });
+  fireEvent.change(getDOMElement(selector), { target: { value } });
 }
 export const $change = change;
 
@@ -97,7 +97,7 @@ export function keyDown(
   key: string,
   keyCode: number = key.charCodeAt(0)
 ) {
-  fireEvent.keyDown(getElement(selector), {
+  fireEvent.keyDown(getDOMElement(selector), {
     key,
     keyCode,
     charCode: keyCode,
@@ -151,7 +151,7 @@ export function $getByText(match: string | RegExp): JQuery {
 /**
  * Get the first element that matches the selector from the currently rendered component.
  */
-function getElement(selector: Selector): HTMLElement {
+function getDOMElement(selector: Selector): HTMLElement {
   let element: HTMLElement;
 
   if (typeof selector === 'string') {
