@@ -1,8 +1,18 @@
-import {
-  wait as rtlWait,
-  waitForElement as rtlWaitForElement
-} from '@testing-library/react/pure';
+import { waitFor as rtlWaitFor } from '@testing-library/react/pure';
 import { getJQueryContainer } from './render';
+
+// TODO: remove after https://github.com/DefinitelyTyped/DefinitelyTyped/pull/43102 is released
+declare module '@testing-library/react/pure' {
+  export function waitFor(
+    callback: () => void,
+    options?: {
+      container?: HTMLElement;
+      timeout?: number;
+      interval?: number;
+      mutationObserverOptions?: MutationObserverInit;
+    }
+  ): Promise<void>;
+}
 
 /**
  * Wait for a condition to be fulfilled.
@@ -52,7 +62,7 @@ export function wait(
   timeoutOrMessage?: number | string,
   maybeTimeout = 1500
 ): Promise<void> {
-  return rtlWait(
+  return rtlWaitFor(
     () => {
       let result: any;
 
@@ -181,7 +191,7 @@ export function waitForElement(
   const errorMessagePrefix =
     typeof messageOrTimeout === 'string' ? `${messageOrTimeout}: ` : '';
 
-  return rtlWaitForElement(
+  return rtlWaitFor(
     () => {
       if (typeof cbOrSelector === 'string') {
         if (!getJQueryContainer().find(cbOrSelector).length) {
