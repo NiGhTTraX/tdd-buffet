@@ -1,4 +1,4 @@
-import { fireEvent as rtlFireEvent } from '@testing-library/react/pure';
+import { fireEvent, getByText, getByTestId } from '@testing-library/react/pure';
 import { EventType } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { getJQueryContainer } from './render';
@@ -21,12 +21,12 @@ export type FireObject = {
  * $fireEvent.click($component.find('button.primary'))
  * $fireEvent.click($component.find('button')[2])
  */
-export const $fireEvent: FireObject = Object.keys(rtlFireEvent).reduce(
+export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
   (acc, key) => {
     const event = key as EventType;
 
     acc[event] = (selector: Selector, options?: {}) => {
-      rtlFireEvent[event](getElement(selector), options);
+      fireEvent[event](getElement(selector), options);
     };
 
     return acc;
@@ -51,7 +51,7 @@ export const $fireEvent: FireObject = Object.keys(rtlFireEvent).reduce(
  * click($component.find('button')[2])
  */
 export function click(selector: Selector) {
-  rtlFireEvent.click(getElement(selector));
+  fireEvent.click(getElement(selector));
 }
 export const $click = click;
 
@@ -71,7 +71,7 @@ export const $click = click;
  * change($component.find('input')[2], 'foobar')
  */
 export function change(selector: Selector, value: string) {
-  rtlFireEvent.change(getElement(selector), { target: { value } });
+  fireEvent.change(getElement(selector), { target: { value } });
 }
 export const $change = change;
 
@@ -97,7 +97,7 @@ export function keyDown(
   key: string,
   keyCode: number = key.charCodeAt(0)
 ) {
-  rtlFireEvent.keyDown(getElement(selector), {
+  fireEvent.keyDown(getElement(selector), {
     key,
     keyCode,
     charCode: keyCode,
