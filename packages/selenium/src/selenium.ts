@@ -30,7 +30,7 @@ async function waitForNodes(
     {
       total: retries,
       width: 60,
-      clear: true
+      clear: true,
     }
   );
 
@@ -39,7 +39,7 @@ async function waitForNodes(
     actual: 0,
     expected: expectedNodes,
     pings: 0,
-    retries
+    retries,
   });
 
   while (pings++ < retries) {
@@ -55,7 +55,7 @@ async function waitForNodes(
       actual: actualNodes,
       expected: expectedNodes,
       pings: pings - 1,
-      retries
+      retries,
     });
 
     if (actualNodes < expectedNodes) {
@@ -84,9 +84,9 @@ async function up(
     await execa.command(`docker-compose -f ${configPath} up -d ${services}`, {
       env: {
         HUB_PORT: `${port}`,
-        COMPOSE_PROJECT_NAME
+        COMPOSE_PROJECT_NAME,
       },
-      stdio: 'inherit'
+      stdio: 'inherit',
     });
 
     console.log(`Waiting for ${expectedNodes} nodes to connect`);
@@ -135,9 +135,9 @@ export async function stop() {
     )} down -v`,
     {
       env: {
-        COMPOSE_PROJECT_NAME
+        COMPOSE_PROJECT_NAME,
       },
-      stdio: 'inherit'
+      stdio: 'inherit',
     }
   );
 }

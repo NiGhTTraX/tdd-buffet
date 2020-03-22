@@ -11,7 +11,7 @@ export function getJQueryContainer() {
 
 function renderAndReturnContainer(element: ReactElement) {
   rtlRender(element, {
-    container: componentContainer
+    container: componentContainer,
   });
 
   return getJQueryContainer();

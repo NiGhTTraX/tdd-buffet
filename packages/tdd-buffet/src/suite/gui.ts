@@ -6,14 +6,14 @@ import {
   runnerBefore,
   runnerBeforeEach,
   runnerDescribe,
-  runnerIt
+  runnerIt,
 } from '../jest';
 
 /* istanbul ignore next: I'm not going to run the tests twice to cover these */
 const {
   BROWSER = 'chrome',
   SELENIUM_HOST = 'localhost',
-  SELENIUM_PORT = '4444'
+  SELENIUM_PORT = '4444',
 } = process.env;
 
 let suiteNesting = 0;
@@ -65,7 +65,7 @@ export type TestDefinition = (
 function getBrowserChromeSize() {
   return {
     width: window.outerWidth - window.innerWidth,
-    height: window.outerHeight - window.innerHeight
+    height: window.outerHeight - window.innerHeight,
   };
 }
 
@@ -87,7 +87,7 @@ export async function setViewportSize(width: number, height: number) {
     // @ts-ignore because the return type is not properly inferred
     width: chromeWidth,
     // @ts-ignore
-    height: chromeHeight
+    height: chromeHeight,
   } = await rootSuiteBrowser.execute(getBrowserChromeSize);
 
   const actualWidth = width + chromeWidth;
@@ -180,7 +180,7 @@ function setupHooks() {
       hostname: SELENIUM_HOST,
       port: parseInt(SELENIUM_PORT, 10),
       capabilities: { browserName: BROWSER },
-      logLevel: 'error'
+      logLevel: 'error',
     };
 
     rootSuiteBrowser = await remote(options);

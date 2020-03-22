@@ -21,13 +21,13 @@ const cli = meow(
     flags: {
       port: {
         type: 'number',
-        default: 4444
+        default: 4444,
       },
       retries: {
         type: 'number',
-        default: 15
-      }
-    }
+        default: 15,
+      },
+    },
   }
 );
 

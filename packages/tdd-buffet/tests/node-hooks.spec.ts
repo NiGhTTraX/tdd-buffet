@@ -5,7 +5,7 @@ import {
   before,
   beforeEach,
   describe,
-  it
+  it,
 } from '../src/suite/node';
 
 describe('Node hooks', () => {

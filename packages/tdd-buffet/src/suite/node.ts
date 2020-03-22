@@ -4,5 +4,5 @@ export {
   runnerAfter as after,
   runnerAfterEach as afterEach,
   runnerBeforeEach as beforeEach,
-  runnerDescribe as describe
+  runnerDescribe as describe,
 } from '../jest';

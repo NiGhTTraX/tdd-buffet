@@ -28,7 +28,7 @@ module.exports = class JestRuntime extends Runtime {
     return {
       ...jestObject,
       config: this.config,
-      addCoverageFor: this.addCoverageFor.bind(this)
+      addCoverageFor: this.addCoverageFor.bind(this),
     };
   }
 

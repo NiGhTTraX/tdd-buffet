@@ -5,7 +5,7 @@ module.exports = {
 
   collectCoverageFrom: [
     ...baseConfig.collectCoverageFrom,
-    '!**/tests/coverage/ignored.js'
+    '!**/tests/coverage/ignored.js',
   ],
-  forceCoverageMatch: ['**/tests/coverage/*.ts', '**/tests/coverage/*.tsx']
+  forceCoverageMatch: ['**/tests/coverage/*.ts', '**/tests/coverage/*.tsx'],
 };

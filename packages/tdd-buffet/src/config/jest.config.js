@@ -18,10 +18,10 @@ const { options: compilerOptions } = ts.parseJsonConfigFileContent(
 const setupTestsFilePaths = [
   path.join(process.cwd(), 'src', 'setupTests.ts'),
   path.join(process.cwd(), 'tests', 'setupTests.ts'),
-  path.join(process.cwd(), 'tests', 'setup.ts')
+  path.join(process.cwd(), 'tests', 'setup.ts'),
 ];
 
-const setupTestsFile = setupTestsFilePaths.find(filePath =>
+const setupTestsFile = setupTestsFilePaths.find((filePath) =>
   pathExistsSync(filePath)
 );
 
@@ -48,8 +48,8 @@ module.exports = {
     ? {
         ...pathsToModuleNameMapper(compilerOptions.paths, {
           // The prefix must have a trailing slash.
-          prefix: path.join(compilerOptions.baseUrl, '/')
-        })
+          prefix: path.join(compilerOptions.baseUrl, '/'),
+        }),
       }
     : null,
   modulePathIgnorePatterns: ['dist'],
@@ -60,7 +60,7 @@ module.exports = {
     // Treat everything else as a static asset and mock it.
     '^(?!.*\\.(js|jsx|ts|tsx|css|less|json)$)': require.resolve(
       './file-mock.js'
-    )
+    ),
   },
 
   // When importing without an extension Jest will try these in order.
@@ -74,15 +74,15 @@ module.exports = {
     '**/src/**/*.{ts,tsx}',
     '!**/*.d.ts',
     '!**/*.(spec|test).{ts,tsx}',
-    '!**/vendor/**/*'
+    '!**/vendor/**/*',
   ],
   coverageDirectory: '<rootDir>/tests/results',
   coverageReporters: ['json', 'text', 'html'],
   coverageThreshold: {
     global: {
       lines: 100,
-      branches: 100
-    }
+      branches: 100,
+    },
   },
 
   globals: {
@@ -97,8 +97,8 @@ module.exports = {
 
         // next.js forces `jsx: 'preserve'` for their toolchain, but Jest wants
         // the transformer to transpile the syntax.
-        ...(compilerOptions.jsx === ts.JsxEmit.Preserve && { jsx: 'react' })
-      }
-    }
-  }
+        ...(compilerOptions.jsx === ts.JsxEmit.Preserve && { jsx: 'react' }),
+      },
+    },
+  },
 };
