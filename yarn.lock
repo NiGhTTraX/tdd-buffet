@@ -2066,6 +2066,11 @@
     "@types/node" "*"
     "@types/responselike" "*"
 
+"@types/caseless@*":
+  version "0.12.2"
+  resolved "https://registry.yarnpkg.com/@types/caseless/-/caseless-0.12.2.tgz#f65d3d6389e01eeb458bd54dc8f52b95a9463bc8"
+  integrity sha512-6ckxMjBBD8URvjB6J3NcnuAn5Pkl7t3TizAg+xdlzzQGSPSmBcXf8KoIH0ua/i+tio+ZRUHEXp0HEmvaR4kt0w==
+
 "@types/chai@~4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@types/chai/-/chai-4.2.0.tgz#2478260021408dec32c123a7cad3414beb811a07"
@@ -2269,6 +2274,16 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
+"@types/request@^2.48.4":
+  version "2.48.4"
+  resolved "https://registry.yarnpkg.com/@types/request/-/request-2.48.4.tgz#df3d43d7b9ed3550feaa1286c6eabf0738e6cf7e"
+  integrity sha512-W1t1MTKYR8PxICH+A4HgEIPuAC3sbljoEVfyZbeFJJDbr30guDspJri2XOaM2E+Un7ZjrihaDi7cf6fPa2tbgw==
+  dependencies:
+    "@types/caseless" "*"
+    "@types/node" "*"
+    "@types/tough-cookie" "*"
+    form-data "^2.5.0"
+
 "@types/responselike@*":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/responselike/-/responselike-1.0.0.tgz#251f4fe7d154d2bad125abe1b429b23afd262e29"
@@ -2400,10 +2415,10 @@
     loglevel-plugin-prefix "^0.8.4"
     strip-ansi "^6.0.0"
 
-"@wdio/protocols@5.19.0":
-  version "5.19.0"
-  resolved "https://registry.yarnpkg.com/@wdio/protocols/-/protocols-5.19.0.tgz#5ba6343836600efa6c65cc086e5561022d412fcd"
-  integrity sha512-6DTSZKJd/UwtiTuQ2GgfQV/LTnjVmAn6uNzUz2j5cdFxCI63vaRQ4AnaPFjjT3VuN+rJXnmRF8FKoT02jBCQrg==
+"@wdio/protocols@5.22.1":
+  version "5.22.1"
+  resolved "https://registry.yarnpkg.com/@wdio/protocols/-/protocols-5.22.1.tgz#51fde0acb57d4ddf07d078fef0ad9c91d227229d"
+  integrity sha512-GdoWb/HTrb09Qb0S/7sLp1NU94LAhTsF1NnFj5sEFSUpecrl0S07pnhVg54pUImectN/woaqSl7uJGjlSGZcdQ==
 
 "@wdio/repl@5.18.6":
   version "5.18.6"
@@ -11658,22 +11673,23 @@ wcwidth@^1.0.0:
   dependencies:
     defaults "^1.0.3"
 
-webdriver@5.21.0:
-  version "5.21.0"
-  resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.21.0.tgz#e5a50ec1332095ab118d464ef83fd5e527d1b4b3"
-  integrity sha512-BROcUUNao26ipJA1x7KDcgs+3RYokdIDlnwgM2oAYFN7dCtg1x+o2yC6ayXOCN9P/JXXX/ft/dUP53kxS7za8w==
+webdriver@5.22.3:
+  version "5.22.3"
+  resolved "https://registry.yarnpkg.com/webdriver/-/webdriver-5.22.3.tgz#5091625a354f0867902380ed484e5fc7b0b8bf7b"
+  integrity sha512-43FCQIXiDifKuuWsTxPhN1y13QeY7rtotG8uLGfq94rCmyRqa1Dg7QhjHp1ps58uVMLttybOs4P9DvdueoeWFw==
   dependencies:
+    "@types/request" "^2.48.4"
     "@wdio/config" "5.18.4"
     "@wdio/logger" "5.16.10"
-    "@wdio/protocols" "5.19.0"
+    "@wdio/protocols" "5.22.1"
     "@wdio/utils" "5.18.6"
     lodash.merge "^4.6.1"
     request "^2.83.0"
 
-webdriverio@~5.21.0:
-  version "5.21.0"
-  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.21.0.tgz#a25973123eb48dda54777a5c15829245ff35a0cd"
-  integrity sha512-T9QQQ71NJRDUETj/yvJdiKOuIeLGmNrQaZTgOy5alcgTCPYBMZ2uKMA/NHZICZ2RgxivYDIbWnnkxDgxuvZBhg==
+webdriverio@~5.22.0:
+  version "5.22.3"
+  resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-5.22.3.tgz#e80b51c4c3b2d2f03cf032af0e5b56a4427c4610"
+  integrity sha512-TveG7OO6jRuEbjdvIjiQ4Smwpsl1sxNASH0D0hsXhbtkFXYB/zk+jTzrn2FHjBUGg9utcY+nZbRAiYuZ60O5vg==
   dependencies:
     "@wdio/config" "5.18.4"
     "@wdio/logger" "5.16.10"
@@ -11689,7 +11705,7 @@ webdriverio@~5.21.0:
     resq "^1.6.0"
     rgb2hex "^0.1.0"
     serialize-error "^5.0.0"
-    webdriver "5.21.0"
+    webdriver "5.22.3"
 
 webidl-conversions@^4.0.2:
   version "4.0.2"
