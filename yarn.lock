@@ -1839,10 +1839,10 @@
   resolved "https://registry.yarnpkg.com/@mugshot/webdriverio/-/webdriverio-1.1.2.tgz#a570948f55d7e71b80246fc65a5ffd69be6fc41d"
   integrity sha512-XkV/j+g2wTqq9ibHlz0k7DxzNhYmewX6p49M5csHIniwr/lgbrT409FsYM0lFWstZlptpxIhboza1/ieguC0Zw==
 
-"@nighttrax/eslint-config-base@^4.0.0-beta.0":
-  version "4.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-base/-/eslint-config-base-4.0.0-beta.0.tgz#d2dc02c5333f4205a15271d68f04434252268939"
-  integrity sha512-4vj4X18JDK1NjmU7z6eMXGdML1o9CNV/VTIDYXHBTzaHs8FssdWz23INnMDHsWEaB2xlrebAkaEcH7h4e8WaOQ==
+"@nighttrax/eslint-config-base@^4.0.0-beta.1":
+  version "4.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-base/-/eslint-config-base-4.0.0-beta.1.tgz#9dfe8e93a29b12400ee603be136998e5fec0ddd4"
+  integrity sha512-VOHgFSTPkDjjlKyZQkWEqawa/GRtTXZlpAx85IyrRXeBoTcx6PQEs28RG5BHt+e2CTEvMwzvhD9V3bB2ryZveQ==
   dependencies:
     eslint-config-airbnb "^18.0.1"
     eslint-config-airbnb-base "^14.0.0"
@@ -1857,22 +1857,22 @@
     eslint-plugin-jsx-a11y "^6.2.3"
     eslint-plugin-react "^7.16.0"
 
-"@nighttrax/eslint-config-ts@^5.0.0-beta.0":
-  version "5.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-ts/-/eslint-config-ts-5.0.0-beta.0.tgz#ebec6df933cb3769b3b41d784471a5a50477f9cf"
-  integrity sha512-cusOyOKMKpe8hw5zacScuegf73Cd890uK58cRC0oWhso6h/niZOEfMH51bk1FTh+L535bSUaJf1lPAtTgCel4w==
+"@nighttrax/eslint-config-ts@^5.0.0-beta.1":
+  version "5.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-ts/-/eslint-config-ts-5.0.0-beta.1.tgz#3720df48158ef3ab1a86b596d720d16403c87523"
+  integrity sha512-bJ3HrJZFJ99PdgkMUjW5Sa4yMV6l2LwZrGpbeYWjDnT9bWwP2wAjw3FyoxlrMvzqav6Z15jqvbR0UdL/O9NLLg==
   dependencies:
-    "@nighttrax/eslint-config-base" "^4.0.0-beta.0"
+    "@nighttrax/eslint-config-base" "^4.0.0-beta.1"
     "@typescript-eslint/eslint-plugin" "~2.23.0"
     "@typescript-eslint/parser" "~2.23.0"
 
-"@nighttrax/eslint-config-tsx@~5.0.0-beta.0":
-  version "5.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-tsx/-/eslint-config-tsx-5.0.0-beta.0.tgz#6f03e471bc233acc07923652a50308c311fbb0d1"
-  integrity sha512-sn4vxI/ZDg6lW1vpMwg5DXOFCHMmDbVnRjYaPK69pfvY+WMdtaXLr/tto0G4iCKaSovZm2WJpJzUJcZ3Yg+MXw==
+"@nighttrax/eslint-config-tsx@~5.0.0-beta.1":
+  version "5.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-tsx/-/eslint-config-tsx-5.0.0-beta.1.tgz#ec1c2a5432731c284bfabdb498d49e8121f9d379"
+  integrity sha512-jmCapfH2l0YojIpugq3xP6EGjQwhn/4nLndJ4AZZZUtndEWijZt51B/CDkqn33TbuMT9vHMpf4ubh6smCNTvzA==
   dependencies:
     "@nighttrax/eslint-config-react" "^3.1.0-alpha.0"
-    "@nighttrax/eslint-config-ts" "^5.0.0-beta.0"
+    "@nighttrax/eslint-config-ts" "^5.0.0-beta.1"
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"

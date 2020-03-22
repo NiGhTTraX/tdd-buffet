@@ -4,8 +4,4 @@ module.exports = {
   'extends': [
     '@nighttrax/eslint-config-tsx',
   ],
-
-  'rules': {
-    'arrow-parens': 0
-  }
 };
