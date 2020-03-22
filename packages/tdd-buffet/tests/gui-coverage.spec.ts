@@ -3,7 +3,7 @@ import path from 'path';
 import { describe, it } from 'tdd-buffet/suite/gui';
 
 describe('Gui coverage', () => {
-  it('should cover a never before seen file', async browser => {
+  it('should cover a never before seen file', async (browser) => {
     const content = await readFile(
       path.join(__dirname, './coverage/simple-bundle.js'),
       { encoding: 'utf-8' }
@@ -19,7 +19,7 @@ describe('Gui coverage', () => {
     `);
   });
 
-  it('should cover an already remotely covered file', async browser => {
+  it('should cover an already remotely covered file', async (browser) => {
     const content = await readFile(
       path.join(__dirname, './coverage/simple-bundle.js'),
       { encoding: 'utf-8' }
@@ -35,7 +35,7 @@ describe('Gui coverage', () => {
     `);
   });
 
-  it('should not cover an ignored file', async browser => {
+  it('should not cover an ignored file', async (browser) => {
     const content = await readFile(
       path.join(__dirname, './coverage/ignored-bundle.js'),
       { encoding: 'utf-8' }

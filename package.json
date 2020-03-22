@@ -29,7 +29,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "~8.3.4",
     "@commitlint/cli": "~8.3.5",
-    "@nighttrax/eslint-config-tsx": "~4.1.1-alpha.0",
+    "@nighttrax/eslint-config-tsx": "~5.0.0-beta.1",
     "@typescript-eslint/eslint-plugin": "~2.23.0",
     "eslint": "~6.8.0",
     "eslint-plugin-import": "~2.20.0",
@@ -41,7 +41,7 @@
     "husky": "~4.2.0",
     "lerna": "~3.20.0",
     "lint-staged": "~10.0.0",
-    "prettier": "~1.19.1",
+    "prettier": "~2.0.0",
     "ts-node": "~8.8.0",
     "typescript": "~3.8.0"
   }

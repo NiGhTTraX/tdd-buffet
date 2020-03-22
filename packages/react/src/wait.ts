@@ -82,7 +82,7 @@ export function wait(
     },
     {
       timeout:
-        typeof timeoutOrMessage === 'number' ? timeoutOrMessage : maybeTimeout
+        typeof timeoutOrMessage === 'number' ? timeoutOrMessage : maybeTimeout,
     }
   );
 }
@@ -195,7 +195,7 @@ export function waitForElement(
     {
       timeout:
         typeof messageOrTimeout === 'number' ? messageOrTimeout : maybeTimeout,
-      container: getJQueryContainer()[0]
+      container: getJQueryContainer()[0],
     }
   );
 }
