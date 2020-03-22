@@ -51,8 +51,5 @@ async function checkForVisualChanges(
  * Turn the given file name into something that's safe to save on the FS.
  */
 function getSafeFilename(fileName: string): string {
-  return fileName
-    .replace(/\//g, '_')
-    .replace(/ /g, '_')
-    .toLowerCase();
+  return fileName.replace(/\//g, '_').replace(/ /g, '_').toLowerCase();
 }

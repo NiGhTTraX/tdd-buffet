@@ -4,5 +4,5 @@ module.exports = {
   },
   getCacheKey(src, filename) {
     return filename;
-  }
+  },
 };

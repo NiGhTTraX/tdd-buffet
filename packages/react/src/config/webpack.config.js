@@ -14,7 +14,7 @@ const babelLoader = {
     babelrc: false,
     caller: {
       name: '@jest/transform',
-      supportsStaticESM: false
+      supportsStaticESM: false,
     },
     configFile: false,
     plugins: [
@@ -23,11 +23,11 @@ const babelLoader = {
         {
           compact: false,
           exclude: [],
-          useInlineSourceMaps: false
-        }
-      ]
-    ]
-  }
+          useInlineSourceMaps: false,
+        },
+      ],
+    ],
+  },
 };
 
 const tsLoader = {
@@ -37,9 +37,9 @@ const tsLoader = {
     transpileOnly: true,
     compilerOptions: {
       // This should match the ts-jest config.
-      target: 'es6'
-    }
-  }
+      target: 'es6',
+    },
+  },
 };
 
 /**
@@ -57,13 +57,13 @@ function getStyleLoaders(isProd, customLoader) {
     !isProd
       ? require.resolve('style-loader')
       : {
-          loader: MiniCssExtractPlugin.loader
+          loader: MiniCssExtractPlugin.loader,
         },
     {
       loader: require.resolve('css-loader'),
       options: {
-        sourceMap: true
-      }
+        sourceMap: true,
+      },
     },
     {
       loader: require.resolve('postcss-loader'),
@@ -73,31 +73,31 @@ function getStyleLoaders(isProd, customLoader) {
           PostCssFlexFixes,
           PostCssPresetEnv({
             autoprefixer: {
-              flexbox: 'no-2009'
+              flexbox: 'no-2009',
             },
-            stage: 3
+            stage: 3,
           }),
-          postcssNormalize()
+          postcssNormalize(),
         ],
-        sourceMap: true
-      }
+        sourceMap: true,
+      },
     },
     customLoader && {
       loader: require.resolve(customLoader),
       options: {
-        sourceMap: true
-      }
-    }
+        sourceMap: true,
+      },
+    },
   ].filter(Boolean);
 }
 
-module.exports = webpackEnv => {
+module.exports = (webpackEnv) => {
   const isProd = webpackEnv === 'production';
 
   return {
     output: {
       filename: isProd ? '[name].[contentHash].js' : '[name].js',
-      path: path.join(process.cwd(), 'build')
+      path: path.join(process.cwd(), 'build'),
     },
 
     mode: isProd ? 'production' : 'development',
@@ -110,8 +110,8 @@ module.exports = webpackEnv => {
             port: 3000,
             disableHostCheck: true,
             hot: !!process.env.COVERAGE,
-            stats: 'errors-only'
-          }
+            stats: 'errors-only',
+          },
         }
       : {}),
 
@@ -120,22 +120,22 @@ module.exports = webpackEnv => {
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          use: process.env.COVERAGE ? [babelLoader, tsLoader] : [tsLoader]
+          use: process.env.COVERAGE ? [babelLoader, tsLoader] : [tsLoader],
         },
         {
           test: /\.less$/,
           exclude: /node_modules/,
-          use: getStyleLoaders(isProd, 'less-loader')
+          use: getStyleLoaders(isProd, 'less-loader'),
         },
         {
           test: /\.css$/,
-          use: getStyleLoaders()
-        }
-      ]
+          use: getStyleLoaders(),
+        },
+      ],
     },
 
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx']
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
 
     plugins: [
@@ -143,9 +143,9 @@ module.exports = webpackEnv => {
       new ForkTsCheckerWebpackPlugin({
         async: !isProd,
         // Don't compile tests and fixtures.
-        reportFiles: ['src/**/*', '!**/?(*.)(spec|test).*']
+        reportFiles: ['src/**/*', '!**/?(*.)(spec|test).*'],
       }),
-      ...(!isProd ? [new HotModuleReplacementPlugin()] : [])
-    ]
+      ...(!isProd ? [new HotModuleReplacementPlugin()] : []),
+    ],
   };
 };

@@ -4,7 +4,7 @@ import { pathExistsSync } from 'fs-extra';
 import {
   CoverageMapData,
   createCoverageMap,
-  FileCoverageData
+  FileCoverageData,
 } from 'istanbul-lib-coverage';
 import { run as runJest } from 'jest';
 import path from 'path';
@@ -119,7 +119,7 @@ function mergeCoverage(source: CoverageMapData, dest: CoverageObject) {
     translateCoveragePaths(source)
   );
 
-  mergedCoverage.files().forEach(filepath => {
+  mergedCoverage.files().forEach((filepath) => {
     // TODO: we're running tests with fake file paths
     if (pathExistsSync(filepath)) {
       if (!registerSourceMap(filepath)) {
@@ -154,8 +154,8 @@ function translateCoveragePaths(
         statementMap: data.statementMap,
         fnMap: data.fnMap,
         branchMap: data.branchMap,
-        path: translatedPath
-      }
+        path: translatedPath,
+      },
     };
   }, {});
 }

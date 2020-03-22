@@ -46,7 +46,7 @@ describe('wait', () => {
   it('should wait on the component container', async () => {
     $render(<span>foobar</span>);
 
-    await wait($container => $container.text() === 'foobar');
+    await wait(($container) => $container.text() === 'foobar');
   });
 
   it('should throw a custom error message', async () => {
@@ -128,7 +128,7 @@ describe('waitForElement', () => {
     $render(<span className="existing" />);
 
     await waitForElement('.existing');
-    await waitForElement($container => $container.find('.existing'));
+    await waitForElement(($container) => $container.find('.existing'));
   });
 
   it('should wait for an element', async () => {
@@ -139,7 +139,7 @@ describe('waitForElement', () => {
     }, 10);
 
     await waitForElement('.soon');
-    await waitForElement($container => $container.find('.soon'));
+    await waitForElement(($container) => $container.find('.soon'));
   });
 
   it('should throw for an element that does not appear', async () => {
@@ -148,7 +148,7 @@ describe('waitForElement', () => {
     );
 
     await jExpect(
-      waitForElement($container => $container.find('.not-found'), 10)
+      waitForElement(($container) => $container.find('.not-found'), 10)
     ).rejects.toThrow('The collection was empty');
   });
 
@@ -158,7 +158,11 @@ describe('waitForElement', () => {
     );
 
     await jExpect(
-      waitForElement($container => $container.find('.not-found'), 'foobar', 10)
+      waitForElement(
+        ($container) => $container.find('.not-found'),
+        'foobar',
+        10
+      )
     ).rejects.toThrow('foobar: The collection was empty');
   });
 });

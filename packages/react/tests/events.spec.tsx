@@ -9,7 +9,7 @@ import {
   $getByText,
   $fireEvent,
   $keyDown,
-  click
+  click,
 } from '../src/events';
 import { $render } from '../src/render';
 
@@ -130,7 +130,7 @@ describe('Firing events', () => {
     $render(
       <input
         type="checkbox"
-        onChange={e => instance(cb)(e.currentTarget.checked)}
+        onChange={(e) => instance(cb)(e.currentTarget.checked)}
       />
     );
 
@@ -147,7 +147,7 @@ describe('Firing events', () => {
       <input
         type="checkbox"
         checked
-        onChange={e => instance(cb)(e.currentTarget.checked)}
+        onChange={(e) => instance(cb)(e.currentTarget.checked)}
       />
     );
 
@@ -163,7 +163,7 @@ describe('Firing events', () => {
     $render(
       <input
         type="radio"
-        onChange={e => instance(cb)(e.currentTarget.checked)}
+        onChange={(e) => instance(cb)(e.currentTarget.checked)}
       />
     );
 
@@ -176,7 +176,9 @@ describe('Firing events', () => {
     const cb = mock<(s: string) => void>();
     when(cb('foobar')).thenReturn(undefined);
 
-    $render(<input type="text" onChange={e => instance(cb)(e.target.value)} />);
+    $render(
+      <input type="text" onChange={(e) => instance(cb)(e.target.value)} />
+    );
 
     $change('input', 'foobar');
 
@@ -188,7 +190,10 @@ describe('Firing events', () => {
     when(cb('foobar')).thenReturn(undefined);
 
     $render(
-      <input type="text" onChange={e => instance(cb)(e.currentTarget.value)} />
+      <input
+        type="text"
+        onChange={(e) => instance(cb)(e.currentTarget.value)}
+      />
     );
 
     $change('input', 'foobar');
@@ -199,7 +204,7 @@ describe('Firing events', () => {
   it('keydown', () => {
     const cb = mock<(char: string, which: number) => void>();
 
-    $render(<div onKeyDown={e => instance(cb)(e.key, e.which)} />);
+    $render(<div onKeyDown={(e) => instance(cb)(e.key, e.which)} />);
 
     when(cb('A', 65)).thenReturn(undefined);
     $keyDown('div', 'A');

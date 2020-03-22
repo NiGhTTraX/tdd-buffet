@@ -101,7 +101,7 @@ export function keyDown(
     key,
     keyCode,
     charCode: keyCode,
-    which: keyCode
+    which: keyCode,
   });
 }
 export const $keyDown = keyDown;
