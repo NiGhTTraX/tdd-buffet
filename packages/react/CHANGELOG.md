@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.9.0...@tdd-buffet/react@0.9.1) (2020-03-22)
+
+
+### Bug Fixes
+
+* **deps:** update babel monorepo ([1a58da8](https://github.com/NiGhTTraX/tdd-buffet/commit/1a58da8))
+
+
+
+
+
 # [0.9.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.8.1...@tdd-buffet/react@0.9.0) (2020-03-20)
 
 
