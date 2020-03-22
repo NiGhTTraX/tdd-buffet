@@ -9758,10 +9758,10 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
-react-mock-component@~2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-mock-component/-/react-mock-component-2.2.0.tgz#51277021a4ef4031083008caff8062d125735d49"
-  integrity sha512-SkABzOkKJYN8u8y6YHI6k+zA3qJ1wlxEF64QnCrHgdDk7kllqbAfJPPvjidGT7fXofIFpPVCH5s4SDhKeIKGSQ==
+react-mock-component@~2.3.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/react-mock-component/-/react-mock-component-2.3.1.tgz#7e36ad4e665f37cdef2cc89d70b7fee8f3450947"
+  integrity sha512-25PrsHWLNvoLEOOJCgT9/1wyJUBZ21xCZ/NbKfQ1/JErFXU5nzMt0lMibcjxwz4vX6aVS78sEf5lq63jakf75Q==
   dependencies:
     "@types/react" "~16.9.2"
     "@types/sinon" "~7.5.0"
