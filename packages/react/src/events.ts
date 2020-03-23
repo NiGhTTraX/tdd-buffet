@@ -10,16 +10,14 @@ export type FireObject = {
 };
 
 /**
- * @testing-library/react's fireEvent.
+ * fireEvent from @testing-library/react that also accepts jQuery collections.
  *
  * @see https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname
  *
  * @example
- * $fireEvent.click('button')
- * $fireEvent.click('input[type=checkbox]')
- * $fireEvent.click('input[type=radio]')
- * $fireEvent.click($component.find('button.primary'))
- * $fireEvent.click($component.find('button')[2])
+ * $fireEvent.click('button') // CSS selector
+ * $fireEvent.click($component.find('button.primary')) // jQuery element
+ * $fireEvent.click($component.find('button')[2]) // DOM element
  */
 export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
   (acc, key) => {
