@@ -32,7 +32,7 @@
     "@commitlint/config-lerna-scopes": "~8.3.4",
     "@commitlint/cli": "~8.3.5",
     "@nighttrax/eslint-config-tsx": "~5.0.0-beta.1",
-    "@typescript-eslint/eslint-plugin": "~2.24.0",
+    "@typescript-eslint/eslint-plugin": "~2.25.0",
     "eslint": "~6.8.0",
     "eslint-plugin-import": "~2.20.0",
     "eslint-plugin-prettier": "~3.1.2",
