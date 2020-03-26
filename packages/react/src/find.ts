@@ -64,6 +64,19 @@ ${prettyDOM()}`);
 }
 
 /**
+ * jQuery's `find` method bound on the container.
+ *
+ * @see https://api.jquery.com/find/
+ *
+ * @example
+ * $render(<span id="text">some text</span>);
+ * console.log($find('#text').text()); // some text
+ */
+export function $find(selector: Selector): JQuery {
+  return getJQueryContainer().find(selector);
+}
+
+/**
  * Get the first element that matches the selector from the currently rendered component.
  */
 export function getDOMElement(selector: Selector): HTMLElement {

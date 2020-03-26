@@ -2,6 +2,7 @@ import * as React from 'react';
 import { expect } from 'tdd-buffet/expect/chai';
 import { describe, it } from 'tdd-buffet/suite/node';
 import {
+  $find,
   $getByTestId,
   $getByText,
   getDOMElement,
@@ -55,6 +56,23 @@ describe('Finding elements', () => {
       );
 
       expect(getDOMElement($container.find('p')).id).to.equal('1');
+    });
+  });
+
+  describe('find', () => {
+    it('non existent', () => {
+      expect($find('aaaa').text()).to.equal('');
+    });
+
+    it('multiple', () => {
+      $render(
+        <>
+          <p>p1</p>
+          <p>p2</p>
+        </>
+      );
+
+      expect($find('p').text()).to.equal('p1p2');
     });
   });
 
