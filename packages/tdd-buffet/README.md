@@ -78,7 +78,7 @@ describe('Expect', () => {
 npx tdd-buffet test
 ```
 
-This will run all the tests matched by the default [Jest config](#jest). You can pass your own config through the `--config` option. The command accepts all Jest arguments:
+This will run all the tests matched by the default [Jest config](../jest-config). You can pass your own config through the `--config` option. The command accepts all Jest arguments:
 
 ```shell script
 npx tdd-buffet test --runInBand tests/my-test.spec.tsx
@@ -109,16 +109,4 @@ The config provides sane defaults for both library and app developers. No `jsx` 
     "jsx": "react"
   }
 }
-```
-
-### Jest
-
-The config is focused on providing a good developer experience with TypeScript. Tests are type checked before they are run and certain harmful options in `tsconfing.json` files are turned off. You can always inspect the config and override it.
-
-```js
-const baseConfig = require('tdd-buffet/config/jest.config.js');
-
-module.exports = {
-  ...baseConfig
-};
 ```

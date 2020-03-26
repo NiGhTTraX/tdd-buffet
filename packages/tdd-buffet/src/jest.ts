@@ -7,7 +7,6 @@ import {
   FileCoverageData,
 } from 'istanbul-lib-coverage';
 import { run as runJest } from 'jest';
-import path from 'path';
 
 /* eslint-disable no-underscore-dangle */
 declare global {
@@ -168,7 +167,7 @@ function registerSourceMap(filename: string): boolean {
 export async function run(argv: string[]) {
   // Push our config if there isn't one specified.
   if (!argv.includes('--config')) {
-    argv.push('--config', path.join(__dirname, './config/jest.config.js'));
+    argv.push('--config', require.resolve('@tdd-buffet/jest-config'));
   }
 
   return runJest(argv);
