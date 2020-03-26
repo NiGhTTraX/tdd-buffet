@@ -14,9 +14,8 @@ This is an opinionated collection of libraries and tools for writing tests and e
 ### Today's menu
 
 - Appetizers
-    - [Configs](./packages/tdd-buffet/README.md#configs)
-      - [TypeScript](./packages/tdd-buffet/README.md#typescript)
-      - [Jest](./packages/jest-config/README.md)
+    - [tsconfig.json](./packages/tsconfig)
+    - [jest.config.js](./packages/jest-config)
 - Main courses
     - [Testing](./packages/tdd-buffet/README.md#testing)
       - [Create a Node test](./packages/tdd-buffet/README.md#create-a-node-test)
