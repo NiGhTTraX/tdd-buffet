@@ -30,8 +30,8 @@
     "prepublishOnly": "yarn run build && yarn run package"
   },
   "dependencies": {
-    "@jest/transform": "~25.1.0",
-    "@jest/types": "~25.1.0",
+    "@jest/transform": "~25.2.0",
+    "@jest/types": "~25.2.0",
     "@types/chai": "~4.2.0",
     "@types/fs-extra": "~8.1.0",
     "@types/istanbul-lib-coverage": "~2.0.1",
@@ -40,8 +40,8 @@
     "execa": "~4.0.0",
     "fs-extra": "~9.0.0",
     "istanbul-lib-coverage": "~3.0.0",
-    "jest": "~25.1.0",
-    "jest-runtime": "~25.1.0",
+    "jest": "~25.2.0",
+    "jest-runtime": "~25.2.0",
     "meow": "~6.1.0",
     "ts-jest": "~25.2.0",
     "ts-loader": "~6.2.0",
