@@ -5,11 +5,10 @@ import { describe, it } from 'tdd-buffet/suite/node';
 import {
   $change,
   $click,
+  $fireEvent,
   $getByTestId,
   $getByText,
-  $fireEvent,
   $keyDown,
-  click,
 } from '../src/events';
 import { $render } from '../src/render';
 
@@ -54,7 +53,7 @@ describe('Firing events', () => {
       </button>
     );
 
-    click($container.find('button')[0]);
+    $click($container.find('button')[0]);
 
     verify(cb);
   });
