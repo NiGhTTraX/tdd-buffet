@@ -1,4 +1,9 @@
-import { fireEvent, getByText, getByTestId } from '@testing-library/react/pure';
+import {
+  fireEvent,
+  getByText,
+  getByTestId,
+  prettyDOM,
+} from '@testing-library/react/pure';
 import { EventType } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { getJQueryContainer } from './render';
@@ -146,6 +151,23 @@ export function $getByText(match: string | RegExp): JQuery {
   return $(getByText(getJQueryContainer()[0], match, { exact: false }));
 }
 
+export class NonExistentElement extends Error {
+  constructor(selector: Selector) {
+    let title: string;
+
+    if (typeof selector === 'string') {
+      title = `Couldn't find element ${selector}`;
+    } else {
+      title = `Couldn't find element`;
+    }
+
+    super(`${title}
+
+Here is the state of your container:
+${prettyDOM()}`);
+  }
+}
+
 /**
  * Get the first element that matches the selector from the currently rendered component.
  */
@@ -161,7 +183,7 @@ function getDOMElement(selector: Selector): HTMLElement {
   }
 
   if (!element) {
-    throw new Error('Element does not exist');
+    throw new NonExistentElement(selector);
   }
 
   return element;

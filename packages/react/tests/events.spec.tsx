@@ -9,6 +9,7 @@ import {
   $getByTestId,
   $getByText,
   $keyDown,
+  NonExistentElement,
 } from '../src/events';
 import { $render } from '../src/render';
 
@@ -63,7 +64,7 @@ describe('Firing events', () => {
 
     expect(() => {
       $click('non-existent');
-    }).to.throw('Element does not exist');
+    }).to.throw(NonExistentElement);
   });
 
   it('selector.non-existent dom', () => {
@@ -71,7 +72,7 @@ describe('Firing events', () => {
 
     expect(() => {
       $click($container.find('non-existent')[0]);
-    }).to.throw('Element does not exist');
+    }).to.throw(NonExistentElement);
   });
 
   it('selector.non-existent jQuery', () => {
@@ -79,7 +80,7 @@ describe('Firing events', () => {
 
     expect(() => {
       $click($container.find('non-existent'));
-    }).to.throw('Element does not exist');
+    }).to.throw(NonExistentElement);
   });
 
   it('selector.multiple query', () => {
