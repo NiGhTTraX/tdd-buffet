@@ -4,8 +4,9 @@
 
 ----
 
+<!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
-  <img src="https://raw.githubusercontent.com/NiGhTTraX/tdd-buffet/master/tdd-buffet.png" width="500"/>
+  <img src="https://raw.githubusercontent.com/NiGhTTraX/tdd-buffet/master/tdd-buffet.png" width="500" alt="tdd-buffet-logo" />
 </div>
 
 This is an opinionated collection of libraries and tools for writing tests and enabling TDD. You can mix and match as little or as much as you like from the project, and if you have any feature requests or suggestions for improvements please open an issue/PR.
