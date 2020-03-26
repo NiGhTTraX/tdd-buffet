@@ -25,7 +25,7 @@
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
-    "package": "cp -r README.md package.json src/config ./dist",
+    "package": "cp -r README.md package.json ./dist",
     "compile": "tsc -p tsconfig.build.json",
     "prepublishOnly": "yarn run build && yarn run package"
   },

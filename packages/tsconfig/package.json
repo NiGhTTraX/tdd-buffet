@@ -1,0 +1,28 @@
+{
+  "name": "@tdd-buffet/tsconfig",
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "version": "0.0.1",
+  "description": "Awesome TypeScript config",
+  "keywords": [
+    "tdd",
+    "typescript",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git",
+    "directory": "packages/tsconfig"
+  },
+  "author": "Andrei Picus",
+  "license": "MIT",
+  "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tsconfig",
+  "main": "src/tsconfig.json",
+  "scripts": {
+  },
+  "peerDependencies": {
+    "typescript": "^3"
+  }
+}

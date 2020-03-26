@@ -93,20 +93,3 @@ Moreover, if you set the `GUI_COVERAGE` environment variable, then the GUI tests
 When you instrument the files make sure to do it from the **same path as your project** because the path will be injected into the coverage data and it will be used when creating the coverage report. If you're instrumenting the files inside a Docker container you can put them in `/usr/src/app` and `tdd-buffet` will map that path to Jest's `rootDir`.
 
 You can control how coverage is collected (output folder, thresholds etc.) through Jest's coverage options.
-
-
-## Configs
-
-### TypeScript
-
-The config provides sane defaults for both library and app developers. No `jsx` option is specified so if you're working in a React app you need to turn that on yourself.
-
-```json
-{
-  "extends": "tdd-buffet/config/tsconfig.json",
-
-  "compilerOptions": {
-    "jsx": "react"
-  }
-}
-```
