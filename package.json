@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "version": "lerna version --conventional-commits --no-commit-hooks --create-release github",
+    "version": "lerna version",
     "version:force": "yarn run version --force-publish",
     "pub": "yarn run build && lerna publish from-git && yarn run clean",
     "lint": "eslint --ext ts,tsx,js .",
