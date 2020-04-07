@@ -31,7 +31,7 @@ module.exports = {
   // If we give it an absolute path then it will look for a `jest-preset.js`
   // in that path.
   preset: __dirname,
-  testEnvironment: 'jest-environment-jsdom-fifteen',
+  testEnvironment: require.resolve('jest-environment-jsdom-fifteen'),
 
   // We polyfill some things commonly found in tests. We don't want to polyfill
   // everything, especially since we only support modern versions of Node.
