@@ -73,7 +73,7 @@ module.exports = {
   collectCoverageFrom: [
     '**/src/**/*.{ts,tsx}',
     '!**/*.d.ts',
-    '!**/*.(spec|test).{ts,tsx}',
+    '!**/*.(spec|test|stories).{ts,tsx}',
     '!**/vendor/**/*',
   ],
   coverageDirectory: '<rootDir>/tests/results',
