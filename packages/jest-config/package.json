@@ -1,8 +1,7 @@
 {
   "name": "@tdd-buffet/jest-config",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "version": "1.0.0-alpha.1",
   "description": "Awesome jest config",
