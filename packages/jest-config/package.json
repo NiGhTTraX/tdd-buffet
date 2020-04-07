@@ -20,6 +20,7 @@
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/jest-config",
   "main": "src/index.js",
+  "files": ["src"],
   "scripts": {
     "test": "jest --config src/index.js"
   },

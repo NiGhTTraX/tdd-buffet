@@ -20,6 +20,7 @@
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tsconfig",
   "main": "src/tsconfig.json",
+  "files": ["src"],
   "scripts": {},
   "peerDependencies": {
     "typescript": "^3"
