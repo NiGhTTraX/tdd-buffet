@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-alpha.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@0.16.4...tdd-buffet@1.0.0-alpha.0) (2020-04-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v9 ([4c471a7](https://github.com/NiGhTTraX/tdd-buffet/commit/4c471a7))
+* **deps:** update dependency meow to ~6.1.0 ([7197237](https://github.com/NiGhTTraX/tdd-buffet/commit/7197237))
+* **deps:** update dependency webdriverio to ~5.22.0 ([a4f346b](https://github.com/NiGhTTraX/tdd-buffet/commit/a4f346b))
+* **deps:** update jest monorepo to ~25.2.0 ([8a06e4d](https://github.com/NiGhTTraX/tdd-buffet/commit/8a06e4d))
+
+
+### Code Refactoring
+
+* **tdd-buffet:** Move jest config to separate package ([21be32d](https://github.com/NiGhTTraX/tdd-buffet/commit/21be32d))
+* **tdd-buffet:** Move tsconfig to separate package ([2e57f10](https://github.com/NiGhTTraX/tdd-buffet/commit/2e57f10))
+
+
+### BREAKING CHANGES
+
+* **tdd-buffet:** replace `extends: 'tdd-buffet/config/tsconfig.json'` with
+`extends: '@tdd-buffet/tsconfig'`
+* **tdd-buffet:** `require('tdd-buffet/config/jest.config.js')` is now
+replaced by `require('@tdd-buffet/jest-config')`
+
+
+
+
+
 ## [0.16.4](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@0.16.3...tdd-buffet@0.16.4) (2020-03-22)
 
 **Note:** Version bump only for package tdd-buffet

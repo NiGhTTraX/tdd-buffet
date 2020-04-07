@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.39-alpha.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.2.38...@tdd-buffet/visual@0.2.39-alpha.0) (2020-04-07)
+
+**Note:** Version bump only for package @tdd-buffet/visual
+
+
+
+
+
 ## [0.2.38](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.2.37...@tdd-buffet/visual@0.2.38) (2020-03-22)
 
 **Note:** Version bump only for package @tdd-buffet/visual

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0-alpha.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.9.4...@tdd-buffet/react@0.10.0-alpha.0) (2020-04-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency css-loader to ~3.5.0 ([7575cc4](https://github.com/NiGhTTraX/tdd-buffet/commit/7575cc4))
+
+
+### Features
+
+* **react:** Add $find ([e6db72f](https://github.com/NiGhTTraX/tdd-buffet/commit/e6db72f))
+* **react:** Pretty print DOM when can't find element ([741c9b6](https://github.com/NiGhTTraX/tdd-buffet/commit/741c9b6))
+
+
+
+
+
 ## [0.9.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.9.3...@tdd-buffet/react@0.9.4) (2020-03-22)
 
 **Note:** Version bump only for package @tdd-buffet/react
