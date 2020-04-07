@@ -9,8 +9,4 @@ describe('Jest config', () => {
   it('should polyfill fetch', () => {
     expect(fetch).toBeInstanceOf(Function);
   });
-
-  it('should polyfill MutationObserver', () => {
-    expect(MutationObserver).toBeDefined();
-  });
 });
