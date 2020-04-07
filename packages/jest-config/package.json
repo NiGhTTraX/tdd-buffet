@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Awesome jest config",
   "keywords": [
     "tdd",
@@ -20,7 +20,9 @@
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/jest-config",
   "main": "src/index.js",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "test": "jest --config src/index.js"
   },
