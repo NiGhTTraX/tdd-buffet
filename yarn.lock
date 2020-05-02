@@ -6072,10 +6072,10 @@ globrex@^0.1.1:
   resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
   integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
 
-got@~11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/got/-/got-11.0.0.tgz#a5a131a55752309157bb32e1365a6a7f2a8c15b8"
-  integrity sha512-6PjDdCa2yPMuxhoBp6TIdHUm5gv8rBEfr055vJG9CqznZBw4rFEwNifI5JxfLhu41xVHRrFsVtseFOjrcIy1/w==
+got@~11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/got/-/got-11.1.0.tgz#99c0c3404ee17592e553f9ed1c895f920f554ed8"
+  integrity sha512-9lZDzFe43s6HH60tSurUk04kEtssfLiIfMiY5lSE0+vVaDCmT7+0xYzzlHY5VArSiz41mQQC38LefW2KoE9erw==
   dependencies:
     "@sindresorhus/is" "^2.1.0"
     "@szmarczak/http-timer" "^4.0.0"
@@ -6085,7 +6085,7 @@ got@~11.0.0:
     cacheable-request "^7.0.1"
     decompress-response "^5.0.0"
     get-stream "^5.0.0"
-    http2-wrapper "^1.0.0-beta.4.3"
+    http2-wrapper "^1.0.0-beta.4.4"
     lowercase-keys "^2.0.0"
     p-cancelable "^2.0.0"
     responselike "^2.0.0"
@@ -6285,10 +6285,10 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-http2-wrapper@^1.0.0-beta.4.3:
-  version "1.0.0-beta.4.3"
-  resolved "https://registry.yarnpkg.com/http2-wrapper/-/http2-wrapper-1.0.0-beta.4.3.tgz#85b499cfada6a5b2c22f08190716c7dcc8a0bc81"
-  integrity sha512-r0Rr4+g7RF0RHBuArwOYHvFFcD2GchoXk4Q331K4h1IQ0kXqowXNBR0n71jQGzav2GHg9BnNYMC1dFxAr66rIg==
+http2-wrapper@^1.0.0-beta.4.4:
+  version "1.0.0-beta.4.5"
+  resolved "https://registry.yarnpkg.com/http2-wrapper/-/http2-wrapper-1.0.0-beta.4.5.tgz#ac8e8f1cbf4aa79e3274c89e954d18697ab31e85"
+  integrity sha512-hRoAcIg26mAenbhZH4yQKpHzdbjHGM2a8JCtGJUIwFtqP82IeuMcmJwXHD6eFkILxDp0AyvaRMNrnV4aSaq9pg==
   dependencies:
     quick-lru "^5.0.0"
     resolve-alpn "^1.0.0"
