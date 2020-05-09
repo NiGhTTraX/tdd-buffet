@@ -32,12 +32,11 @@
     "@commitlint/config-conventional": "~8.3.4",
     "@commitlint/config-lerna-scopes": "~8.3.4",
     "@commitlint/cli": "~8.3.5",
-    "@nighttrax/eslint-config-tsx": "~6.0.0-beta.0",
+    "@nighttrax/eslint-config-tsx": "~6.1.0-beta.0",
     "eslint": "~7.0.0",
     "husky": "~4.2.0",
     "lerna": "~3.20.0",
     "lint-staged": "~10.2.0",
-    "prettier": "~2.0.0",
     "ts-node": "~8.10.0",
     "typescript": "~3.8.0"
   }
