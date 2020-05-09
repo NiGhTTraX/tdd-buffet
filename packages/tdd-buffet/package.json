@@ -41,7 +41,7 @@
     "meow": "~7.0.0",
     "ts-loader": "~7.0.0",
     "typescript": "~3.8.0",
-    "webdriverio": "~5.22.0"
+    "webdriverio": "~6.1.0"
   },
   "devDependencies": {
     "@types/meow": "~5.0.0",
