@@ -119,5 +119,8 @@ export function $prettyDOM(
   maxLength?: number,
   options?: OptionsReceived
 ): string {
-  return prettyDOM(getDOMElement(selector), maxLength, { ...options }) || '';
+  return (
+    prettyDOM(getDOMElement(selector), maxLength, options) ||
+    /* istanbul ignore next: because the types are silly, this should never return falsy */ ''
+  );
 }
