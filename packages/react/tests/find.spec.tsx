@@ -61,7 +61,7 @@ describe('Finding elements', () => {
 
   describe('find', () => {
     it('non existent', () => {
-      expect($find('aaaa').text()).toEqual('');
+      expect($find('non-existent').text()).toEqual('');
     });
 
     it('multiple', () => {
