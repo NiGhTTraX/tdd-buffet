@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { expect } from 'tdd-buffet/expect/chai';
+import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
 import {
   $find,
@@ -17,7 +17,7 @@ describe('Finding elements', () => {
 
       expect(() => {
         getDOMElement('non-existent');
-      }).to.throw(NonExistentElement);
+      }).toThrow(NonExistentElement);
     });
 
     it('non-existent dom', () => {
@@ -25,7 +25,7 @@ describe('Finding elements', () => {
 
       expect(() => {
         getDOMElement($container.find('non-existent')[0]);
-      }).to.throw(NonExistentElement);
+      }).toThrow(NonExistentElement);
     });
 
     it('non-existent jQuery', () => {
@@ -33,7 +33,7 @@ describe('Finding elements', () => {
 
       expect(() => {
         getDOMElement($container.find('non-existent'));
-      }).to.throw(NonExistentElement);
+      }).toThrow(NonExistentElement);
     });
 
     it('multiple query', () => {
@@ -44,7 +44,7 @@ describe('Finding elements', () => {
         </>
       );
 
-      expect(getDOMElement('p').id).to.equal('1');
+      expect(getDOMElement('p').id).toEqual('1');
     });
 
     it('multiple jQuery', () => {
@@ -55,13 +55,13 @@ describe('Finding elements', () => {
         </>
       );
 
-      expect(getDOMElement($container.find('p')).id).to.equal('1');
+      expect(getDOMElement($container.find('p')).id).toEqual('1');
     });
   });
 
   describe('find', () => {
     it('non existent', () => {
-      expect($find('aaaa').text()).to.equal('');
+      expect($find('aaaa').text()).toEqual('');
     });
 
     it('multiple', () => {
@@ -72,28 +72,28 @@ describe('Finding elements', () => {
         </>
       );
 
-      expect($find('p').text()).to.equal('p1p2');
+      expect($find('p').text()).toEqual('p1p2');
     });
   });
 
   it('getByTestId', () => {
     $render(<span data-testid="foo">bar</span>);
 
-    expect($getByTestId('foo').text()).to.equal('bar');
-    expect(() => $getByTestId('xxx')).to.throw();
+    expect($getByTestId('foo').text()).toEqual('bar');
+    expect(() => $getByTestId('xxx')).toThrow();
   });
 
   it('getByText.string', () => {
     $render(<span>FoO BaR</span>);
 
-    expect($getByText('FoO').text()).to.equal('FoO BaR');
-    expect(() => $getByText('xxx')).to.throw();
+    expect($getByText('FoO').text()).toEqual('FoO BaR');
+    expect(() => $getByText('xxx')).toThrow();
   });
 
   it('getByText.regexp', () => {
     $render(<span>FoO BaR</span>);
 
-    expect($getByText(/foo/i).text()).to.equal('FoO BaR');
-    expect(() => $getByText(/xxx/)).to.throw();
+    expect($getByText(/foo/i).text()).toEqual('FoO BaR');
+    expect(() => $getByText(/xxx/)).toThrow();
   });
 });
