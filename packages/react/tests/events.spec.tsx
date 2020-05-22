@@ -5,127 +5,101 @@ import { $change, $click, $fireEvent, $keyDown, $submit } from '../src/events';
 import { $render } from '../src/render';
 
 describe('Firing events', () => {
-  it('click', () => {
-    const cb = mock<() => void>();
-    when(cb()).thenReturn(undefined);
+  describe('click', () => {
+    it('button', () => {
+      const cb = mock<() => void>();
+      when(cb()).thenReturn(undefined);
 
-    $render(
-      <button type="button" onClick={() => instance(cb)()}>
-        click me
-      </button>
-    );
+      $render(
+        <button type="button" onClick={() => instance(cb)()}>
+          click me
+        </button>
+      );
 
-    $click('button');
+      $click('button');
 
-    verify(cb);
+      verify(cb);
+    });
+
+    it('checkbox.check', () => {
+      const cb = mock<(s: boolean) => void>();
+      when(cb(true)).thenReturn(undefined);
+
+      $render(
+        <input
+          type="checkbox"
+          onChange={(e) => instance(cb)(e.currentTarget.checked)}
+        />
+      );
+
+      $click('input');
+
+      verify(cb);
+    });
+
+    it('checkbox.uncheck', () => {
+      const cb = mock<(s: boolean) => void>();
+      when(cb(false)).thenReturn(undefined);
+
+      $render(
+        <input
+          type="checkbox"
+          checked
+          onChange={(e) => instance(cb)(e.currentTarget.checked)}
+        />
+      );
+
+      $click('input');
+
+      verify(cb);
+    });
+
+    it('radio.check', () => {
+      const cb = mock<(s: boolean) => void>();
+      when(cb(true)).thenReturn(undefined);
+
+      $render(
+        <input
+          type="radio"
+          onChange={(e) => instance(cb)(e.currentTarget.checked)}
+        />
+      );
+
+      $click('input');
+
+      verify(cb);
+    });
   });
 
-  it('click.jquery', () => {
-    const cb = mock<() => void>();
-    when(cb()).thenReturn(undefined);
+  describe('change', () => {
+    it('target', () => {
+      const cb = mock<(s: string) => void>();
+      when(cb('foobar')).thenReturn(undefined);
 
-    const $container = $render(
-      <button type="button" onClick={() => instance(cb)()}>
-        click me
-      </button>
-    );
+      $render(
+        <input type="text" onChange={(e) => instance(cb)(e.target.value)} />
+      );
 
-    $click($container.find('button'));
+      $change('input', 'foobar');
 
-    verify(cb);
-  });
+      verify(cb);
+    });
 
-  it('click.dom', () => {
-    const cb = mock<() => void>();
-    when(cb()).thenReturn(undefined);
+    it('currentTarget', () => {
+      const cb = mock<(s: string) => void>();
+      when(cb('foobar')).thenReturn(undefined);
 
-    const $container = $render(
-      <button type="button" onClick={() => instance(cb)()}>
-        click me
-      </button>
-    );
+      $render(
+        <input
+          type="text"
+          onChange={(e) => instance(cb)(e.currentTarget.value)}
+        />
+      );
 
-    $click($container.find('button')[0]);
+      $change('input', 'foobar');
 
-    verify(cb);
-  });
-
-  it('click.checkbox.check', () => {
-    const cb = mock<(s: boolean) => void>();
-    when(cb(true)).thenReturn(undefined);
-
-    $render(
-      <input
-        type="checkbox"
-        onChange={(e) => instance(cb)(e.currentTarget.checked)}
-      />
-    );
-
-    $click('input');
-
-    verify(cb);
-  });
-
-  it('click.checkbox.uncheck', () => {
-    const cb = mock<(s: boolean) => void>();
-    when(cb(false)).thenReturn(undefined);
-
-    $render(
-      <input
-        type="checkbox"
-        checked
-        onChange={(e) => instance(cb)(e.currentTarget.checked)}
-      />
-    );
-
-    $click('input');
-
-    verify(cb);
-  });
-
-  it('click.radio.check', () => {
-    const cb = mock<(s: boolean) => void>();
-    when(cb(true)).thenReturn(undefined);
-
-    $render(
-      <input
-        type="radio"
-        onChange={(e) => instance(cb)(e.currentTarget.checked)}
-      />
-    );
-
-    $click('input');
-
-    verify(cb);
-  });
-
-  it('change.target', () => {
-    const cb = mock<(s: string) => void>();
-    when(cb('foobar')).thenReturn(undefined);
-
-    $render(
-      <input type="text" onChange={(e) => instance(cb)(e.target.value)} />
-    );
-
-    $change('input', 'foobar');
-
-    verify(cb);
-  });
-
-  it('change.currentTarget', () => {
-    const cb = mock<(s: string) => void>();
-    when(cb('foobar')).thenReturn(undefined);
-
-    $render(
-      <input
-        type="text"
-        onChange={(e) => instance(cb)(e.currentTarget.value)}
-      />
-    );
-
-    $change('input', 'foobar');
-
-    verify(cb);
+      verify(cb);
+    });
   });
 
   it('keydown', () => {
