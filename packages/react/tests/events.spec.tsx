@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { instance, mock, verify, when } from 'strong-mock';
 import { describe, it } from 'tdd-buffet/suite/node';
-import { $change, $click, $fireEvent, $keyDown } from '../src/events';
+import { $change, $click, $fireEvent, $keyDown, $submit } from '../src/events';
 import { $render } from '../src/render';
 
 describe('Firing events', () => {
@@ -161,5 +161,51 @@ describe('Firing events', () => {
     $fireEvent.drag('button');
 
     verify(cb);
+  });
+
+  describe('submit', () => {
+    it('button', () => {
+      const cb = mock<() => void>();
+      when(cb()).thenReturn();
+
+      $render(
+        <form onSubmit={instance(cb)}>
+          <button type="submit">submit</button>
+        </form>
+      );
+
+      $submit('button');
+
+      verify(cb);
+    });
+
+    it('form', () => {
+      const cb = mock<() => void>();
+      when(cb()).thenReturn();
+
+      $render(<form onSubmit={instance(cb)} />);
+
+      $submit('form');
+
+      verify(cb);
+    });
+
+    it('linked button', () => {
+      const cb = mock<() => void>();
+      when(cb()).thenReturn();
+
+      $render(
+        <>
+          <form id="form" onSubmit={instance(cb)} />
+          <button form="form" type="submit">
+            submit
+          </button>
+        </>
+      );
+
+      $submit('button');
+
+      verify(cb);
+    });
   });
 });

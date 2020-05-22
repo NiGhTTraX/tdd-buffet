@@ -99,3 +99,26 @@ export function keyDown(
   });
 }
 export const $keyDown = keyDown;
+
+/**
+ * Submit a form.
+ *
+ * You can fire the event on a form or on a linked submit button. The
+ * submit button either has to be inside the `<form>` element, or linked
+ * to it via the `form` attribute.
+ *
+ * @param selector If it's a string, the first element identified
+ *   by this will receive the event. If it's a jQuery collection
+ *   then the first element in it will receive the event.
+ */
+export const $submit = (selector: Selector) => {
+  let element = getDOMElement(selector);
+
+  // If this is a button linked to a form then fire the event
+  // on the linked form.
+  if (element.getAttribute('form')) {
+    element = getDOMElement(`#${element.getAttribute('form')}`);
+  }
+
+  fireEvent.submit(element);
+};
