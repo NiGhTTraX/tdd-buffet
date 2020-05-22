@@ -2,6 +2,7 @@ const { pathExistsSync } = require('fs-extra');
 const path = require('path');
 const { pathsToModuleNameMapper } = require('ts-jest/utils');
 const ts = require('typescript');
+const tsjestPresets = require('ts-jest/presets');
 
 const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
 const { config: configContent } = ts.readConfigFile(
@@ -26,11 +27,6 @@ const setupTestsFile = setupTestsFilePaths.find((filePath) =>
 );
 
 module.exports = {
-  // Work around a quirk in how jest resolves the preset: it uses its own
-  // module resolution instead of Node's so it breaks in yarn workspaces.
-  // If we give it an absolute path then it will look for a `jest-preset.js`
-  // in that path.
-  preset: __dirname,
   testEnvironment: require.resolve('jest-environment-jsdom-fifteen'),
 
   // We polyfill some things commonly found in tests. We don't want to polyfill
@@ -54,10 +50,13 @@ module.exports = {
     : null,
   modulePathIgnorePatterns: ['dist'],
 
-  // Ignore static assets such as images and stylesheets.
   transform: {
+    // Using this directly as opposed to the preset because of
+    // module resolution issues.
+    ...tsjestPresets.defaults.transform,
+
+    // Ignore static assets such as images and stylesheets.
     '\\.(css|less)$': require.resolve('./style-mock.js'),
-    // Treat everything else as a static asset and mock it.
     '^(?!.*\\.(js|jsx|ts|tsx|css|less|json)$)': require.resolve(
       './file-mock.js'
     ),
