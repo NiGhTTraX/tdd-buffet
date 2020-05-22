@@ -17,6 +17,7 @@ This is an opinionated collection of libraries and tools for writing tests and e
 - Appetizers
     - [tsconfig.json](./packages/tsconfig)
     - [jest.config.js](./packages/jest-config)
+    - [webpack.config.js](./packages/webpack-config)
 - Main courses
     - [Testing](./packages/tdd-buffet/README.md#testing)
       - [Create a Node test](./packages/tdd-buffet/README.md#create-a-node-test)
@@ -34,8 +35,6 @@ This is an opinionated collection of libraries and tools for writing tests and e
       - [Wait for elements](./packages/react/README.md#wait-for-elements)
       - [Unmount](./packages/react/README.md#unmount)
       - [Rerender](./packages/react/README.md#rerender)
-    - [Building React apps](./packages/react/README.md#building)
-      - [Webpack](./packages/react/README.md#webpack)
     - [Visual testing](./packages/visual)
       - [Create a visual test](./packages/visual/README.md#create-a-visual-test)
 - Desserts

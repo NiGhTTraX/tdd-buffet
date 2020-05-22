@@ -223,18 +223,3 @@ import { $render, $rerender } from '@tdd-buffet/react';
 $render(<span>foobar</span>);
 $rerender(<span>potato</span>);
 ```
-
-## Building
-
-### Webpack
-
-
-```js
-const baseConfig = require('tdd-buffet/config/webpack.config.js');
-
-module.exports = {
-  ...baseConfig
-}
-```
-
-Setting `COVERAGE=1` in your environment will instrument your code for coverage and is needed to [aggregate reports](../tdd-buffet/README.md#coverage).

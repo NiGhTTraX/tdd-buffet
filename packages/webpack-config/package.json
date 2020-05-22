@@ -1,0 +1,54 @@
+{
+  "name": "@tdd-buffet/webpack-config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "Awesome webpack config",
+  "keywords": [
+    "tdd",
+    "webpack",
+    "testing"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git",
+    "directory": "packages/webpack-config"
+  },
+  "author": "Andrei Picus",
+  "license": "MIT",
+  "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/webpack-config",
+  "main": "src/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
+    "pretest": "yarn run webpack",
+    "test": "GUI_COVERAGE=1 yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    "webpack": "COVERAGE=1 webpack --config src/index.js ../webpack-config/tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
+  },
+  "peerDependencies": {
+    "webpack": "^4.43.0"
+  },
+  "dependencies": {
+    "@babel/core": "~7.9.0",
+    "babel-loader": "~8.1.0",
+    "babel-plugin-istanbul": "~6.0.0",
+    "css-loader": "~3.5.0",
+    "fork-ts-checker-webpack-plugin": "~4.1.0",
+    "less": "~3.11.0",
+    "less-loader": "~6.1.0",
+    "mini-css-extract-plugin": "~0.9.0",
+    "postcss-flexbugs-fixes": "~4.2.0",
+    "postcss-loader": "~3.0.0",
+    "postcss-normalize": "~9.0.0",
+    "postcss-preset-env": "~6.7.0",
+    "style-loader": "~1.2.0",
+    "webpack": "~4.43.0"
+  },
+  "devDependencies": {
+    "typescript": "~3.9.0",
+    "webpack-cli": "~3.3.11"
+  }
+}
