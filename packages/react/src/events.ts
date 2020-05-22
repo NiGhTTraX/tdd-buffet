@@ -101,6 +101,23 @@ export function $keyDown(
  * @param selector If it's a string, the first element identified
  *   by this will receive the event. If it's a jQuery collection
  *   then the first element in it will receive the event.
+ *
+ * @example
+ * $render(<form onSubmit={() => {}} />);
+ * $submit('form')
+ *
+ * @example
+ * $render(<form onSubmit={() => {}}>
+ *   <button>Submit</button>
+ * </form>);
+ * $submit('button');
+ *
+ * @example
+ * $render(<>
+ *   <form id="my-form" onSubmit={() => {}} />
+ *   <button form="my-form">Submit</button>
+ * </>);
+ * $submit('button');
  */
 export const $submit = (selector: Selector) => {
   let element = getDOMElement(selector);

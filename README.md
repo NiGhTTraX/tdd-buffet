@@ -26,7 +26,7 @@ This is an opinionated collection of libraries and tools for writing tests and e
 - Specials
     - [Merge coverage from node and GUI tests](./packages/tdd-buffet/README.md#coverage)
 - Side dishes
-    - [Testing React apps](./packages/react/README.md#testing)
+    - [Testing React apps](./packages/react/README.md#usage)
       - [Render components](./packages/react/README.md#render-components)
       - [Find elements](./packages/react/README.md#find-elements)
       - [Fire events](./packages/react/README.md#fire-events)

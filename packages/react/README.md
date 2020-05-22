@@ -13,7 +13,27 @@
 npm install @tdd-buffet/react
 ```
 
-## Testing
+## Usage
+
+This package wraps the excellent [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro) and adds [jQuery](https://jquery.com/) for its powerful selection engine.
+
+The following table illustrates the methods available in `@testing-library/react` and their equivalents in this package:
+
+`@testing-library/react` | `@tdd-buffet/react`
+-------------------------|--------------------
+[`render`](https://testing-library.com/docs/react-testing-library/api#render)| [`$render`](#render-components)
+[`rerender`](https://testing-library.com/docs/react-testing-library/api#rerender) | [`$rerender`](#rerender)
+[`unmount`](https://testing-library.com/docs/react-testing-library/api#unmount) | [`$unmount`](#unmount)
+[`fireEvent.*`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$fireEvent.*`](#fire-events)
+[`fireEvent.click`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$click`](#$click)
+[`fireEvent.change`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$change`](#$change)
+[`fireEvent.submit`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$submit`](#$submit)
+[`fireEvent.keyDown`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$keyDown`](#$keyDown)
+[`waitFor`](https://testing-library.com/docs/dom-testing-library/api-async#waitfor) | [`$wait`](#wait-for-conditions), [`$waitForElement`](#wait-for-elements)
+[`queryBy`](https://testing-library.com/docs/dom-testing-library/api-queries#queryby) | [`$find`](#find-elements)
+[`getByText`](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) | [`$getByText`]()
+[`getByTestId`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) | [`$getByTestId`]()
+
 
 ### Render components
 
@@ -77,6 +97,10 @@ $fireEvent.click('button'); // will log 'clicked'
 
 Some aliases are also exported for the most common events:
 
+#### $click
+
+Simulate click events on buttons, checkboxes, radio buttons etc.
+
 ```typescript jsx
 import React from 'react';
 import { $render, $click } from '@tdd-buffet/react';
@@ -88,15 +112,54 @@ $render(<button onClick={() => console.log('clicked')}>
 $click('button'); // will log 'clicked'
 ```
 
+#### $change
+
+Simulate change events on inputs. Receives the text value as the 2nd argument.
+
+```typescript jsx
+import React from 'react';
+import { $render, $change } from '@tdd-buffet/react';
+
+$render(<input onChange={e => console.log(e.target.value)} />);
+
+$change('input', 'foobar'); // will log 'foobar'
+```
+
+#### $submit
+
+Simulate form submissions. Can be triggered on a form or an a linked button (either inside the form or linked via the `form` attribute).
+
+```typescript jsx
+import React from 'react';
+import { $render, $submit } from '@tdd-buffet/react';
+
+$render(<form onSubmit={() => console.log('submit')}>
+  <button>Submit me</button>
+</form>);
+
+$submit('button'); // will log 'submit'
+```
+
+#### $keyDown
+
+Simulate pressing down a key. Receives the key character as the 2nd argument.
+
+```typescript jsx
+import React from 'react';
+import { $render, $keyDown } from '@tdd-buffet/react';
+
+$render(<div onKeyDown={(e) => console.log(e.which)} />);
+
+$keyDown('div', 'A'); // will log 65
+```
+
 ### Wait for conditions
 
-If your component contains async logic like waiting for a promise or for a timer you can use the `wait` function to wait for a condition to be satisfied such as an element becoming visible.
-
-Note that React doesn't guarantee that a render happens synchronously so it's safer to wrap all of your assertions with `wait`.
+If your component contains async logic like waiting for a promise or for a timer you can use the `$wait` function to wait for a condition to be satisfied such as an element becoming visible.
 
 ```typescript jsx
 import React, { useState } from 'react';
-import { $render, wait, $click } from '@tdd-buffet/react';
+import { $render, $wait, $click } from '@tdd-buffet/react';
 
 const MyComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -109,7 +172,7 @@ const MyComponent = () => {
 $render(<MyComponent />);
 $click('button');
 
-await wait($container => $container.text() === 'done');
+await $wait($container => $container.text() === 'done');
 ```
 
 ### Wait for elements
@@ -118,7 +181,7 @@ The package exposes a shortcut to wait for the condition that an element is pres
 
 ```typescript jsx
 import React, { useState } from 'react';
-import { $render, waitForElement, $click } from '@tdd-buffet/react';
+import { $render, $waitForElement, $click } from '@tdd-buffet/react';
 
 const MyComponent = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -132,7 +195,7 @@ const MyComponent = () => {
 $render(<MyComponent />);
 $click('button');
 
-await waitForElement($container => $container.find('.present'));
+await $waitForElement($container => $container.find('.present'));
 ```
 
 ### Unmount
