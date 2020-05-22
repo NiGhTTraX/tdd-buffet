@@ -24,13 +24,13 @@ declare module '@testing-library/react/pure' {
  * @param timeout Time in ms to wait until condition is fulfilled.
  *
  * @example
- * await wait(() => 1 === 1);
- * await wait(() => 1 === 1, 2000);
- * await wait(() => expect(1).to.equal(1))
- * await wait(() => { expect(1).to.equal(1); })
- * await wait($container => $container.text() === 'foobar');
+ * await $wait(() => 1 === 1);
+ * await $wait(() => 1 === 1, 2000);
+ * await $wait(() => expect(1).to.equal(1))
+ * await $wait(() => { expect(1).to.equal(1); })
+ * await $wait($container => $container.text() === 'foobar');
  */
-export function wait(
+export function $wait(
   cb: ($container: JQuery) => any,
   timeout?: number
 ): Promise<void>;
@@ -45,15 +45,15 @@ export function wait(
  * @param timeout Time in ms to wait until condition is fulfilled.
  *
  * @example
- * await wait(() => 1 === 1, '1 should be 1');
- * await wait(() => expect(1).to.equal(1), '1 should be 1 before 2 secs', 2000)
+ * await $wait(() => 1 === 1, '1 should be 1');
+ * await $wait(() => expect(1).to.equal(1), '1 should be 1 before 2 secs', 2000)
  */
-export function wait(
+export function $wait(
   cb: ($container: JQuery) => any,
   message?: string,
   timeout?: number
 ): Promise<void>;
-export function wait(
+export function $wait(
   cb: ($container: JQuery) => any,
   timeoutOrMessage?: number | string,
   maybeTimeout = 1500
@@ -99,10 +99,10 @@ export function wait(
  * @param timeout
  *
  * @example
- * waitForElement('div.myClass')
- * waitForElement('div > p + p')
+ * $waitForElement('div.myClass')
+ * $waitForElement('div > p + p')
  */
-export function waitForElement(
+export function $waitForElement(
   selector: string,
   timeout?: number
 ): Promise<any>;
@@ -119,10 +119,10 @@ export function waitForElement(
  * @param timeout
  *
  * @example
- * waitForElement('div.myClass')
- * waitForElement('div > p + p')
+ * $waitForElement('div.myClass')
+ * $waitForElement('div > p + p')
  */
-export function waitForElement(
+export function $waitForElement(
   selector: string,
   message: string,
   timeout?: number
@@ -141,10 +141,10 @@ export function waitForElement(
  * @param timeout
  *
  * @example
- * waitForElement($container => $container.find('.foobar'))
- * waitForElement($container => $container.find('div').children().find('p').get(1))
+ * $waitForElement($container => $container.find('.foobar'))
+ * $waitForElement($container => $container.find('div').children().find('p').get(1))
  */
-export function waitForElement(
+export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
   timeout?: number
 ): Promise<any>;
@@ -163,15 +163,15 @@ export function waitForElement(
  * @param timeout
  *
  * @example
- * waitForElement($container => $container.find('.foobar'))
- * waitForElement($container => $container.find('div').children().find('p').get(1))
+ * $waitForElement($container => $container.find('.foobar'))
+ * $waitForElement($container => $container.find('div').children().find('p').get(1))
  */
-export function waitForElement(
+export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
   message: string,
   timeout?: number
 ): Promise<any>;
-export function waitForElement(
+export function $waitForElement(
   cbOrSelector: string | (($container: JQuery) => JQuery),
   messageOrTimeout?: string | number,
   maybeTimeout = 1500
