@@ -18,12 +18,12 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/jest-config",
-  "main": "src/index.js",
+  "main": "src/jest.config.js",
   "files": [
     "src"
   ],
   "scripts": {
-    "test": "jest --config src/index.js"
+    "test": "jest --config src/jest.config.js"
   },
   "peerDependencies": {
     "jest": "^25.2.2"
