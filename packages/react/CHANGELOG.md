@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.10.0-alpha.0...@tdd-buffet/react@1.0.0) (2020-05-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jquery to ~3.5.0 ([d4bed33](https://github.com/NiGhTTraX/tdd-buffet/commit/d4bed33))
+* **deps:** update dependency less-loader to ~6.1.0 ([c7528c2](https://github.com/NiGhTTraX/tdd-buffet/commit/c7528c2))
+* **deps:** update dependency less-loader to v6 ([427aa25](https://github.com/NiGhTTraX/tdd-buffet/commit/427aa25))
+* **deps:** update dependency postcss-normalize to v9 ([91e11c1](https://github.com/NiGhTTraX/tdd-buffet/commit/91e11c1))
+* **deps:** update dependency style-loader to ~1.2.0 ([5cf07ba](https://github.com/NiGhTTraX/tdd-buffet/commit/5cf07ba))
+* **deps:** update dependency webpack to ~4.43.0 ([c530ae4](https://github.com/NiGhTTraX/tdd-buffet/commit/c530ae4))
+
+
+### Features
+
+* **react:** Add $submit ([dc9e604](https://github.com/NiGhTTraX/tdd-buffet/commit/dc9e604))
+
+
+* refactor(react)!: Split webpack config to separate package ([bcceecd](https://github.com/NiGhTTraX/tdd-buffet/commit/bcceecd))
+* chore(react)!: Remove deprecated methods ([9a8449f](https://github.com/NiGhTTraX/tdd-buffet/commit/9a8449f))
+
+
+### BREAKING CHANGES
+
+* The config is now available in @tdd-buffet/webpack-config.
+* Deprecated event methods were removed in favor of their
+counterparts named with `$` e.g. `$click` instead of `click`.
+
+
+
+
+
 # [0.10.0-alpha.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.9.4...@tdd-buffet/react@0.10.0-alpha.0) (2020-04-07)
 
 

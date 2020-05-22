@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@1.0.0-alpha.0...tdd-buffet@1.0.0) (2020-05-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/fs-extra to v9 ([384da42](https://github.com/NiGhTTraX/tdd-buffet/commit/384da42))
+* **deps:** update dependency meow to v7 ([da7ece6](https://github.com/NiGhTTraX/tdd-buffet/commit/da7ece6))
+* **deps:** update dependency ts-loader to v7 ([2ed8c14](https://github.com/NiGhTTraX/tdd-buffet/commit/2ed8c14))
+* **deps:** update jest monorepo to ~25.3.0 ([d4f2548](https://github.com/NiGhTTraX/tdd-buffet/commit/d4f2548))
+* **deps:** update jest monorepo to ~25.4.0 ([ad10edd](https://github.com/NiGhTTraX/tdd-buffet/commit/ad10edd))
+
+
+
+
+
 # [1.0.0-alpha.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@0.16.4...tdd-buffet@1.0.0-alpha.0) (2020-04-07)
 
 

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@1.0.0-alpha.4...@tdd-buffet/jest-config@1.0.0) (2020-05-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/fs-extra to v9 ([384da42](https://github.com/NiGhTTraX/tdd-buffet/commit/384da42))
+* **deps:** update dependency ts-jest to ~25.4.0 ([ec5dd8d](https://github.com/NiGhTTraX/tdd-buffet/commit/ec5dd8d))
+* **deps:** update dependency ts-jest to ~25.5.0 ([cb6cbb1](https://github.com/NiGhTTraX/tdd-buffet/commit/cb6cbb1))
+* **deps:** update dependency ts-jest to v26 ([088d701](https://github.com/NiGhTTraX/tdd-buffet/commit/088d701))
+* **deps:** update jest monorepo to ~25.3.0 ([d4f2548](https://github.com/NiGhTTraX/tdd-buffet/commit/d4f2548))
+* **deps:** update jest monorepo to ~25.4.0 ([ad10edd](https://github.com/NiGhTTraX/tdd-buffet/commit/ad10edd))
+* **jest-config:** Make sure we choose our jest environment ([0341d0b](https://github.com/NiGhTTraX/tdd-buffet/commit/0341d0b))
+
+
+### Features
+
+* **jest-config:** Upgrade jsdom to v15 ([cdb9fa9](https://github.com/NiGhTTraX/tdd-buffet/commit/cdb9fa9))
+
+
+
+
+
 # [1.0.0-alpha.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@1.0.0-alpha.3...@tdd-buffet/jest-config@1.0.0-alpha.4) (2020-04-07)
 
 
