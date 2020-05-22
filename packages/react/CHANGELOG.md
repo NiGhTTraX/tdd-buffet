@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.0.0...@tdd-buffet/react@1.1.0) (2020-05-22)
+
+
+### Features
+
+* **react:** Add $prettyDOM ([884fa7b](https://github.com/NiGhTTraX/tdd-buffet/commit/884fa7b))
+
+
+
+
+
 # [1.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@0.10.0-alpha.0...@tdd-buffet/react@1.0.0) (2020-05-22)
 
 
