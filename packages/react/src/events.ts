@@ -35,8 +35,6 @@ export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
  *   by this will receive the event. If it's a jQuery collection
  *   then the first element in it will receive the event.
  *
- * @deprecated Please use $click instead.
- *
  * @example
  * click('button')
  * click('input[type=checkbox]')
@@ -44,10 +42,9 @@ export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
  * click($component.find('button.primary'))
  * click($component.find('button')[2])
  */
-export function click(selector: Selector) {
+export function $click(selector: Selector) {
   fireEvent.click(getDOMElement(selector));
 }
-export const $click = click;
 
 /**
  * Simulate a change event.
@@ -57,17 +54,14 @@ export const $click = click;
  *   then the first element in it will receive the event.
  * @param value The entire value will be sent at once to the target.
  *
- * @deprecated Please use $change instead.
- *
  * @example
  * change('input', 'foobar')
  * change($component.find('input[type=password]'), 'foobar')
  * change($component.find('input')[2], 'foobar')
  */
-export function change(selector: Selector, value: string) {
+export function $change(selector: Selector, value: string) {
   fireEvent.change(getDOMElement(selector), { target: { value } });
 }
-export const $change = change;
 
 /**
  * Simulate a keyDown event.
@@ -79,14 +73,12 @@ export const $change = change;
  * @param keyCode See `which` from https://keycode.info/. If not provided
  *   it will default to the char code for the first char in `key`.
  *
- * @deprecated Please use $keyDown instead.
- *
  * @example
  * keyDown('input', 'a')
  * keyDown('input', 'A', 65)
  * keyDown('input', 'Enter', 13)
  */
-export function keyDown(
+export function $keyDown(
   selector: Selector,
   key: string,
   keyCode: number = key.charCodeAt(0)
@@ -98,7 +90,6 @@ export function keyDown(
     which: keyCode,
   });
 }
-export const $keyDown = keyDown;
 
 /**
  * Submit a form.
