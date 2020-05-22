@@ -2019,31 +2019,31 @@
     eslint-plugin-prettier "^3.1.2"
     prettier "^2.0.0"
 
-"@nighttrax/eslint-config-react@^4.0.0-alpha.0":
-  version "4.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-react/-/eslint-config-react-4.0.0-alpha.0.tgz#0162aa16275cbb1c750defdc2c2664cd402e3624"
-  integrity sha512-LsxF+8TWgapEzl6yqknzxUt9Q/i+FR1LR8DxEIby3+VZp0YvRsEIMHJ9zjO3W92XCO7kEBXw6HM0vNmhKdY24Q==
+"@nighttrax/eslint-config-react@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-react/-/eslint-config-react-4.0.0.tgz#cdb6ca5fa462d21dea8686f54f8b1667249fc4a6"
+  integrity sha512-pTVFCx8chzStdagjashWnzTdS888mLpOzRP1s6M3c+/2S3nZ0dH+t+6zMwfYqNmUIx2QvQBay7wKaoOPmVYB7Q==
   dependencies:
     eslint-config-airbnb "^18.0.1"
     eslint-plugin-jsx-a11y "^6.2.3"
     eslint-plugin-react "^7.16.0"
 
-"@nighttrax/eslint-config-ts@^6.1.0-beta.0":
-  version "6.1.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-ts/-/eslint-config-ts-6.1.0-beta.0.tgz#d9e543798885382fcb1e31a83d52c766c6c6664b"
-  integrity sha512-dA4M+GUUChMkRQbR02xUbj1kHp8dUnYr1nUGgSft2UIxMz24M+aLCig/athJZNQg8o8UNxkr32cPYWlg5S1VKA==
+"@nighttrax/eslint-config-ts@^6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-ts/-/eslint-config-ts-6.1.0.tgz#1afc1a5e140e18d79ae6dd5c668e3daac23233a0"
+  integrity sha512-CwLgIkLtsrSkvT0/uWzlAlP81HlJSH39lZwGsC3VYHLhGb3dCBEJgpWtJaWsz4g1pMd7FGdxlKeoShBbgdQzBA==
   dependencies:
     "@nighttrax/eslint-config-base" "^5.1.0-beta.0"
     "@typescript-eslint/eslint-plugin" "~2.31.0"
     "@typescript-eslint/parser" "~2.31.0"
 
-"@nighttrax/eslint-config-tsx@~6.1.0-beta.0":
-  version "6.1.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-tsx/-/eslint-config-tsx-6.1.0-beta.0.tgz#541978f84b895f7511b6ef85ab6cf1960be5744f"
-  integrity sha512-LypzwEHpTMa+++6wFTJ5U0ZlpNCrhe4TGpOqixN2UfqTRwCUKf8aaedvHsl9ttDlEBOyQRqP26LVeEx8GRGBFA==
+"@nighttrax/eslint-config-tsx@~6.1.0":
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/@nighttrax/eslint-config-tsx/-/eslint-config-tsx-6.1.0.tgz#102111d396d7cde3f9409aa0ceb715614c1cba30"
+  integrity sha512-JonZ7LjfPhGN8BwvWlvg2wa7+3D7vrIao1MeDoR15iHOvsV/eK7kxUMfwoIHawQzQqdtCw7UwGcMa+I9ESjf2g==
   dependencies:
-    "@nighttrax/eslint-config-react" "^4.0.0-alpha.0"
-    "@nighttrax/eslint-config-ts" "^6.1.0-beta.0"
+    "@nighttrax/eslint-config-react" "^4.0.0"
+    "@nighttrax/eslint-config-ts" "^6.1.0"
 
 "@nodelib/fs.stat@^1.1.2":
   version "1.1.3"
