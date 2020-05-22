@@ -18,7 +18,7 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/webpack-config",
-  "main": "src/index.js",
+  "main": "src/webpack.config.js",
   "files": [
     "src"
   ],
@@ -26,7 +26,7 @@
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "pretest": "yarn run webpack",
     "test": "GUI_COVERAGE=1 yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
-    "webpack": "COVERAGE=1 webpack --config src/index.js ../webpack-config/tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
+    "webpack": "COVERAGE=1 webpack --config src/webpack.config.js ../webpack-config/tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
   },
   "peerDependencies": {
     "webpack": "^4.43.0"
