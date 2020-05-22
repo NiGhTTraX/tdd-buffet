@@ -33,6 +33,7 @@ The following table illustrates the methods available in `@testing-library/react
 [`queryBy`](https://testing-library.com/docs/dom-testing-library/api-queries#queryby) | [`$find`](#find-elements)
 [`getByText`](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) | [`$getByText`]()
 [`getByTestId`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) | [`$getByTestId`]()
+[`prettyDOM`](https://testing-library.com/docs/dom-testing-library/api-helpers#prettydom) | [`$prettyDOM`](#print-dom)
 
 
 ### Render components
@@ -222,4 +223,19 @@ import { $render, $rerender } from '@tdd-buffet/react';
 
 $render(<span>foobar</span>);
 $rerender(<span>potato</span>);
+```
+
+### Print DOM
+
+To help with debugging tests, you can use the [`$.html()`](https://api.jquery.com/html/) method to get the HTML content of an element. For large DOM trees the output could be hard to read, so you can use the `$prettyDOM` helper instead to get a more readable representation. By default it prints the currently rendered component's container, but you can pass a different element e.g. the result of [`$find`](#find-elements).
+
+```typescript jsx
+import { $render, $prettyDOM } from '@tdd-buffet/react';
+import React from 'react';
+
+$render(<div>foobar</div>);
+console.log($prettyDOM());
+// <div>
+//   foobar
+// </div>
 ```

@@ -1,5 +1,6 @@
 import { getByTestId, getByText, prettyDOM } from '@testing-library/react/pure';
 import $ from 'jquery';
+import { OptionsReceived } from 'pretty-format';
 import { getJQueryContainer } from './render';
 
 export type Selector = string | HTMLElement | JQuery;
@@ -95,4 +96,28 @@ export function getDOMElement(selector: Selector): HTMLElement {
   }
 
   return element;
+}
+
+/**
+ * Get a readable representation of a DOM element.
+ *
+ * @param selector If not given the container for the currently rendered component
+ *   will be used.
+ * @param maxLength Limit the length of the output.
+ * @param options pretty-format options.
+ *
+ * @example
+ * $render(<div>foobar</div>);
+ * console.log($prettyDOM())
+ *
+ * @example
+ * $render(<div><span>foobar</span><div>);
+ * console.log($prettyDOM($find('span')))
+ */
+export function $prettyDOM(
+  selector: Selector = getJQueryContainer(),
+  maxLength?: number,
+  options?: OptionsReceived
+): string {
+  return prettyDOM(getDOMElement(selector), maxLength, { ...options }) || '';
 }

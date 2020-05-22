@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
+import stripAnsi from 'strip-ansi';
 import {
   $find,
   $getByTestId,
   $getByText,
+  $prettyDOM,
   getDOMElement,
   NonExistentElement,
 } from '../src';
@@ -56,6 +58,32 @@ describe('Finding elements', () => {
       );
 
       expect(getDOMElement($container.find('p')).id).toEqual('1');
+    });
+  });
+
+  describe('prettyDOM', () => {
+    it('should print the container', () => {
+      $render(<div>foo</div>);
+
+      expect(stripAnsi($prettyDOM())).toEqual(`<div
+  data-testid="__tdd-buffet-container__"
+>
+  <div>
+    foo
+  </div>
+</div>`);
+    });
+
+    it('should print an element', () => {
+      const $container = $render(
+        <div>
+          <span>foobar</span>
+        </div>
+      );
+
+      expect(stripAnsi($prettyDOM($container.find('span')))).toEqual(`<span>
+  foobar
+</span>`);
     });
   });
 

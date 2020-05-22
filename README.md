@@ -35,6 +35,7 @@ This is an opinionated collection of libraries and tools for writing tests and e
       - [Wait for elements](./packages/react/README.md#wait-for-elements)
       - [Unmount](./packages/react/README.md#unmount)
       - [Rerender](./packages/react/README.md#rerender)
+      - [Print DOM](./packages/react/README.md#print-dom)
     - [Visual testing](./packages/visual)
       - [Create a visual test](./packages/visual/README.md#create-a-visual-test)
 - Desserts

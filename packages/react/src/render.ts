@@ -23,6 +23,7 @@ function createContainer() {
   }
 
   componentContainer = document.createElement('div');
+  componentContainer.dataset.testid = '__tdd-buffet-container__';
   document.body.appendChild(componentContainer);
 }
 
