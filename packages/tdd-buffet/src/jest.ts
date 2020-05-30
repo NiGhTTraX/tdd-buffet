@@ -84,7 +84,14 @@ export function runnerAfter(definition: () => Promise<any> | void) {
   afterAll(definition);
 }
 
-export type CoverageObject = { [key: string]: FileCoverageData };
+export type CoverageObject = {
+  [key: string]: FileCoverageData & {
+    inputSourceMap?: {
+      file: string;
+      sources: string[];
+    };
+  };
+};
 
 /**
  * Add coverage data to the current report.
@@ -133,16 +140,19 @@ function mergeCoverage(source: CoverageMapData, dest: CoverageObject) {
   });
 }
 
+function getTranslatedPath(key: string) {
+  return key.replace(/^\/usr\/src\/app/g, jest.config.rootDir);
+}
+
 function translateCoveragePaths(
   coverageObject: CoverageObject
 ): CoverageObject {
   return Object.keys(coverageObject).reduce((acc, key) => {
-    const translatedPath = key.replace(
-      /^\/usr\/src\/app/g,
-      jest.config.rootDir
-    );
+    const translatedPath = getTranslatedPath(key);
 
     const data = coverageObject[key];
+
+    const { inputSourceMap } = data;
 
     return {
       ...acc,
@@ -154,6 +164,13 @@ function translateCoveragePaths(
         fnMap: data.fnMap,
         branchMap: data.branchMap,
         path: translatedPath,
+        inputSourceMap: inputSourceMap && {
+          ...inputSourceMap,
+          file: getTranslatedPath(inputSourceMap.file),
+          sources: inputSourceMap.sources.map((s: string) =>
+            getTranslatedPath(s)
+          ),
+        },
       },
     };
   }, {});
