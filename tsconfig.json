@@ -3,6 +3,7 @@
 
   "compilerOptions": {
     "jsx": "react",
+    "types": ["jest"],
     "baseUrl": "./packages",
     "paths": {
       "tdd-buffet/*": ["tdd-buffet/src/*"],
