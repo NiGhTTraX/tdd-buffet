@@ -1,19 +1,6 @@
 import { waitFor as rtlWaitFor } from '@testing-library/react/pure';
 import { getJQueryContainer } from './render';
 
-// TODO: remove after https://github.com/DefinitelyTyped/DefinitelyTyped/pull/43102 is released
-declare module '@testing-library/react/pure' {
-  export function waitFor(
-    callback: () => void,
-    options?: {
-      container?: HTMLElement;
-      timeout?: number;
-      interval?: number;
-      mutationObserverOptions?: MutationObserverInit;
-    }
-  ): Promise<void>;
-}
-
 /**
  * Wait for a condition to be fulfilled.
  *
