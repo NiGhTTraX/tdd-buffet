@@ -21,7 +21,7 @@
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
   "bin": "./bin/index.js",
   "scripts": {
-    "test": "GUI_COVERAGE=1 yarn run ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    "test": "yarn run ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "build": "yarn run clean && yarn run compile",
     "clean": "rm -rf ./dist",
