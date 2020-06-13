@@ -35,9 +35,6 @@ module.exports = {
   // Here a user could setup e.g. custom jest matchers.
   setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
 
-  // Our custom runtime that exposes a way to add coverage from external sources.
-  moduleLoader: path.join(__dirname, './jest-runtime.js'),
-
   rootDir: process.cwd(),
   moduleNameMapper: compilerOptions.paths
     ? {
