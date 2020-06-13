@@ -23,10 +23,6 @@
     "src"
   ],
   "scripts": {
-    "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
-    "pretest": "yarn run webpack",
-    "test": "yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
-    "webpack": "COVERAGE=1 webpack --config src/webpack.config.js ../webpack-config/tests/coverage/webpack.ts -o ./tests/coverage/webpack-bundle.js"
   },
   "peerDependencies": {
     "webpack": "^4.43.0"
