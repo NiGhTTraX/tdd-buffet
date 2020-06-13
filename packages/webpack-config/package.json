@@ -28,9 +28,6 @@
     "webpack": "^4.43.0"
   },
   "dependencies": {
-    "@babel/core": "~7.10.0",
-    "babel-loader": "~8.1.0",
-    "babel-plugin-istanbul": "~6.0.0",
     "css-loader": "~3.6.0",
     "fork-ts-checker-webpack-plugin": "~4.1.0",
     "less": "~3.11.0",
