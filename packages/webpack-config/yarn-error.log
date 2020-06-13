@@ -1,0 +1,82 @@
+Arguments: 
+  /home/nightcrawler/n/bin/node /home/nightcrawler/n/lib/node_modules/yarn/bin/yarn.js test
+
+PATH: 
+  /usr/share/Modules/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/nightcrawler/bin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  10.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/nightcrawler/github/tdd-buffet/packages/webpack-config/package.json: Unexpected token } in JSON at position 753
+      at JSON.parse (<anonymous>)
+      at /home/nightcrawler/n/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/nightcrawler/n/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/nightcrawler/n/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "@tdd-buffet/webpack-config",
+    "publishConfig": {
+      "access": "public"
+    },
+    "version": "1.0.1",
+    "description": "Awesome webpack config",
+    "keywords": [
+      "tdd",
+      "webpack",
+      "testing"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/NiGhTTraX/tdd-buffet.git",
+      "directory": "packages/webpack-config"
+    },
+    "author": "Andrei Picus",
+    "license": "MIT",
+    "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/webpack-config",
+    "main": "src/webpack.config.js",
+    "files": [
+      "src"
+    ],
+    "scripts": {
+      "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
+      "test": "yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    },
+    "peerDependencies": {
+      "webpack": "^4.43.0"
+    },
+    "dependencies": {
+      "@babel/core": "~7.10.0",
+      "babel-loader": "~8.1.0",
+      "babel-plugin-istanbul": "~6.0.0",
+      "css-loader": "~3.6.0",
+      "fork-ts-checker-webpack-plugin": "~4.1.0",
+      "less": "~3.11.0",
+      "less-loader": "~6.1.0",
+      "mini-css-extract-plugin": "~0.9.0",
+      "postcss-flexbugs-fixes": "~4.2.0",
+      "postcss-loader": "~3.0.0",
+      "postcss-normalize": "~9.0.0",
+      "postcss-preset-env": "~6.7.0",
+      "style-loader": "~1.2.0",
+      "webpack": "~4.43.0"
+    },
+    "devDependencies": {
+      "typescript": "~3.9.0",
+      "webpack-cli": "~3.3.11"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@1.0.3...@tdd-buffet/jest-config@2.0.0) (2020-06-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-jest to ~26.1.0 ([c0abce6](https://github.com/NiGhTTraX/tdd-buffet/commit/c0abce6))
+* **deps:** update jest monorepo to v26 ([65930fd](https://github.com/NiGhTTraX/tdd-buffet/commit/65930fd))
+
+
+* refactor(jest-config)!: Remove support for adding external coverage data ([4a2d43d](https://github.com/NiGhTTraX/tdd-buffet/commit/4a2d43d))
+
+
+### BREAKING CHANGES
+
+* jest@26 changed their internals on which this feature was
+dependent.
+
+
+
+
+
 ## [1.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@1.0.2...@tdd-buffet/jest-config@1.0.3) (2020-05-22)
 
 **Note:** Version bump only for package @tdd-buffet/jest-config

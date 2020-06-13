@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@1.0.2...tdd-buffet@2.0.0) (2020-06-13)
+
+
+### Bug Fixes
+
+* **deps:** update jest monorepo to v26 ([65930fd](https://github.com/NiGhTTraX/tdd-buffet/commit/65930fd))
+* **tdd-buffet:** Fix collecting external coverage ([a44d046](https://github.com/NiGhTTraX/tdd-buffet/commit/a44d046))
+
+
+* refactor(tdd-buffet)!: Remove support for adding external coverage data ([e8311c5](https://github.com/NiGhTTraX/tdd-buffet/commit/e8311c5))
+
+
+### BREAKING CHANGES
+
+* jest@26 changed their internals on which this feature was
+dependent.
+
+
+
+
+
 ## [1.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@1.0.1...tdd-buffet@1.0.2) (2020-05-22)
 
 **Note:** Version bump only for package tdd-buffet
