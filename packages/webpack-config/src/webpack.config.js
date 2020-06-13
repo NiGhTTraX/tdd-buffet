@@ -67,7 +67,7 @@ module.exports = (webpackEnv) => {
     mode: isProd ? 'production' : 'development',
     devtool: isProd ? 'sourcemap' : 'cheap-module-source-map',
 
-    ...(isProd
+    ...(!isProd
       ? {
           devServer: {
             host: '0.0.0.0',
