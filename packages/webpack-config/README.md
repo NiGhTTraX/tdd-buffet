@@ -19,5 +19,3 @@ module.exports = {
   ...baseConfig
 }
 ```
-
-Setting `COVERAGE=1` in your environment will instrument your code for coverage and is needed to [aggregate reports](../tdd-buffet/README.md#coverage).

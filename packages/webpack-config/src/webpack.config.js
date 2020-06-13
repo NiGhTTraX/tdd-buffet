@@ -6,42 +6,6 @@ const postcssNormalize = require('postcss-normalize');
 const PostCssPresetEnv = require('postcss-preset-env');
 const PostCssFlexFixes = require('postcss-flexbugs-fixes');
 
-const babelLoader = {
-  loader: require.resolve('babel-loader'),
-  // The following options should match jest-transform.
-  options: {
-    auxiliaryCommentBefore: ' istanbul ignore next ',
-    babelrc: false,
-    caller: {
-      name: '@jest/transform',
-      supportsStaticESM: false,
-    },
-    configFile: false,
-    plugins: [
-      [
-        require.resolve('babel-plugin-istanbul'),
-        {
-          compact: false,
-          exclude: [],
-          useInlineSourceMaps: false,
-        },
-      ],
-    ],
-  },
-};
-
-const tsLoader = {
-  loader: require.resolve('ts-loader'),
-  options: {
-    // Type checking is done by fork-ts-checker-webpack-plugin.
-    transpileOnly: true,
-    compilerOptions: {
-      // This should match the ts-jest config.
-      target: 'es6',
-    },
-  },
-};
-
 /**
  * Get a list of loaders to process styles.
  *
@@ -109,7 +73,7 @@ module.exports = (webpackEnv) => {
             host: '0.0.0.0',
             port: 3000,
             disableHostCheck: true,
-            hot: !!process.env.COVERAGE,
+            hot: true,
             stats: 'errors-only',
           },
         }
@@ -120,7 +84,19 @@ module.exports = (webpackEnv) => {
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
-          use: process.env.COVERAGE ? [babelLoader, tsLoader] : [tsLoader],
+          use: [
+            {
+              loader: require.resolve('ts-loader'),
+              options: {
+                // Type checking is done by fork-ts-checker-webpack-plugin.
+                transpileOnly: true,
+                compilerOptions: {
+                  // This should match the ts-jest config.
+                  target: 'es6',
+                },
+              },
+            },
+          ],
         },
         {
           test: /\.less$/,
