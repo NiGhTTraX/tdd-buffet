@@ -17,7 +17,6 @@ const cli = meow(
                      There's a 1 second wait between retries.
 `,
   {
-    // @ts-ignore
     flags: {
       port: {
         type: 'number',
