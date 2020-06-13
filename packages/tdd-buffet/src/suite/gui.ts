@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import { remote } from 'webdriverio';
 import {
-  addCoverageData,
   runnerAfter,
   runnerBefore,
   runnerBeforeEach,
@@ -69,13 +68,6 @@ function getBrowserChromeSize() {
   };
 }
 
-/* istanbul ignore next because it's stringified and sent to the browser */
-function getCoverage() {
-  // @ts-ignore
-  // eslint-disable-next-line no-underscore-dangle
-  return window.__coverage__;
-}
-
 /**
  * Set the browser's viewport size.
  *
@@ -137,41 +129,23 @@ export function beforeEach(definition: HookDefinition) {
 /**
  * @param definition
  * @param browserName
- * @param coverage Whether should collect coverage reports from the browser.
  */
-export function createTest(
-  definition: TestDefinition,
-  browserName: string,
-  coverage: boolean
-) {
+export function createTest(definition: TestDefinition, browserName: string) {
   return async (testName: string) => {
     const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
 
     await definition(rootSuiteBrowser, testNameWithoutBrowser);
-
-    /* istanbul ignore else because when ran in CI this will always be true */
-    if (coverage) {
-      await collectCoverage(rootSuiteBrowser);
-    }
   };
 }
 
 /**
  * Declare a test.
  *
- * If `tdd-buffet test` is run with the `--coverage` option then
- * these tests will gather coverage reports from withing the browser.
- *
  * @param name
  * @param definition Omitting this will create a 'pending' test.
  */
 export function it(name: string, definition?: TestDefinition) {
-  runnerIt(
-    name,
-    definition
-      ? createTest(definition, BROWSER, !!process.env.GUI_COVERAGE)
-      : undefined
-  );
+  runnerIt(name, definition ? createTest(definition, BROWSER) : undefined);
 }
 
 function setupHooks() {
@@ -191,14 +165,4 @@ function setupHooks() {
   runnerAfter(function endSession() {
     return rootSuiteBrowser.deleteSession();
   });
-}
-
-async function collectCoverage(browser: Browser) {
-  const browserCoverage = await browser.execute(getCoverage);
-
-  if (!browserCoverage) {
-    return;
-  }
-
-  addCoverageData(browserCoverage);
 }

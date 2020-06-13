@@ -24,8 +24,6 @@ This is an opinionated collection of libraries and tools for writing tests and e
       - [Create a GUI test](packages/tdd-buffet/README.md#create-a-gui-test)
       - [Assertions](packages/tdd-buffet/README.md#assertions)
       - [Run the tests](packages/tdd-buffet/README.md#run-the-tests)
-- Specials
-    - [Merge coverage from node and GUI tests](packages/tdd-buffet/README.md#coverage)
 - Side dishes
     - [Testing React apps](packages/react/README.md#usage)
       - [Render components](packages/react/README.md#render-components)
