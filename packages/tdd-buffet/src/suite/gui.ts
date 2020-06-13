@@ -76,9 +76,7 @@ function getBrowserChromeSize() {
  */
 export async function setViewportSize(width: number, height: number) {
   const {
-    // @ts-ignore because the return type is not properly inferred
     width: chromeWidth,
-    // @ts-ignore
     height: chromeHeight,
   } = await rootSuiteBrowser.execute(getBrowserChromeSize);
 
