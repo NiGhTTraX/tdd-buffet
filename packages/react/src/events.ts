@@ -119,7 +119,7 @@ export function $keyDown(
  * </>);
  * $submit('button');
  */
-export const $submit = (selector: Selector) => {
+export function $submit(selector: Selector) {
   let element = getDOMElement(selector);
 
   // If this is a button linked to a form then fire the event
@@ -129,4 +129,4 @@ export const $submit = (selector: Selector) => {
   }
 
   fireEvent.submit(element);
-};
+}
