@@ -49,7 +49,7 @@
     "react-dom": "~16.13.0",
     "react-mock-component": "~2.3.0",
     "strip-ansi": "~6.0.0",
-    "strong-mock": "~5.0.0",
+    "strong-mock": "~6.0.0",
     "typescript": "~3.9.0"
   }
 }
