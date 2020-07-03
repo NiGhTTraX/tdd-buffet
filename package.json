@@ -33,7 +33,7 @@
     "@commitlint/config-lerna-scopes": "~9.0.0",
     "@commitlint/cli": "~9.0.0",
     "@nighttrax/eslint-config-tsx": "~6.1.0",
-    "eslint": "~7.3.0",
+    "eslint": "~7.4.0",
     "husky": "~4.2.0",
     "lerna": "~3.22.0",
     "lint-staged": "~10.2.0",
