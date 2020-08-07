@@ -12422,10 +12422,10 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.5:
   dependencies:
     iconv-lite "0.4.24"
 
-whatwg-fetch@~3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.3.0.tgz#b316f34303bf983439b93c6582157f81bd786110"
-  integrity sha512-5nvoOtuhyA2mOH0prcVbqDO2DVZV5g+m4hKjiLkTFdLkytlG/UPv9UYa79BzAm872mRerUOPZxVtQevATN3b/w==
+whatwg-fetch@~3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-3.4.0.tgz#e11de14f4878f773fbebcde8871b2c0699af8b30"
+  integrity sha512-rsum2ulz2iuZH08mJkT0Yi6JnKhwdw4oeyMjokgxd+mmqYSd9cPpOQf01TIWgjxG/U4+QR+AwKq6lSbXVxkyoQ==
 
 whatwg-mimetype@^2.2.0, whatwg-mimetype@^2.3.0:
   version "2.3.0"
