@@ -32,7 +32,7 @@
     "@commitlint/config-conventional": "~9.1.0",
     "@commitlint/config-lerna-scopes": "~9.1.0",
     "@commitlint/cli": "~9.1.0",
-    "@nighttrax/eslint-config-tsx": "~6.2.0",
+    "@nighttrax/eslint-config-tsx": "~6.3.0",
     "eslint": "~7.7.0",
     "husky": "~4.2.0",
     "lerna": "~3.22.0",
