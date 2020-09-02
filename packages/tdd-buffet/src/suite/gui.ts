@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { remote, BrowserObject } from 'webdriverio';
+import { remote, BrowserObject, RemoteOptions } from 'webdriverio';
 import {
   runnerAfter,
   runnerBefore,
@@ -148,9 +148,10 @@ export function it(name: string, definition?: TestDefinition) {
 
 function setupHooks() {
   runnerBefore(async function connectToSelenium() {
-    const options: WebdriverIO.RemoteOptions = {
+    const options: RemoteOptions = {
       hostname: SELENIUM_HOST,
       port: parseInt(SELENIUM_PORT, 10),
+      path: '/wd/hub',
       capabilities: { browserName: BROWSER },
       logLevel: 'error',
     };
