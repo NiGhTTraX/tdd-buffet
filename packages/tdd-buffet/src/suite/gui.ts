@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { remote } from 'webdriverio';
+import { remote, BrowserObject } from 'webdriverio';
 import {
   runnerAfter,
   runnerBefore,
@@ -44,7 +44,7 @@ export function bindBrowser<A extends any[], R>(
   return (...args: A) => cb(rootSuiteBrowser, ...args);
 }
 
-export type Browser = ReturnType<typeof remote>;
+export type Browser = BrowserObject;
 
 /**
  * @param browser
@@ -148,7 +148,7 @@ export function it(name: string, definition?: TestDefinition) {
 
 function setupHooks() {
   runnerBefore(async function connectToSelenium() {
-    const options: WebDriver.Options = {
+    const options: WebdriverIO.RemoteOptions = {
       hostname: SELENIUM_HOST,
       port: parseInt(SELENIUM_PORT, 10),
       capabilities: { browserName: BROWSER },
