@@ -36,7 +36,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@testing-library/react": "~10.4.0",
+    "@testing-library/react": "~11.0.0",
     "@types/jquery": "~3.5.0",
     "jquery": "~3.5.0",
     "pretty-format": "~26.4.0"
