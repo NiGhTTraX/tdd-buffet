@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.0...@tdd-buffet/jest-config@2.0.1) (2020-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-jest to ~26.2.0 ([af4057c](https://github.com/NiGhTTraX/tdd-buffet/commit/af4057c))
+* **deps:** update dependency ts-jest to ~26.3.0 ([993a7a9](https://github.com/NiGhTTraX/tdd-buffet/commit/993a7a9))
+* **deps:** update dependency whatwg-fetch to ~3.1.0 ([ec55908](https://github.com/NiGhTTraX/tdd-buffet/commit/ec55908))
+* **deps:** update dependency whatwg-fetch to ~3.2.0 ([63adb89](https://github.com/NiGhTTraX/tdd-buffet/commit/63adb89))
+* **deps:** update dependency whatwg-fetch to ~3.3.0 ([bf91f76](https://github.com/NiGhTTraX/tdd-buffet/commit/bf91f76))
+* **deps:** update dependency whatwg-fetch to ~3.4.0 ([c61187f](https://github.com/NiGhTTraX/tdd-buffet/commit/c61187f))
+* **deps:** update jest monorepo to ~26.1.0 ([978b7b6](https://github.com/NiGhTTraX/tdd-buffet/commit/978b7b6))
+* **deps:** update jest monorepo to ~26.2.0 ([4900552](https://github.com/NiGhTTraX/tdd-buffet/commit/4900552))
+* **deps:** update jest monorepo to ~26.3.0 ([4a9a376](https://github.com/NiGhTTraX/tdd-buffet/commit/4a9a376))
+* **deps:** update jest monorepo to ~26.4.0 ([d3f0c40](https://github.com/NiGhTTraX/tdd-buffet/commit/d3f0c40))
+
+
+
+
+
 # [2.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@1.0.3...@tdd-buffet/jest-config@2.0.0) (2020-06-13)
 
 

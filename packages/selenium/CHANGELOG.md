@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.15](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.14...@tdd-buffet/selenium@0.4.15) (2020-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to ~11.4.0 ([308331e](https://github.com/NiGhTTraX/tdd-buffet/commit/308331e))
+* **deps:** update dependency got to ~11.5.0 ([a49e2df](https://github.com/NiGhTTraX/tdd-buffet/commit/a49e2df))
+* **deps:** update dependency got to ~11.6.0 ([0a8c6f6](https://github.com/NiGhTTraX/tdd-buffet/commit/0a8c6f6))
+* **deps:** update dependency meow to ~7.1.0 ([f6bf458](https://github.com/NiGhTTraX/tdd-buffet/commit/f6bf458))
+
+
+
+
+
 ## [0.4.14](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.13...@tdd-buffet/selenium@0.4.14) (2020-06-13)
 
 

@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.0.0...tdd-buffet@2.1.0) (2020-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency meow to ~7.1.0 ([f6bf458](https://github.com/NiGhTTraX/tdd-buffet/commit/f6bf458))
+* **deps:** update dependency ts-loader to v8 ([7fbccd8](https://github.com/NiGhTTraX/tdd-buffet/commit/7fbccd8))
+* **deps:** update jest monorepo to ~26.1.0 ([978b7b6](https://github.com/NiGhTTraX/tdd-buffet/commit/978b7b6))
+* **deps:** update jest monorepo to ~26.2.0 ([4900552](https://github.com/NiGhTTraX/tdd-buffet/commit/4900552))
+* **deps:** update jest monorepo to ~26.3.0 ([4a9a376](https://github.com/NiGhTTraX/tdd-buffet/commit/4a9a376))
+* **deps:** update jest monorepo to ~26.4.0 ([d3f0c40](https://github.com/NiGhTTraX/tdd-buffet/commit/d3f0c40))
+* **tdd-buffet:** Add missing @types/jest dependency ([611bd7f](https://github.com/NiGhTTraX/tdd-buffet/commit/611bd7f))
+
+
+### Features
+
+* **tdd-buffet:** Upgrade to `webdriverio@6` ([62332ce](https://github.com/NiGhTTraX/tdd-buffet/commit/62332ce))
+
+
+
+
+
 # [2.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@1.0.2...tdd-buffet@2.0.0) (2020-06-13)
 
 

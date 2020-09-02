@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.1.1...@tdd-buffet/react@1.2.0) (2020-09-02)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to ~10.3.0 ([f2e313a](https://github.com/NiGhTTraX/tdd-buffet/commit/f2e313a))
+* **deps:** update dependency @testing-library/react to ~10.4.0 ([1fcc4a4](https://github.com/NiGhTTraX/tdd-buffet/commit/1fcc4a4))
+* **deps:** update dependency @types/jquery to ~3.5.0 ([575b89a](https://github.com/NiGhTTraX/tdd-buffet/commit/575b89a))
+* **deps:** update jest monorepo to ~26.1.0 ([978b7b6](https://github.com/NiGhTTraX/tdd-buffet/commit/978b7b6))
+* **deps:** update jest monorepo to ~26.2.0 ([4900552](https://github.com/NiGhTTraX/tdd-buffet/commit/4900552))
+* **deps:** update jest monorepo to ~26.3.0 ([4a9a376](https://github.com/NiGhTTraX/tdd-buffet/commit/4a9a376))
+* **deps:** update jest monorepo to ~26.4.0 ([d3f0c40](https://github.com/NiGhTTraX/tdd-buffet/commit/d3f0c40))
+
+
+### Features
+
+* **react:** Wrap `$unmount` in `act` ([433b148](https://github.com/NiGhTTraX/tdd-buffet/commit/433b148))
+
+
+
+
+
 ## [1.1.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.1.0...@tdd-buffet/react@1.1.1) (2020-06-13)
 
 
