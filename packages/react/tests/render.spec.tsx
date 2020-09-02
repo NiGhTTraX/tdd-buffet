@@ -133,4 +133,23 @@ describe('$render', () => {
     expect($container.text()).toHaveLength(0);
     expect($newContainer.text()).toEqual('baz');
   });
+
+  it('should cleanup after unmounting', () => {
+    let flushed = false;
+
+    const Foo = () => {
+      useEffect(() => {
+        return () => {
+          flushed = true;
+        };
+      });
+
+      return null;
+    };
+
+    $render(<Foo />);
+    $unmount();
+
+    expect(flushed).toBeTruthy();
+  });
 });
