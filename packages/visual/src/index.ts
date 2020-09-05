@@ -1,5 +1,6 @@
 import WebdriverIOAdapter from '@mugshot/webdriverio';
-import Mugshot from 'mugshot';
+import Mugshot, { WebdriverScreenshotter } from 'mugshot';
+import FsStorage from 'mugshot/dist/lib/fs-storage';
 import path from 'path';
 import { Browser, it, TestDefinition } from 'tdd-buffet/suite/gui';
 
@@ -18,7 +19,7 @@ const { BROWSER = 'chrome' } = process.env;
 export function vit(
   name: string,
   definition: TestDefinition,
-  selector: string = 'body > *'
+  selector: string = 'body > *:first-child'
 ) {
   it(name, async (browser, testName) => {
     await definition(browser, testName);
@@ -35,8 +36,8 @@ async function checkForVisualChanges(
   const adapter = new WebdriverIOAdapter(browser);
 
   const mugshot = new Mugshot(
-    adapter,
-    path.join(process.cwd(), `tests/gui/screenshots/${BROWSER}`)
+    new WebdriverScreenshotter(adapter),
+    new FsStorage(path.join(process.cwd(), `tests/gui/screenshots/${BROWSER}`))
   );
 
   const result = await mugshot.check(getSafeFilename(name), selector);
