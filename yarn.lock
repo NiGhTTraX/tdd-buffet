@@ -8800,10 +8800,10 @@ ms@^2.0.0, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-mugshot@~3.0.0-alpha.3:
-  version "3.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/mugshot/-/mugshot-3.0.0-alpha.3.tgz#2bcc4da12c3a2c4a9aa2afb854ae38c5270bef53"
-  integrity sha512-Qqfr/nbqXZRxsvU7issnzEBKC/Pka9aGUP+6aEYp8c7zk08yF8EbpxZUkkS3J1yjgN6UDsTbkHy1RCQbFeEvVw==
+mugshot@~3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/mugshot/-/mugshot-3.1.0.tgz#54d85190d4096bbf0786b7e38d68e8e6f633b800"
+  integrity sha512-ICsHu34Kr9jjTS8bVbPJwMEEqk9cl80VtKtMOOWVpAxQKXZVuUE7YXEQDiAC1j8lIW7tBCUcqzASp9PlVO0PUw==
   dependencies:
     "@types/fs-extra" "~9.0.0"
     "@types/is-ci" "~2.0.0"
