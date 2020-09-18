@@ -6325,10 +6325,27 @@ globrex@^0.1.1:
   resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
   integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
 
-got@^11.0.2, got@~11.6.0:
+got@^11.0.2:
   version "11.6.0"
   resolved "https://registry.yarnpkg.com/got/-/got-11.6.0.tgz#4978c78f3cbc3a45ee95381f8bb6efd1db1f4638"
   integrity sha512-ErhWb4IUjQzJ3vGs3+RR12NWlBDDkRciFpAkQ1LPUxi6OnwhGj07gQxjPsyIk69s7qMihwKrKquV6VQq7JNYLA==
+  dependencies:
+    "@sindresorhus/is" "^3.1.1"
+    "@szmarczak/http-timer" "^4.0.5"
+    "@types/cacheable-request" "^6.0.1"
+    "@types/responselike" "^1.0.0"
+    cacheable-lookup "^5.0.3"
+    cacheable-request "^7.0.1"
+    decompress-response "^6.0.0"
+    http2-wrapper "^1.0.0-beta.5.2"
+    lowercase-keys "^2.0.0"
+    p-cancelable "^2.0.0"
+    responselike "^2.0.0"
+
+got@~11.7.0:
+  version "11.7.0"
+  resolved "https://registry.yarnpkg.com/got/-/got-11.7.0.tgz#a386360305571a74548872e674932b4ef70d3b24"
+  integrity sha512-7en2XwH2MEqOsrK0xaKhbWibBoZqy+f1RSUoIeF1BLcnf+pyQdDsljWMfmOh+QKJwuvDIiKx38GtPh5wFdGGjg==
   dependencies:
     "@sindresorhus/is" "^3.1.1"
     "@szmarczak/http-timer" "^4.0.5"
