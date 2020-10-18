@@ -18,9 +18,9 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tsconfig",
-  "main": "src/tsconfig.json",
+  "main": "tsconfig.json",
   "files": [
-    "src"
+    "tsconfig.json"
   ],
   "scripts": {},
   "peerDependencies": {
