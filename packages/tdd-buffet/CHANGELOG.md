@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.0...tdd-buffet@2.1.1) (2020-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency webdriverio to ~6.5.0 ([f03949c](https://github.com/NiGhTTraX/tdd-buffet/commit/f03949c))
+* **deps:** update dependency webdriverio to ~6.6.0 ([7962ec9](https://github.com/NiGhTTraX/tdd-buffet/commit/7962ec9))
+
+
+
+
+
 # [2.1.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.0.0...tdd-buffet@2.1.0) (2020-09-02)
 
 

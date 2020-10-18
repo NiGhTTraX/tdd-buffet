@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.1...@tdd-buffet/webpack-config@2.0.2) (2020-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency css-loader to ~4.3.0 ([274fb26](https://github.com/NiGhTTraX/tdd-buffet/commit/274fb26))
+* **deps:** update dependency css-loader to v5 ([9f2f909](https://github.com/NiGhTTraX/tdd-buffet/commit/9f2f909))
+* **deps:** update dependency fork-ts-checker-webpack-plugin to ~5.2.0 ([6177574](https://github.com/NiGhTTraX/tdd-buffet/commit/6177574))
+* **deps:** update dependency mini-css-extract-plugin to ~0.12.0 ([8f35215](https://github.com/NiGhTTraX/tdd-buffet/commit/8f35215))
+* **deps:** update dependency mini-css-extract-plugin to v1 ([de22065](https://github.com/NiGhTTraX/tdd-buffet/commit/de22065))
+* **deps:** update dependency postcss-loader to v4 ([8dde025](https://github.com/NiGhTTraX/tdd-buffet/commit/8dde025))
+* **deps:** update dependency style-loader to ~1.3.0 ([c2aa8e7](https://github.com/NiGhTTraX/tdd-buffet/commit/c2aa8e7))
+* **deps:** update dependency style-loader to v2 ([f727f42](https://github.com/NiGhTTraX/tdd-buffet/commit/f727f42))
+
+
+
+
+
 ## [2.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.0...@tdd-buffet/webpack-config@2.0.1) (2020-09-02)
 
 

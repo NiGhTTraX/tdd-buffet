@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.1...@tdd-buffet/jest-config@2.0.2) (2020-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-jest to ~26.4.0 ([c3a3efa](https://github.com/NiGhTTraX/tdd-buffet/commit/c3a3efa))
+
+
+
+
+
 ## [2.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.0...@tdd-buffet/jest-config@2.0.1) (2020-09-02)
 
 

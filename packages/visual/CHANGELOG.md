@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.44](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.2.43...@tdd-buffet/visual@0.2.44) (2020-10-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency mugshot to ~3.1.0 ([3bc65aa](https://github.com/NiGhTTraX/tdd-buffet/commit/3bc65aa))
+* **deps:** update dependency mugshot to ~3.2.0 ([2632dbc](https://github.com/NiGhTTraX/tdd-buffet/commit/2632dbc))
+
+
+
+
+
 ## [0.2.43](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.2.42...@tdd-buffet/visual@0.2.43) (2020-09-02)
 
 **Note:** Version bump only for package @tdd-buffet/visual
