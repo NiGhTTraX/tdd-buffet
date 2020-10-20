@@ -32,8 +32,8 @@
     "prepublishOnly": "yarn run build"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "dependencies": {
     "@testing-library/react": "~11.1.0",
@@ -45,8 +45,8 @@
     "@types/react": "~16.9.0",
     "@types/react-dom": "~16.9.0",
     "jest-react-mock": "~1.0.1",
-    "react": "~16.14.0",
-    "react-dom": "~16.14.0",
+    "react": "~17.0.0",
+    "react-dom": "~17.0.0",
     "react-mock-component": "~2.3.0",
     "strip-ansi": "~6.0.0",
     "strong-mock": "~6.0.0",
