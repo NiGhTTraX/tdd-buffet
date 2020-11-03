@@ -30,7 +30,7 @@
     "prepublishOnly": "yarn run build && yarn run package"
   },
   "dependencies": {
-    "@jest/types": "~26.3.0",
+    "@jest/types": "~26.6.0",
     "@tdd-buffet/jest-config": "^2.0.2",
     "@types/chai": "~4.2.0",
     "@types/fs-extra": "~9.0.0",
@@ -38,7 +38,7 @@
     "chai": "~4.2.0",
     "execa": "~4.1.0",
     "fs-extra": "~9.0.0",
-    "jest": "~26.4.0",
+    "jest": "~26.6.0",
     "meow": "~8.0.0",
     "ts-loader": "~8.0.0",
     "typescript": "~4.0.0",
