@@ -31,8 +31,8 @@ The following table illustrates the methods available in `@testing-library/react
 [`fireEvent.keyDown`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$keyDown`](#$keyDown)
 [`waitFor`](https://testing-library.com/docs/dom-testing-library/api-async#waitfor) | [`$wait`](#wait-for-conditions), [`$waitForElement`](#wait-for-elements)
 [`queryBy`](https://testing-library.com/docs/dom-testing-library/api-queries#queryby) | [`$find`](#find-elements)
-[`getByText`](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) | [`$getByText`]()
-[`getByTestId`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) | [`$getByTestId`]()
+[`getByText`](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) | [`$getByText`](#find-elements)
+[`getByTestId`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) | [`$getByTestId`](#find-elements)
 [`prettyDOM`](https://testing-library.com/docs/dom-testing-library/api-helpers#prettydom) | [`$prettyDOM`](#print-dom)
 
 
