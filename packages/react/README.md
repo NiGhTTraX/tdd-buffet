@@ -31,8 +31,8 @@ The following table illustrates the methods available in `@testing-library/react
 [`fireEvent.keyDown`](https://testing-library.com/docs/dom-testing-library/api-events#fireeventeventname) | [`$keyDown`](#$keyDown)
 [`waitFor`](https://testing-library.com/docs/dom-testing-library/api-async#waitfor) | [`$wait`](#wait-for-conditions), [`$waitForElement`](#wait-for-elements)
 [`queryBy`](https://testing-library.com/docs/dom-testing-library/api-queries#queryby) | [`$find`](#find-elements)
-[`getByText`](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) | [`$getByText`](#find-elements)
-[`getByTestId`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) | [`$getByTestId`](#find-elements)
+[`ByText`](https://testing-library.com/docs/dom-testing-library/api-queries#bytext) | [`$*ByText`](#find-elements)
+[`ByTestId`](https://testing-library.com/docs/dom-testing-library/api-queries#bytestid) | [`$*ByTestId`](#find-elements)
 [`prettyDOM`](https://testing-library.com/docs/dom-testing-library/api-helpers#prettydom) | [`$prettyDOM`](#print-dom)
 
 
@@ -66,7 +66,7 @@ const $container = $render(<div>
 $container.find('p:second').text() === 'second paragraph';
 ```
 
-There are also a couple of convenience query methods for finding elements by test ID (`$getByTestId`) and by text (`$getByText`).
+There are also a few convenience query methods for finding elements by test ID (`$getByTestId`, `$getAllByTestId`, `$queryByTestId`) and by text (`$getByText`).
 
 ```typescript jsx
 import React from 'react';

@@ -1,4 +1,10 @@
-import { getByTestId, getByText, prettyDOM } from '@testing-library/react/pure';
+import {
+  getAllByTestId,
+  getByTestId,
+  getByText,
+  prettyDOM,
+  queryByTestId,
+} from '@testing-library/react/pure';
 import $ from 'jquery';
 import { OptionsReceived } from 'pretty-format';
 import { getJQueryContainer } from './render';
@@ -8,8 +14,14 @@ export type Selector = string | HTMLElement | JQuery;
 /**
  * Find an element in the currently rendered component by its `data-testid` attribute.
  *
- * Only the first matching element is returned. If there are no matching elements
- * an error will be thrown.
+ * @returns Only the first matching element is returned.
+ *
+ * @throws If there are no matching elements an error will be thrown.
+ *
+ * @see $getAllByTestId Use the `getAll` variant if you want to match
+ *   multiple elements.
+ * @see $queryByTestId Use the `query` variant if you want to check
+ *   that an element is not rendered.
  *
  * @example
  * $render(<button data-test="submit">Click me</button>);
@@ -17,6 +29,50 @@ export type Selector = string | HTMLElement | JQuery;
  */
 export function $getByTestId(id: string): JQuery {
   return $(getByTestId(getJQueryContainer()[0], id, {}));
+}
+
+/**
+ * Find all the elements in the currently rendered component that match
+ * the given `data-testid` attribute.
+ *
+ * @throws If there are no matching elements an error will be thrown.
+ *
+ * @see $getByTestId Use the `get` variant if you're looking for a single element.
+ * @see $queryByTestId Use the `query` variant if you want to check
+ *   that an element is not rendered.
+ *
+ * @example
+ * $render(<button data-test="submit">Click me</button>);
+ * $getAllByTestId('submit').length === 1
+ */
+export function $getAllByTestId(id: string): JQuery {
+  return $(getAllByTestId(getJQueryContainer()[0], id, {}));
+}
+
+/**
+ * Find a single element in the currently rendered component that matches
+ * the given `data-testid` attribute.
+ *
+ * @returns If there are no matching elements `null` will be returned.
+ *
+ * @throws Will throw if multiple elements match.
+ *
+ * @see $getByTestId Use the `get` variant if you're looking for a single element.
+ * @see $getAllByTestId Use the `getAll` variant if you want to match
+ *   multiple elements.
+ *
+ * @example
+ * $render(<button data-test="submit">Click me</button>);
+ * $getAllByTestId('submit').length === 1
+ */
+export function $queryByTestId(id: string): JQuery | null {
+  const elements = queryByTestId(getJQueryContainer()[0], id, {});
+
+  if (!elements) {
+    return null;
+  }
+
+  return $(elements);
 }
 
 /**

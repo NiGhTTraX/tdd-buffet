@@ -1,12 +1,14 @@
 import * as React from 'react';
+import stripAnsi from 'strip-ansi';
 import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
-import stripAnsi from 'strip-ansi';
 import {
   $find,
+  $getAllByTestId,
   $getByTestId,
   $getByText,
   $prettyDOM,
+  $queryByTestId,
   getDOMElement,
   NonExistentElement,
 } from '../src';
@@ -109,6 +111,43 @@ describe('Finding elements', () => {
 
     expect($getByTestId('foo').text()).toEqual('bar');
     expect(() => $getByTestId('xxx')).toThrow();
+
+    $render(
+      <>
+        <span data-testid="foo">bar</span>
+        <span data-testid="foo">baz</span>
+      </>
+    );
+
+    expect(() => $getByTestId('foo')).toThrow();
+  });
+
+  it('getAllByTestId', () => {
+    $render(
+      <>
+        <span data-testid="foo">bar</span>
+        <span data-testid="foo">baz</span>
+      </>
+    );
+
+    expect($getAllByTestId('foo')).toHaveLength(2);
+    expect(() => $getAllByTestId('xxx')).toThrow();
+  });
+
+  it('queryByTestId', () => {
+    $render(<span data-testid="foo">bar</span>);
+
+    expect($queryByTestId('foo')).toHaveLength(1);
+    expect($queryByTestId('xxx')).toBeNull();
+
+    $render(
+      <>
+        <span data-testid="foo">bar</span>
+        <span data-testid="foo">baz</span>
+      </>
+    );
+
+    expect(() => $queryByTestId('foo')).toThrow();
   });
 
   it('getByText.string', () => {
