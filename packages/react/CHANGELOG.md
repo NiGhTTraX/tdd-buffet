@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.2.1...@tdd-buffet/react@1.3.0) (2020-12-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to ~11.2.0 ([9271aaf](https://github.com/NiGhTTraX/tdd-buffet/commit/9271aaf))
+* **deps:** update jest monorepo to ~26.6.0 ([b4db1a6](https://github.com/NiGhTTraX/tdd-buffet/commit/b4db1a6))
+
+
+### Features
+
+* **react:** Add `getAllByTestId` and `queryByTestId` ([3bd362d](https://github.com/NiGhTTraX/tdd-buffet/commit/3bd362d))
+
+
+
+
+
 ## [1.2.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.2.0...@tdd-buffet/react@1.2.1) (2020-10-18)
 
 

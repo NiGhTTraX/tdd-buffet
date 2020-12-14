@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "All you can eat TDD tools and libraries",
   "keywords": [
     "tdd",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@jest/types": "~26.6.0",
-    "@tdd-buffet/jest-config": "^2.0.2",
+    "@tdd-buffet/jest-config": "^2.0.3",
     "@types/chai": "~4.2.0",
     "@types/fs-extra": "~9.0.0",
     "@types/jest": "~26.0.0",

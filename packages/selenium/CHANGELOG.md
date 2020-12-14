@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.17](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.16...@tdd-buffet/selenium@0.4.17) (2020-12-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency execa to ~4.1.0 ([cb8ff44](https://github.com/NiGhTTraX/tdd-buffet/commit/cb8ff44))
+* **deps:** update dependency execa to v5 ([77c7d06](https://github.com/NiGhTTraX/tdd-buffet/commit/77c7d06))
+* **deps:** update dependency got to ~11.8.0 ([fbbc14f](https://github.com/NiGhTTraX/tdd-buffet/commit/fbbc14f))
+* **deps:** update dependency meow to v8 ([c2af368](https://github.com/NiGhTTraX/tdd-buffet/commit/c2af368))
+
+
+
+
+
 ## [0.4.16](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.15...@tdd-buffet/selenium@0.4.16) (2020-10-18)
 
 

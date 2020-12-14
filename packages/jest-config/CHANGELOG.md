@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.2...@tdd-buffet/jest-config@2.0.3) (2020-12-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency whatwg-fetch to ~3.5.0 ([0c98d2d](https://github.com/NiGhTTraX/tdd-buffet/commit/0c98d2d))
+* **deps:** update jest monorepo to ~26.6.0 ([b4db1a6](https://github.com/NiGhTTraX/tdd-buffet/commit/b4db1a6))
+
+
+
+
+
 ## [2.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.1...@tdd-buffet/jest-config@2.0.2) (2020-10-18)
 
 

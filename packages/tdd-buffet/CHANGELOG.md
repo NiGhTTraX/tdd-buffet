@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.2](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.1...tdd-buffet@2.1.2) (2020-12-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency execa to ~4.1.0 ([cb8ff44](https://github.com/NiGhTTraX/tdd-buffet/commit/cb8ff44))
+* **deps:** update dependency execa to v5 ([77c7d06](https://github.com/NiGhTTraX/tdd-buffet/commit/77c7d06))
+* **deps:** update dependency meow to v8 ([c2af368](https://github.com/NiGhTTraX/tdd-buffet/commit/c2af368))
+* **deps:** update dependency webdriverio to ~6.10.0 ([5e00ab1](https://github.com/NiGhTTraX/tdd-buffet/commit/5e00ab1))
+* **deps:** update dependency webdriverio to ~6.7.0 ([c272074](https://github.com/NiGhTTraX/tdd-buffet/commit/c272074))
+* **deps:** update dependency webdriverio to ~6.8.0 ([b338f5a](https://github.com/NiGhTTraX/tdd-buffet/commit/b338f5a))
+* **deps:** update dependency webdriverio to ~6.9.0 ([63a2bf8](https://github.com/NiGhTTraX/tdd-buffet/commit/63a2bf8))
+* **deps:** update jest monorepo to ~26.6.0 ([b4db1a6](https://github.com/NiGhTTraX/tdd-buffet/commit/b4db1a6))
+
+
+
+
+
 ## [2.1.1](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.0...tdd-buffet@2.1.1) (2020-10-18)
 
 
