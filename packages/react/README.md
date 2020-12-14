@@ -83,7 +83,7 @@ $getByTestId('second').text() === 'second paragraph';
 
 ### Fire events
 
-The package exposes [@testing-library/react's `fireEvent` object](https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname) wrapped in a helper that can take a DOM element, a CSS selector or a JQuery collection:
+The package exposes the `fireEvent` object from [@testing-library/react](https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname) wrapped in a helper that can take a DOM element, a CSS selector or a JQuery collection:
 
 ```typescript jsx
 import React from 'react';
@@ -128,7 +128,7 @@ $change('input', 'foobar'); // will log 'foobar'
 
 #### $submit
 
-Simulate form submissions. Can be triggered on a form or an a linked button (either inside the form or linked via the `form` attribute).
+Simulate form submissions. Can be triggered on a form or on a linked button (either inside the form or linked via the `form` attribute).
 
 ```typescript jsx
 import React from 'react';
@@ -227,7 +227,7 @@ $rerender(<span>potato</span>);
 
 ### Print DOM
 
-To help with debugging tests, you can use the [`$.html()`](https://api.jquery.com/html/) method to get the HTML content of an element. For large DOM trees the output could be hard to read, so you can use the `$prettyDOM` helper instead to get a more readable representation. By default it prints the currently rendered component's container, but you can pass a different element e.g. the result of [`$find`](#find-elements).
+To help with debugging tests, you can use the [`$.html()`](https://api.jquery.com/html/) method to get the HTML content of an element. For large DOM trees the output could be hard to read, so you can use the `$prettyDOM` helper instead to get a more readable representation. By default, it prints the currently rendered component's container, but you can pass a different element e.g. the result of [`$find`](#find-elements).
 
 ```typescript jsx
 import { $render, $prettyDOM } from '@tdd-buffet/react';
