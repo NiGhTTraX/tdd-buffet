@@ -13,7 +13,7 @@ export type Selector = string | HTMLElement | JQuery;
  *
  * @example
  * $render(<button data-test="submit">Click me</button>);
- * $findByTestId('submit').text() === 'Click me'
+ * $getByTestId('submit').text() === 'Click me'
  */
 export function $getByTestId(id: string): JQuery {
   return $(getByTestId(getJQueryContainer()[0], id, {}));
@@ -29,7 +29,7 @@ export function $getByTestId(id: string): JQuery {
  *
  * @example
  * $render(<button>Click me</button>);
- * $findByText('Click').text() === 'Click me'
+ * $getByText('Click').text() === 'Click me'
  */
 export function $getByText(contains: string): JQuery;
 /**
@@ -40,7 +40,7 @@ export function $getByText(contains: string): JQuery;
  *
  * @example
  * $render(<button>Click me</button>);
- * $findByText(/click/).text() === 'Click me'
+ * $getByText(/click/).text() === 'Click me'
  */
 export function $getByText(matches: RegExp): JQuery;
 export function $getByText(match: string | RegExp): JQuery {
