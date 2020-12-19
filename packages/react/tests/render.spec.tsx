@@ -138,10 +138,8 @@ describe('$render', () => {
     let flushed = false;
 
     const Foo = () => {
-      useEffect(() => {
-        return () => {
-          flushed = true;
-        };
+      useEffect(() => () => {
+        flushed = true;
       });
 
       return null;
