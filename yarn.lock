@@ -8831,10 +8831,10 @@ ms@^2.0.0, ms@^2.1.1:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
-mugshot@~3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/mugshot/-/mugshot-3.2.0.tgz#10898ce860e3290ab3120a6e705960cc451981bd"
-  integrity sha512-fU5+4MtfUA1hyrZbSDFUYvfZNXz9pp7KGMfy0QQcVqd5vHbR57OevVNyKCH4qkET0qTXBX0uGWAUsGhUcZrQZA==
+mugshot@~3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/mugshot/-/mugshot-3.3.0.tgz#e7e600488778c9afbeda693a7172b64fc7d73541"
+  integrity sha512-xs5fQbbemncBtRUpaXoQCrMz3MCiuXRFkkcmxiny+vzgxbH7dPGoDXfU0K0nqgfowF9EIrW6BOn6810WGKMJgg==
   dependencies:
     "@types/fs-extra" "~9.0.0"
     "@types/is-ci" "~2.0.0"
