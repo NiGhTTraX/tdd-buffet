@@ -72,7 +72,7 @@ module.exports = {
     '!**/vendor/**/*',
   ],
   coverageDirectory: '<rootDir>/tests/results',
-  coverageReporters: ['json', 'text', 'html'],
+  coverageReporters: ['lcov', 'text'],
   coverageThreshold: {
     global: {
       lines: 100,
