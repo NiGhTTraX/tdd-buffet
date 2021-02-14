@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.3](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.2...tdd-buffet@2.1.3) (2021-02-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency chai to ~4.3.0 ([67c274e](https://github.com/NiGhTTraX/tdd-buffet/commit/67c274e))
+* **deps:** update dependency fs-extra to ~9.1.0 ([0fb02fd](https://github.com/NiGhTTraX/tdd-buffet/commit/0fb02fd))
+* **deps:** update dependency meow to ~8.1.0 ([945646a](https://github.com/NiGhTTraX/tdd-buffet/commit/945646a))
+* **deps:** update dependency meow to v9 ([5446872](https://github.com/NiGhTTraX/tdd-buffet/commit/5446872))
+* **deps:** update dependency webdriverio to ~6.11.0 ([f23e2c2](https://github.com/NiGhTTraX/tdd-buffet/commit/f23e2c2))
+* **deps:** update dependency webdriverio to ~6.12.0 ([2604482](https://github.com/NiGhTTraX/tdd-buffet/commit/2604482))
+
+
+
+
+
 ## [2.1.2](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.1...tdd-buffet@2.1.2) (2020-12-14)
 
 

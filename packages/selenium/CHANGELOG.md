@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.18](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.17...@tdd-buffet/selenium@0.4.18) (2021-02-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency meow to ~8.1.0 ([945646a](https://github.com/NiGhTTraX/tdd-buffet/commit/945646a))
+* **deps:** update dependency meow to v9 ([5446872](https://github.com/NiGhTTraX/tdd-buffet/commit/5446872))
+
+
+
+
+
 ## [0.4.17](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.16...@tdd-buffet/selenium@0.4.17) (2020-12-14)
 
 

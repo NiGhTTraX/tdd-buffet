@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.3...@tdd-buffet/jest-config@3.0.0) (2021-02-14)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to ~9.1.0 ([0fb02fd](https://github.com/NiGhTTraX/tdd-buffet/commit/0fb02fd))
+* **deps:** update dependency ts-jest to ~26.5.0 ([d2440b0](https://github.com/NiGhTTraX/tdd-buffet/commit/d2440b0))
+
+
+### Code Refactoring
+
+* **jest:** Use lcov reports instead of json+html ([0479af6](https://github.com/NiGhTTraX/tdd-buffet/commit/0479af6))
+
+
+### BREAKING CHANGES
+
+* **jest:** this might break your coverage uploading if you were
+targetting `coverage-final.json` explictly. If you're using `codecov`
+you should be able to remove the `-f` param and let it discover the
+`lcov.info` files automatically.
+
+
+
+
+
 ## [2.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.2...@tdd-buffet/jest-config@2.0.3) (2020-12-14)
 
 
