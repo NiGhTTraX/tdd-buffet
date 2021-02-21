@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.4...@tdd-buffet/webpack-config@2.0.5) (2021-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency webpack to ~5.22.0 ([6ca15bf](https://github.com/NiGhTTraX/tdd-buffet/commit/6ca15bf))
+* **deps:** update dependency webpack to ~5.23.0 ([33f50dc](https://github.com/NiGhTTraX/tdd-buffet/commit/33f50dc))
+
+
+
+
+
 ## [2.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.3...@tdd-buffet/webpack-config@2.0.4) (2021-02-14)
 
 

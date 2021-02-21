@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@3.0.0...@tdd-buffet/jest-config@3.0.1) (2021-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency whatwg-fetch to ~3.6.0 ([4047fd9](https://github.com/NiGhTTraX/tdd-buffet/commit/4047fd9))
+* **jest:** Fix ts-jest deprecation warning ([b56778a](https://github.com/NiGhTTraX/tdd-buffet/commit/b56778a))
+
+
+
+
+
 # [3.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@2.0.3...@tdd-buffet/jest-config@3.0.0) (2021-02-14)
 
 
