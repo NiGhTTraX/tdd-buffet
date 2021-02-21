@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/tsconfig@1.0.3...@tdd-buffet/tsconfig@1.0.4) (2021-02-21)
+
+
+### Bug Fixes
+
+* **tsconfig:** Change peer dep to allow typescript@3.8 ([2bf97c6](https://github.com/NiGhTTraX/tdd-buffet/commit/2bf97c6))
+
+
+
+
+
 ## [1.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/tsconfig@1.0.2...@tdd-buffet/tsconfig@1.0.3) (2021-02-14)
 
 **Note:** Version bump only for package @tdd-buffet/tsconfig
