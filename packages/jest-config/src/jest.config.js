@@ -82,7 +82,7 @@ module.exports = {
 
   globals: {
     'ts-jest': {
-      tsConfig: {
+      tsconfig: {
         // Minimise transpilation since tests run in modern Node.
         target: 'es6',
 
