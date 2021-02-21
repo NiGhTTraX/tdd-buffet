@@ -24,6 +24,6 @@
   ],
   "scripts": {},
   "peerDependencies": {
-    "typescript": "^4.0.0"
+    "typescript": "^3.8.3 || ^4.0.0"
   }
 }
