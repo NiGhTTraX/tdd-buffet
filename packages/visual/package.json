@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.47",
+  "version": "0.2.48",
   "description": "Visual testing for tdd-buffet",
   "keywords": [
     "tdd",
@@ -40,7 +40,7 @@
     "mugshot": "~3.3.0"
   },
   "devDependencies": {
-    "tdd-buffet": "^2.1.4",
+    "tdd-buffet": "^2.1.5",
     "typescript": "~4.2.0"
   }
 }

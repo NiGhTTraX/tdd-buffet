@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@3.0.1...@tdd-buffet/jest-config@3.0.2) (2021-03-09)
+
+
+### Bug Fixes
+
+* **jest:** Support tsconfigs without a `baseUrl` ([1e03c03](https://github.com/NiGhTTraX/tdd-buffet/commit/1e03c0388a7d09de578031efc03384527e522ffc))
+
+
+
+
+
 ## [3.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@3.0.0...@tdd-buffet/jest-config@3.0.1) (2021-02-21)
 
 

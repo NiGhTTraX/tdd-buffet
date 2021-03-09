@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.3.1...@tdd-buffet/react@1.3.2) (2021-03-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jquery to ~3.6.0 ([c3c471d](https://github.com/NiGhTTraX/tdd-buffet/commit/c3c471d769caaf8b488e2dcf963be196df2b3a43))
+
+
+
+
+
 ## [1.3.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.3.0...@tdd-buffet/react@1.3.1) (2021-02-14)
 
 **Note:** Version bump only for package @tdd-buffet/react

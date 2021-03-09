@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.5](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.4...tdd-buffet@2.1.5) (2021-03-09)
+
+**Note:** Version bump only for package tdd-buffet
+
+
+
+
+
 ## [2.1.4](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.3...tdd-buffet@2.1.4) (2021-02-21)
 
 **Note:** Version bump only for package tdd-buffet
