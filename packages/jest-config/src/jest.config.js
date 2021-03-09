@@ -39,8 +39,49 @@ module.exports = {
   moduleNameMapper: compilerOptions.paths
     ? {
         ...pathsToModuleNameMapper(compilerOptions.paths, {
-          // The prefix must have a trailing slash.
-          prefix: path.join(compilerOptions.baseUrl, '/'),
+          /**
+           * baseURL is the absolute path resolved from the config it's defined in.
+           * pathsBasePath is the absolute path of the config that defines the paths.
+           * baseUrl, if defined, is pathsBasePath + baseUrl.
+           *
+           * @example
+           * // project/tsconfig.base.json
+           * {
+           *   compilerOptions: {
+           *     baseUrl: './packages',
+           *     paths: {
+           *       'tdd-buffet': ['tdd-buffet/src']
+           *     }
+           *   }
+           * }
+           *
+           * // project/packages/foobar/tsconfig.json
+           * {
+           *   extends: '../../tsconfig.base.json',
+           * }
+           *
+           * compilerOptions.baseUrl = 'project/packages';
+           * compilerOptions.pathsBasePath = 'project/';
+           *
+           * @example
+           * // project/tsconfig.base.json
+           * {
+           *   compilerOptions: {
+           *     paths: {
+           *       'tdd-buffet': ['packages/tdd-buffet/src']
+           *     }
+           *   }
+           * }
+           *
+           * // project/packages/foobar/tsconfig.json
+           * {
+           *   extends: '../../tsconfig.base.json',
+           * }
+           *
+           * compilerOptions.baseUrl = undefined;
+           * compilerOptions.pathsBasePath = 'project/';
+           */
+          prefix: compilerOptions.baseUrl || compilerOptions.pathsBasePath,
         }),
       }
     : null,
