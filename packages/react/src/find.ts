@@ -13,11 +13,14 @@ import { getJQueryContainer } from './render';
 export type Selector = string | HTMLElement | JQuery;
 
 /**
- * Find an element in the currently rendered component by its `data-testid` attribute.
+ * Find an element by a test ID.
  *
- * @returns Only the first matching element is returned.
+ * @param id The test ID assigned to the `data-testid` attribute.
  *
- * @throws If there are no matching elements an error will be thrown.
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
+ *
+ * @throws Will throw if multiple elements match or if no element matches.
  *
  * @see $getAllByTestId Use the `getAll` variant if you want to match
  *   multiple elements.
@@ -28,13 +31,20 @@ export type Selector = string | HTMLElement | JQuery;
  * $render(<button data-test="submit">Click me</button>);
  * $getByTestId('submit').text() === 'Click me'
  */
-export function $getByTestId(id: string): JQuery {
-  return $(getByTestId(getJQueryContainer()[0], id, {}));
+export function $getByTestId(
+  id: string,
+  container: Selector = getJQueryContainer()
+): JQuery {
+  return $(getByTestId(getDOMElement(container), id, {}));
 }
 
 /**
- * Find all the elements in the currently rendered component that match
- * the given `data-testid` attribute.
+ * Find all the elements that match a test ID.
+ *
+ * @param id The test ID assigned to the `data-testid` attribute.
+ *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
  *
  * @throws If there are no matching elements an error will be thrown.
  *
@@ -46,13 +56,20 @@ export function $getByTestId(id: string): JQuery {
  * $render(<button data-test="submit">Click me</button>);
  * $getAllByTestId('submit').length === 1
  */
-export function $getAllByTestId(id: string): JQuery {
-  return $(getAllByTestId(getJQueryContainer()[0], id, {}));
+export function $getAllByTestId(
+  id: string,
+  container: Selector = getJQueryContainer()
+): JQuery {
+  return $(getAllByTestId(getDOMElement(container), id, {}));
 }
 
 /**
- * Find a single element in the currently rendered component that matches
- * the given `data-testid` attribute.
+ * Find a single element that matches a test ID.
+ *
+ * @param id The test ID assigned to the `data-testid` attribute.
+ *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
  *
  * @returns If there are no matching elements `null` will be returned.
  *
@@ -66,8 +83,11 @@ export function $getAllByTestId(id: string): JQuery {
  * $render(<button data-test="submit">Click me</button>);
  * $getAllByTestId('submit').length === 1
  */
-export function $queryByTestId(id: string): JQuery | null {
-  const elements = queryByTestId(getJQueryContainer()[0], id, {});
+export function $queryByTestId(
+  id: string,
+  container: Selector = getJQueryContainer()
+): JQuery | null {
+  const elements = queryByTestId(getDOMElement(container), id, {});
 
   if (!elements) {
     return null;
@@ -81,17 +101,23 @@ export function $queryByTestId(id: string): JQuery | null {
  *
  * @param contains A substring to look for. The search is case **insensitive**.
  *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
+ *
  * @throws Will throw if multiple elements match, or if no element matches.
  *
  * @example
  * $render(<button>Click me</button>);
  * $getByText('Click').text() === 'Click me'
  */
-export function $getByText(contains: string): JQuery;
+export function $getByText(contains: string, container?: Selector): JQuery;
 /**
  * Find an element in the currently rendered component that matches the given RegExp.
  *
  * @param matches A regular expression.
+ *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
  *
  * @throws Will throw if multiple elements match, or if no element matches.
  *
@@ -99,15 +125,21 @@ export function $getByText(contains: string): JQuery;
  * $render(<button>Click me</button>);
  * $getByText(/click/).text() === 'Click me'
  */
-export function $getByText(matches: RegExp): JQuery;
-export function $getByText(match: string | RegExp): JQuery {
-  return $(getByText(getJQueryContainer()[0], match, { exact: false }));
+export function $getByText(matches: RegExp, container?: Selector): JQuery;
+export function $getByText(
+  match: string | RegExp,
+  container: Selector = getJQueryContainer()
+): JQuery {
+  return $(getByText(getDOMElement(container), match, { exact: false }));
 }
 
 /**
  * Find an element in the currently rendered component that contains the given text.
  *
  * @param contains A substring to look for. The search is case **insensitive**.
+ *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
  *
  * @returns If there are no matching elements `null` will be returned.
  *
@@ -117,11 +149,17 @@ export function $getByText(match: string | RegExp): JQuery {
  * $render(<button>Click me</button>);
  * $queryByText('Click').text() === 'Click me'
  */
-export function $queryByText(contains: string): JQuery | null;
+export function $queryByText(
+  contains: string,
+  container?: Selector
+): JQuery | null;
 /**
  * Find an element in the currently rendered component that matches the given RegExp.
  *
  * @param matches A regular expression.
+ *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
  *
  * @returns If there are no matching elements `null` will be returned.
  *
@@ -131,9 +169,17 @@ export function $queryByText(contains: string): JQuery | null;
  * $render(<button>Click me</button>);
  * $queryByText(/click/).text() === 'Click me'
  */
-export function $queryByText(matches: RegExp): JQuery | null;
-export function $queryByText(match: string | RegExp): JQuery | null {
-  const element = queryByText(getJQueryContainer()[0], match, { exact: false });
+export function $queryByText(
+  matches: RegExp,
+  container?: Selector
+): JQuery | null;
+export function $queryByText(
+  match: string | RegExp,
+  container: Selector = getJQueryContainer()
+): JQuery | null {
+  const element = queryByText(getDOMElement(container), match, {
+    exact: false,
+  });
 
   if (!element) {
     return null;
@@ -159,16 +205,26 @@ ${prettyDOM()}`);
 }
 
 /**
- * jQuery's `find` method bound on the container.
+ * jQuery's `find` method.
+ *
+ * @param selector Can be any CSS selector or jQuery powered selector.
  *
  * @see https://api.jquery.com/find/
+ *
+ * @param container By default, the function will search through the whole component
+ *   that's currently rendered. You can override this by passing an optional container.
+ *
+ * @returns A jQuery collection.
  *
  * @example
  * $render(<span id="text">some text</span>);
  * console.log($find('#text').text()); // some text
  */
-export function $find(selector: Selector): JQuery {
-  return getJQueryContainer().find(selector);
+export function $find(
+  selector: Selector,
+  container: Selector = getJQueryContainer()
+): JQuery {
+  return $(getDOMElement(container)).find(selector);
 }
 
 /**

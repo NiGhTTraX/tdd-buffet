@@ -81,6 +81,27 @@ $getByText('first').text() === 'first paragraph';
 $getByTestId('second').text() === 'second paragraph';
 ```
 
+
+By default, all queries search throw the whole component that's currently rendered. You can override this by passing an optional selector to limit the search to e.g. a subtree of the component.
+
+```tsx
+import React from 'react';
+import { $render, $getByText, $getByTestId } from '@tdd-buffet/react';
+
+$render(<div>
+  <div data-testid="foo">
+    <span>foo text</span>
+  </div>
+  <div data-testid="bar">
+    <span>bar text</span>
+  </div>
+</div>);
+
+console.log(
+  $getByText('text', $getByTestId('bar'))
+); // 'bar text'
+```
+
 ### Fire events
 
 The package exposes the `fireEvent` object from [@testing-library/react](https://testing-library.com/docs/dom-testing-library/api-events#fireevent-eventname) wrapped in a helper that can take a DOM element, a CSS selector or a JQuery collection:
