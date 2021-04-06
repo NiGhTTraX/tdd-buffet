@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.4.0...@tdd-buffet/react@1.5.0) (2021-04-06)
+
+
+### Features
+
+* **react:** Allow specifying container in queries ([9867d7a](https://github.com/NiGhTTraX/tdd-buffet/commit/9867d7af4384e2309da6e9e265deb8f58d107b52))
+
+
+
+
+
 # [1.4.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.3.2...@tdd-buffet/react@1.4.0) (2021-04-06)
 
 
