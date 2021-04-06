@@ -154,6 +154,7 @@ describe('Finding elements', () => {
     $render(<span>FoO BaR</span>);
 
     expect($getByText('FoO').text()).toEqual('FoO BaR');
+    expect($getByText('foo').text()).toEqual('FoO BaR');
     expect(() => $getByText('xxx')).toThrow();
   });
 

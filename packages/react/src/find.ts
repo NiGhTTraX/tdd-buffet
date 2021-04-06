@@ -78,7 +78,7 @@ export function $queryByTestId(id: string): JQuery | null {
 /**
  * Find an element in the currently rendered component that contains the given text.
  *
- * The search is case sensitive.
+ * @param contains A substring to look for. The search is case **insensitive**.
  *
  * Only the first matching element is returned. If there are no matching elements
  * an error will be thrown.
