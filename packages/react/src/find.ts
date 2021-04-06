@@ -80,8 +80,7 @@ export function $queryByTestId(id: string): JQuery | null {
  *
  * @param contains A substring to look for. The search is case **insensitive**.
  *
- * Only the first matching element is returned. If there are no matching elements
- * an error will be thrown.
+ * @throws Will throw if multiple elements match, or if no element matches.
  *
  * @example
  * $render(<button>Click me</button>);
@@ -91,8 +90,9 @@ export function $getByText(contains: string): JQuery;
 /**
  * Find an element in the currently rendered component that matches the given RegExp.
  *
- * Only the first matching element is returned. If there are no matching elements
- * an error will be thrown.
+ * @param matches A regular expression.
+ *
+ * @throws Will throw if multiple elements match, or if no element matches.
  *
  * @example
  * $render(<button>Click me</button>);

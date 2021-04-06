@@ -156,6 +156,15 @@ describe('Finding elements', () => {
     expect($getByText('FoO').text()).toEqual('FoO BaR');
     expect($getByText('foo').text()).toEqual('FoO BaR');
     expect(() => $getByText('xxx')).toThrow();
+
+    $render(
+      <>
+        <span>foobar</span>
+        <span>foobar</span>
+      </>
+    );
+
+    expect(() => $getByText('foo')).toThrow();
   });
 
   it('getByText.regexp', () => {
