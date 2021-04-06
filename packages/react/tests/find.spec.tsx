@@ -9,6 +9,7 @@ import {
   $getByText,
   $prettyDOM,
   $queryByTestId,
+  $queryByText,
   getDOMElement,
   NonExistentElement,
 } from '../src';
@@ -172,5 +173,28 @@ describe('Finding elements', () => {
 
     expect($getByText(/foo/i).text()).toEqual('FoO BaR');
     expect(() => $getByText(/xxx/)).toThrow();
+  });
+
+  it('queryByText.string', () => {
+    $render(<span>FoO BaR</span>);
+
+    expect($queryByText('FoO')).toHaveLength(1);
+    expect($queryByText('xxx')).toBeNull();
+
+    $render(
+      <>
+        <span>foobar</span>
+        <span>foobar</span>
+      </>
+    );
+
+    expect(() => $queryByText('foobar')).toThrow();
+  });
+
+  it('queryByText.regexp', () => {
+    $render(<span>FoO BaR</span>);
+
+    expect($queryByText(/foo/i)).toHaveLength(1);
+    expect($queryByText(/xxx/)).toBeNull();
   });
 });

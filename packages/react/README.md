@@ -66,7 +66,7 @@ const $container = $render(<div>
 $container.find('p:second').text() === 'second paragraph';
 ```
 
-There are also a few convenience query methods for finding elements by test ID (`$getByTestId`, `$getAllByTestId`, `$queryByTestId`) and by text (`$getByText`).
+There are also a few convenience query methods for finding elements by test ID (`$getByTestId`, `$getAllByTestId`, `$queryByTestId`) and by text (`$getByText`, `$queryByText`).
 
 ```typescript jsx
 import React from 'react';

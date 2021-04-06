@@ -4,6 +4,7 @@ import {
   getByText,
   prettyDOM,
   queryByTestId,
+  queryByText,
 } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { OptionsReceived } from 'pretty-format';
@@ -101,6 +102,43 @@ export function $getByText(contains: string): JQuery;
 export function $getByText(matches: RegExp): JQuery;
 export function $getByText(match: string | RegExp): JQuery {
   return $(getByText(getJQueryContainer()[0], match, { exact: false }));
+}
+
+/**
+ * Find an element in the currently rendered component that contains the given text.
+ *
+ * @param contains A substring to look for. The search is case **insensitive**.
+ *
+ * @returns If there are no matching elements `null` will be returned.
+ *
+ * @throws Will throw if multiple elements match.
+ *
+ * @example
+ * $render(<button>Click me</button>);
+ * $queryByText('Click').text() === 'Click me'
+ */
+export function $queryByText(contains: string): JQuery | null;
+/**
+ * Find an element in the currently rendered component that matches the given RegExp.
+ *
+ * @param matches A regular expression.
+ *
+ * @returns If there are no matching elements `null` will be returned.
+ *
+ * @throws Will throw if multiple elements match.
+ *
+ * @example
+ * $render(<button>Click me</button>);
+ * $queryByText(/click/).text() === 'Click me'
+ */
+export function $queryByText(matches: RegExp): JQuery | null;
+export function $queryByText(match: string | RegExp): JQuery | null {
+  const element = queryByText(getJQueryContainer()[0], match, { exact: false });
+
+  if (!element) {
+    return null;
+  }
+  return $(element);
 }
 
 export class NonExistentElement extends Error {
