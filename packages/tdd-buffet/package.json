@@ -4,7 +4,7 @@
     "access": "public",
     "directory": "dist"
   },
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "All you can eat TDD tools and libraries",
   "keywords": [
     "tdd",

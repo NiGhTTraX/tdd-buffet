@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.3.2...@tdd-buffet/react@1.4.0) (2021-04-06)
+
+
+### Features
+
+* **react:** Add `$queryByText` ([f4ae175](https://github.com/NiGhTTraX/tdd-buffet/commit/f4ae1754d7793c2174886c298ed576099fe7f859))
+
+
+
+
+
 ## [1.3.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.3.1...@tdd-buffet/react@1.3.2) (2021-03-09)
 
 

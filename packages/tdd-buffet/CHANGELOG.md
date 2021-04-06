@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.6](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.5...tdd-buffet@2.1.6) (2021-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-loader to ~8.1.0 ([2984598](https://github.com/NiGhTTraX/tdd-buffet/commit/29845987e357f4344cef959040e06e2fafe58f14))
+
+
+
+
+
 ## [2.1.5](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.4...tdd-buffet@2.1.5) (2021-03-09)
 
 **Note:** Version bump only for package tdd-buffet
