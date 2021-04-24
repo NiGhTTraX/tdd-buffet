@@ -36,7 +36,7 @@
     "tdd-buffet": "^2.0.0"
   },
   "dependencies": {
-    "@mugshot/webdriverio": "~2.0.0",
+    "@mugshot/webdriverio": "~3.0.0",
     "mugshot": "~3.3.0"
   },
   "devDependencies": {

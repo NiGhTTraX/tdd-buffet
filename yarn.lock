@@ -1979,10 +1979,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@mugshot/webdriverio@~2.0.0":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@mugshot/webdriverio/-/webdriverio-2.0.3.tgz#9c83e26e97cc5a0ef1e860ea197c5313a631d2cf"
-  integrity sha512-Haw2gUOKwPQCXdqy/OCociMJ5Z29sH2rpPEwo7V7EspC8tVkprmEHaPzisMjqJpwz0NfCosT3HyhVamciyb6gA==
+"@mugshot/webdriverio@~3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@mugshot/webdriverio/-/webdriverio-3.0.0.tgz#dbcd518f6436ef30b084a8d639d2405772edc315"
+  integrity sha512-UOsXxrQUZKEaWIqEmniA0my3eiay2noVlrK75k59e7XXpIKgwm2pPeNNIzxqprOvMilkkYQDi/xVM8M2bB/thw==
 
 "@nighttrax/eslint-config-base@^7.1.1":
   version "7.1.1"
