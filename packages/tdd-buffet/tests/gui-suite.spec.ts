@@ -1,20 +1,20 @@
 import { expect } from 'tdd-buffet/expect/chai';
 import {
   beforeEach,
-  bindBrowser,
-  Browser,
+  bindPage,
+  Page,
   describe,
   it,
   setViewportSize,
 } from '../src/suite/gui';
 
 describe('Gui suite', () => {
-  beforeEach(async (browser) => {
-    await browser.url('about:blank');
+  beforeEach(async (page) => {
+    await page.goto('about:blank');
   });
 
-  it('should set viewport size', async (browser) => {
-    await browser.url('about:blank');
+  it('should set viewport size', async (page) => {
+    await page.goto('about:blank');
     await setViewportSize(600, 600);
 
     function getViewportSize() {
@@ -24,35 +24,36 @@ describe('Gui suite', () => {
       };
     }
 
-    const viewportSize = await browser.execute(getViewportSize);
+    const viewportSize = await page.evaluate(getViewportSize);
 
     expect(viewportSize).to.deep.equal({ width: 600, height: 600 });
   });
 
-  // Keep this here to test the closure over rootSuiteBrowser.
-  const writeSomeText = bindBrowser(
-    async (boundBrowser: Browser, x: number, y: number) =>
-      boundBrowser.execute(
-        function (a, b) {
-          document.body.textContent = `${a + b}`;
-        },
-        x,
-        y
-      )
+  // Keep this here to test the closure over rootSuitePage.
+  const writeSomeText = bindPage(async (page: Page, x: number, y: number) =>
+    page.evaluate(
+      function (a: number, b: number) {
+        document.body.textContent = `${a + b}`;
+      },
+      x,
+      y
+    )
   );
 
-  it('should bind the browser to a helper', async (browser) => {
+  it('should bind the page to a helper', async (page) => {
     await writeSomeText(1, 2);
 
-    const body = await browser.$('body');
-    expect(await body.getText()).to.equal('3');
+    const body = await page.$('body');
+    expect(
+      await (await body?.getProperty('textContent'))?.jsonValue()
+    ).to.equal('3');
   });
 
   it('pending test');
 
   describe('nested', () => {
-    it('should preserve session', async (browser) => {
-      expect(await browser.getUrl()).to.equal('about:blank');
+    it('should preserve session', async (page) => {
+      expect(await page.url()).to.equal('about:blank');
     });
   });
 });

@@ -32,7 +32,7 @@ describe('Node suite', () => {
 
 ### Create a GUI test
 
-These tests give you a [WebdriverIO](https://webdriver.io) client that connects to a Selenium server (see the [selenium package](../selenium) on how to start one). Browser name and Selenium host/port are read from the environment variables `BROWSER` and `SELENIUM_HOST` and `SELENIUM_PORT` respectively.
+These tests will spin up [Puppeteer](https://pptr.dev/) in headless mode and pass the `page` instance in the test callback. The browser and page will be set up once per test suite and persisted between individual tests. 
 
 These tests are slower than Node tests. Therefore, you should not rely on them to exhaustively check the correctness of your code. You can start with them to have some basic coverage, but try to make your down to smaller, faster, more focused tests.
 
@@ -40,8 +40,8 @@ These tests are slower than Node tests. Therefore, you should not rely on them t
 import { describe, it } from 'tdd-buffet/suite/gui';
 
 describe('Gui suite', () => {
-  it('should run a test', async browser => {
-    await browser.url('http://github.com');
+  it('should run a test', async (page) => {
+    await page.goto('http://github.com');
   });
 });
 ```

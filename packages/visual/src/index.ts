@@ -1,10 +1,7 @@
-import WebdriverIOAdapter from '@mugshot/webdriverio';
-import Mugshot, { WebdriverScreenshotter } from 'mugshot';
-import FsStorage from 'mugshot/dist/lib/fs-storage';
+import { Mugshot } from 'mugshot';
+import { PuppeteerAdapter } from '@mugshot/puppeteer';
 import path from 'path';
-import { Browser, it, TestDefinition } from 'tdd-buffet/suite/gui';
-
-const { BROWSER = 'chrome' } = process.env;
+import { it, Page, TestDefinition } from 'tdd-buffet/suite/gui';
 
 /**
  * Perform a visual test alongside a normal test.
@@ -21,30 +18,32 @@ export function vit(
   definition: TestDefinition,
   selector: string = 'body > *:first-child'
 ) {
-  it(name, async (browser, testName) => {
-    await definition(browser, testName);
+  it(name, async (page, testName) => {
+    await definition(page, testName);
 
-    await checkForVisualChanges(browser, testName, selector);
+    await checkForVisualChanges(page, testName, selector);
   });
 }
 
 async function checkForVisualChanges(
-  browser: Browser,
+  page: Page,
   name: string,
   selector: string
 ) {
-  const adapter = new WebdriverIOAdapter(browser);
+  const adapter = new PuppeteerAdapter(page);
 
   const mugshot = new Mugshot(
-    new WebdriverScreenshotter(adapter),
-    new FsStorage(path.join(process.cwd(), `tests/gui/screenshots/${BROWSER}`))
+    adapter,
+    path.join(process.cwd(), `tests/gui/screenshots`)
   );
 
   const result = await mugshot.check(getSafeFilename(name), selector);
 
   /* istanbul ignore next because it's hard to test this through vit */
   if (!result.matches) {
-    throw new Error('Visual changes detected. Check screenshots');
+    throw new Error(
+      `Visual changes detected. Check diff at '${result.diffName}'`
+    );
   }
 }
 

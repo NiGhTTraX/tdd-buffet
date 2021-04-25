@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { remote, BrowserObject, RemoteOptions } from 'webdriverio';
+import puppeteer, { Browser, Page } from 'puppeteer';
 import {
   runnerAfter,
   runnerBefore,
@@ -8,15 +8,11 @@ import {
   runnerIt,
 } from '../jest';
 
-/* istanbul ignore next: I'm not going to run the tests twice to cover these */
-const {
-  BROWSER = 'chrome',
-  SELENIUM_HOST = 'localhost',
-  SELENIUM_PORT = '4444',
-} = process.env;
+export { Page };
 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
+let rootSuitePage: Page;
 
 /**
  * You can use this to simplify writing custom functions that work
@@ -24,39 +20,34 @@ let rootSuiteBrowser: Browser;
  *
  * @example
  * ```
- * import { describe, it, bindBrowser, Browser } from 'tdd-buffet/suite/gui';
+ * import { describe, it, bindPage, Page } from 'tdd-buffet/suite/gui';
  *
- * const loadFixture = bindBrowser(
- *   async (browser: Browser, path: string) => await browser.url(`/fixtures/${path}`)
+ * const loadFixture = bindPage(
+ *   async (page: Page, path: string) => await page.url(`/fixtures/${path}`)
  * );
  *
  * describe('My suite', () => {
- *   it('my test', async browser => {
+ *   it('my test', async (page) => {
  *     await loadFixture('foobar');
- *     await browser.click('.something');
+ *     await page.click('.something');
  *   });
  * });
  * ```
  */
-export function bindBrowser<A extends any[], R>(
-  cb: (browser: Browser, ...args: A) => R
+export function bindPage<A extends any[], R>(
+  cb: (page: Page, ...args: A) => R
 ) {
-  return (...args: A) => cb(rootSuiteBrowser, ...args);
+  return (...args: A) => cb(rootSuitePage, ...args);
 }
 
-export type Browser = BrowserObject;
+export type HookDefinition = (page: Page) => Promise<any> | void;
 
 /**
- * @param browser
- */
-export type HookDefinition = (browser: Browser) => Promise<any> | void;
-
-/**
- * @param browser
+ * @param page
  * @param testName The full test name including all of its parent `describe` names.
  */
 export type TestDefinition = (
-  browser: Browser,
+  page: Page,
   testName: string
 ) => Promise<any> | void;
 
@@ -78,19 +69,12 @@ export async function setViewportSize(width: number, height: number) {
   const {
     width: chromeWidth,
     height: chromeHeight,
-  } = await rootSuiteBrowser.execute(getBrowserChromeSize);
+  } = await rootSuitePage.evaluate(getBrowserChromeSize);
 
   const actualWidth = width + chromeWidth;
   const actualHeight = height + chromeHeight;
 
-  // Chrome...
-  await rootSuiteBrowser.setWindowSize(actualWidth, actualHeight);
-
-  // Firefox...
-  try {
-    await rootSuiteBrowser.setWindowRect(0, 0, actualWidth, actualHeight);
-    // eslint-disable-next-line no-empty
-  } catch (e) {}
+  await rootSuitePage.setViewport({ width: actualWidth, height: actualHeight });
 }
 
 /**
@@ -103,7 +87,7 @@ export async function setViewportSize(width: number, height: number) {
 export function describe(name: string, definition: () => void) {
   suiteNesting++;
 
-  runnerDescribe(suiteNesting === 1 ? `${name}:${BROWSER}` : name, () => {
+  runnerDescribe(name, () => {
     // We only want to set up hooks once - for the root suite.
     if (suiteNesting === 1) {
       setupHooks();
@@ -121,18 +105,12 @@ export function describe(name: string, definition: () => void) {
  * @param definition Will receive the browser instance.
  */
 export function beforeEach(definition: HookDefinition) {
-  runnerBeforeEach(() => definition(rootSuiteBrowser));
+  runnerBeforeEach(() => definition(rootSuitePage));
 }
 
-/**
- * @param definition
- * @param browserName
- */
-export function createTest(definition: TestDefinition, browserName: string) {
+export function createTest(definition: TestDefinition) {
   return async (testName: string) => {
-    const testNameWithoutBrowser = testName.replace(`:${browserName}`, '');
-
-    await definition(rootSuiteBrowser, testNameWithoutBrowser);
+    await definition(rootSuitePage, testName);
   };
 }
 
@@ -143,25 +121,18 @@ export function createTest(definition: TestDefinition, browserName: string) {
  * @param definition Omitting this will create a 'pending' test.
  */
 export function it(name: string, definition?: TestDefinition) {
-  runnerIt(name, definition ? createTest(definition, BROWSER) : undefined);
+  runnerIt(name, definition ? createTest(definition) : undefined);
 }
 
 function setupHooks() {
   runnerBefore(async function connectToSelenium() {
-    const options: RemoteOptions = {
-      hostname: SELENIUM_HOST,
-      port: parseInt(SELENIUM_PORT, 10),
-      path: '/wd/hub',
-      capabilities: { browserName: BROWSER },
-      logLevel: 'error',
-    };
+    rootSuiteBrowser = await puppeteer.launch();
+    rootSuitePage = await rootSuiteBrowser.newPage();
 
-    rootSuiteBrowser = await remote(options);
-
-    return rootSuiteBrowser;
+    return rootSuitePage;
   });
 
   runnerAfter(function endSession() {
-    return rootSuiteBrowser.deleteSession();
+    return rootSuiteBrowser.close();
   });
 }
