@@ -125,7 +125,7 @@ export function it(name: string, definition?: TestDefinition) {
 }
 
 function setupHooks() {
-  runnerBefore(async function connectToSelenium() {
+  runnerBefore(async function startBrowser() {
     rootSuiteBrowser = await puppeteer.launch();
     rootSuitePage = await rootSuiteBrowser.newPage();
 
