@@ -1,5 +1,10 @@
 /* eslint-disable no-underscore-dangle */
-import puppeteer, { Browser, Page } from 'puppeteer';
+import puppeteer, {
+  Browser,
+  BrowserLaunchArgumentOptions,
+  LaunchOptions,
+  Page,
+} from 'puppeteer';
 import {
   runnerAfter,
   runnerBefore,
@@ -9,6 +14,8 @@ import {
 } from '../jest';
 
 export { Page };
+
+type PuppeteerOptions = LaunchOptions & BrowserLaunchArgumentOptions;
 
 let suiteNesting = 0;
 let rootSuiteBrowser: Browser;
@@ -78,19 +85,29 @@ export async function setViewportSize(width: number, height: number) {
 }
 
 /**
- * Declare a block of tests that will start a fresh Selenium instance. **Mandatory**.
+ * Declare a block of tests that will spin up Puppeteer.
+ *
+ * You need to wrap individual tests with this in order to start the browser.
  *
  * Nested blocks will preserve the root session.
  *
- * Tests and hooks will receive the browser instance.
+ * Tests and hooks will receive the page instance.
+ *
+ * @param name
+ * @param definition
+ * @param options Puppeteer launch options.
  */
-export function describe(name: string, definition: () => void) {
+export function describe(
+  name: string,
+  definition: () => void,
+  options?: PuppeteerOptions
+) {
   suiteNesting++;
 
   runnerDescribe(name, () => {
     // We only want to set up hooks once - for the root suite.
     if (suiteNesting === 1) {
-      setupHooks();
+      setupHooks(options);
     }
 
     definition();
@@ -124,9 +141,9 @@ export function it(name: string, definition?: TestDefinition) {
   runnerIt(name, definition ? createTest(definition) : undefined);
 }
 
-function setupHooks() {
+function setupHooks(options?: PuppeteerOptions) {
   runnerBefore(async function startBrowser() {
-    rootSuiteBrowser = await puppeteer.launch();
+    rootSuiteBrowser = await puppeteer.launch(options);
     rootSuitePage = await rootSuiteBrowser.newPage();
 
     return rootSuitePage;
