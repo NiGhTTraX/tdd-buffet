@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.2.49...@tdd-buffet/visual@0.3.0) (2021-04-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @mugshot/webdriverio to ~2.0.0 ([4b82abf](https://github.com/NiGhTTraX/tdd-buffet/commit/4b82abf3ba0f431814b14ab4a79199bcafcc54cd))
+
+
+### Code Refactoring
+
+* Use Puppeteer instead of WebdriverIO ([6960e4c](https://github.com/NiGhTTraX/tdd-buffet/commit/6960e4c75bf30e49ca5be8754fb4abdd24696abe))
+
+
+### BREAKING CHANGES
+
+* `tdd-buffet/suite/gui` and `@tdd-buffet/visual` now use
+Puppeteer instead of WebdriverIO for faster tests with less setup.
+
+Changes include:
+
+- a Puppeteer.Page is passed to `vit` instead of `WebdriverIO.Browser`
+- `bindBrowser` has been renamed to `bindPage` to align with Puppeteer types
+- the `BROWSER`, `SELENIUM_HOST` and `SELENIUM_PORT` environment variable have
+been removed
+- test names will no longer contain the browser name
+- the screenshot results path will no longer contain the browser name
+
+
+
+
+
 ## [0.2.49](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.2.48...@tdd-buffet/visual@0.2.49) (2021-04-06)
 
 **Note:** Version bump only for package @tdd-buffet/visual

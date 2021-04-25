@@ -3,6 +3,43 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.6...tdd-buffet@3.0.0) (2021-04-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-loader to ~9.1.0 ([b90a952](https://github.com/NiGhTTraX/tdd-buffet/commit/b90a952b2f233e0800aab625cd4bdb33f49bd3c1))
+* **deps:** update dependency ts-loader to v9 ([c5442ab](https://github.com/NiGhTTraX/tdd-buffet/commit/c5442abf9b7b91cf6a080e8bc242694c7ec2fa24))
+
+
+### Code Refactoring
+
+* Use Puppeteer instead of WebdriverIO ([6960e4c](https://github.com/NiGhTTraX/tdd-buffet/commit/6960e4c75bf30e49ca5be8754fb4abdd24696abe))
+
+
+### Features
+
+* **tdd-buffet:** Allow specifying Puppeteer launch options ([6366fea](https://github.com/NiGhTTraX/tdd-buffet/commit/6366fea9a19332de0df696d4bb839f64daa8c582))
+
+
+### BREAKING CHANGES
+
+* `tdd-buffet/suite/gui` and `@tdd-buffet/visual` now use
+Puppeteer instead of WebdriverIO for faster tests with less setup.
+
+Changes include:
+
+- a Puppeteer.Page is passed to `vit` instead of `WebdriverIO.Browser`
+- `bindBrowser` has been renamed to `bindPage` to align with Puppeteer types
+- the `BROWSER`, `SELENIUM_HOST` and `SELENIUM_PORT` environment variable have
+been removed
+- test names will no longer contain the browser name
+- the screenshot results path will no longer contain the browser name
+
+
+
+
+
 ## [2.1.6](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.5...tdd-buffet@2.1.6) (2021-04-06)
 
 
