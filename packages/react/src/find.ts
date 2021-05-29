@@ -7,7 +7,6 @@ import {
   queryByText,
 } from '@testing-library/react/pure';
 import $ from 'jquery';
-import { OptionsReceived } from 'pretty-format';
 import { getJQueryContainer } from './render';
 
 export type Selector = string | HTMLElement | JQuery;
@@ -254,7 +253,6 @@ export function getDOMElement(selector: Selector): HTMLElement {
  * @param selector If not given the container for the currently rendered component
  *   will be used.
  * @param maxLength Limit the length of the output.
- * @param options pretty-format options.
  *
  * @example
  * $render(<div>foobar</div>);
@@ -266,11 +264,10 @@ export function getDOMElement(selector: Selector): HTMLElement {
  */
 export function $prettyDOM(
   selector: Selector = getJQueryContainer(),
-  maxLength?: number,
-  options?: OptionsReceived
+  maxLength?: number
 ): string {
   return (
-    prettyDOM(getDOMElement(selector), maxLength, options) ||
+    prettyDOM(getDOMElement(selector), maxLength) ||
     /* istanbul ignore next: because the types are silly, this should never return falsy */ ''
   );
 }
