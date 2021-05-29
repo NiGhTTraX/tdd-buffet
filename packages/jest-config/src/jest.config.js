@@ -26,7 +26,7 @@ const setupTestsFile = setupTestsFilePaths.find((filePath) =>
 );
 
 module.exports = {
-  testEnvironment: require.resolve('jest-environment-jsdom-fifteen'),
+  testEnvironment: 'jsdom',
 
   // We polyfill some things commonly found in tests. We don't want to polyfill
   // everything, especially since we only support modern versions of Node.
