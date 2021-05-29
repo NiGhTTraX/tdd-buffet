@@ -1,13 +1,19 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 import { run as runJest } from 'jest';
 
+const testSuiteNameStack: string[] = [];
+
 /**
  * Declare a block of tests.
  *
  * You can have nested blocks. You don't need a block in order to define tests.
  */
 export function runnerDescribe(name: string, definition: () => void) {
+  testSuiteNameStack.push(name);
+
   describe(name, definition);
+
+  testSuiteNameStack.pop();
 }
 
 /**
@@ -22,11 +28,10 @@ export function runnerIt(
   name: string,
   definition?: (testName: string) => Promise<any> | void
 ) {
+  const testFullName = [...testSuiteNameStack, name].join(' ');
+
   if (definition) {
-    // @ts-ignore because @types/jest doesn't expose this
-    const test: { getFullName: () => string } = it(name, () =>
-      definition(test.getFullName())
-    );
+    it(name, () => definition(testFullName));
   } else {
     it.todo(name);
   }
