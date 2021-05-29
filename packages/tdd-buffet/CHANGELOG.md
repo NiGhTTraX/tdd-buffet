@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.0...tdd-buffet@3.0.1) (2021-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v10 ([802ed0e](https://github.com/NiGhTTraX/tdd-buffet/commit/802ed0e221d208a1d69bc707cc8496fb2671ae0f))
+* **deps:** update dependency puppeteer to ~9.1.0 ([3b54ad6](https://github.com/NiGhTTraX/tdd-buffet/commit/3b54ad6cc0bfeca091a961db80e5e8122afc3025))
+* **deps:** update dependency ts-loader to ~9.2.0 ([4afe423](https://github.com/NiGhTTraX/tdd-buffet/commit/4afe423a29d02eadb47221ab1a05bda8f0e6e39b))
+* **deps:** update jest monorepo to v27 ([c983217](https://github.com/NiGhTTraX/tdd-buffet/commit/c9832178f66578890f6b6ac453b92fd9bd3ce14d))
+
+
+
+
+
 # [3.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@2.1.6...tdd-buffet@3.0.0) (2021-04-25)
 
 

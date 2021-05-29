@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.5.0...@tdd-buffet/react@2.0.0) (2021-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update jest monorepo to v27 ([c983217](https://github.com/NiGhTTraX/tdd-buffet/commit/c9832178f66578890f6b6ac453b92fd9bd3ce14d))
+
+
+### Code Refactoring
+
+* **jest-config:** Remove `$prettyDOM` options argument ([dd7ae67](https://github.com/NiGhTTraX/tdd-buffet/commit/dd7ae677c42cbfc29c63a829212725f3e2f58b9b))
+
+
+### BREAKING CHANGES
+
+* **jest-config:** Removed the optional `options` argument to `$prettyDOM`
+due to a type mismatch between `@testing-library/react` and the
+`pretty-format` package used by `jest`.
+
+
+
+
+
 # [1.5.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@1.4.0...@tdd-buffet/react@1.5.0) (2021-04-06)
 
 

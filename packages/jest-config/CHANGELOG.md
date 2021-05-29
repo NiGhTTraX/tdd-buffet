@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@3.0.2...@tdd-buffet/jest-config@4.0.0) (2021-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fs-extra to v10 ([802ed0e](https://github.com/NiGhTTraX/tdd-buffet/commit/802ed0e221d208a1d69bc707cc8496fb2671ae0f))
+* **deps:** update dependency ts-jest to v27 ([a76693c](https://github.com/NiGhTTraX/tdd-buffet/commit/a76693cb1b2960ee3c99c2cb085e7cec590c272e))
+* **deps:** update jest monorepo to v27 ([c983217](https://github.com/NiGhTTraX/tdd-buffet/commit/c9832178f66578890f6b6ac453b92fd9bd3ce14d))
+
+
+### Code Refactoring
+
+* **jest-config:** Use latest JSDOM test environment ([0a1418c](https://github.com/NiGhTTraX/tdd-buffet/commit/0a1418c0e9ec4a998fb13f9d6fa6f2f8833a0326)), closes [/github.com/jsdom/jsdom/blob/master/Changelog.md#1600](https://github.com//github.com/jsdom/jsdom/blob/master/Changelog.md/issues/1600)
+
+
+### BREAKING CHANGES
+
+* **jest-config:** You shouldn't notice any changes, but check the
+* **deps:** ts-jest will use the `sourceMap` option from the
+`tsconfig.json`.
+
+
+
+
+
 ## [3.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@3.0.1...@tdd-buffet/jest-config@3.0.2) (2021-03-09)
 
 
