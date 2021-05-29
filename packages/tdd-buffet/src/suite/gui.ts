@@ -13,7 +13,7 @@ import {
   runnerIt,
 } from '../jest';
 
-export { Page };
+export type { Page };
 
 type PuppeteerOptions = LaunchOptions & BrowserLaunchArgumentOptions;
 
