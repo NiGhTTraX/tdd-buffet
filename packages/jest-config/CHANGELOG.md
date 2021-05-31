@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@4.0.0...@tdd-buffet/jest-config@4.0.1) (2021-05-31)
+
+
+### Bug Fixes
+
+* **jest-config:** Make sure we use correct jsdom environment ([0b8f5f3](https://github.com/NiGhTTraX/tdd-buffet/commit/0b8f5f35f74e6ab8cd83106802ee85910f3540ff))
+
+
+
+
+
 # [4.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@3.0.2...@tdd-buffet/jest-config@4.0.0) (2021-05-29)
 
 
