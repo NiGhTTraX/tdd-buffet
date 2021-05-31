@@ -26,7 +26,10 @@ const setupTestsFile = setupTestsFilePaths.find((filePath) =>
 );
 
 module.exports = {
-  testEnvironment: 'jsdom',
+  // Manually requiring the package instead of using just 'jsdom'
+  // to avoid module resolution picking up a different version inside
+  // a project with hoisted dependencies.
+  testEnvironment: require.resolve('jest-environment-jsdom'),
 
   // We polyfill some things commonly found in tests. We don't want to polyfill
   // everything, especially since we only support modern versions of Node.
