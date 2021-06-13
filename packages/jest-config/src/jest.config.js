@@ -92,12 +92,12 @@ module.exports = {
 
   transform: {
     // Using this directly as opposed to the preset because of
-    // module resolution issues.
+    // to be able to manually specify the ts-jest dependency.
     '^.+\\.tsx?$': require.resolve('ts-jest'),
 
     // Ignore static assets such as images and stylesheets.
     '\\.(css|less)$': require.resolve('./style-mock.js'),
-    '^(?!.*\\.(js|jsx|ts|tsx|css|less|json)$)': require.resolve(
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|less|json)$)': require.resolve(
       './file-mock.js'
     ),
   },
