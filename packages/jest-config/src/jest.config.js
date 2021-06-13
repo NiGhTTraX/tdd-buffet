@@ -102,6 +102,11 @@ module.exports = {
     ),
   },
 
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$',
+    '^.+\\.module\\.(css|sass|scss)$',
+  ],
+
   // When importing without an extension Jest will try these in order.
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 
