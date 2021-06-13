@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.10](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.9...@tdd-buffet/webpack-config@2.0.10) (2021-06-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency less-loader to ~9.1.0 ([6b14011](https://github.com/NiGhTTraX/tdd-buffet/commit/6b1401179cb5293dbc0394ac2edc2c223ab3fa67))
+* **deps:** update dependency postcss-loader to ~6.1.0 ([9523684](https://github.com/NiGhTTraX/tdd-buffet/commit/9523684f38b54b82b57ed8d678ac3787a2c41887))
+* **deps:** update dependency postcss-loader to v6 ([710486e](https://github.com/NiGhTTraX/tdd-buffet/commit/710486efaacc7fee98b7980e19a40879b13c11a3))
+
+
+
+
+
 ## [2.0.9](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.8...@tdd-buffet/webpack-config@2.0.9) (2021-05-29)
 
 
