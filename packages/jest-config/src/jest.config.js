@@ -133,7 +133,8 @@ module.exports = {
     'ts-jest': {
       tsconfig: {
         // Minimise transpilation since tests run in modern Node.
-        target: 'es6',
+        // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping#node-12
+        target: 'es2019',
 
         // Some tsconfigs e.g. the ones owned by create-react-app turn this on
         // which causes some type errors across file boundaries to be silenced.
