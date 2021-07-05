@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.11](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.10...@tdd-buffet/webpack-config@2.0.11) (2021-07-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency less-loader to v10 ([542a679](https://github.com/NiGhTTraX/tdd-buffet/commit/542a679ac333b1c288005afe00210d806251347a))
+* **deps:** update dependency mini-css-extract-plugin to v2 ([1788733](https://github.com/NiGhTTraX/tdd-buffet/commit/178873321ea691f6c0da934b79b48b5b97113579))
+* **deps:** update dependency style-loader to v3 ([8aa616d](https://github.com/NiGhTTraX/tdd-buffet/commit/8aa616d078cba3c64a1755080abae37a3f119a8f))
+* **deps:** update dependency webpack to ~5.39.0 ([1dc2284](https://github.com/NiGhTTraX/tdd-buffet/commit/1dc2284c29b71126f946eae725c5d3c19cccc7a8))
+* **deps:** update dependency webpack to ~5.40.0 ([83c885a](https://github.com/NiGhTTraX/tdd-buffet/commit/83c885acf81a7ac43136d26e1a53f6397c34d12b))
+* **deps:** update dependency webpack to ~5.41.0 ([e864b18](https://github.com/NiGhTTraX/tdd-buffet/commit/e864b186fda1fb4189fb81953288e56603e1a2b7))
+* **deps:** update dependency webpack to ~5.42.0 ([9fe464d](https://github.com/NiGhTTraX/tdd-buffet/commit/9fe464d1e1812ce7b18dfe0ddecefe84f9e7d73b))
+
+
+
+
+
 ## [2.0.10](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.9...@tdd-buffet/webpack-config@2.0.10) (2021-06-13)
 
 

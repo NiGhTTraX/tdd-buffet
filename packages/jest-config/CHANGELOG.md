@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@4.0.2...@tdd-buffet/jest-config@4.1.0) (2021-07-05)
+
+
+### Features
+
+* **jest:** Use ES2019 as compilation target for tests ([3f1a1a0](https://github.com/NiGhTTraX/tdd-buffet/commit/3f1a1a07ceb522a06c4c680508326efa24ad039a))
+
+
+
+
+
 ## [4.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@4.0.1...@tdd-buffet/jest-config@4.0.2) (2021-06-13)
 
 

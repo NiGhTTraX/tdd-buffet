@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.3...tdd-buffet@3.0.4) (2021-07-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency puppeteer to ~10.1.0 ([f7da4f1](https://github.com/NiGhTTraX/tdd-buffet/commit/f7da4f1c8fce9f971d4fa39263df63240c58d853))
+
+
+
+
+
 ## [3.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.2...tdd-buffet@3.0.3) (2021-06-13)
 
 
