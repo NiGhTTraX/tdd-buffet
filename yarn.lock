@@ -6473,10 +6473,10 @@ jest-pnp-resolver@^1.2.2:
   resolved "https://registry.yarnpkg.com/jest-pnp-resolver/-/jest-pnp-resolver-1.2.2.tgz#b704ac0ae028a89108a4d040b3f919dfddc8e33c"
   integrity sha512-olV41bKSMm8BdnuMsewT4jqlZ8+3TCARAXjZGT9jcoSnrfUnRCqnMoF9XEeoWjbzObpqF9dRhHQj0Xb9QdF6/w==
 
-jest-react-mock@~3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/jest-react-mock/-/jest-react-mock-3.0.1.tgz#b1e590c47dd407ff895510ed2075fe503040fdb0"
-  integrity sha512-+ZyjJt2mE8KI2afgc1aSWujcgEFpUVXEPh0pgrB0kZHBqpUN7GW9dt8Eg5dmFR6YY/WyFIoUHNCSfhWaoYBAJw==
+jest-react-mock@~3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/jest-react-mock/-/jest-react-mock-3.1.0.tgz#e2a254f449178c7c81e468d54177bf46970d7c9a"
+  integrity sha512-yy+SwWIRwgv2XNDlixH51ps8QyC+v2uhzkILTODOv9m3R8hGefqx74X+WsBgNIeaefY3RKrN+firsFPRpUwcWw==
 
 jest-regex-util@^27.0.1:
   version "27.0.1"
