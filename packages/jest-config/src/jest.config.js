@@ -97,9 +97,8 @@ module.exports = {
 
     // Ignore static assets such as images and stylesheets.
     '\\.(css|less)$': require.resolve('./style-mock.js'),
-    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|less|json)$)': require.resolve(
-      './file-mock.js'
-    ),
+    '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|less|json)$)':
+      require.resolve('./file-mock.js'),
   },
 
   transformIgnorePatterns: [

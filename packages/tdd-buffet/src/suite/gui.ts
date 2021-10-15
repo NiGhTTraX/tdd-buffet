@@ -73,10 +73,8 @@ function getBrowserChromeSize() {
  * and set the entire window's size in order to achieve the given viewport size.
  */
 export async function setViewportSize(width: number, height: number) {
-  const {
-    width: chromeWidth,
-    height: chromeHeight,
-  } = await rootSuitePage.evaluate(getBrowserChromeSize);
+  const { width: chromeWidth, height: chromeHeight } =
+    await rootSuitePage.evaluate(getBrowserChromeSize);
 
   const actualWidth = width + chromeWidth;
   const actualHeight = height + chromeHeight;
