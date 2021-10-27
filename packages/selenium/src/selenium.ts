@@ -48,7 +48,7 @@ async function waitForNodes(
     try {
       actualNodes = await getCurrentlyConnectedNodes(port);
     } catch (e) {
-      bar.interrupt(e.message);
+      // Ignore errors.
     }
 
     bar.tick(1, {
