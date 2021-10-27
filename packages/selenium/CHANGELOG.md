@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.22](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.21...@tdd-buffet/selenium@0.4.22) (2021-10-27)
+
+
+### Bug Fixes
+
+* **selenium:** Ignore errors when pinging hub status ([1646556](https://github.com/NiGhTTraX/tdd-buffet/commit/164655666efe84a73480a5d8e8ddef1c5c5a3bbf))
+
+
+
+
+
 ## [0.4.21](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.20...@tdd-buffet/selenium@0.4.21) (2021-06-13)
 
 

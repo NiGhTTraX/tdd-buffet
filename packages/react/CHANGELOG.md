@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.1...@tdd-buffet/react@2.0.2) (2021-10-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to ~12.1.0 ([a035038](https://github.com/NiGhTTraX/tdd-buffet/commit/a035038f3ca72decc185caf388f67ec7ae08de3e))
+* **deps:** update jest monorepo to ~27.1.0 ([89e4e05](https://github.com/NiGhTTraX/tdd-buffet/commit/89e4e056660bd1d4004fa86d3a8a2c9568c11216))
+* **deps:** update jest monorepo to ~27.2.0 ([b99e118](https://github.com/NiGhTTraX/tdd-buffet/commit/b99e118c72e6a5b37acbbe311446032c36373d43))
+* **deps:** update jest monorepo to ~27.3.0 ([71b1cd4](https://github.com/NiGhTTraX/tdd-buffet/commit/71b1cd4c312301146a20d904d9e168eb820128cc))
+
+
+
+
+
 ## [2.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.0...@tdd-buffet/react@2.0.1) (2021-07-05)
 
 

@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.5](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.4...tdd-buffet@3.0.5) (2021-10-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @jest/types to ~27.2.0 ([80b21d8](https://github.com/NiGhTTraX/tdd-buffet/commit/80b21d87008018ae00de93a800e904f52c4afa32))
+* **deps:** update dependency puppeteer to ~10.2.0 ([c8c12ac](https://github.com/NiGhTTraX/tdd-buffet/commit/c8c12ac8270628c14ab255c89560b45aba16d554))
+* **deps:** update dependency puppeteer to ~10.4.0 ([f3190f2](https://github.com/NiGhTTraX/tdd-buffet/commit/f3190f22f2824151b96a69bf645009161023f392))
+* **deps:** update jest monorepo to ~27.1.0 ([89e4e05](https://github.com/NiGhTTraX/tdd-buffet/commit/89e4e056660bd1d4004fa86d3a8a2c9568c11216))
+* **deps:** update jest monorepo to ~27.2.0 ([b99e118](https://github.com/NiGhTTraX/tdd-buffet/commit/b99e118c72e6a5b37acbbe311446032c36373d43))
+* **deps:** update jest monorepo to ~27.3.0 ([71b1cd4](https://github.com/NiGhTTraX/tdd-buffet/commit/71b1cd4c312301146a20d904d9e168eb820128cc))
+
+
+
+
+
 ## [3.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.3...tdd-buffet@3.0.4) (2021-07-05)
 
 
