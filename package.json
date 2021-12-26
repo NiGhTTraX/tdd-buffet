@@ -19,9 +19,9 @@
     "report-coverage": "codecov"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "~15.0.0",
-    "@commitlint/config-lerna-scopes": "~15.0.0",
-    "@commitlint/cli": "~15.0.0",
+    "@commitlint/config-conventional": "~16.0.0",
+    "@commitlint/config-lerna-scopes": "~16.0.0",
+    "@commitlint/cli": "~16.0.0",
     "@nighttrax/eslint-config-tsx": "~9.0.0",
     "codecov": "3.8.3",
     "eslint": "~8.5.0",
