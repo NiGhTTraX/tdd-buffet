@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import execa from 'execa';
+import { execaCommand } from 'execa';
 /* eslint-disable no-console, no-await-in-loop */
 import got from 'got';
 import path from 'path';
@@ -81,7 +81,7 @@ async function up(
   retries: number
 ) {
   try {
-    await execa.command(`docker-compose -f ${configPath} up -d ${services}`, {
+    await execaCommand(`docker-compose -f ${configPath} up -d ${services}`, {
       env: {
         HUB_PORT: `${port}`,
         COMPOSE_PROJECT_NAME,
@@ -128,7 +128,7 @@ export async function debug(retries: number, port: number) {
 }
 
 export async function stop() {
-  await execa.command(
+  await execaCommand(
     `docker-compose -f ${path.join(
       __dirname,
       'config/docker-compose.yml'
