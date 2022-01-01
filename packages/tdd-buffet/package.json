@@ -21,13 +21,13 @@
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
   "bin": "./bin/index.js",
   "scripts": {
-    "test": "yarn run ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    "test": "pnpm exec ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
-    "build": "yarn run clean && yarn run compile",
+    "build": "pnpm run clean && pnpm run compile",
     "clean": "rm -rf ./dist",
     "package": "cp -r README.md package.json ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn run build && yarn run package"
+    "prepublishOnly": "pnpm run build && pnpm run package"
   },
   "dependencies": {
     "@jest/types": "~27.4.0",

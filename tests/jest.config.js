@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-const baseConfig = require('@tdd-buffet/jest-config');
+const baseConfig = require('../packages/jest-config/src/jest.config');
 
 module.exports = {
   ...baseConfig,

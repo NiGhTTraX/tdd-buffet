@@ -24,11 +24,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn run clean && yarn run compile",
+    "build": "pnpm run clean && pnpm run compile",
     "clean": "rm -rf ./dist",
     "package": "cp -r src/config ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn run build && yarn run package"
+    "prepublishOnly": "pnpm run build && pnpm run package"
   },
   "dependencies": {
     "@types/got": "~9.6.2",

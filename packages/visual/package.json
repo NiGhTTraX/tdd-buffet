@@ -24,13 +24,13 @@
     "dist"
   ],
   "scripts": {
-    "test": "yarn run ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    "test": "pnpm exec ts-node ../tdd-buffet/src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
-    "build": "yarn run clean && yarn run compile",
+    "build": "pnpm run clean && pnpm run compile",
     "clean": "rm -rf ./dist",
     "link": "rm -rf node_modules/tdd-buffet && cd ../tdd-buffet && ln -s \"$(pwd)/dist\" ../visual/node_modules/tdd-buffet",
-    "compile": "yarn run link && tsc -p tsconfig.build.json",
-    "prepublishOnly": "yarn run build"
+    "compile": "pnpm run link && tsc -p tsconfig.build.json",
+    "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
     "tdd-buffet": "^2.0.0"
