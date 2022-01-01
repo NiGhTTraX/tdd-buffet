@@ -32,5 +32,8 @@ jobs:
       - name: Test
         run: pnpm run test
 
+      - name: Build
+        run: pnpm run build
+
       - name: Coverage
         run: pnpm run report-coverage
