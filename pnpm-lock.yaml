@@ -167,7 +167,7 @@ importers:
       fork-ts-checker-webpack-plugin: ~6.5.0
       less: ~4.1.0
       less-loader: ~10.2.0
-      mini-css-extract-plugin: ~2.4.0
+      mini-css-extract-plugin: ~2.5.0
       postcss: ~8.4.5
       postcss-flexbugs-fixes: ~5.0.0
       postcss-loader: ~6.2.0
@@ -183,7 +183,7 @@ importers:
       fork-ts-checker-webpack-plugin: 6.5.0_fdcb2cb2c1f65761bceb35450d7f1e80
       less: 4.1.2
       less-loader: 10.2.0_less@4.1.2+webpack@5.66.0
-      mini-css-extract-plugin: 2.4.5_webpack@5.66.0
+      mini-css-extract-plugin: 2.5.0_webpack@5.66.0
       postcss: 8.4.5
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
       postcss-loader: 6.2.1_postcss@8.4.5+webpack@5.66.0
@@ -6361,7 +6361,7 @@ packages:
       tslib: 2.3.1
     optionalDependencies:
       errno: 0.1.8
-      graceful-fs: 4.2.8
+      graceful-fs: 4.2.9
       image-size: 0.5.5
       make-dir: 2.1.0
       mime: 1.6.0
@@ -6712,8 +6712,8 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
 
-  /mini-css-extract-plugin/2.4.5_webpack@5.66.0:
-    resolution: {integrity: sha512-oEIhRucyn1JbT/1tU2BhnwO6ft1jjH1iCX9Gc59WFMg0n5773rQU0oyQ0zzeYFFuBfONaRbQJyGoPtuNseMxjA==}
+  /mini-css-extract-plugin/2.5.0_webpack@5.66.0:
+    resolution: {integrity: sha512-hWAswjzsausaaIjk4GiUtoiNnsMc8tLAA2TZ0vbMDZcxKYS/b3UBGNElBjgQ4QYztYR+nsKp5h2Lo1NL3zz2bg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
