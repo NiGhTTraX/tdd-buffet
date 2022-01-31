@@ -31,7 +31,11 @@ export function runnerIt(
   const testFullName = [...testSuiteNameStack, name].join(' ');
 
   if (definition) {
-    it(name, () => definition(testFullName));
+    it(
+      name,
+      // @ts-expect-error because `definition` returns a union, and `it` is overloaded
+      () => definition(testFullName)
+    );
   } else {
     it.todo(name);
   }
