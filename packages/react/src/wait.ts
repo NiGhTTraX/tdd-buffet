@@ -52,7 +52,7 @@ export function $wait(
       try {
         result = cb(getJQueryContainer());
       } catch (e) {
-        if (typeof timeoutOrMessage === 'string') {
+        if (e instanceof Error && typeof timeoutOrMessage === 'string') {
           e.message = `${timeoutOrMessage}: ${e.message}`;
           throw e;
         }
