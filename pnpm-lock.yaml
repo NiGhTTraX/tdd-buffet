@@ -163,7 +163,7 @@ importers:
   packages/webpack-config:
     specifiers:
       browserslist: ~4.19.1
-      css-loader: ~6.5.0
+      css-loader: ~6.6.0
       fork-ts-checker-webpack-plugin: ~7.0.0
       less: ~4.1.0
       less-loader: ~10.2.0
@@ -179,7 +179,7 @@ importers:
       webpack-cli: ~4.9.0
     dependencies:
       browserslist: 4.19.1
-      css-loader: 6.5.1_webpack@5.68.0
+      css-loader: 6.6.0_webpack@5.68.0
       fork-ts-checker-webpack-plugin: 7.0.0_typescript@4.5.4+webpack@5.68.0
       less: 4.1.2
       less-loader: 10.2.0_less@4.1.2+webpack@5.68.0
@@ -3819,8 +3819,8 @@ packages:
       postcss-selector-parser: 6.0.9
     dev: false
 
-  /css-loader/6.5.1_webpack@5.68.0:
-    resolution: {integrity: sha512-gEy2w9AnJNnD9Kuo4XAP9VflW/ujKoS9c/syO+uWMlm5igc7LysKzPXaDoR2vroROkSwsTS2tGr1yGGEbZOYZQ==}
+  /css-loader/6.6.0_webpack@5.68.0:
+    resolution: {integrity: sha512-FK7H2lisOixPT406s5gZM1S3l8GrfhEBT3ZiL2UX1Ng1XWs0y2GPllz/OTyvbaHe12VgQrIXIzuEGVlbUhodqg==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
