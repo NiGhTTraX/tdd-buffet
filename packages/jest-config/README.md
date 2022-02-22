@@ -4,6 +4,10 @@
 
 ----
 
+## Intro
+
+The config focuses on providing a good developer experience with TypeScript. Tests are type checked before they are run using [ts-jest](https://github.com/kulshekhar/ts-jest).
+
 ## Install
 
 ```sh
@@ -12,12 +16,15 @@ npm install @tdd-buffet/jest-config
 
 ## Usage
 
-The config focuses on providing a good developer experience with TypeScript. Tests are type checked before they are run and certain harmful options in `tsconfing.json` files are turned off. You can extend the config and override it as you see fit.
+The config itself is written in TypeScript and published with types, so you can have a `jest.config.ts` file where you import the package and apply your overrides. Just make sure to have [ts-node](https://www.npmjs.com/package/ts-node) installed.
 
-```js
-const baseConfig = require('@tdd-buffet/jest-config');
+```typescript
+import baseConfig from '@tdd-buffet/jest-config';
 
-module.exports = {
-  ...baseConfig
+export default {
+  ...baseConfig,
+  /* your overrides here */
 };
 ```
+
+You can also use it from a JavaScript `jest.config.js` file with `require()`.

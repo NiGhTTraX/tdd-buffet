@@ -1,9 +1,13 @@
-const { pathExistsSync } = require('fs-extra');
-const path = require('path');
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
-const ts = require('typescript');
+import type { Config } from '@jest/types';
+import { pathExistsSync } from 'fs-extra';
+import path from 'path';
+import { pathsToModuleNameMapper } from 'ts-jest';
+import ts from 'typescript';
 
 const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
+if (!configName) {
+  throw new Error("Couldn't find tsconfig.json");
+}
 const { config: configContent } = ts.readConfigFile(
   configName,
   ts.sys.readFile
@@ -25,7 +29,7 @@ const setupTestsFile = setupTestsFilePaths.find((filePath) =>
   pathExistsSync(filePath)
 );
 
-module.exports = {
+const config: Config.InitialOptions = {
   // Manually requiring the package instead of using just 'jsdom'
   // to avoid module resolution picking up a different version inside
   // a project with hoisted dependencies.
@@ -35,7 +39,7 @@ module.exports = {
   // everything, especially since we only support modern versions of Node.
   setupFiles: [path.join(__dirname, 'polyfills.js')],
 
-  // Here a user could setup e.g. custom jest matchers.
+  // Here a user could set up e.g. custom jest matchers.
   setupFilesAfterEnv: setupTestsFile ? [setupTestsFile] : [],
 
   rootDir: process.cwd(),
@@ -84,10 +88,12 @@ module.exports = {
            * compilerOptions.baseUrl = undefined;
            * compilerOptions.pathsBasePath = 'project/';
            */
-          prefix: compilerOptions.baseUrl || compilerOptions.pathsBasePath,
+          prefix:
+            compilerOptions.baseUrl ||
+            (compilerOptions.pathsBasePath as string),
         }),
       }
-    : null,
+    : undefined,
   modulePathIgnorePatterns: ['dist'],
 
   transform: {
@@ -146,3 +152,5 @@ module.exports = {
     },
   },
 };
+
+export default config;

@@ -18,12 +18,17 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/jest-config",
-  "main": "src/jest.config.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
-    "test": "jest --config src/jest.config.js"
+    "test": "jest --config src/jest.config.ts",
+    "build": "pnpm run clean && pnpm run compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "pnpm run build"
   },
   "peerDependencies": {
     "jest": "^27.0.0",

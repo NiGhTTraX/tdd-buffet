@@ -3,10 +3,11 @@
 
   "compilerOptions": {
     "jsx": "react",
-    "types": ["jest"],
+    "types": ["jest", "node"],
     "paths": {
       "tdd-buffet/*": ["./packages/tdd-buffet/src/*"],
       "@tdd-buffet/*": ["./packages/*/src"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx"]
 }

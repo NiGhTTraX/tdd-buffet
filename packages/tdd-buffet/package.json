@@ -21,8 +21,7 @@
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
   "bin": "./bin/index.js",
   "scripts": {
-    "test": "pnpm exec ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
-    "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
+    "test": "jest --config ../../tests/jest.config.ts --coverage",
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rm -rf ./dist",
     "package": "cp -r README.md package.json ./dist",
