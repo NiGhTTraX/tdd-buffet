@@ -123,7 +123,7 @@ importers:
       fs-extra: ~10.0.0
       jest: ~27.5.0
       meow: ~9.0.0
-      puppeteer: ~13.3.0
+      puppeteer: ~13.4.0
       strong-mock: ~7.3.0
       typescript: ~4.5.0
     dependencies:
@@ -137,7 +137,7 @@ importers:
       fs-extra: 10.0.0
       jest: 27.5.0_ts-node@10.5.0
       meow: 9.0.0
-      puppeteer: 13.3.0
+      puppeteer: 13.4.0
       typescript: 4.5.4
     devDependencies:
       '@types/meow': 5.0.0
@@ -8171,8 +8171,8 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
 
-  /puppeteer/13.3.0:
-    resolution: {integrity: sha512-qEsXUQhF4mcF++0O5N7mW7jcVXqztC9fWYj14s2xNrd16SD1U/rCfV0BYE6/MBK7sHXi400qJlxWv7INYytZtQ==}
+  /puppeteer/13.4.0:
+    resolution: {integrity: sha512-WrHtFF2WpYC6KWFP4OCPOHWCjW4f8tFk+FkYZeNQ8/lHn+asjXBEXiIWauune8CY2xIHBVExGas+WI6Ay8/MgQ==}
     engines: {node: '>=10.18.1'}
     requiresBuild: true
     dependencies:
