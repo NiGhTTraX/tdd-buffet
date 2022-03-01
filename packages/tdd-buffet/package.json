@@ -41,7 +41,7 @@
     "jest": "~27.5.0",
     "meow": "~9.0.0",
     "puppeteer": "~13.4.0",
-    "typescript": "~4.5.0"
+    "typescript": "~4.6.0"
   },
   "devDependencies": {
     "@types/meow": "~5.0.0",
