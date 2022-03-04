@@ -27,7 +27,7 @@
     "webpack": "^5.0.0"
   },
   "dependencies": {
-    "css-loader": "~6.6.0",
+    "css-loader": "~6.7.0",
     "fork-ts-checker-webpack-plugin": "~7.2.0",
     "less": "~4.1.0",
     "less-loader": "~10.2.0",
