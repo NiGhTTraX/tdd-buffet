@@ -64,14 +64,14 @@ importers:
       jest-react-mock: ~3.1.0
       jquery: ~3.6.0
       pretty-format: ~27.5.0
-      react: ~17.0.0
-      react-dom: ~17.0.0
+      react: ~18.0.0
+      react-dom: ~18.0.0
       react-mock-component: ~3.0.0
       strip-ansi: ~6.0.0
       strong-mock: ~7.3.0
       typescript: ~4.6.0
     dependencies:
-      '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
+      '@testing-library/react': 12.1.2_react-dom@18.0.0+react@18.0.0
       '@types/jquery': 3.5.11
       jquery: 3.6.0
       pretty-format: 27.5.0
@@ -81,9 +81,9 @@ importers:
       '@types/react-dom': 17.0.11
       jest: 27.5.0_ts-node@10.7.0
       jest-react-mock: 3.1.0_f51d0252f8a116e4788c924b32bbcb45
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      react-mock-component: 3.0.0_b3482aaf5744fc7c2aeb7941b0e0a78f
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
+      react-mock-component: 3.0.0_4d21babb7f047807f804d1fae084b860
       strip-ansi: 6.0.1
       strong-mock: 7.3.0
       typescript: 4.6.2
@@ -2373,7 +2373,7 @@ packages:
       pretty-format: 27.5.0
     dev: false
 
-  /@testing-library/react/12.1.2_react-dom@17.0.2+react@17.0.2:
+  /@testing-library/react/12.1.2_react-dom@18.0.0+react@18.0.0:
     resolution: {integrity: sha512-ihQiEOklNyHIpo2Y8FREkyD1QAea054U0MVbwH1m8N9TxeFz+KoJ9LkqoKqJlzx2JDm56DVwaJ1r36JYxZM05g==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -2382,8 +2382,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.16.7
       '@testing-library/dom': 8.11.1
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
     dev: false
 
   /@tootallnate/once/1.1.2:
@@ -5953,7 +5953,7 @@ packages:
     dependencies:
       '@types/jest': 27.4.0
       jest: 27.5.0_ts-node@10.7.0
-      react-mock-component: 3.0.0_b3482aaf5744fc7c2aeb7941b0e0a78f
+      react-mock-component: 3.0.0_4d21babb7f047807f804d1fae084b860
     dev: true
 
   /jest-regex-util/27.5.0:
@@ -8266,15 +8266,14 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /react-dom/17.0.2_react@17.0.2:
-    resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
+  /react-dom/18.0.0_react@18.0.0:
+    resolution: {integrity: sha512-XqX7uzmFo0pUceWFCt7Gff6IyIMzFUn7QMZrbrQfGxtaxXZIcGQzoNpRLE3fQLnS4XzLLPMZX2T9TRcSrasicw==}
     peerDependencies:
-      react: 17.0.2
+      react: ^18.0.0
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
-      react: 17.0.2
-      scheduler: 0.20.2
+      react: 18.0.0
+      scheduler: 0.21.0
     dev: true
 
   /react-is/16.13.1:
@@ -8284,7 +8283,7 @@ packages:
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  /react-mock-component/3.0.0_b3482aaf5744fc7c2aeb7941b0e0a78f:
+  /react-mock-component/3.0.0_4d21babb7f047807f804d1fae084b860:
     resolution: {integrity: sha512-afzkYu9j6DmlrGGZ7paHFHZqJGHuX9viGR9Ftzi+NILJmjS1cdDPFrEgpA0h0nlh5MaGa+v6I5f9Vcx8F9YjEg==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0
@@ -8292,17 +8291,16 @@ packages:
       react-dom: ^16.8.0 || ^17.0.0
     dependencies:
       '@types/react': 17.0.38
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
+      react: 18.0.0
+      react-dom: 18.0.0_react@18.0.0
       sinon: 11.1.2
     dev: true
 
-  /react/17.0.2:
-    resolution: {integrity: sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==}
+  /react/18.0.0:
+    resolution: {integrity: sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
     dev: true
 
   /read-cmd-shim/2.0.0:
@@ -8624,11 +8622,10 @@ packages:
     dependencies:
       xmlchars: 2.2.0
 
-  /scheduler/0.20.2:
-    resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
+  /scheduler/0.21.0:
+    resolution: {integrity: sha512-1r87x5fz9MXqswA2ERLo0EbOAU74DpIUO090gIasYTqlVoJeMcl+Z1Rg7WHz+qtPujhS/hGIt9kxZOYBV3faRQ==}
     dependencies:
       loose-envify: 1.4.0
-      object-assign: 4.1.1
     dev: true
 
   /schema-utils/3.1.1:
