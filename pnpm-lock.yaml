@@ -58,7 +58,7 @@ importers:
       '@testing-library/react': ~12.1.0
       '@types/jest': ~27.4.0
       '@types/jquery': ~3.5.0
-      '@types/react': ~17.0.0
+      '@types/react': ~18.0.0
       '@types/react-dom': ~17.0.0
       jest: ~27.5.0
       jest-react-mock: ~3.1.0
@@ -77,13 +77,13 @@ importers:
       pretty-format: 27.5.0
     devDependencies:
       '@types/jest': 27.4.0
-      '@types/react': 17.0.38
+      '@types/react': 18.0.0
       '@types/react-dom': 17.0.11
       jest: 27.5.0_ts-node@10.7.0
       jest-react-mock: 3.1.0_f51d0252f8a116e4788c924b32bbcb45
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
-      react-mock-component: 3.0.0_4d21babb7f047807f804d1fae084b860
+      react-mock-component: 3.0.0_761282c47ea27a9f40e1344337910648
       strip-ansi: 6.0.1
       strong-mock: 7.3.0
       typescript: 4.6.2
@@ -2585,11 +2585,11 @@ packages:
   /@types/react-dom/17.0.11:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 18.0.0
     dev: true
 
-  /@types/react/17.0.38:
-    resolution: {integrity: sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==}
+  /@types/react/18.0.0:
+    resolution: {integrity: sha512-7+K7zEQYu7NzOwQGLR91KwWXXDzmTFODRVizJyIALf6RfLv2GDpqpknX64pvRVILXCpXi7O/pua8NGk44dLvJw==}
     dependencies:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
@@ -5953,7 +5953,7 @@ packages:
     dependencies:
       '@types/jest': 27.4.0
       jest: 27.5.0_ts-node@10.7.0
-      react-mock-component: 3.0.0_4d21babb7f047807f804d1fae084b860
+      react-mock-component: 3.0.0_761282c47ea27a9f40e1344337910648
     dev: true
 
   /jest-regex-util/27.5.0:
@@ -8283,14 +8283,14 @@ packages:
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  /react-mock-component/3.0.0_4d21babb7f047807f804d1fae084b860:
+  /react-mock-component/3.0.0_761282c47ea27a9f40e1344337910648:
     resolution: {integrity: sha512-afzkYu9j6DmlrGGZ7paHFHZqJGHuX9viGR9Ftzi+NILJmjS1cdDPFrEgpA0h0nlh5MaGa+v6I5f9Vcx8F9YjEg==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0
       react: ^16.8.0 || ^17.0.0
       react-dom: ^16.8.0 || ^17.0.0
     dependencies:
-      '@types/react': 17.0.38
+      '@types/react': 18.0.0
       react: 18.0.0
       react-dom: 18.0.0_react@18.0.0
       sinon: 11.1.2
