@@ -59,7 +59,7 @@ importers:
       '@types/jest': ~27.4.0
       '@types/jquery': ~3.5.0
       '@types/react': ~18.0.0
-      '@types/react-dom': ~17.0.0
+      '@types/react-dom': ~18.0.0
       jest: ~27.5.0
       jest-react-mock: ~3.1.0
       jquery: ~3.6.0
@@ -78,7 +78,7 @@ importers:
     devDependencies:
       '@types/jest': 27.4.0
       '@types/react': 18.0.0
-      '@types/react-dom': 17.0.11
+      '@types/react-dom': 18.0.0
       jest: 27.5.0_ts-node@10.7.0
       jest-react-mock: 3.1.0_f51d0252f8a116e4788c924b32bbcb45
       react: 18.0.0
@@ -2582,8 +2582,8 @@ packages:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
     dev: true
 
-  /@types/react-dom/17.0.11:
-    resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
+  /@types/react-dom/18.0.0:
+    resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
     dependencies:
       '@types/react': 18.0.0
     dev: true
