@@ -1,6 +1,6 @@
 const { pathExistsSync } = require('fs-extra');
 const path = require('path');
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { pathsToModuleNameMapper } = require('ts-jest');
 const ts = require('typescript');
 
 const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
