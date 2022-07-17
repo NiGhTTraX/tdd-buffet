@@ -66,7 +66,7 @@ importers:
       pretty-format: ~27.5.0
       react: ~18.1.0
       react-dom: ~18.1.0
-      react-mock-component: ~3.0.0
+      react-mock-component: ~3.0.2
       strip-ansi: ~6.0.0
       strong-mock: ~7.3.0
       typescript: ~4.6.0
@@ -80,10 +80,10 @@ importers:
       '@types/react': 18.0.0
       '@types/react-dom': 18.0.0
       jest: 27.5.0
-      jest-react-mock: 3.1.0_6uoqeuxyueloi6emsjftfo6liu
+      jest-react-mock: 3.1.0_jwv3num4rdg3sf2ckfzvui37mm
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      react-mock-component: 3.0.0_3fp3iqsvskyedrjnep7no5cifm
+      react-mock-component: 3.0.2_3fp3iqsvskyedrjnep7no5cifm
       strip-ansi: 6.0.1
       strong-mock: 7.3.0
       typescript: 4.6.2
@@ -2343,19 +2343,19 @@ packages:
     dependencies:
       type-detect: 4.0.8
 
-  /@sinonjs/fake-timers/7.1.2:
-    resolution: {integrity: sha512-iQADsW4LBMISqZ6Ci1dupJL9pprqwcVFTcOsEmQOEhW+KLCVn/Y4Jrvg2k19fIHCp+iFprriYPTdRcQR8NbUPg==}
-    dependencies:
-      '@sinonjs/commons': 1.8.3
-    dev: true
-
   /@sinonjs/fake-timers/8.1.0:
     resolution: {integrity: sha512-OAPJUAtgeINhh/TAlUID4QTs53Njm7xzddaVlEs/SXwgtiD1tW22zAB/W1wdqfrpmikgaWQ9Fw6Ws+hsiRm5Vg==}
     dependencies:
       '@sinonjs/commons': 1.8.3
 
-  /@sinonjs/samsam/6.0.2:
-    resolution: {integrity: sha512-jxPRPp9n93ci7b8hMfJOFDPRLFYadN6FSpeROFTR4UNF4i5b+EK6m4QXPO46BDhFgRy1JuS87zAnFOzCUwMJcQ==}
+  /@sinonjs/fake-timers/9.1.2:
+    resolution: {integrity: sha512-BPS4ynJW/o92PUR4wgriz2Ud5gpST5vz6GQfMixEDK0Z8ZCUv2M7SkBLykH56T++Xs+8ln9zTGbOvNGIe02/jw==}
+    dependencies:
+      '@sinonjs/commons': 1.8.3
+    dev: true
+
+  /@sinonjs/samsam/6.1.1:
+    resolution: {integrity: sha512-cZ7rKJTLiE7u7Wi/v9Hc2fs3Ucc3jrWeMgPHbbTCeVAB2S0wOBbYlkJVeNSL04i7fdhT8wIbDq1zhC/PXTD2SA==}
     dependencies:
       '@sinonjs/commons': 1.8.3
       lodash.get: 4.4.2
@@ -5648,7 +5648,7 @@ packages:
     dev: false
 
   /isarray/0.0.1:
-    resolution: {integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=}
+    resolution: {integrity: sha512-D2S+3GLxWH+uhrNEcoh/fnmYeP8E8/zHl644d/jdA0g2uyXvy3sb0qxotE+ne0LtccHknQzWwZEzhak7oJ0COQ==}
     dev: true
 
   /isarray/1.0.0:
@@ -5978,7 +5978,7 @@ packages:
     dependencies:
       jest-resolve: 27.5.0
 
-  /jest-react-mock/3.1.0_6uoqeuxyueloi6emsjftfo6liu:
+  /jest-react-mock/3.1.0_jwv3num4rdg3sf2ckfzvui37mm:
     resolution: {integrity: sha512-yy+SwWIRwgv2XNDlixH51ps8QyC+v2uhzkILTODOv9m3R8hGefqx74X+WsBgNIeaefY3RKrN+firsFPRpUwcWw==}
     peerDependencies:
       '@types/jest': ^26.0.0 || ^27.0.0
@@ -5987,7 +5987,7 @@ packages:
     dependencies:
       '@types/jest': 27.4.0
       jest: 27.5.0
-      react-mock-component: 3.0.0_3fp3iqsvskyedrjnep7no5cifm
+      react-mock-component: 3.0.2_3fp3iqsvskyedrjnep7no5cifm
     dev: true
 
   /jest-regex-util/27.5.0:
@@ -6552,7 +6552,7 @@ packages:
     dev: true
 
   /lodash.get/4.4.2:
-    resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
+    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
     dev: true
 
   /lodash.ismatch/4.4.0:
@@ -6989,11 +6989,11 @@ packages:
   /neo-async/2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  /nise/5.1.0:
-    resolution: {integrity: sha512-W5WlHu+wvo3PaKLsJJkgPup2LrsXCcm7AWwyNZkUnn5rwPkuPBi3Iwk5SQtN0mv+K65k7nKKjwNQ30wg3wLAQQ==}
+  /nise/5.1.1:
+    resolution: {integrity: sha512-yr5kW2THW1AkxVmCnKEh4nbYkJdB3I7LUkiUgOvEkOp414mc2UMaHMA7pjq1nYowhdoJZGwEKGaQVbxfpWj10A==}
     dependencies:
       '@sinonjs/commons': 1.8.3
-      '@sinonjs/fake-timers': 7.1.2
+      '@sinonjs/fake-timers': 9.1.2
       '@sinonjs/text-encoding': 0.7.1
       just-extend: 4.2.1
       path-to-regexp: 1.8.0
@@ -8329,17 +8329,17 @@ packages:
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  /react-mock-component/3.0.0_3fp3iqsvskyedrjnep7no5cifm:
-    resolution: {integrity: sha512-afzkYu9j6DmlrGGZ7paHFHZqJGHuX9viGR9Ftzi+NILJmjS1cdDPFrEgpA0h0nlh5MaGa+v6I5f9Vcx8F9YjEg==}
+  /react-mock-component/3.0.2_3fp3iqsvskyedrjnep7no5cifm:
+    resolution: {integrity: sha512-korloEavqB9jVRYxLGIugdvILdG4hGM305cNzkaZEW5eqUWuO5fEJC1znAlM4MwAxpVeUvhioZTfN6Xfe323Ug==}
     peerDependencies:
-      '@types/react': ^16.8.0 || ^17.0.0
-      react: ^16.8.0 || ^17.0.0
-      react-dom: ^16.8.0 || ^17.0.0
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@types/react': 18.0.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
-      sinon: 11.1.2
+      sinon: 14.0.0
     dev: true
 
   /react/18.1.0:
@@ -8744,14 +8744,14 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: false
 
-  /sinon/11.1.2:
-    resolution: {integrity: sha512-59237HChms4kg7/sXhiRcUzdSkKuydDeTiamT/jesUVHshBgL8XAmhgFo0GfK6RruMDM/iRSij1EybmMog9cJw==}
+  /sinon/14.0.0:
+    resolution: {integrity: sha512-ugA6BFmE+WrJdh0owRZHToLd32Uw3Lxq6E6LtNRU+xTVBefx632h03Q7apXWRsRdZAJ41LB8aUfn2+O4jsDNMw==}
     dependencies:
       '@sinonjs/commons': 1.8.3
-      '@sinonjs/fake-timers': 7.1.2
-      '@sinonjs/samsam': 6.0.2
+      '@sinonjs/fake-timers': 9.1.2
+      '@sinonjs/samsam': 6.1.1
       diff: 5.0.0
-      nise: 5.1.0
+      nise: 5.1.1
       supports-color: 7.2.0
     dev: true
 

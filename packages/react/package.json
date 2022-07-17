@@ -49,7 +49,7 @@
     "jest-react-mock": "~3.1.0",
     "react": "~18.1.0",
     "react-dom": "~18.1.0",
-    "react-mock-component": "~3.0.0",
+    "react-mock-component": "~3.0.2",
     "strip-ansi": "~6.0.0",
     "strong-mock": "~7.3.0",
     "typescript": "~4.6.0"
