@@ -149,13 +149,15 @@ importers:
 
   packages/visual:
     specifiers:
-      '@mugshot/puppeteer': ~2.0.0
+      '@mugshot/puppeteer': ~2.0.1
       mugshot: ~4.0.0
+      puppeteer: ~13.7.0
       tdd-buffet: ^3.0.5
       typescript: ~4.6.0
     dependencies:
-      '@mugshot/puppeteer': 2.0.0_mugshot@4.0.0
+      '@mugshot/puppeteer': 2.0.1_3brb4feqaf4gtq4dv36fbbqqzy
       mugshot: 4.0.0
+      puppeteer: 13.7.0
     devDependencies:
       tdd-buffet: link:../tdd-buffet
       typescript: 4.6.2
@@ -2074,13 +2076,14 @@ packages:
       write-file-atomic: 3.0.3
     dev: true
 
-  /@mugshot/puppeteer/2.0.0_mugshot@4.0.0:
-    resolution: {integrity: sha512-BBTKJ7mI/AzvPzlGK6+JAjW08p7A+R+m2sQQB9q+6vecQQh42jxYv/FshjHSjcV35ilhSF5JSQTN2Y34JPDYsg==}
+  /@mugshot/puppeteer/2.0.1_3brb4feqaf4gtq4dv36fbbqqzy:
+    resolution: {integrity: sha512-PQtrNW/faOftr1VTYTvAVYf0gBGUoZa3gwW+jvo+tVxOrSpZ7Nzr0Sjq/rcz85PamkODw2zcqaH42MyAVhQ2pw==}
     peerDependencies:
-      mugshot: ^3.0.0
-      puppeteer: ^8.0.0 || ^9.0.0
+      mugshot: ^4.0.0
+      puppeteer: ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
     dependencies:
       mugshot: 4.0.0
+      puppeteer: 13.7.0
     dev: false
 
   /@nighttrax/eslint-config-base/9.0.0-beta.2_ydjvh5yzpd44rgetqsdwhjcp5e:
