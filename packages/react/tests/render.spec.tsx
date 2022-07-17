@@ -150,4 +150,9 @@ describe('$render', () => {
 
     expect(flushed).toBeTruthy();
   });
+
+  it('should not blow up if unmounting nothing', () => {
+    $unmount();
+    $unmount();
+  });
 });

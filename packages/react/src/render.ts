@@ -1,19 +1,21 @@
 import { render as rtlRender } from '@testing-library/react/pure';
 import $ from 'jquery';
 import { ReactElement } from 'react';
-import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 
 let componentContainer: HTMLDivElement;
+let rootUnmount: () => void;
 
 export function getJQueryContainer() {
   return $(componentContainer);
 }
 
 function renderAndReturnContainer(element: ReactElement) {
-  rtlRender(element, {
+  const { unmount } = rtlRender(element, {
     container: componentContainer,
   });
+
+  rootUnmount = unmount;
 
   return getJQueryContainer();
 }
@@ -62,6 +64,6 @@ export function $rerender(element: ReactElement): JQuery {
  */
 export function $unmount() {
   act(() => {
-    ReactDOM.unmountComponentAtNode(componentContainer);
+    rootUnmount();
   });
 }
