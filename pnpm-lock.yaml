@@ -174,7 +174,7 @@ importers:
       mini-css-extract-plugin: ~2.6.0
       postcss: ~8.4.5
       postcss-flexbugs-fixes: ~5.0.0
-      postcss-loader: ~6.2.0
+      postcss-loader: ~7.0.0
       postcss-normalize: ~10.0.0
       postcss-preset-env: ~7.4.0
       style-loader: ~3.3.0
@@ -190,7 +190,7 @@ importers:
       mini-css-extract-plugin: 2.6.0_webpack@5.73.0
       postcss: 8.4.5
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
-      postcss-loader: 6.2.1_afewghbn3qr5rm7nm5oxbbppni
+      postcss-loader: 7.0.1_afewghbn3qr5rm7nm5oxbbppni
       postcss-normalize: 10.0.1_hjet3qvjpogjbzoz2rfouxmzey
       postcss-preset-env: 7.4.0_postcss@8.4.5
       style-loader: 3.3.1_webpack@5.73.0
@@ -8063,9 +8063,9 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-loader/6.2.1_afewghbn3qr5rm7nm5oxbbppni:
-    resolution: {integrity: sha512-WbbYpmAaKcux/P66bZ40bpWsBucjx/TTgVVzRZ9yUO8yQfVBlameJ0ZGVaPfH64hNSBh63a+ICP5nqOpBA0w+Q==}
-    engines: {node: '>= 12.13.0'}
+  /postcss-loader/7.0.1_afewghbn3qr5rm7nm5oxbbppni:
+    resolution: {integrity: sha512-VRviFEyYlLjctSM93gAZtcJJ/iSkPZ79zWbN/1fSH+NisBByEiVLqpdVDrPLVSi8DX0oJo12kL/GppTBdKVXiQ==}
+    engines: {node: '>= 14.15.0'}
     peerDependencies:
       postcss: ^7.0.0 || ^8.0.1
       webpack: ^5.0.0
@@ -8073,7 +8073,7 @@ packages:
       cosmiconfig: 7.0.1
       klona: 2.0.5
       postcss: 8.4.5
-      semver: 7.3.5
+      semver: 7.3.7
       webpack: 5.73.0_webpack-cli@4.10.0
     dev: false
 
