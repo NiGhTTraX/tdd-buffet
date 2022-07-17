@@ -57,7 +57,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@testing-library/react': ~12.1.0
+      '@testing-library/react': ~13.3.0
       '@types/jest': ~28.1.0
       '@types/jquery': ~3.5.0
       '@types/react': ~18.0.0
@@ -73,7 +73,7 @@ importers:
       strong-mock: ~7.3.0
       typescript: ~4.7.0
     dependencies:
-      '@testing-library/react': 12.1.2_ef5jwxihqo6n7gxfmzogljlgcm
+      '@testing-library/react': 13.3.0_ef5jwxihqo6n7gxfmzogljlgcm
       '@types/jquery': 3.5.11
       jquery: 3.6.0
       pretty-format: 28.1.3
@@ -114,7 +114,7 @@ importers:
   packages/tdd-buffet:
     specifiers:
       '@jest/types': ~28.1.0
-      '@tdd-buffet/jest-config': ^4.1.2
+      '@tdd-buffet/jest-config': ^5.0.0
       '@types/chai': ~4.3.0
       '@types/fs-extra': ~9.0.0
       '@types/jest': ~28.1.0
@@ -154,7 +154,7 @@ importers:
       '@mugshot/puppeteer': ~2.0.1
       mugshot: ~4.0.0
       puppeteer: ~13.7.0
-      tdd-buffet: ^3.0.6
+      tdd-buffet: ^3.0.7
       typescript: ~4.7.0
     dependencies:
       '@mugshot/puppeteer': 2.0.1_3brb4feqaf4gtq4dv36fbbqqzy
@@ -2424,15 +2424,16 @@ packages:
       pretty-format: 27.5.0
     dev: false
 
-  /@testing-library/react/12.1.2_ef5jwxihqo6n7gxfmzogljlgcm:
-    resolution: {integrity: sha512-ihQiEOklNyHIpo2Y8FREkyD1QAea054U0MVbwH1m8N9TxeFz+KoJ9LkqoKqJlzx2JDm56DVwaJ1r36JYxZM05g==}
+  /@testing-library/react/13.3.0_ef5jwxihqo6n7gxfmzogljlgcm:
+    resolution: {integrity: sha512-DB79aA426+deFgGSjnf5grczDPiL4taK3hFaa+M5q7q20Kcve9eQottOG5kZ74KEr55v0tU2CQormSSDK87zYQ==}
     engines: {node: '>=12'}
     peerDependencies:
-      react: '*'
-      react-dom: '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
     dependencies:
       '@babel/runtime': 7.16.7
       '@testing-library/dom': 8.11.1
+      '@types/react-dom': 18.0.0
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
     dev: false
@@ -2646,13 +2647,11 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: true
 
   /@types/react-dom/18.0.0:
     resolution: {integrity: sha512-49897Y0UiCGmxZqpC8Blrf6meL8QUla6eb+BBhn69dTXlmuOlzkfr7HHY/O8J25e1lTUMs+YYxSlVDAaGHCOLg==}
     dependencies:
       '@types/react': 18.0.0
-    dev: true
 
   /@types/react/18.0.0:
     resolution: {integrity: sha512-7+K7zEQYu7NzOwQGLR91KwWXXDzmTFODRVizJyIALf6RfLv2GDpqpknX64pvRVILXCpXi7O/pua8NGk44dLvJw==}
@@ -2660,7 +2659,6 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.10
-    dev: true
 
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
@@ -2670,7 +2668,6 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/sizzle/2.3.3:
     resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
@@ -3974,7 +3971,6 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
-    dev: true
 
   /damerau-levenshtein/1.0.7:
     resolution: {integrity: sha512-VvdQIPGdWP0SqFXghj79Wf/5LArmreyMsGLa6FG6iC4t3j7j5s71TrwWmT/4akbDQIqjfACkLZmjXhA7g2oUZw==}
@@ -6764,7 +6760,7 @@ packages:
       yallist: 4.0.0
 
   /lz-string/1.4.4:
-    resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=}
+    resolution: {integrity: sha512-0ckx7ZHRPqb0oUm8zNr+90mtf9DQB60H1wMCjBtfi62Kl3a7JbHob6gA2bC+xRvZoOL+1hzUK8jeuEIQE8svEQ==}
     hasBin: true
     dev: false
 
