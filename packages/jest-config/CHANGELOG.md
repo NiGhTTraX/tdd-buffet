@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@4.1.2...@tdd-buffet/jest-config@5.0.0) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update jest monorepo to v28 ([4cb1bad](https://github.com/NiGhTTraX/tdd-buffet/commit/4cb1bad0e5aae8d947ffe94e9c1dcf643f271011))
+
+
+### Code Refactoring
+
+* **jest-config:** Update config to jest 28 API ([ccdce92](https://github.com/NiGhTTraX/tdd-buffet/commit/ccdce92b366ad2b4b23e9346f4204d2819c89060))
+
+
+### BREAKING CHANGES
+
+* **jest-config:** This drops support for jest < 27.
+
+
+
+
+
 ## [4.1.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@4.1.1...@tdd-buffet/jest-config@4.1.2) (2022-07-17)
 
 

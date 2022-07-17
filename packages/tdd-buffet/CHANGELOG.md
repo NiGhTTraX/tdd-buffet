@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.7](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.6...tdd-buffet@3.0.7) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update jest monorepo to v28 ([4cb1bad](https://github.com/NiGhTTraX/tdd-buffet/commit/4cb1bad0e5aae8d947ffe94e9c1dcf643f271011))
+
+
+
+
+
 ## [3.0.6](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.5...tdd-buffet@3.0.6) (2022-07-17)
 
 

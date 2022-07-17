@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.3...@tdd-buffet/react@2.0.4) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update jest monorepo to v28 ([4cb1bad](https://github.com/NiGhTTraX/tdd-buffet/commit/4cb1bad0e5aae8d947ffe94e9c1dcf643f271011))
+
+
+
+
+
 ## [2.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.2...@tdd-buffet/react@2.0.3) (2022-07-17)
 
 
