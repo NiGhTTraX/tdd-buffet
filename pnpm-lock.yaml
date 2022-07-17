@@ -63,7 +63,7 @@ importers:
       '@types/react': ~18.0.0
       '@types/react-dom': ~18.0.0
       jest: ~27.5.0
-      jest-react-mock: ~3.1.0
+      jest-react-mock: ~3.1.1
       jquery: ~3.6.0
       pretty-format: ~27.5.0
       react: ~18.1.0
@@ -82,7 +82,7 @@ importers:
       '@types/react': 18.0.0
       '@types/react-dom': 18.0.0
       jest: 27.5.0
-      jest-react-mock: 3.1.0_jwv3num4rdg3sf2ckfzvui37mm
+      jest-react-mock: 3.1.1_jwv3num4rdg3sf2ckfzvui37mm
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-mock-component: 3.0.2_3fp3iqsvskyedrjnep7no5cifm
@@ -6012,11 +6012,11 @@ packages:
     dependencies:
       jest-resolve: 27.5.0
 
-  /jest-react-mock/3.1.0_jwv3num4rdg3sf2ckfzvui37mm:
-    resolution: {integrity: sha512-yy+SwWIRwgv2XNDlixH51ps8QyC+v2uhzkILTODOv9m3R8hGefqx74X+WsBgNIeaefY3RKrN+firsFPRpUwcWw==}
+  /jest-react-mock/3.1.1_jwv3num4rdg3sf2ckfzvui37mm:
+    resolution: {integrity: sha512-PMiMzgUExARf3mBweB8q5hLrqAN07s6ttmkor/MeKIeSmosZ8RnboLBvEdyo7OFUAUtksot9BvPluqncNt6jeg==}
     peerDependencies:
-      '@types/jest': ^26.0.0 || ^27.0.0
-      jest: ^26.0.1 || ^27.0.0
+      '@types/jest': ^26.0.0 || ^27.0.0 || ^28.0.0
+      jest: ^26.0.1 || ^27.0.0 || ^28.0.0
       react-mock-component: ^3.0.0
     dependencies:
       '@types/jest': 27.4.0

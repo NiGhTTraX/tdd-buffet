@@ -46,7 +46,7 @@
     "@types/react": "~18.0.0",
     "@types/react-dom": "~18.0.0",
     "jest": "~27.5.0",
-    "jest-react-mock": "~3.1.0",
+    "jest-react-mock": "~3.1.1",
     "react": "~18.1.0",
     "react-dom": "~18.1.0",
     "react-mock-component": "~3.0.2",
