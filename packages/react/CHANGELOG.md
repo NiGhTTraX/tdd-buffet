@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.4...@tdd-buffet/react@3.0.0) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to v13 ([de15642](https://github.com/NiGhTTraX/tdd-buffet/commit/de15642af6718a40fd4dfe9d3852a7abd3dbd240))
+
+
+### Code Refactoring
+
+* **react:** Update to React 18 API ([a94b643](https://github.com/NiGhTTraX/tdd-buffet/commit/a94b64374e6685e697803a2022346ed24e7d3bf0))
+
+
+### BREAKING CHANGES
+
+* **react:** This drops support for React < 17.
+
+
+
+
+
 ## [2.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.3...@tdd-buffet/react@2.0.4) (2022-07-17)
 
 

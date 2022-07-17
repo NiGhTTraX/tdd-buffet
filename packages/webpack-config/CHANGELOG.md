@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.15](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.14...@tdd-buffet/webpack-config@2.0.15) (2022-07-17)
+
+**Note:** Version bump only for package @tdd-buffet/webpack-config
+
+
+
+
+
 ## [2.0.14](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.13...@tdd-buffet/webpack-config@2.0.14) (2022-07-17)
 
 **Note:** Version bump only for package @tdd-buffet/webpack-config
