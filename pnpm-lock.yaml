@@ -114,7 +114,7 @@ importers:
   packages/tdd-buffet:
     specifiers:
       '@jest/types': ~28.1.0
-      '@tdd-buffet/jest-config': ^4.1.2
+      '@tdd-buffet/jest-config': ^5.0.0
       '@types/chai': ~4.3.0
       '@types/fs-extra': ~9.0.0
       '@types/jest': ~28.1.0
@@ -154,7 +154,7 @@ importers:
       '@mugshot/puppeteer': ~2.0.1
       mugshot: ~4.0.0
       puppeteer: ~13.7.0
-      tdd-buffet: ^3.0.6
+      tdd-buffet: ^3.0.7
       typescript: ~4.7.0
     dependencies:
       '@mugshot/puppeteer': 2.0.1_3brb4feqaf4gtq4dv36fbbqqzy
