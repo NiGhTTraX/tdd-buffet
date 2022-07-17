@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.13](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.12...@tdd-buffet/webpack-config@2.0.13) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency browserslist to ~4.20.0 ([73bbdda](https://github.com/NiGhTTraX/tdd-buffet/commit/73bbdda098dbca4454f6b200848a708e7dc93d1b))
+* **deps:** update dependency css-loader to ~6.6.0 ([6e4380a](https://github.com/NiGhTTraX/tdd-buffet/commit/6e4380a7bf8ebc98085b2d21c124b9cae3feaa76))
+* **deps:** update dependency css-loader to ~6.7.0 ([53c7e2f](https://github.com/NiGhTTraX/tdd-buffet/commit/53c7e2fa58a127dc206cb7e3acf0a0e9aa33494f))
+* **deps:** update dependency fork-ts-checker-webpack-plugin to ~6.5.0 ([f39f1b5](https://github.com/NiGhTTraX/tdd-buffet/commit/f39f1b55d1ca98024bf1618dc09579d0f3c970c1))
+* **deps:** update dependency fork-ts-checker-webpack-plugin to ~7.1.0 ([b5ed782](https://github.com/NiGhTTraX/tdd-buffet/commit/b5ed782488425c02b5d063bf2329fb626fc2b604))
+* **deps:** update dependency fork-ts-checker-webpack-plugin to ~7.2.0 ([e7618e6](https://github.com/NiGhTTraX/tdd-buffet/commit/e7618e6b69425215eac396a126b2ec36302859eb))
+* **deps:** update dependency fork-ts-checker-webpack-plugin to v7 ([0e30f13](https://github.com/NiGhTTraX/tdd-buffet/commit/0e30f13e0290a92353687366a9558897ee6dcf8c))
+* **deps:** update dependency mini-css-extract-plugin to ~2.5.0 ([3782b81](https://github.com/NiGhTTraX/tdd-buffet/commit/3782b81cb2833a286e16744104f84a253eff4900))
+* **deps:** update dependency mini-css-extract-plugin to ~2.6.0 ([3ef7bde](https://github.com/NiGhTTraX/tdd-buffet/commit/3ef7bdecdbe81104c4a202dffc431293ff4663b7))
+* **deps:** update dependency postcss-preset-env to ~7.1.0 ([7230801](https://github.com/NiGhTTraX/tdd-buffet/commit/723080141ba409705a7848970eeed9c51928ae88))
+* **deps:** update dependency postcss-preset-env to ~7.2.0 ([88035c3](https://github.com/NiGhTTraX/tdd-buffet/commit/88035c37b2d4a0acceec3c1687cbd98a0a002fcf))
+* **deps:** update dependency postcss-preset-env to ~7.3.0 ([99cf5ef](https://github.com/NiGhTTraX/tdd-buffet/commit/99cf5ef95a2e9024e641bb6862a646f2daedf2e2))
+* **deps:** update dependency postcss-preset-env to ~7.4.0 ([dac61f8](https://github.com/NiGhTTraX/tdd-buffet/commit/dac61f8787f2b01f91e2540df8c77ad732315ff2))
+* **deps:** update dependency postcss-preset-env to v7 ([b2c9e90](https://github.com/NiGhTTraX/tdd-buffet/commit/b2c9e907fa5ba874160ed50241750f6252542bf5))
+* **deps:** update dependency webpack to ~5.61.0 ([864f9c3](https://github.com/NiGhTTraX/tdd-buffet/commit/864f9c3849dce43d3cc290e47deebe9a81d2fc3d))
+* **deps:** update dependency webpack to ~5.62.0 ([f53e18f](https://github.com/NiGhTTraX/tdd-buffet/commit/f53e18f1510805e223463ffc6c10a98bc02a5651))
+* **deps:** update dependency webpack to ~5.63.0 ([d58c77b](https://github.com/NiGhTTraX/tdd-buffet/commit/d58c77b0c2dc728bcd7d900106fa5ca298e82445))
+* **deps:** update dependency webpack to ~5.64.0 ([36bd2d5](https://github.com/NiGhTTraX/tdd-buffet/commit/36bd2d571b763975491e2f117d5fe82a1b02faca))
+* **deps:** update dependency webpack to ~5.65.0 ([cfd8bb7](https://github.com/NiGhTTraX/tdd-buffet/commit/cfd8bb7d2d8a4562cec97715a05a56ce5ec9efa0))
+* **deps:** update dependency webpack to ~5.66.0 ([c58dd99](https://github.com/NiGhTTraX/tdd-buffet/commit/c58dd9973c85e988d53f4a7a0ff3d9dc6853c437))
+* **deps:** update dependency webpack to ~5.67.0 ([3af513c](https://github.com/NiGhTTraX/tdd-buffet/commit/3af513cf1d6d006749e20ff29f3730924dca26bb))
+* **deps:** update dependency webpack to ~5.68.0 ([2e95d64](https://github.com/NiGhTTraX/tdd-buffet/commit/2e95d64f5d5795194ef52055b5a26ac26c9d70fe))
+* **deps:** update dependency webpack to ~5.69.0 ([66302ad](https://github.com/NiGhTTraX/tdd-buffet/commit/66302ad9a08d0f4d194db69adf7b7253384ed384))
+* **deps:** update dependency webpack to ~5.70.0 ([501c54f](https://github.com/NiGhTTraX/tdd-buffet/commit/501c54f40ecc463b3e6c1cfb10d5ab66d5a4ea04))
+* **deps:** update dependency webpack to ~5.71.0 ([9b01c59](https://github.com/NiGhTTraX/tdd-buffet/commit/9b01c5989972e7e13297de871681a0c27a887018))
+* **deps:** update dependency webpack to ~5.72.0 ([0568b85](https://github.com/NiGhTTraX/tdd-buffet/commit/0568b85ea60281c3bae5c4cdcd8b7cf0d7f2557a))
+
+
+
+
+
 ## [2.0.12](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.11...@tdd-buffet/webpack-config@2.0.12) (2021-10-27)
 
 

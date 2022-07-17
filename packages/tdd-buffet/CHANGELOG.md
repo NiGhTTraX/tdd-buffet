@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.6](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.5...tdd-buffet@3.0.6) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/chai to ~4.3.0 ([12a3872](https://github.com/NiGhTTraX/tdd-buffet/commit/12a38726dffb8773b6424486e99eeecdb122a6a7))
+* **deps:** update dependency @types/jest to v27 ([f922ebf](https://github.com/NiGhTTraX/tdd-buffet/commit/f922ebf20f57ef7ed71b42aeb2e2f4fa6504f8ae))
+* **deps:** update dependency execa to ~6.1.0 ([851941f](https://github.com/NiGhTTraX/tdd-buffet/commit/851941f3d9747da8a8b66385df32c759951a0859))
+* **deps:** update dependency execa to v6 ([30646bc](https://github.com/NiGhTTraX/tdd-buffet/commit/30646bc9d26dde6c590c1700be8c2d34b680d083))
+* **deps:** update dependency fs-extra to ~10.1.0 ([880232d](https://github.com/NiGhTTraX/tdd-buffet/commit/880232d1e3cc97355115770847dceed6281cbae2))
+* **deps:** update dependency puppeteer to ~13.1.0 ([1a99881](https://github.com/NiGhTTraX/tdd-buffet/commit/1a99881d82c4cd935774ba4f1e87b137ee9b5c0f))
+* **deps:** update dependency puppeteer to ~13.2.0 ([f3092b2](https://github.com/NiGhTTraX/tdd-buffet/commit/f3092b2cd98fe7fac30d14d5ff7f7a6f330b4606))
+* **deps:** update dependency puppeteer to ~13.3.0 ([01fcab2](https://github.com/NiGhTTraX/tdd-buffet/commit/01fcab271bdcbe9b3f75e307d536fa5c503370cc))
+* **deps:** update dependency puppeteer to ~13.4.0 ([bcf7f0e](https://github.com/NiGhTTraX/tdd-buffet/commit/bcf7f0ee29d5478af6e29df998155bee404e5385))
+* **deps:** update dependency puppeteer to ~13.5.0 ([9f07af6](https://github.com/NiGhTTraX/tdd-buffet/commit/9f07af638188ea7f96a77624884ddf7ba5b98ec2))
+* **deps:** update dependency puppeteer to ~13.6.0 ([f0090c4](https://github.com/NiGhTTraX/tdd-buffet/commit/f0090c4ec28cf9199595d30da5887094e8ac9c05))
+* **deps:** update dependency puppeteer to ~13.7.0 ([d699732](https://github.com/NiGhTTraX/tdd-buffet/commit/d69973214ad2ff9070db8143c140e9a45ce4f97f))
+* **deps:** update dependency puppeteer to v11 ([99968b2](https://github.com/NiGhTTraX/tdd-buffet/commit/99968b2fd3d29af6dbf17cf8cfdc527465a3920d))
+* **deps:** update dependency puppeteer to v12 ([d7102b2](https://github.com/NiGhTTraX/tdd-buffet/commit/d7102b25b2eb567d211227b7366577299afc6498))
+* **deps:** update dependency puppeteer to v13 ([cd8fbf2](https://github.com/NiGhTTraX/tdd-buffet/commit/cd8fbf28752ce7ee9883c06278c9eddb94e04ff5))
+* **deps:** update jest monorepo to ~27.4.0 ([2a20d93](https://github.com/NiGhTTraX/tdd-buffet/commit/2a20d93db8fcf76661c562274722105218193578))
+* **deps:** update jest monorepo to ~27.5.0 ([3c7db39](https://github.com/NiGhTTraX/tdd-buffet/commit/3c7db39455e0050470da36b15f32c45865a9035b))
+
+
+
+
+
 ## [3.0.5](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.4...tdd-buffet@3.0.5) (2021-10-27)
 
 

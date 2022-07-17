@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.2...@tdd-buffet/react@2.0.3) (2022-07-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/jest to v27 ([f922ebf](https://github.com/NiGhTTraX/tdd-buffet/commit/f922ebf20f57ef7ed71b42aeb2e2f4fa6504f8ae))
+* **deps:** update jest monorepo to ~27.4.0 ([2a20d93](https://github.com/NiGhTTraX/tdd-buffet/commit/2a20d93db8fcf76661c562274722105218193578))
+* **deps:** update jest monorepo to ~27.5.0 ([3c7db39](https://github.com/NiGhTTraX/tdd-buffet/commit/3c7db39455e0050470da36b15f32c45865a9035b))
+
+
+
+
+
 ## [2.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.1...@tdd-buffet/react@2.0.2) (2021-10-27)
 
 

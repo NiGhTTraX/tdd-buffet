@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "2.0.12",
+  "version": "2.0.13",
   "description": "Awesome webpack config",
   "keywords": [
     "tdd",
@@ -27,13 +27,13 @@
     "webpack": "^5.0.0"
   },
   "dependencies": {
+    "browserslist": "~4.20.0",
     "css-loader": "~6.7.0",
     "fork-ts-checker-webpack-plugin": "~7.2.0",
     "less": "~4.1.0",
     "less-loader": "~10.2.0",
     "mini-css-extract-plugin": "~2.6.0",
     "postcss": "~8.4.5",
-    "browserslist": "~4.20.0",
     "postcss-flexbugs-fixes": "~5.0.0",
     "postcss-loader": "~6.2.0",
     "postcss-normalize": "~10.0.0",
