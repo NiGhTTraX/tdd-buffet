@@ -110,7 +110,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
 
   // Improves speed by 100% for visual tests.
-  extraGlobals: ['Math'],
+  sandboxInjectedGlobals: ['Math'],
 
   testMatch: ['**/*.(spec|test).{ts,tsx}'],
   collectCoverageFrom: [

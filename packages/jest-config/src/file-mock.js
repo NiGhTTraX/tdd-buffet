@@ -1,6 +1,6 @@
 module.exports = {
   process(src, filename) {
-    return `module.exports = '${filename}';`;
+    return { code: `module.exports = '${filename}';` };
   },
   getCacheKey(src, filename) {
     return filename;
