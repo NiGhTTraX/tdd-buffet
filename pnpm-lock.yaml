@@ -68,7 +68,7 @@ importers:
       pretty-format: ~28.1.0
       react: ~18.2.0
       react-dom: ~18.2.0
-      react-mock-component: ~3.0.2
+      react-mock-component: ~3.1.0
       strip-ansi: ~6.0.0
       strong-mock: ~7.3.0
       typescript: ~4.7.0
@@ -82,10 +82,10 @@ importers:
       '@types/react': 18.0.0
       '@types/react-dom': 18.0.0
       jest: 28.1.3
-      jest-react-mock: 3.1.1_qnrbmao4hmuh4sp56u27ldwwgi
+      jest-react-mock: 3.1.1_nq7jnnez3opfprewyobrarbqqe
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-mock-component: 3.0.2_lbxwco5hoik6kks3ktye6h3qpq
+      react-mock-component: 3.1.0_lbxwco5hoik6kks3ktye6h3qpq
       strip-ansi: 6.0.1
       strong-mock: 7.3.0
       typescript: 4.7.4
@@ -6299,7 +6299,7 @@ packages:
     dependencies:
       jest-resolve: 28.1.3
 
-  /jest-react-mock/3.1.1_qnrbmao4hmuh4sp56u27ldwwgi:
+  /jest-react-mock/3.1.1_nq7jnnez3opfprewyobrarbqqe:
     resolution: {integrity: sha512-PMiMzgUExARf3mBweB8q5hLrqAN07s6ttmkor/MeKIeSmosZ8RnboLBvEdyo7OFUAUtksot9BvPluqncNt6jeg==}
     peerDependencies:
       '@types/jest': ^26.0.0 || ^27.0.0 || ^28.0.0
@@ -6308,7 +6308,7 @@ packages:
     dependencies:
       '@types/jest': 28.1.6
       jest: 28.1.3
-      react-mock-component: 3.0.2_lbxwco5hoik6kks3ktye6h3qpq
+      react-mock-component: 3.1.0_lbxwco5hoik6kks3ktye6h3qpq
     dev: true
 
   /jest-regex-util/28.0.2:
@@ -8648,8 +8648,8 @@ packages:
   /react-is/18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  /react-mock-component/3.0.2_lbxwco5hoik6kks3ktye6h3qpq:
-    resolution: {integrity: sha512-korloEavqB9jVRYxLGIugdvILdG4hGM305cNzkaZEW5eqUWuO5fEJC1znAlM4MwAxpVeUvhioZTfN6Xfe323Ug==}
+  /react-mock-component/3.1.0_lbxwco5hoik6kks3ktye6h3qpq:
+    resolution: {integrity: sha512-PK+IPsEy1Zc4FTWZmUo3OzuFlOSuf6HSru0nYMZdVvlcfv+4kKKO1Kea+qaiZbo01y7QQbqD6hf3As6vfGLZXw==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
