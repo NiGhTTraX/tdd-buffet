@@ -171,7 +171,7 @@ importers:
       css-loader: ~6.7.0
       fork-ts-checker-webpack-plugin: ~7.2.0
       less: ~4.1.0
-      less-loader: ~11.0.0
+      less-loader: ~11.1.0
       mini-css-extract-plugin: ~2.6.0
       postcss: ~8.4.5
       postcss-flexbugs-fixes: ~5.0.0
@@ -187,7 +187,7 @@ importers:
       css-loader: 6.7.0_webpack@5.74.0
       fork-ts-checker-webpack-plugin: 7.2.0_frxmcuunqqqeqipt45cd6rjuvu
       less: 4.1.2
-      less-loader: 11.0.0_less@4.1.2+webpack@5.74.0
+      less-loader: 11.1.0_less@4.1.2+webpack@5.74.0
       mini-css-extract-plugin: 2.6.0_webpack@5.74.0
       postcss: 8.4.5
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.5
@@ -6847,8 +6847,8 @@ packages:
       - supports-color
     dev: true
 
-  /less-loader/11.0.0_less@4.1.2+webpack@5.74.0:
-    resolution: {integrity: sha512-9+LOWWjuoectIEx3zrfN83NAGxSUB5pWEabbbidVQVgZhN+wN68pOvuyirVlH1IK4VT1f3TmlyvAnCXh8O5KEw==}
+  /less-loader/11.1.0_less@4.1.2+webpack@5.74.0:
+    resolution: {integrity: sha512-C+uDBV7kS7W5fJlUjq5mPBeBVhYpTIm5gB09APT9o3n/ILeaXVsiSFTbZpTJCJwQ/Crczfn3DmfQFwxYusWFug==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       less: ^3.5.0 || ^4.0.0
