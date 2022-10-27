@@ -64,6 +64,10 @@ export function $rerender(element: ReactElement): JQuery {
  */
 export function $unmount() {
   act(() => {
+    if (!rootUnmount) {
+      return;
+    }
+
     rootUnmount();
   });
 }
