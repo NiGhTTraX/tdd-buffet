@@ -62,6 +62,10 @@ export function $rerender(element: ReactElement): JQuery {
  */
 export function $unmount() {
   act(() => {
-    ReactDOM.unmountComponentAtNode(componentContainer);
+    if (!componentContainer) {
+      return;
+    }
+
+    ReactDOM.unmountComponentAtNode(componentContainer!);
   });
 }

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
-import { $render, $rerender, $unmount } from '../src/render';
+import { $render, $rerender } from '../src/render';
 
 describe('$render', () => {
   it('should render a component', () => {
@@ -104,50 +104,5 @@ describe('$render', () => {
     const $component = $render(<Bar />);
 
     expect($component.text()).toEqual('12');
-  });
-
-  it('should unmount component', () => {
-    let unmounted = false;
-
-    class Unmountable extends React.Component {
-      render() {
-        return null;
-      }
-
-      componentWillUnmount() {
-        unmounted = true;
-      }
-    }
-
-    $render(<Unmountable />);
-    $unmount();
-
-    expect(unmounted).toBeTruthy();
-  });
-
-  it('should recreate container after unmounting', () => {
-    const $container = $render(<span>bar</span>);
-    $unmount();
-    const $newContainer = $render(<span>baz</span>);
-
-    expect($container.text()).toHaveLength(0);
-    expect($newContainer.text()).toEqual('baz');
-  });
-
-  it('should cleanup after unmounting', () => {
-    let flushed = false;
-
-    const Foo = () => {
-      useEffect(() => () => {
-        flushed = true;
-      });
-
-      return null;
-    };
-
-    $render(<Foo />);
-    $unmount();
-
-    expect(flushed).toBeTruthy();
   });
 });
