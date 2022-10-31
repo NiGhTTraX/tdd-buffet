@@ -46,6 +46,6 @@
   "devDependencies": {
     "@types/meow": "~5.0.0",
     "@types/node": "~18.11.0",
-    "strong-mock": "~7.3.0"
+    "strong-mock": "~8.0.0"
   }
 }
