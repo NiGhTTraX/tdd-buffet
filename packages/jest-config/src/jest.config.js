@@ -93,7 +93,24 @@ module.exports = {
   transform: {
     // Using this directly as opposed to the preset because of
     // to be able to manually specify the ts-jest dependency.
-    '^.+\\.tsx?$': require.resolve('ts-jest'),
+    '^.+\\.tsx?$': [
+      require.resolve('ts-jest'),
+      {
+        tsconfig: {
+          // Minimise transpilation since tests run in modern Node.
+          // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping#node-12
+          target: 'es2019',
+
+          // Some tsconfigs e.g. the ones owned by create-react-app turn this on
+          // which causes some type errors across file boundaries to be silenced.
+          isolatedModules: false,
+
+          // next.js forces `jsx: 'preserve'` for their toolchain, but Jest wants
+          // the transformer to transpile the syntax.
+          ...(compilerOptions.jsx === ts.JsxEmit.Preserve && { jsx: 'react' }),
+        },
+      },
+    ],
 
     // Ignore static assets such as images and stylesheets.
     '\\.(css|less)$': require.resolve('./style-mock.js'),
@@ -125,24 +142,6 @@ module.exports = {
     global: {
       lines: 100,
       branches: 100,
-    },
-  },
-
-  globals: {
-    'ts-jest': {
-      tsconfig: {
-        // Minimise transpilation since tests run in modern Node.
-        // https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping#node-12
-        target: 'es2019',
-
-        // Some tsconfigs e.g. the ones owned by create-react-app turn this on
-        // which causes some type errors across file boundaries to be silenced.
-        isolatedModules: false,
-
-        // next.js forces `jsx: 'preserve'` for their toolchain, but Jest wants
-        // the transformer to transpile the syntax.
-        ...(compilerOptions.jsx === ts.JsxEmit.Preserve && { jsx: 'react' }),
-      },
     },
   },
 };
