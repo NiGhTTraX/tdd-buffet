@@ -21,6 +21,7 @@ export function $wait(
   cb: ($container: JQuery) => any,
   timeout?: number
 ): Promise<void>;
+
 /**
  * Wait for a condition to be fulfilled.
  *
@@ -40,6 +41,7 @@ export function $wait(
   message?: string,
   timeout?: number
 ): Promise<void>;
+
 export function $wait(
   cb: ($container: JQuery) => any,
   timeoutOrMessage?: number | string,
@@ -93,6 +95,7 @@ export function $waitForElement(
   selector: string,
   timeout?: number
 ): Promise<any>;
+
 /**
  * Wait for an element to exist in the currently rendered component.
  *
@@ -114,6 +117,7 @@ export function $waitForElement(
   message: string,
   timeout?: number
 ): Promise<any>;
+
 /**
  * Wait for an element to exist in the currently rendered component.
  *
@@ -135,6 +139,7 @@ export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
   timeout?: number
 ): Promise<any>;
+
 /**
  * Wait for an element to exist in the currently rendered component.
  *
@@ -158,6 +163,7 @@ export function $waitForElement(
   message: string,
   timeout?: number
 ): Promise<any>;
+
 export function $waitForElement(
   cbOrSelector: string | (($container: JQuery) => JQuery),
   messageOrTimeout?: string | number,
@@ -177,6 +183,7 @@ export function $waitForElement(
       } else if (!cbOrSelector(getJQueryContainer()).length) {
         throw new Error(`${errorMessagePrefix}The collection was empty`);
       }
+
       return true;
     },
     {

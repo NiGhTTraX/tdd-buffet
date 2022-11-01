@@ -110,6 +110,7 @@ export function $queryByTestId(
  * $getByText('Click').text() === 'Click me'
  */
 export function $getByText(contains: string, container?: Selector): JQuery;
+
 /**
  * Find an element in the currently rendered component that matches the given RegExp.
  *
@@ -125,6 +126,7 @@ export function $getByText(contains: string, container?: Selector): JQuery;
  * $getByText(/click/).text() === 'Click me'
  */
 export function $getByText(matches: RegExp, container?: Selector): JQuery;
+
 export function $getByText(
   match: string | RegExp,
   container: Selector = getJQueryContainer()
@@ -152,6 +154,7 @@ export function $queryByText(
   contains: string,
   container?: Selector
 ): JQuery | null;
+
 /**
  * Find an element in the currently rendered component that matches the given RegExp.
  *
@@ -172,6 +175,7 @@ export function $queryByText(
   matches: RegExp,
   container?: Selector
 ): JQuery | null;
+
 export function $queryByText(
   match: string | RegExp,
   container: Selector = getJQueryContainer()
@@ -183,6 +187,7 @@ export function $queryByText(
   if (!element) {
     return null;
   }
+
   return $(element);
 }
 
