@@ -71,6 +71,7 @@ importers:
       react-mock-component: ~3.1.0
       strip-ansi: ~6.0.0
       strong-mock: ~8.0.0
+      tdd-buffet: ~3.0.7
       typescript: ~4.8.0
     dependencies:
       '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
@@ -88,6 +89,7 @@ importers:
       react-mock-component: 3.1.0_knhnagtyfncgg2hpin7s37uixq
       strip-ansi: 6.0.1
       strong-mock: 8.0.0
+      tdd-buffet: link:../tdd-buffet
       typescript: 4.8.4
 
   packages/selenium:
