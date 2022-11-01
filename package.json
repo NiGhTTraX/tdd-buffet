@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "~17.2.0",
-    "@commitlint/config-lerna-scopes": "~17.2.0",
+    "@commitlint/config-lerna-scopes": "~17.2.1",
     "@commitlint/cli": "~17.2.0",
     "@nighttrax/eslint-config-tsx": "~10.0.0-beta.2",
     "eslint": "~8.26.0",
