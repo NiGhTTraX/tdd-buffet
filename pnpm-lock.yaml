@@ -154,13 +154,13 @@ importers:
 
   packages/visual:
     specifiers:
-      '@mugshot/puppeteer': ~2.0.1
+      '@mugshot/puppeteer': ~3.0.0
       mugshot: ~4.0.0
       puppeteer: ~13.7.0
       tdd-buffet: ^3.0.7
       typescript: ~4.8.0
     dependencies:
-      '@mugshot/puppeteer': 2.0.1_3brb4feqaf4gtq4dv36fbbqqzy
+      '@mugshot/puppeteer': 3.0.0_3brb4feqaf4gtq4dv36fbbqqzy
       mugshot: 4.0.0
       puppeteer: 13.7.0
     devDependencies:
@@ -2277,11 +2277,11 @@ packages:
       write-file-atomic: 4.0.2
     dev: true
 
-  /@mugshot/puppeteer/2.0.1_3brb4feqaf4gtq4dv36fbbqqzy:
-    resolution: {integrity: sha512-PQtrNW/faOftr1VTYTvAVYf0gBGUoZa3gwW+jvo+tVxOrSpZ7Nzr0Sjq/rcz85PamkODw2zcqaH42MyAVhQ2pw==}
+  /@mugshot/puppeteer/3.0.0_3brb4feqaf4gtq4dv36fbbqqzy:
+    resolution: {integrity: sha512-ZMibkXX4AY2kKf/OF8BBtaMY7EZzuz4SiHo2t0BwsikL8mUV2ynQu4TUbS58dCkwUOw39qnFYToIoWaQCL7T6w==}
     peerDependencies:
       mugshot: ^4.0.0
-      puppeteer: ^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+      puppeteer: ^19.0.0
     dependencies:
       mugshot: 4.0.0
       puppeteer: 13.7.0
