@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.8](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.7...tdd-buffet@3.0.8) (2022-11-04)
+
+
+### Bug Fixes
+
+* **tdd-buffet:** Fix peer dep warnings ([2ba57af](https://github.com/NiGhTTraX/tdd-buffet/commit/2ba57afbbf0e5b66fecb6475231f79cda7fe9a79))
+
+
+
+
+
 ## [3.0.7](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.6...tdd-buffet@3.0.7) (2022-07-17)
 
 

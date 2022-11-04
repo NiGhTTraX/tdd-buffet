@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.4...@tdd-buffet/react@2.0.5) (2022-11-04)
+
+
+### Bug Fixes
+
+* **react:** Downgrade peer deps to react@17 ([54e48ed](https://github.com/NiGhTTraX/tdd-buffet/commit/54e48edf6db9d10ece2d4c8e6d6e4dff7d8059a1))
+* **react:** Fix `$unmount` throwing in a non React test ([1803ec6](https://github.com/NiGhTTraX/tdd-buffet/commit/1803ec6326fbef9c3b5d697335110ba26d965e88))
+
+
+
+
+
 ## [2.0.4](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.3...@tdd-buffet/react@2.0.4) (2022-07-17)
 
 
