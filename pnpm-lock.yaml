@@ -174,7 +174,7 @@ importers:
       fork-ts-checker-webpack-plugin: ~7.2.0
       less: ~4.1.0
       less-loader: ~11.1.0
-      mini-css-extract-plugin: ~2.6.0
+      mini-css-extract-plugin: ~2.7.0
       postcss: ~8.4.5
       postcss-flexbugs-fixes: ~5.0.0
       postcss-loader: ~7.0.0
@@ -190,7 +190,7 @@ importers:
       fork-ts-checker-webpack-plugin: 7.2.13_vfotqvx6lgcbf3upbs6hgaza4q
       less: 4.1.3
       less-loader: 11.1.0_less@4.1.3+webpack@5.75.0
-      mini-css-extract-plugin: 2.6.1_webpack@5.75.0
+      mini-css-extract-plugin: 2.7.0_webpack@5.75.0
       postcss: 8.4.18
       postcss-flexbugs-fixes: 5.0.2_postcss@8.4.18
       postcss-loader: 7.0.1_sdypjwo5ssab3pyqgv4b4agnly
@@ -7072,8 +7072,8 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
 
-  /mini-css-extract-plugin/2.6.1_webpack@5.75.0:
-    resolution: {integrity: sha512-wd+SD57/K6DiV7jIR34P+s3uckTRuQvx0tKPcvjFlrEylk6P4mQ2KSWk1hblj1Kxaqok7LogKOieygXqBczNlg==}
+  /mini-css-extract-plugin/2.7.0_webpack@5.75.0:
+    resolution: {integrity: sha512-auqtVo8KhTScMsba7MbijqZTfibbXiBNlPAQbsVt7enQfcDYLdgG57eGxMqwVU3mfeWANY4F1wUg+rMF+ycZgw==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
