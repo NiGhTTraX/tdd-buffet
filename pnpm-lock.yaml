@@ -127,7 +127,7 @@ importers:
       fs-extra: ~10.1.0
       jest: ~29.3.0
       meow: ~9.0.0
-      puppeteer: ~19.2.2
+      puppeteer: ~19.3.0
       strong-mock: ~8.0.0
       typescript: ~4.9.0
     dependencies:
@@ -141,7 +141,7 @@ importers:
       fs-extra: 10.1.0
       jest: 29.3.0_@types+node@18.11.8
       meow: 9.0.0
-      puppeteer: 19.2.2
+      puppeteer: 19.3.0
       typescript: 4.9.3
     devDependencies:
       '@types/meow': 5.0.0
@@ -156,13 +156,13 @@ importers:
     specifiers:
       '@mugshot/puppeteer': ~3.0.0
       mugshot: ~4.0.2
-      puppeteer: ~19.2.2
+      puppeteer: ~19.3.0
       tdd-buffet: ^3.0.8
       typescript: ~4.9.0
     dependencies:
-      '@mugshot/puppeteer': 3.0.0_g2di3e62ncmuhibo4w3usurs5y
+      '@mugshot/puppeteer': 3.0.0_ojzvfjfwv4yflzcyyor535rmrm
       mugshot: 4.0.2
-      puppeteer: 19.2.2
+      puppeteer: 19.3.0
     devDependencies:
       tdd-buffet: link:../tdd-buffet
       typescript: 4.9.3
@@ -1980,14 +1980,14 @@ packages:
       '@jimp/png': 0.16.2_@jimp+custom@0.16.2
     dev: false
 
-  /@mugshot/puppeteer/3.0.0_g2di3e62ncmuhibo4w3usurs5y:
+  /@mugshot/puppeteer/3.0.0_ojzvfjfwv4yflzcyyor535rmrm:
     resolution: {integrity: sha512-ZMibkXX4AY2kKf/OF8BBtaMY7EZzuz4SiHo2t0BwsikL8mUV2ynQu4TUbS58dCkwUOw39qnFYToIoWaQCL7T6w==}
     peerDependencies:
       mugshot: ^4.0.0
       puppeteer: ^19.0.0
     dependencies:
       mugshot: 4.0.2
-      puppeteer: 19.2.2
+      puppeteer: 19.3.0
     dev: false
 
   /@nighttrax/eslint-config-base/10.0.0_h5lfgu3ixlfkf7lxmu4d4xr7vm:
@@ -8647,8 +8647,8 @@ packages:
     resolution: {integrity: sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==}
     engines: {node: '>=6'}
 
-  /puppeteer-core/19.2.2:
-    resolution: {integrity: sha512-faojf+1pZ/tHXSr4x1q+9MVd9FrL3rpdbC0w7qN7MNClMoLuCvMbpR4vzcjoiJYgclt1n+SOPUOmHQViTw6frw==}
+  /puppeteer-core/19.3.0:
+    resolution: {integrity: sha512-P8VAAOBnBJo/7DKJnj1b0K9kZBF2D8lkdL94CjJ+DZKCp182LQqYemPI9omUSZkh4bgykzXjZhaVR1qtddTTQg==}
     engines: {node: '>=14.1.0'}
     dependencies:
       cross-fetch: 3.1.5
@@ -8668,8 +8668,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /puppeteer/19.2.2:
-    resolution: {integrity: sha512-m1T5Mog5qu5+dMBptWYTn6pXRdnFbydbVUCthqwbfd8/kOiMlzZBR9ywjX79LpvI1Sj+/z8+FKeIsjnMul8ZYA==}
+  /puppeteer/19.3.0:
+    resolution: {integrity: sha512-WJbi/ULaeuFOz7cfMgJlJCBAZiyqIFeQ6os4h5ex3PVTt2qosXgwI9eruFZqFAwJRv8x5pOuMhWR0aSRgyDqEg==}
     engines: {node: '>=14.1.0'}
     requiresBuild: true
     dependencies:
@@ -8678,7 +8678,7 @@ packages:
       https-proxy-agent: 5.0.1
       progress: 2.0.3
       proxy-from-env: 1.1.0
-      puppeteer-core: 19.2.2
+      puppeteer-core: 19.3.0
     transitivePeerDependencies:
       - bufferutil
       - encoding
