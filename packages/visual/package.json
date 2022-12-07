@@ -38,7 +38,7 @@
   "dependencies": {
     "@mugshot/puppeteer": "~3.0.0",
     "mugshot": "~4.0.2",
-    "puppeteer": "~19.3.0"
+    "puppeteer": "~19.4.0"
   },
   "devDependencies": {
     "tdd-buffet": "^3.0.8",
