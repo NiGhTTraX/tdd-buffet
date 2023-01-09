@@ -30,7 +30,7 @@ importers:
     specifiers:
       '@jest/transform': ~29.3.0
       '@jest/types': ~29.3.0
-      '@types/fs-extra': ~9.0.0
+      '@types/fs-extra': ~11.0.0
       '@types/jest': ~29.2.0
       '@types/node': ~18.11.0
       fs-extra: ~11.1.0
@@ -43,7 +43,7 @@ importers:
     dependencies:
       '@jest/transform': 29.3.0
       '@jest/types': 29.3.1
-      '@types/fs-extra': 9.0.13
+      '@types/fs-extra': 11.0.0
       fs-extra: 11.1.0
       jest-environment-jsdom: 29.3.0
       jest-runtime: 29.3.0
@@ -118,7 +118,7 @@ importers:
       '@jest/types': ~29.3.0
       '@tdd-buffet/jest-config': ^5.0.1
       '@types/chai': ~4.3.0
-      '@types/fs-extra': ~9.0.0
+      '@types/fs-extra': ~11.0.0
       '@types/jest': ~29.2.0
       '@types/meow': ~5.0.0
       '@types/node': ~18.11.0
@@ -134,7 +134,7 @@ importers:
       '@jest/types': 29.3.1
       '@tdd-buffet/jest-config': link:../jest-config
       '@types/chai': 4.3.3
-      '@types/fs-extra': 9.0.13
+      '@types/fs-extra': 11.0.0
       '@types/jest': 29.2.1
       chai: 4.3.6
       execa: 6.1.0
@@ -2546,6 +2546,13 @@ packages:
   /@types/estree/0.0.51:
     resolution: {integrity: sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==}
 
+  /@types/fs-extra/11.0.0:
+    resolution: {integrity: sha512-zdV5odfHf95B4qr6bdpshG4VMm/3xgnPhSJLa3xh75CYr35e34k+4FQli82Q48sPqwHazJGy+6+jl4T+Vw1AMg==}
+    dependencies:
+      '@types/jsonfile': 6.1.1
+      '@types/node': 18.11.8
+    dev: false
+
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
@@ -2614,6 +2621,12 @@ packages:
   /@types/json5/0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
+
+  /@types/jsonfile/6.1.1:
+    resolution: {integrity: sha512-GSgiRCVeapDN+3pqA35IkQwasaCh/0YFH5dEF6S88iDvEn901DjOeH3/QPY+XYP1DFzDZPvIvfeEgk+7br5png==}
+    dependencies:
+      '@types/node': 18.11.8
+    dev: false
 
   /@types/meow/5.0.0:
     resolution: {integrity: sha512-csdM22P8TFF5KwuHseifUBOzWiGtiLfYmQosrKPGpA/xdK3o3PNo3+4YOpiJ5BQBshwO2kuhdJ7NoAitQ6m/jg==}
