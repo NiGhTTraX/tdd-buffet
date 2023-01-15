@@ -22,7 +22,7 @@
     "@commitlint/config-lerna-scopes": "~17.4.0",
     "@commitlint/cli": "~17.4.0",
     "@nighttrax/eslint-config-tsx": "~11.0.0",
-    "eslint": "~8.31.0",
+    "eslint": "~8.32.0",
     "lerna": "~6.4.0",
     "@types/jest": "~29.2.0",
     "@types/node": "~18.11.0",
