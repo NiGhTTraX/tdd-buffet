@@ -69,7 +69,7 @@ importers:
       react: ~18.2.0
       react-dom: ~18.2.0
       react-mock-component: ~3.1.0
-      strip-ansi: ~6.0.0
+      strip-ansi: ~7.0.0
       strong-mock: ~8.0.0
       tdd-buffet: ^3.0.8
       typescript: ~4.9.0
@@ -87,7 +87,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-mock-component: 3.1.0_knhnagtyfncgg2hpin7s37uixq
-      strip-ansi: 6.0.1
+      strip-ansi: 7.0.1
       strong-mock: 8.0.0
       tdd-buffet: link:../tdd-buffet
       typescript: 4.9.3
@@ -3127,6 +3127,11 @@ packages:
   /ansi-regex/5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
+
+  /ansi-regex/6.0.1:
+    resolution: {integrity: sha512-n5M855fKb2SsfMIiFFoVrABHJC8QtHwVx+mHWP3QcEqBHYienj5dHSgjbxtC0WEZXYt4wcD6zrQElDPhFuZgfA==}
+    engines: {node: '>=12'}
+    dev: true
 
   /ansi-styles/3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
@@ -9308,6 +9313,13 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       ansi-regex: 5.0.1
+
+  /strip-ansi/7.0.1:
+    resolution: {integrity: sha512-cXNxvT8dFNRVfhVME3JAe98mkXDYN2O1l7jmcwMnOslDeESg1rF/OZMtK0nRAhiari1unG5cD4jG3rapUAkLbw==}
+    engines: {node: '>=12'}
+    dependencies:
+      ansi-regex: 6.0.1
+    dev: true
 
   /strip-bom/3.0.0:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
