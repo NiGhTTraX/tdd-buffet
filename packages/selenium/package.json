@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@types/got": "~9.6.2",
-    "@types/node": "~18.13.0",
+    "@types/node": "~18.14.0",
     "@types/progress": "~2.0.3",
     "execa": "~7.0.0",
     "got": "~12.5.0",
