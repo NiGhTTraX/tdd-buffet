@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.9](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.8...tdd-buffet@3.0.9) (2023-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/fs-extra to v11 ([d490a1c](https://github.com/NiGhTTraX/tdd-buffet/commit/d490a1ccc374de06ffe12b284b6666cd331e5883))
+* **deps:** update dependency @types/jest to ~29.4.0 ([6a408c5](https://github.com/NiGhTTraX/tdd-buffet/commit/6a408c5005f1477d5dba367b48561928a41257f7))
+* **deps:** update dependency execa to v7 ([1fbb1d3](https://github.com/NiGhTTraX/tdd-buffet/commit/1fbb1d33e585bb8f277776f783fece449fb3c8da))
+* **deps:** update dependency fs-extra to ~11.1.0 ([6b8cc6a](https://github.com/NiGhTTraX/tdd-buffet/commit/6b8cc6a41742dd452405fede5a6aec0048f83525))
+* **deps:** update dependency fs-extra to v11 ([604de1e](https://github.com/NiGhTTraX/tdd-buffet/commit/604de1e3311f97bcd77f747c118199ff9fdd5b12))
+* **deps:** update dependency puppeteer to ~19.3.0 ([81210d4](https://github.com/NiGhTTraX/tdd-buffet/commit/81210d4fe1615b2d37f286a74f0b921aeee62bec))
+* **deps:** update dependency puppeteer to ~19.4.0 ([62af4ae](https://github.com/NiGhTTraX/tdd-buffet/commit/62af4aee517f951049b8ef45199c4bdbb13c59f2))
+* **deps:** update dependency puppeteer to ~19.5.0 ([4b20ca3](https://github.com/NiGhTTraX/tdd-buffet/commit/4b20ca34ea708be3fdaf2da300868a4c092acf28))
+* **deps:** update dependency puppeteer to ~19.6.0 ([c483284](https://github.com/NiGhTTraX/tdd-buffet/commit/c483284465c2a9362a2ce2e8b6040b7f0f134ea9))
+* **deps:** update dependency puppeteer to ~19.7.0 ([7c86519](https://github.com/NiGhTTraX/tdd-buffet/commit/7c865195015cc566749d4871d144ef5417a44580))
+* **deps:** update jest monorepo to ~29.3.0 ([0aa5b51](https://github.com/NiGhTTraX/tdd-buffet/commit/0aa5b51d033c25ed47a80ce5009dd72d7f401e59))
+* **deps:** update jest monorepo to ~29.3.0 ([ef704bf](https://github.com/NiGhTTraX/tdd-buffet/commit/ef704bfe3e94224f32b1e2be0350348483781abb))
+* **deps:** update jest monorepo to ~29.4.0 ([c4c3d28](https://github.com/NiGhTTraX/tdd-buffet/commit/c4c3d28913b6cbecd328ceef040779ac3cd85a84))
+* **tdd-buffet,visual:** Add missing peer dependency ([3f2c29a](https://github.com/NiGhTTraX/tdd-buffet/commit/3f2c29a21d101cd013b98014338c7c84420fe9d0))
+
+
+
+
+
 ## [3.0.8](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.7...tdd-buffet@3.0.8) (2022-11-04)
 
 ### Bug Fixes

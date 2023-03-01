@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.26](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.25...@tdd-buffet/selenium@0.4.26) (2023-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency execa to v7 ([1fbb1d3](https://github.com/NiGhTTraX/tdd-buffet/commit/1fbb1d33e585bb8f277776f783fece449fb3c8da))
+
+
+
+
+
 ## [0.4.25](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.24...@tdd-buffet/selenium@0.4.25) (2022-11-04)
 
 **Note:** Version bump only for package @tdd-buffet/selenium

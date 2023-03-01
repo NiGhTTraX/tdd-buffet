@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.17](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.16...@tdd-buffet/webpack-config@2.0.17) (2023-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency fork-ts-checker-webpack-plugin to ~7.3.0 ([654c715](https://github.com/NiGhTTraX/tdd-buffet/commit/654c715057dca838e84f18f8a85e3e77496bffca))
+* **deps:** update dependency mini-css-extract-plugin to ~2.7.0 ([fe5e838](https://github.com/NiGhTTraX/tdd-buffet/commit/fe5e8389828beda1457c5e4aeb8af99992332af2))
+* **deps:** update dependency postcss-preset-env to v8 ([854796e](https://github.com/NiGhTTraX/tdd-buffet/commit/854796ebed8db774e3343124a8cc6960ad2731dd))
+* **deps:** update dependency webpack to ~5.75.0 ([9437bea](https://github.com/NiGhTTraX/tdd-buffet/commit/9437bea3f9ada2398ff2e60a2333d6ff9343ec73))
+
+
+
+
+
 ## [2.0.16](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.15...@tdd-buffet/webpack-config@2.0.16) (2022-11-04)
 
 ### Bug Fixes

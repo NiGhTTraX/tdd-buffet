@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.9](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.3.8...@tdd-buffet/visual@0.3.9) (2023-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency puppeteer to ~19.3.0 ([81210d4](https://github.com/NiGhTTraX/tdd-buffet/commit/81210d4fe1615b2d37f286a74f0b921aeee62bec))
+* **deps:** update dependency puppeteer to ~19.4.0 ([62af4ae](https://github.com/NiGhTTraX/tdd-buffet/commit/62af4aee517f951049b8ef45199c4bdbb13c59f2))
+* **deps:** update dependency puppeteer to ~19.5.0 ([4b20ca3](https://github.com/NiGhTTraX/tdd-buffet/commit/4b20ca34ea708be3fdaf2da300868a4c092acf28))
+* **deps:** update dependency puppeteer to ~19.6.0 ([c483284](https://github.com/NiGhTTraX/tdd-buffet/commit/c483284465c2a9362a2ce2e8b6040b7f0f134ea9))
+* **deps:** update dependency puppeteer to ~19.7.0 ([7c86519](https://github.com/NiGhTTraX/tdd-buffet/commit/7c865195015cc566749d4871d144ef5417a44580))
+* **tdd-buffet,visual:** Add missing peer dependency ([3f2c29a](https://github.com/NiGhTTraX/tdd-buffet/commit/3f2c29a21d101cd013b98014338c7c84420fe9d0))
+
+
+
+
+
 ## [0.3.8](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/visual@0.3.7...@tdd-buffet/visual@0.3.8) (2022-11-04)
 
 ### Bug Fixes

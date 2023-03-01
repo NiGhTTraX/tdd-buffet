@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@3.0.1...@tdd-buffet/react@3.0.2) (2023-03-01)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @testing-library/react to v14 ([0fb9087](https://github.com/NiGhTTraX/tdd-buffet/commit/0fb90874a82a3908ac5d23dd8c512e7a51a23d71))
+* **deps:** update dependency @types/jest to ~29.4.0 ([6a408c5](https://github.com/NiGhTTraX/tdd-buffet/commit/6a408c5005f1477d5dba367b48561928a41257f7))
+* **deps:** update jest monorepo to ~29.3.0 ([0aa5b51](https://github.com/NiGhTTraX/tdd-buffet/commit/0aa5b51d033c25ed47a80ce5009dd72d7f401e59))
+* **deps:** update jest monorepo to ~29.3.0 ([ef704bf](https://github.com/NiGhTTraX/tdd-buffet/commit/ef704bfe3e94224f32b1e2be0350348483781abb))
+* **deps:** update jest monorepo to ~29.4.0 ([c4c3d28](https://github.com/NiGhTTraX/tdd-buffet/commit/c4c3d28913b6cbecd328ceef040779ac3cd85a84))
+* **react:** Downgrade jQuery types ([f95f4bf](https://github.com/NiGhTTraX/tdd-buffet/commit/f95f4bf4bd051051a69bca880c893c29efa30f94))
+
+
+
+
+
 ## [3.0.1](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@3.0.0...@tdd-buffet/react@3.0.1) (2022-11-04)
 
 ### Bug Fixes
