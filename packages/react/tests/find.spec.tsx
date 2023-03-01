@@ -105,6 +105,17 @@ describe('Finding elements', () => {
 
       expect($find('p').text()).toEqual('p1p2');
     });
+
+    it('get', () => {
+      $render(
+        <>
+          <p>p1</p>
+          <p>p2</p>
+        </>
+      );
+
+      expect($find('p').get(1).textContent).toEqual('p2');
+    });
   });
 
   it('getByTestId', () => {
