@@ -1,4 +1,5 @@
 // eslint-disable-next-line max-classes-per-file
+import { screen } from '@testing-library/react';
 import React, { useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/jest';
@@ -104,5 +105,11 @@ describe('$render', () => {
     const $component = $render(<Bar />);
 
     expect($component.text()).toEqual('12');
+  });
+
+  it('should interop with RTL', () => {
+    $render(<span>foo</span>);
+
+    expect(screen.getByText('foo')).toBeDefined();
   });
 });
