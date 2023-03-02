@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.6](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.5...@tdd-buffet/react@2.0.6) (2023-03-02)
+
+
+### Bug Fixes
+
+* **react:** Downgrade jQuery types ([49cb162](https://github.com/NiGhTTraX/tdd-buffet/commit/49cb16202f6c0ddd38b3a5692ee2c49341064ee8))
+
+
+
+
+
 ## [2.0.5](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.4...@tdd-buffet/react@2.0.5) (2022-11-04)
 
 
