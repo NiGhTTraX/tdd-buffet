@@ -77,6 +77,6 @@ export function $unmount() {
       return;
     }
 
-    ReactDOM.unmountComponentAtNode(componentContainer!);
+    ReactDOM.unmountComponentAtNode(componentContainer);
   });
 }
