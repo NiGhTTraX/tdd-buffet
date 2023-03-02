@@ -22,7 +22,18 @@ function renderAndReturnContainer(element: ReactElement) {
 
 function createContainer() {
   if (componentContainer) {
-    document.body.removeChild(componentContainer);
+    try {
+      document.body.removeChild(componentContainer);
+    } catch (e) {
+      /* istanbul ignore else because I don't want to simulate other exceptions */
+      if (e instanceof DOMException && e.name === 'NotFoundError') {
+        // The container might have been removed by other means e.g. mixing
+        // tdd-buffet with RTL which auto-injects a cleanup function.
+      } else {
+        // Rethrow the error so the user can deal with it.
+        throw e;
+      }
+    }
   }
 
   componentContainer = document.createElement('div');
