@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.7](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.6...@tdd-buffet/react@2.0.7) (2023-03-02)
+
+
+### Bug Fixes
+
+* **react:** Allow tdd-buffet to co-exist with RTL ([00493b3](https://github.com/NiGhTTraX/tdd-buffet/commit/00493b3b90c9f5d2f773bcd03a71cede642c20ba))
+
+
+
+
+
 ## [2.0.6](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@2.0.5...@tdd-buffet/react@2.0.6) (2023-03-02)
 
 
