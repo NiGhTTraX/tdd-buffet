@@ -39,13 +39,13 @@
     "@testing-library/react": "~14.0.0",
     "@types/jquery": "3.5.7",
     "jquery": "~3.6.0",
-    "pretty-format": "~29.4.0"
+    "pretty-format": "~29.5.0"
   },
   "devDependencies": {
     "@types/jest": "~29.4.0",
     "@types/react": "~18.0.0",
     "@types/react-dom": "~18.0.0",
-    "jest": "~29.4.0",
+    "jest": "~29.5.0",
     "jest-react-mock": "~3.1.2",
     "react": "~18.2.0",
     "react-dom": "~18.2.0",
