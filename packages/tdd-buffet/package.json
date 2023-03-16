@@ -34,7 +34,7 @@
     "@tdd-buffet/jest-config": "^5.0.2",
     "@types/chai": "~4.3.0",
     "@types/fs-extra": "~11.0.0",
-    "@types/jest": "~29.4.0",
+    "@types/jest": "~29.5.0",
     "chai": "~4.3.0",
     "execa": "~7.1.0",
     "fs-extra": "~11.1.0",
