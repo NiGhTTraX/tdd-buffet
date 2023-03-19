@@ -26,7 +26,7 @@ export function runnerDescribe(name: string, definition: () => void) {
  */
 export function runnerIt(
   name: string,
-  definition?: (testName: string) => Promise<any> | void
+  definition?: (testName: string) => Promise<unknown> | void
 ) {
   const testFullName = [...testSuiteNameStack, name].join(' ');
 
@@ -44,28 +44,28 @@ export function runnerIt(
 /**
  * Run some set up code before each test in the current `describe` block.
  */
-export function runnerBeforeEach(definition: () => Promise<any> | void) {
+export function runnerBeforeEach(definition: () => Promise<unknown> | void) {
   beforeEach(definition);
 }
 
 /**
  * Run some tear down code after each test in the current `describe` block.
  */
-export function runnerAfterEach(definition: () => Promise<any> | void) {
+export function runnerAfterEach(definition: () => Promise<unknown> | void) {
   afterEach(definition);
 }
 
 /**
  * Run some set up code __once__ before all the tests in the current `describe` block.
  */
-export function runnerBefore(definition: () => Promise<any> | void) {
+export function runnerBefore(definition: () => Promise<unknown> | void) {
   beforeAll(definition);
 }
 
 /**
  * Run some tear down code __once__ after all the tests in the current `describe` block.
  */
-export function runnerAfter(definition: () => Promise<any> | void) {
+export function runnerAfter(definition: () => Promise<unknown> | void) {
   afterAll(definition);
 }
 

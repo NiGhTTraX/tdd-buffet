@@ -41,13 +41,13 @@ let rootSuitePage: Page;
  * });
  * ```
  */
-export function bindPage<A extends any[], R>(
+export function bindPage<A extends unknown[], R>(
   cb: (page: Page, ...args: A) => R
 ) {
   return (...args: A) => cb(rootSuitePage, ...args);
 }
 
-export type HookDefinition = (page: Page) => Promise<any> | void;
+export type HookDefinition = (page: Page) => Promise<unknown> | void;
 
 /**
  * @param page
@@ -56,7 +56,7 @@ export type HookDefinition = (page: Page) => Promise<any> | void;
 export type TestDefinition = (
   page: Page,
   testName: string
-) => Promise<any> | void;
+) => Promise<unknown> | void;
 
 /* istanbul ignore next */
 function getBrowserChromeSize() {
