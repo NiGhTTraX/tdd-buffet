@@ -71,7 +71,7 @@ importers:
       react-mock-component: ~3.1.0
       strip-ansi: ~6.0.0
       strong-mock: ~8.0.0
-      tdd-buffet: ^3.0.9
+      tdd-buffet: ^3.0.10
       typescript: ~5.0.0
     dependencies:
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
@@ -116,7 +116,7 @@ importers:
   packages/tdd-buffet:
     specifiers:
       '@jest/types': ~29.5.0
-      '@tdd-buffet/jest-config': ^5.0.2
+      '@tdd-buffet/jest-config': ^5.0.3
       '@types/chai': ~4.3.0
       '@types/fs-extra': ~11.0.0
       '@types/jest': ~29.5.0
@@ -160,7 +160,7 @@ importers:
       mitt: ~3.0.0
       mugshot: ~4.0.2
       puppeteer: ~19.7.0
-      tdd-buffet: ^3.0.9
+      tdd-buffet: ^3.0.10
       typescript: ~5.0.0
     dependencies:
       '@mugshot/puppeteer': 3.0.0_2zv66rob5do2bajrjt77un4ny4

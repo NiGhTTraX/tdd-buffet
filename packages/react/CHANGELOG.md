@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@3.0.2...@tdd-buffet/react@3.0.3) (2023-03-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/jest to ~29.5.0 ([5d7219f](https://github.com/NiGhTTraX/tdd-buffet/commit/5d7219f0da30796e6dae22d7cd88b7b6f19e6d2a))
+* **deps:** update jest monorepo to ~29.5.0 ([c91e5a8](https://github.com/NiGhTTraX/tdd-buffet/commit/c91e5a8b0486bbfa30afabbc51182a91e4a7da50))
+* **react:** Allow tdd-buffet to co-exist with RTL ([e79692d](https://github.com/NiGhTTraX/tdd-buffet/commit/e79692de6085c0430ea0820bf96e76211a54f7be))
+* **react:** Use proper object type for `$fireEvent` optional options ([ce0e842](https://github.com/NiGhTTraX/tdd-buffet/commit/ce0e84239e50c365af4cc963e3c57842c4f4c7a1))
+
+
+
+
+
 ## [3.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/react@3.0.1...@tdd-buffet/react@3.0.2) (2023-03-01)
 
 

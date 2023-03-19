@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.10](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.9...tdd-buffet@3.0.10) (2023-03-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/jest to ~29.5.0 ([5d7219f](https://github.com/NiGhTTraX/tdd-buffet/commit/5d7219f0da30796e6dae22d7cd88b7b6f19e6d2a))
+* **deps:** update dependency execa to ~7.1.0 ([c63937c](https://github.com/NiGhTTraX/tdd-buffet/commit/c63937cb4e6101cf2bca63259642d4719238bd8c))
+* **deps:** update jest monorepo to ~29.5.0 ([c91e5a8](https://github.com/NiGhTTraX/tdd-buffet/commit/c91e5a8b0486bbfa30afabbc51182a91e4a7da50))
+
+
+
+
+
 ## [3.0.9](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.8...tdd-buffet@3.0.9) (2023-03-01)
 
 

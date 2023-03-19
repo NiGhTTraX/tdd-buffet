@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [5.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@5.0.2...@tdd-buffet/jest-config@5.0.3) (2023-03-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @types/jest to ~29.5.0 ([5d7219f](https://github.com/NiGhTTraX/tdd-buffet/commit/5d7219f0da30796e6dae22d7cd88b7b6f19e6d2a))
+* **deps:** update jest monorepo to ~29.5.0 ([c91e5a8](https://github.com/NiGhTTraX/tdd-buffet/commit/c91e5a8b0486bbfa30afabbc51182a91e4a7da50))
+
+
+
+
+
 ## [5.0.2](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@5.0.1...@tdd-buffet/jest-config@5.0.2) (2023-03-01)
 
 
