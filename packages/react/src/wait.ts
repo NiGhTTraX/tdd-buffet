@@ -18,7 +18,7 @@ import { getJQueryContainer } from './render';
  * await $wait($container => $container.text() === 'foobar');
  */
 export function $wait(
-  cb: ($container: JQuery) => any,
+  cb: ($container: JQuery) => unknown,
   timeout?: number
 ): Promise<void>;
 
@@ -37,19 +37,19 @@ export function $wait(
  * await $wait(() => expect(1).to.equal(1), '1 should be 1 before 2 secs', 2000)
  */
 export function $wait(
-  cb: ($container: JQuery) => any,
+  cb: ($container: JQuery) => unknown,
   message?: string,
   timeout?: number
 ): Promise<void>;
 
 export function $wait(
-  cb: ($container: JQuery) => any,
+  cb: ($container: JQuery) => unknown,
   timeoutOrMessage?: number | string,
   maybeTimeout = 1500
 ): Promise<void> {
   return rtlWaitFor(
     () => {
-      let result: any;
+      let result: unknown;
 
       try {
         result = cb(getJQueryContainer());
@@ -94,7 +94,7 @@ export function $wait(
 export function $waitForElement(
   selector: string,
   timeout?: number
-): Promise<any>;
+): Promise<unknown>;
 
 /**
  * Wait for an element to exist in the currently rendered component.
@@ -116,7 +116,7 @@ export function $waitForElement(
   selector: string,
   message: string,
   timeout?: number
-): Promise<any>;
+): Promise<unknown>;
 
 /**
  * Wait for an element to exist in the currently rendered component.
@@ -138,7 +138,7 @@ export function $waitForElement(
 export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
   timeout?: number
-): Promise<any>;
+): Promise<unknown>;
 
 /**
  * Wait for an element to exist in the currently rendered component.
@@ -162,13 +162,13 @@ export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
   message: string,
   timeout?: number
-): Promise<any>;
+): Promise<unknown>;
 
 export function $waitForElement(
   cbOrSelector: string | (($container: JQuery) => JQuery),
   messageOrTimeout?: string | number,
   maybeTimeout = 1500
-): Promise<any> {
+): Promise<unknown> {
   const errorMessagePrefix =
     typeof messageOrTimeout === 'string' ? `${messageOrTimeout}: ` : '';
 

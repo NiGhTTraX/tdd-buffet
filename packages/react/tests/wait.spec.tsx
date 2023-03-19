@@ -89,8 +89,11 @@ describe('wait', () => {
     const originalError = console.error;
 
     beforeEach(() => {
-      console.error = (...args: any[]) => {
-        if (/Warning.*not wrapped in act/.test(args[0])) {
+      console.error = (...args: unknown[]) => {
+        if (
+          typeof args[0] === 'string' &&
+          /Warning.*not wrapped in act/.test(args[0])
+        ) {
           throw new Error(args[0]);
         }
 
