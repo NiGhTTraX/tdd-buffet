@@ -1,5 +1,5 @@
-import { Mugshot } from 'mugshot';
 import { PuppeteerAdapter } from '@mugshot/puppeteer';
+import { Mugshot } from 'mugshot';
 import path from 'path';
 import { it, Page, TestDefinition } from 'tdd-buffet/suite/gui';
 
@@ -16,7 +16,7 @@ import { it, Page, TestDefinition } from 'tdd-buffet/suite/gui';
 export function vit(
   name: string,
   definition: TestDefinition,
-  selector: string = 'body > *:first-child'
+  selector = 'body > *:first-child'
 ) {
   it(name, async (page, testName) => {
     await definition(page, testName);

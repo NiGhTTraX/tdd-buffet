@@ -2,7 +2,7 @@ import { EventType, fireEvent } from '@testing-library/react/pure';
 import { getDOMElement, Selector } from './find';
 
 export type FireObject = {
-  [E in EventType]: (selector: Selector, options?: {}) => void;
+  [E in EventType]: (selector: Selector, options?: object) => void;
 };
 
 /**
@@ -19,7 +19,7 @@ export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
   (acc, key) => {
     const event = key as EventType;
 
-    acc[event] = (selector: Selector, options?: {}) => {
+    acc[event] = (selector: Selector, options?: object) => {
       fireEvent[event](getDOMElement(selector), options);
     };
 
