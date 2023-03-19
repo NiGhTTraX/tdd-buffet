@@ -7,7 +7,7 @@ import ProgressBar from 'progress';
 
 const TIMEOUT = 1000;
 const COMPOSE_PROJECT_NAME = 'tdd-buffet';
-const waitTimeout = (resolve: (...args: any[]) => void) =>
+const waitTimeout = (resolve: (...args: unknown[]) => void) =>
   setTimeout(resolve, TIMEOUT);
 
 async function getCurrentlyConnectedNodes(port: number) {
