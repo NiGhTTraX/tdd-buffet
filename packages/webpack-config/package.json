@@ -39,7 +39,7 @@
     "postcss-normalize": "~10.0.0",
     "postcss-preset-env": "~8.3.0",
     "style-loader": "~3.3.0",
-    "webpack": "~5.78.0"
+    "webpack": "~5.79.0"
   },
   "devDependencies": {
     "typescript": "~5.0.0",
