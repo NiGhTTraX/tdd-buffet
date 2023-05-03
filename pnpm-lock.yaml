@@ -11,8 +11,8 @@ importers:
         specifier: ~17.6.0
         version: 17.6.0
       '@commitlint/config-lerna-scopes':
-        specifier: ~17.4.0
-        version: 17.4.0(lerna@6.6.0)
+        specifier: ~17.6.0
+        version: 17.6.2(lerna@6.6.0)
       '@nighttrax/eslint-config-tsx':
         specifier: ~12.0.0-alpha.0
         version: 12.0.0-alpha.0(eslint@8.39.0)(typescript@5.0.2)
@@ -629,8 +629,8 @@ packages:
       conventional-changelog-conventionalcommits: 5.0.0
     dev: true
 
-  /@commitlint/config-lerna-scopes@17.4.0(lerna@6.6.0):
-    resolution: {integrity: sha512-On2/C02BUVDUjlypu15B9y1rdIb2pYdcc3CSDuVIMae5fhvTqZqRozfIDIodFXda4o+iG8Ae19kqFwG+Wz4VAA==}
+  /@commitlint/config-lerna-scopes@17.6.2(lerna@6.6.0):
+    resolution: {integrity: sha512-GeFy+QfrDfKcB925J+BYCShHUWz313IqZtyO/Y54eUtiKgKJjZVjXRHoWk00JHAU91xGJfR+NYV6xuxf9YaL+A==}
     engines: {node: '>=v14'}
     peerDependencies:
       lerna: ^5.0.0 || ^6
@@ -641,7 +641,6 @@ packages:
       glob: 8.0.3
       import-from: 4.0.0
       lerna: 6.6.0
-      resolve-pkg: 2.0.0
       semver: 7.3.8
     dev: true
 
@@ -9092,13 +9091,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       global-dirs: 0.1.1
-    dev: true
-
-  /resolve-pkg@2.0.0:
-    resolution: {integrity: sha512-+1lzwXehGCXSeryaISr6WujZzowloigEofRB+dj75y9RRa/obVcYgbHJd53tdYw8pvZj8GojXaaENws8Ktw/hQ==}
-    engines: {node: '>=8'}
-    dependencies:
-      resolve-from: 5.0.0
     dev: true
 
   /resolve.exports@2.0.0:
