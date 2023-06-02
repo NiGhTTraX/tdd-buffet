@@ -53,6 +53,6 @@
     "strip-ansi": "~6.0.0",
     "strong-mock": "~8.0.0",
     "tdd-buffet": "^3.0.10",
-    "typescript": "~5.0.0"
+    "typescript": "~5.1.0"
   }
 }
