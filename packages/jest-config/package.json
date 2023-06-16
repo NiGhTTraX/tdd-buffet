@@ -26,7 +26,8 @@
     "test": "jest --config src/jest.config.js"
   },
   "peerDependencies": {
-    "jest": "^29.0.0"
+    "jest": "^29.0.0",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "@jest/transform": "~29.5.0",
@@ -36,12 +37,12 @@
     "jest-environment-jsdom": "~29.5.0",
     "jest-runtime": "~29.5.0",
     "ts-jest": "~29.1.0",
-    "typescript": "~5.1.0",
     "whatwg-fetch": "~3.6.0"
   },
   "devDependencies": {
     "@types/jest": "~29.5.0",
     "@types/node": "~18.16.0",
-    "jest": "~29.5.0"
+    "jest": "~29.5.0",
+    "typescript": "~5.1.0"
   }
 }
