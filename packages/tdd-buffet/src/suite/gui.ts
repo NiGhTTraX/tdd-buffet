@@ -76,8 +76,8 @@ export async function setViewportSize(width: number, height: number) {
   const { width: chromeWidth, height: chromeHeight } =
     await rootSuitePage.evaluate(getBrowserChromeSize);
 
-  const actualWidth = width + chromeWidth;
-  const actualHeight = height + chromeHeight;
+  const actualWidth = width + Math.max(chromeWidth, 0);
+  const actualHeight = height + Math.max(chromeHeight, 0);
 
   await rootSuitePage.setViewport({ width: actualWidth, height: actualHeight });
 }
