@@ -34,7 +34,7 @@
     }
   },
   "scripts": {
-    "test": "pnpm exec ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
+    "test": "pnpm exec ts-node ./src/bin/index.ts test --config ./jest.config.js --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rm -rf ./dist",
