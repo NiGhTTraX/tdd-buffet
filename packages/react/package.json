@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "React testing for tdd-buffet",
   "keywords": [
     "tdd",
@@ -52,7 +52,7 @@
     "react-mock-component": "~3.1.0",
     "strip-ansi": "~6.0.0",
     "strong-mock": "~8.0.0",
-    "tdd-buffet": "^3.0.10",
+    "tdd-buffet": "^4.0.0",
     "typescript": "~5.1.0"
   }
 }

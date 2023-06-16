@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@5.0.3...@tdd-buffet/jest-config@6.0.0) (2023-06-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-jest to ~29.1.0 ([5cecb52](https://github.com/NiGhTTraX/tdd-buffet/commit/5cecb52b30c9d881666f6d7ca336bf558ae0a1bd))
+
+
+* build(jest-config)!: Make typescript a peer dependency ([ab79d6b](https://github.com/NiGhTTraX/tdd-buffet/commit/ab79d6b5b27f1b0b727a78c87c6d2def8dc68a96))
+
+
+### BREAKING CHANGES
+
+* This might cause build failures if you're running an
+unsupported version of typescript.
+
+
+
+
+
 ## [5.0.3](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/jest-config@5.0.2...@tdd-buffet/jest-config@5.0.3) (2023-03-19)
 
 

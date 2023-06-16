@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.10...tdd-buffet@4.0.0) (2023-06-16)
+
+
+* build(tdd-buffet)!: Use `pkg#exports` ([79abefa](https://github.com/NiGhTTraX/tdd-buffet/commit/79abefa3d4ca2fbed7291bdce1e25b31a61cac44))
+
+
+### BREAKING CHANGES
+
+* This shouldn't affect anyone, but releasing it in a
+major version just in case.
+
+
+
+
+
 ## [3.0.10](https://github.com/NiGhTTraX/tdd-buffet/compare/tdd-buffet@3.0.9...tdd-buffet@3.0.10) (2023-03-19)
 
 

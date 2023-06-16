@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.28](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.27...@tdd-buffet/selenium@0.4.28) (2023-06-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency got to v13 ([73daccd](https://github.com/NiGhTTraX/tdd-buffet/commit/73daccd3651dceacc38cb10d725cff196fecf89c))
+
+
+
+
+
 ## [0.4.27](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/selenium@0.4.26...@tdd-buffet/selenium@0.4.27) (2023-03-19)
 
 

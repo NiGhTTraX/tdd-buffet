@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.19](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.18...@tdd-buffet/webpack-config@2.0.19) (2023-06-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency css-loader to ~6.8.0 ([3d7d613](https://github.com/NiGhTTraX/tdd-buffet/commit/3d7d613b255ca2015b13c2f20d9d460e09ce5484))
+* **deps:** update dependency postcss-loader to ~7.2.0 ([f0cc8a1](https://github.com/NiGhTTraX/tdd-buffet/commit/f0cc8a160543257e89fd92ebc94a8a04f22ca35d))
+* **deps:** update dependency postcss-loader to ~7.3.0 ([3cb1892](https://github.com/NiGhTTraX/tdd-buffet/commit/3cb1892704c1fa3b0e4f09d441e35eb6ea776040))
+* **deps:** update dependency postcss-preset-env to ~8.1.0 ([dae6711](https://github.com/NiGhTTraX/tdd-buffet/commit/dae6711612450094b01e69d014dbb3f47d329834))
+* **deps:** update dependency postcss-preset-env to ~8.2.0 ([65cdb67](https://github.com/NiGhTTraX/tdd-buffet/commit/65cdb67b234ebda6896311ee4a5292e4e7ba7899))
+* **deps:** update dependency postcss-preset-env to ~8.3.0 ([ebc1558](https://github.com/NiGhTTraX/tdd-buffet/commit/ebc15587d8fee741281c601f6a9aa70a1bf1c079))
+* **deps:** update dependency postcss-preset-env to ~8.4.0 ([25f977b](https://github.com/NiGhTTraX/tdd-buffet/commit/25f977ba8f14fc2dbb0d835d88e98dcae401ddd4))
+* **deps:** update dependency postcss-preset-env to ~8.5.0 ([3bd712c](https://github.com/NiGhTTraX/tdd-buffet/commit/3bd712cea76eddae745b6b20266fb27f8f171f20))
+* **deps:** update dependency webpack to ~5.77.0 ([08b35b3](https://github.com/NiGhTTraX/tdd-buffet/commit/08b35b30992a29a43504e15bbc90a375471e6914))
+* **deps:** update dependency webpack to ~5.78.0 ([d2deff5](https://github.com/NiGhTTraX/tdd-buffet/commit/d2deff5a1d93a32a74e554dbb96ccd36a250c954))
+* **deps:** update dependency webpack to ~5.79.0 ([59eb097](https://github.com/NiGhTTraX/tdd-buffet/commit/59eb0978f071d12578c7db78569550327c750eaf))
+* **deps:** update dependency webpack to ~5.80.0 ([60e235d](https://github.com/NiGhTTraX/tdd-buffet/commit/60e235d56769a369887b496dda0c42ee9d3eef96))
+* **deps:** update dependency webpack to ~5.81.0 ([16e7867](https://github.com/NiGhTTraX/tdd-buffet/commit/16e7867e3faa8c59cf4eed301f3c79e130806320))
+* **deps:** update dependency webpack to ~5.82.0 ([442954a](https://github.com/NiGhTTraX/tdd-buffet/commit/442954a1c1d5c9ec293d3964a766c064d4da7256))
+* **deps:** update dependency webpack to ~5.83.0 ([7751cce](https://github.com/NiGhTTraX/tdd-buffet/commit/7751cce796268ef3d6c95b79bf14ff6a0358dbf4))
+* **deps:** update dependency webpack to ~5.84.0 ([3b6661f](https://github.com/NiGhTTraX/tdd-buffet/commit/3b6661f853da2bf6883f51004eff7ce53e1534fe))
+* **deps:** update dependency webpack to ~5.85.0 ([eb43b39](https://github.com/NiGhTTraX/tdd-buffet/commit/eb43b39751a29963e01f558a6a1199698faf3914))
+* **deps:** update dependency webpack to ~5.86.0 ([5a67871](https://github.com/NiGhTTraX/tdd-buffet/commit/5a67871c879551f4d2051b5e223033371250f0e2))
+* **deps:** update dependency webpack to ~5.87.0 ([6b3e309](https://github.com/NiGhTTraX/tdd-buffet/commit/6b3e3095aec3f4292420176b2cb73f26fab3c4bd))
+* **webpack-config:** Fix peer dependency warning ([dfb1ede](https://github.com/NiGhTTraX/tdd-buffet/commit/dfb1ede16d3ff4209a9865ccce9e2d612948f86c))
+
+
+
+
+
 ## [2.0.18](https://github.com/NiGhTTraX/tdd-buffet/compare/@tdd-buffet/webpack-config@2.0.17...@tdd-buffet/webpack-config@2.0.18) (2023-03-19)
 
 
