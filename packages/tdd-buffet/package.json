@@ -1,8 +1,7 @@
 {
   "name": "tdd-buffet",
   "publishConfig": {
-    "access": "public",
-    "directory": "dist"
+    "access": "public"
   },
   "version": "3.0.10",
   "description": "All you can eat TDD tools and libraries",
@@ -19,15 +18,28 @@
   "author": "Andrei Picus",
   "license": "MIT",
   "homepage": "https://github.com/NiGhTTraX/tdd-buffet/tree/master/packages/tdd-buffet",
-  "bin": "./bin/index.js",
+  "bin": "./dist/bin/index.js",
+  "exports": {
+    "./suite/node": {
+      "default": "./dist/suite/node"
+    },
+    "./suite/gui": {
+      "default": "./dist/suite/gui"
+    },
+    "./expect/jest": {
+      "default": "./dist/expect/jest"
+    },
+    "./expect/chai": {
+      "default": "./dist/expect/chai"
+    }
+  },
   "scripts": {
     "test": "pnpm exec ts-node ./src/bin/index.ts test --config ../../tests/jest.config.js --coverage",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "build": "pnpm run clean && pnpm run compile",
     "clean": "rm -rf ./dist",
-    "package": "cp -r README.md package.json ./dist",
     "compile": "tsc -p tsconfig.build.json",
-    "prepublishOnly": "pnpm run build && pnpm run package"
+    "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
     "@jest/types": "~29.5.0",
