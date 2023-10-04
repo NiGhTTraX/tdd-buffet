@@ -29,7 +29,7 @@
   "dependencies": {
     "browserslist": "~4.22.0",
     "css-loader": "~6.8.0",
-    "fork-ts-checker-webpack-plugin": "~8.0.0",
+    "fork-ts-checker-webpack-plugin": "~9.0.0",
     "less": "~4.2.0",
     "less-loader": "~11.1.0",
     "mini-css-extract-plugin": "~2.7.0",
