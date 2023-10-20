@@ -15,8 +15,8 @@ importers:
         specifier: ~17.8.0
         version: 17.8.0
       '@commitlint/config-lerna-scopes':
-        specifier: ~17.7.0
-        version: 17.7.0(lerna@6.6.0)
+        specifier: ~17.8.0
+        version: 17.8.1(lerna@6.6.0)
       '@nighttrax/eslint-config-tsx':
         specifier: ~12.0.0-alpha.0
         version: 12.0.0-alpha.0(eslint@8.51.0)(typescript@5.2.2)
@@ -627,8 +627,8 @@ packages:
       conventional-changelog-conventionalcommits: 6.1.0
     dev: true
 
-  /@commitlint/config-lerna-scopes@17.7.0(lerna@6.6.0):
-    resolution: {integrity: sha512-fMIDgStYnCTYjGLqPM7UO1YQk1gdskforUUeOSqYrx58810K8xHnZoJu7T8WEkw5mx3yUJ2FuEPAfmk/7w6pvQ==}
+  /@commitlint/config-lerna-scopes@17.8.1(lerna@6.6.0):
+    resolution: {integrity: sha512-F6AlpUo8H17yW9BKv5pbdTGUPkHAidvfZmde9oLPcha5emsWKiUq3YBcLyEV1EShyGpF5uCmQ/+RQ16SPI/D0Q==}
     engines: {node: '>=v14'}
     peerDependencies:
       lerna: ^5.0.0 || ^6
