@@ -51,8 +51,8 @@ importers:
         specifier: ~11.0.0
         version: 11.0.0
       fs-extra:
-        specifier: ~11.1.0
-        version: 11.1.0
+        specifier: ~11.2.0
+        version: 11.2.0
       jest-environment-jsdom:
         specifier: ~29.7.0
         version: 29.7.0
@@ -183,8 +183,8 @@ importers:
         specifier: ~8.0.0
         version: 8.0.0
       fs-extra:
-        specifier: ~11.1.0
-        version: 11.1.0
+        specifier: ~11.2.0
+        version: 11.2.0
       jest:
         specifier: ~29.7.0
         version: 29.7.0(@types/node@20.10.0)(ts-node@10.9.0)
@@ -733,7 +733,7 @@ packages:
     dependencies:
       '@commitlint/top-level': 18.4.0
       '@commitlint/types': 18.4.0
-      fs-extra: 11.1.0
+      fs-extra: 11.2.0
       git-raw-commits: 2.0.11
       minimist: 1.2.8
     dev: true
@@ -5363,8 +5363,8 @@ packages:
       universalify: 2.0.0
     dev: false
 
-  /fs-extra@11.1.0:
-    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+  /fs-extra@11.2.0:
+    resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
     engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.11
@@ -8214,7 +8214,7 @@ packages:
       fast-glob: 3.2.7
       figures: 3.2.0
       flat: 5.0.2
-      fs-extra: 11.1.0
+      fs-extra: 11.2.0
       glob: 7.1.4
       ignore: 5.2.4
       js-yaml: 4.1.0
