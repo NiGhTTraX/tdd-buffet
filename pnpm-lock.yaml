@@ -250,8 +250,8 @@ importers:
         specifier: ~4.2.0
         version: 4.2.0
       less-loader:
-        specifier: ~12.0.0
-        version: 12.0.0(less@4.2.0)(webpack@5.89.0)
+        specifier: ~12.1.0
+        version: 12.1.0(less@4.2.0)(webpack@5.89.0)
       mini-css-extract-plugin:
         specifier: ~2.7.0
         version: 2.7.0(webpack@5.89.0)
@@ -7204,8 +7204,8 @@ packages:
       - supports-color
     dev: true
 
-  /less-loader@12.0.0(less@4.2.0)(webpack@5.89.0):
-    resolution: {integrity: sha512-fcRoWK28+eD+1PxuwNG+44V2v32IBdzsYAi0keUncHVblbpxMPWwrGlnw0wZKCdOg7O0HNwfhWNw/DrRZ45xCA==}
+  /less-loader@12.1.0(less@4.2.0)(webpack@5.89.0):
+    resolution: {integrity: sha512-N/MRZA9iILOW+TQ9xoDptsSPbtBJDWshOj3LNqL+UJAYDhtoraLECiBa93DeLJUfR4m/VE6bWuxaVs40+wBXYw==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       less: ^3.5.0 || ^4.0.0
