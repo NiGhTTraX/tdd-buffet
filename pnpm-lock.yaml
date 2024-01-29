@@ -146,8 +146,8 @@ importers:
         specifier: ~8.0.0
         version: 8.0.0
       got:
-        specifier: ~14.0.0
-        version: 14.0.0
+        specifier: ~14.1.0
+        version: 14.1.0
       meow:
         specifier: ~9.0.0
         version: 9.0.0
@@ -5723,8 +5723,8 @@ packages:
     dependencies:
       get-intrinsic: 1.2.1
 
-  /got@14.0.0:
-    resolution: {integrity: sha512-X01vTgaX9SwaMq5DfImvS+3GMQFFs5HtrrlS9CuzUSzkxAf/tWGEyynuI+Qy7BjciMczZGjyVSmawYbP4eYhYA==}
+  /got@14.1.0:
+    resolution: {integrity: sha512-jGmSBfxa7jOGg464azcsf/cUlJBZldU8edFpiVebIJrVBE4vqVx0t3Z2f1kz1WrcMvLgQREoC/l2ttDmSHwyRg==}
     engines: {node: '>=20'}
     dependencies:
       '@sindresorhus/is': 6.1.0
