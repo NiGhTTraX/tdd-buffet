@@ -82,8 +82,8 @@ importers:
   packages/react:
     dependencies:
       '@testing-library/react':
-        specifier: ~14.1.0
-        version: 14.1.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: ~14.2.0
+        version: 14.2.0(react-dom@18.2.0)(react@18.2.0)
       '@types/jquery':
         specifier: 3.5.7
         version: 3.5.7
@@ -2456,8 +2456,8 @@ packages:
       pretty-format: 27.5.1
     dev: false
 
-  /@testing-library/react@14.1.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-hcvfZEEyO0xQoZeHmUbuMs7APJCGELpilL7bY+BaJaMP57aWc6q1etFwScnoZDheYjk4ESdlzPdQ33IbsKAK/A==}
+  /@testing-library/react@14.2.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-7uBnPHyOG6nDGCzv8SLeJbSa33ZoYw7swYpSLIgJvBALdq7l9zPNk33om4USrxy1lKTxXaVfufzLmq83WNfWIw==}
     engines: {node: '>=14'}
     peerDependencies:
       react: ^18.0.0
