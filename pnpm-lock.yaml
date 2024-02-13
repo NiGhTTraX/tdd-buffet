@@ -15,8 +15,8 @@ importers:
         specifier: ~18.6.0
         version: 18.6.0
       '@commitlint/config-lerna-scopes':
-        specifier: ~18.4.0
-        version: 18.4.0(lerna@6.6.0)
+        specifier: ~18.6.0
+        version: 18.6.1(lerna@6.6.0)
       '@nighttrax/eslint-config-tsx':
         specifier: ~12.0.0-alpha.0
         version: 12.0.0-alpha.0(eslint@8.56.0)(typescript@5.3.2)
@@ -627,8 +627,8 @@ packages:
       conventional-changelog-conventionalcommits: 7.0.2
     dev: true
 
-  /@commitlint/config-lerna-scopes@18.4.0(lerna@6.6.0):
-    resolution: {integrity: sha512-+RLh59UisO3iIBUp7fA48Y9Lej00FF2ar9Txzi6rHKV5mQpZPz5tzKOZK0uoOVMaP/+66HpzBGeFAorNDR3stQ==}
+  /@commitlint/config-lerna-scopes@18.6.1(lerna@6.6.0):
+    resolution: {integrity: sha512-61wMcaSekEIXnbOfcA1QuF4EtU76wTtUHHdWQj9YoyoYRQtscth6l9jTql/vkCQ+bVAwWDfcJhLRksNNe+1U/w==}
     engines: {node: '>=v18'}
     peerDependencies:
       lerna: ^5.0.0 || ^6
@@ -640,7 +640,7 @@ packages:
       glob: 8.1.0
       import-from: 4.0.0
       lerna: 6.6.0
-      semver: 7.5.4
+      semver: 7.6.0
     dev: true
 
   /@commitlint/config-validator@18.6.0:
@@ -1729,6 +1729,7 @@ packages:
   /@lerna/package@6.4.1:
     resolution: {integrity: sha512-TrOah58RnwS9R8d3+WgFFTu5lqgZs7M+e1dvcRga7oSJeKscqpEK57G0xspvF3ycjfXQwRMmEtwPmpkeEVLMzA==}
     engines: {node: ^14.15.0 || >=16.0.0}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
       load-json-file: 6.2.0
       npm-package-arg: 8.1.1
@@ -1738,6 +1739,7 @@ packages:
   /@lerna/project@6.4.1:
     resolution: {integrity: sha512-BPFYr4A0mNZ2jZymlcwwh7PfIC+I6r52xgGtJ4KIrIOB6mVKo9u30dgYJbUQxmSuMRTOnX7PJZttQQzSda4gEg==}
     engines: {node: ^14.15.0 || >=16.0.0}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
       '@lerna/package': 6.4.1
       '@lerna/validation-error': 6.4.1
@@ -1757,6 +1759,7 @@ packages:
   /@lerna/validation-error@6.4.1:
     resolution: {integrity: sha512-fxfJvl3VgFd7eBfVMRX6Yal9omDLs2mcGKkNYeCEyt4Uwlz1B5tPAXyk/sNMfkKV2Aat/mlK5tnY13vUrMKkyA==}
     engines: {node: ^14.15.0 || >=16.0.0}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
     dependencies:
       npmlog: 6.0.2
     dev: true
@@ -3099,9 +3102,6 @@ packages:
 
   /ajv-formats@2.1.1:
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependenciesMeta:
-      ajv:
-        optional: true
     dependencies:
       ajv: 8.12.0
     dev: false
@@ -9888,6 +9888,14 @@ packages:
     hasBin: true
     dependencies:
       lru-cache: 6.0.0
+
+  /semver@7.6.0:
+    resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
 
   /serialize-javascript@6.0.1:
     resolution: {integrity: sha512-owoXEFjWRllis8/M1Q+Cw5k8ZH40e3zhp/ovX+Xr/vi1qj6QesbyXXViFbpNvWvPNAD62SutwEXavefrLJWj7w==}
