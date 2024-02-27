@@ -141,7 +141,7 @@ importers:
         version: 20.11.20
       '@types/progress':
         specifier: ~2.0.3
-        version: 2.0.3
+        version: 2.0.7
       execa:
         specifier: ~8.0.0
         version: 8.0.0
@@ -2716,8 +2716,8 @@ packages:
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
     dev: true
 
-  /@types/progress@2.0.3:
-    resolution: {integrity: sha512-bPOsfCZ4tsTlKiBjBhKnM8jpY5nmIll166IPD58D92hR7G7kZDfx5iB9wGF4NfZrdKolebjeAr3GouYkSGoJ/A==}
+  /@types/progress@2.0.7:
+    resolution: {integrity: sha512-iadjw02vte8qWx7U0YM++EybBha2CQLPGu9iJ97whVgJUT5Zq9MjAPYUnbfRI2Kpehimf1QjFJYxD0t8nqzu5w==}
     dependencies:
       '@types/node': 20.11.20
     dev: false
