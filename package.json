@@ -23,7 +23,7 @@
     "@commitlint/cli": "~18.6.0",
     "@nighttrax/eslint-config-tsx": "~12.0.0-alpha.0",
     "eslint": "~8.57.0",
-    "lerna": "~6.6.0",
+    "lerna": "~8.1.0",
     "@types/jest": "~29.5.0",
     "@types/node": "~20.11.0",
     "ts-node": "~10.9.0",
