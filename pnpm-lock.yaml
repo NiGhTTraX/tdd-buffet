@@ -135,7 +135,7 @@ importers:
     dependencies:
       '@types/got':
         specifier: ~9.6.2
-        version: 9.6.2
+        version: 9.6.12
       '@types/node':
         specifier: ~20.11.0
         version: 20.11.20
@@ -2599,11 +2599,11 @@ packages:
       '@types/node': 18.11.19
     dev: false
 
-  /@types/got@9.6.2:
-    resolution: {integrity: sha512-Md/d9kSfdyZvVqhmUb3l+YPCmvIZG7qmM9hvW7dKJfTwpaZ4HBSqYpPhz3Dh0ywTfaEHKlFvPL+HMXIcNzP2tw==}
+  /@types/got@9.6.12:
+    resolution: {integrity: sha512-X4pj/HGHbXVLqTpKjA2ahI4rV/nNBc9mGO2I/0CgAra+F2dKgMXnENv2SRpemScBzBAI4vMelIVYViQxlSE6xA==}
     dependencies:
       '@types/node': 20.11.20
-      '@types/tough-cookie': 4.0.2
+      '@types/tough-cookie': 4.0.5
       form-data: 2.5.1
     dev: false
 
@@ -2651,7 +2651,7 @@ packages:
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
     dependencies:
       '@types/node': 20.11.20
-      '@types/tough-cookie': 4.0.2
+      '@types/tough-cookie': 4.0.5
       parse5: 7.1.2
     dev: false
 
@@ -2751,8 +2751,8 @@ packages:
   /@types/stack-utils@2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
 
-  /@types/tough-cookie@4.0.2:
-    resolution: {integrity: sha512-Q5vtl1W5ue16D+nIaW8JWebSSraJVlK+EthKn7e7UcD4KWsaSJ8BqGPXNaPghgtcn/fhvrN17Tv8ksUsQpiplw==}
+  /@types/tough-cookie@4.0.5:
+    resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
     dev: false
 
   /@types/yargs-parser@21.0.0:
