@@ -39,7 +39,7 @@
     "@mugshot/puppeteer": "~3.0.0",
     "mitt": "~3.0.0",
     "mugshot": "~4.0.2",
-    "puppeteer": "~19.7.0"
+    "puppeteer": "~22.3.0"
   },
   "devDependencies": {
     "tdd-buffet": "^4.0.0",
