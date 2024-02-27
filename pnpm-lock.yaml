@@ -193,10 +193,10 @@ importers:
         version: 9.0.0
       mitt:
         specifier: ~3.0.0
-        version: 3.0.0
+        version: 3.0.1
       puppeteer:
         specifier: ~19.7.0
-        version: 19.7.0(mitt@3.0.0)(typescript@5.3.3)
+        version: 19.7.0(mitt@3.0.1)(typescript@5.3.3)
       typescript:
         specifier: ~5.3.0
         version: 5.3.3
@@ -220,13 +220,13 @@ importers:
         version: 3.0.0(mugshot@4.0.2)(puppeteer@19.7.0)
       mitt:
         specifier: ~3.0.0
-        version: 3.0.0
+        version: 3.0.1
       mugshot:
         specifier: ~4.0.2
         version: 4.0.2
       puppeteer:
         specifier: ~19.7.0
-        version: 19.7.0(mitt@3.0.0)(typescript@5.3.3)
+        version: 19.7.0(mitt@3.0.1)(typescript@5.3.3)
     devDependencies:
       tdd-buffet:
         specifier: ^4.0.0
@@ -1813,7 +1813,7 @@ packages:
       puppeteer: ^19.0.0
     dependencies:
       mugshot: 4.0.2
-      puppeteer: 19.7.0(mitt@3.0.0)(typescript@5.3.3)
+      puppeteer: 19.7.0(mitt@3.0.1)(typescript@5.3.3)
     dev: false
 
   /@nighttrax/eslint-config-base@11.0.0-alpha.2(eslint-plugin-import@2.27.5)(eslint-plugin-prettier@4.2.1)(eslint@8.57.0)(prettier@2.8.8):
@@ -3741,14 +3741,14 @@ packages:
     resolution: {integrity: sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg==}
     engines: {node: '>=6.0'}
 
-  /chromium-bidi@0.4.3(devtools-protocol@0.0.1094867)(mitt@3.0.0):
+  /chromium-bidi@0.4.3(devtools-protocol@0.0.1094867)(mitt@3.0.1):
     resolution: {integrity: sha512-A40H1rdpJqkTdnGhnYDzMhtDdIbkXNFj2wgIfivMXL7LyHFDmBtv1hdyycDhnxtYunbPLDZtTs/n+ZT5j7Vnew==}
     peerDependencies:
       devtools-protocol: '*'
       mitt: '*'
     dependencies:
       devtools-protocol: 0.0.1094867
-      mitt: 3.0.0
+      mitt: 3.0.1
     dev: false
 
   /ci-info@2.0.0:
@@ -7775,8 +7775,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /mitt@3.0.0:
-    resolution: {integrity: sha512-7dX2/10ITVyqh4aOSVI9gdape+t9l2/8QxHrFmUXu4EEUpdlxl6RudZUPZoc+zuY2hk1j7XxVroIVIan/pD/SQ==}
+  /mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
     dev: false
 
   /mkdirp-classic@0.5.3:
@@ -9317,7 +9317,7 @@ packages:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
 
-  /puppeteer-core@19.7.0(mitt@3.0.0)(typescript@5.3.3):
+  /puppeteer-core@19.7.0(mitt@3.0.1)(typescript@5.3.3):
     resolution: {integrity: sha512-BU05W24N+fWudCCeWxv/+R9fnMGmS6HCNPJbieoy0S4yAloVOoVDpOnHV8ZpFTGMPTHQ2EuPyZPWA+idPKO0pw==}
     engines: {node: '>=14.1.0'}
     peerDependencies:
@@ -9326,7 +9326,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      chromium-bidi: 0.4.3(devtools-protocol@0.0.1094867)(mitt@3.0.0)
+      chromium-bidi: 0.4.3(devtools-protocol@0.0.1094867)(mitt@3.0.1)
       cross-fetch: 3.1.5
       debug: 4.3.4
       devtools-protocol: 0.0.1094867
@@ -9346,7 +9346,7 @@ packages:
       - utf-8-validate
     dev: false
 
-  /puppeteer@19.7.0(mitt@3.0.0)(typescript@5.3.3):
+  /puppeteer@19.7.0(mitt@3.0.1)(typescript@5.3.3):
     resolution: {integrity: sha512-ri4XTvTWL09E3L+SNhY9FKRdEOCRhFyyuBppg7D5lk9q4BZKvDWivpjstwmtz5lr8ufxju/jkn9y7uGowISHgw==}
     engines: {node: '>=14.1.0'}
     requiresBuild: true
@@ -9355,7 +9355,7 @@ packages:
       https-proxy-agent: 5.0.1
       progress: 2.0.3
       proxy-from-env: 1.1.0
-      puppeteer-core: 19.7.0(mitt@3.0.0)(typescript@5.3.3)
+      puppeteer-core: 19.7.0(mitt@3.0.1)(typescript@5.3.3)
     transitivePeerDependencies:
       - bufferutil
       - encoding
