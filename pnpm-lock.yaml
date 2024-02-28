@@ -263,7 +263,7 @@ importers:
         version: 5.0.2(postcss@8.4.35)
       postcss-loader:
         specifier: ~8.1.0
-        version: 8.1.0(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.0)
+        version: 8.1.1(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.0)
       postcss-normalize:
         specifier: ~10.0.0
         version: 10.0.1(browserslist@4.23.0)(postcss@8.4.35)
@@ -6908,15 +6908,9 @@ packages:
       - supports-color
       - ts-node
 
-  /jiti@1.20.0:
-    resolution: {integrity: sha512-3TV69ZbrvV6U5DfQimop50jE9Dl6J8O1ja1dvBbMba/sZ3YBEQqJ2VZRoQPVnhlzjNtU1vaXRZVrVjU4qtm8yA==}
-    hasBin: true
-    dev: false
-
   /jiti@1.21.0:
     resolution: {integrity: sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==}
     hasBin: true
-    dev: true
 
   /jquery@3.6.0:
     resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
@@ -8901,8 +8895,8 @@ packages:
       postcss: 8.4.35
     dev: false
 
-  /postcss-loader@8.1.0(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.0):
-    resolution: {integrity: sha512-AbperNcX3rlob7Ay7A/HQcrofug1caABBkopoFeOQMspZBqcqj6giYn1Bwey/0uiOPAcR+NQD0I2HC7rXzk91w==}
+  /postcss-loader@8.1.1(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.0):
+    resolution: {integrity: sha512-0IeqyAsG6tYiDRCYKQJLAmgQr47DX6N7sFSWvQxt6AcupX8DIdmykuk/o/tx0Lze3ErGHJEp5OSRxrelC6+NdQ==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       '@rspack/core': 0.x || 1.x
@@ -8915,9 +8909,9 @@ packages:
         optional: true
     dependencies:
       cosmiconfig: 9.0.0(typescript@5.3.3)
-      jiti: 1.20.0
+      jiti: 1.21.0
       postcss: 8.4.35
-      semver: 7.5.4
+      semver: 7.6.0
       webpack: 5.90.0(webpack-cli@5.1.4)
     transitivePeerDependencies:
       - typescript
