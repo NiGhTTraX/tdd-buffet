@@ -272,7 +272,7 @@ importers:
         version: 9.4.0(postcss@8.4.35)
       style-loader:
         specifier: ~3.3.0
-        version: 3.3.0(webpack@5.90.0)
+        version: 3.3.4(webpack@5.90.0)
       webpack:
         specifier: ~5.90.0
         version: 5.90.0(webpack-cli@5.1.4)
@@ -10164,8 +10164,8 @@ packages:
       peek-readable: 4.1.0
     dev: false
 
-  /style-loader@3.3.0(webpack@5.90.0):
-    resolution: {integrity: sha512-szANub7ksJtQioJYtpbWwh1hUl99uK15n5HDlikeCRil/zYMZgSxucHddyF/4A3qJMUiAjPhFowrrQuNMA7jwQ==}
+  /style-loader@3.3.4(webpack@5.90.0):
+    resolution: {integrity: sha512-0WqXzrsMTyb8yjZJHDqwmnwRJvhALK9LfRtRc6B4UTWe8AijYLZYZ9thuJTZc2VfQWINADW/j+LiJnfy2RoC1w==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
