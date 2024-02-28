@@ -266,7 +266,7 @@ importers:
         version: 8.1.0(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.0)
       postcss-normalize:
         specifier: ~10.0.0
-        version: 10.0.0(browserslist@4.23.0)(postcss@8.4.35)
+        version: 10.0.1(browserslist@4.23.0)(postcss@8.4.35)
       postcss-preset-env:
         specifier: ~9.4.0
         version: 9.4.0(postcss@8.4.35)
@@ -853,8 +853,8 @@ packages:
       '@csstools/css-tokenizer': 2.2.3
     dev: false
 
-  /@csstools/normalize.css@12.0.0:
-    resolution: {integrity: sha512-M0qqxAcwCsIVfpFQSlGN5XjXWu8l5JDZN+fPt1LeW5SZexQTgnaEvgXAY+CeygRw0EeppWHi12JxESWiWrB0Sg==}
+  /@csstools/normalize.css@12.1.1:
+    resolution: {integrity: sha512-YAYeJ+Xqh7fUou1d1j9XHl44BmsuThiTr4iNrgCQ3J27IbhXsxXDGZ1cXv8Qvs99d4rBbLiSKy3+WZiet32PcQ==}
     dev: false
 
   /@csstools/postcss-cascade-layers@4.0.3(postcss@8.4.35):
@@ -8985,14 +8985,14 @@ packages:
       postcss-selector-parser: 6.0.15
     dev: false
 
-  /postcss-normalize@10.0.0(browserslist@4.23.0)(postcss@8.4.35):
-    resolution: {integrity: sha512-krYZhIfZ6TIbMSXI4JpIWU64CPHCzXNbyCgHAJdZXirBpgTLRoB4+bSA17zvMLlst6SrdL9yfyTdGQlxS5poeg==}
+  /postcss-normalize@10.0.1(browserslist@4.23.0)(postcss@8.4.35):
+    resolution: {integrity: sha512-+5w18/rDev5mqERcG3W5GZNMJa1eoYYNGo8gB7tEwaos0ajk3ZXAI4mHGcNT47NE+ZnZD1pEpUOFLvltIwmeJA==}
     engines: {node: '>= 12'}
     peerDependencies:
       browserslist: '>= 4'
       postcss: '>= 8'
     dependencies:
-      '@csstools/normalize.css': 12.0.0
+      '@csstools/normalize.css': 12.1.1
       browserslist: 4.23.0
       postcss: 8.4.35
       postcss-browser-comments: 4.0.0(browserslist@4.23.0)(postcss@8.4.35)
