@@ -260,7 +260,7 @@ importers:
         version: 8.4.35
       postcss-flexbugs-fixes:
         specifier: ~5.0.0
-        version: 5.0.0
+        version: 5.0.2(postcss@8.4.35)
       postcss-loader:
         specifier: ~8.1.0
         version: 8.1.0(postcss@8.4.35)(typescript@5.3.3)(webpack@5.90.0)
@@ -8831,8 +8831,12 @@ packages:
       postcss-value-parser: 4.2.0
     dev: false
 
-  /postcss-flexbugs-fixes@5.0.0:
-    resolution: {integrity: sha512-WXt2F6FnFB16rCwWVJnBsvfztnTi6O4SYRcpnGHOnDyMoKcqjC3uKHWbhFz0z1ic9UMyQm1hleTBGavZZGE1KA==}
+  /postcss-flexbugs-fixes@5.0.2(postcss@8.4.35):
+    resolution: {integrity: sha512-18f9voByak7bTktR2QgDveglpn9DTbBWPUzSOe9g0N4WR/2eSt6Vrcbf0hmspvMI6YWGywz6B9f7jzpFNJJgnQ==}
+    peerDependencies:
+      postcss: ^8.1.4
+    dependencies:
+      postcss: 8.4.35
     dev: false
 
   /postcss-focus-visible@9.0.1(postcss@8.4.35):
