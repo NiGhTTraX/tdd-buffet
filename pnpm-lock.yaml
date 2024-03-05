@@ -99,7 +99,7 @@ importers:
         version: 29.5.12
       '@types/react':
         specifier: ~18.2.0
-        version: 18.2.62
+        version: 18.2.63
       '@types/react-dom':
         specifier: ~18.2.0
         version: 18.2.19
@@ -117,7 +117,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       react-mock-component:
         specifier: ~3.1.0
-        version: 3.1.1(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)
+        version: 3.1.1(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0)
       strip-ansi:
         specifier: ~6.0.0
         version: 6.0.1
@@ -2674,10 +2674,10 @@ packages:
   /@types/react-dom@18.2.19:
     resolution: {integrity: sha512-aZvQL6uUbIJpjZk4U8JZGbau9KDeAwMfmhyWorxgBkqDIEf6ROjRozcmPIicqsUwPUjbkDfHKgGee1Lq65APcA==}
     dependencies:
-      '@types/react': 18.2.62
+      '@types/react': 18.2.63
 
-  /@types/react@18.2.62:
-    resolution: {integrity: sha512-l3f57BbaEKP0xcFzf+5qRG8/PXykZiuVM6eEoPtqBPCp6dxO3HhDkLIgIyXPhPKNAeXn3KO2pEaNgzaEo/asaw==}
+  /@types/react@18.2.63:
+    resolution: {integrity: sha512-ppaqODhs15PYL2nGUOaOu2RSCCB4Difu4UFrP4I3NHLloXC/ESQzQMi9nvjfT1+rudd0d2L3fQPJxRSey+rGlQ==}
     dependencies:
       '@types/prop-types': 15.7.11
       '@types/scheduler': 0.16.8
@@ -6682,7 +6682,7 @@ packages:
     dependencies:
       '@types/jest': 29.5.12
       jest: 29.7.0(@types/node@20.11.24)(ts-node@10.9.2)
-      react-mock-component: 3.1.1(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0)
+      react-mock-component: 3.1.1(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0)
     dev: true
 
   /jest-regex-util@29.6.3:
@@ -9374,14 +9374,14 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  /react-mock-component@3.1.1(@types/react@18.2.62)(react-dom@18.2.0)(react@18.2.0):
+  /react-mock-component@3.1.1(@types/react@18.2.63)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-cGLxp0hW6z+fVtyAQeBjKhbj7GHkaPPYIcTwBxwvc6PN9HGCbtg0DJs94PlQ/nM3s2Xn6lXH5YhTRaOfkNyodg==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.62
+      '@types/react': 18.2.63
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       sinon: 15.0.4
