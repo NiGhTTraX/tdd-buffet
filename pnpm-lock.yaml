@@ -99,10 +99,10 @@ importers:
         version: 29.5.12
       '@types/react':
         specifier: ~18.2.0
-        version: 18.2.75
+        version: 18.2.76
       '@types/react-dom':
         specifier: ~18.2.0
-        version: 18.2.24
+        version: 18.2.25
       jest:
         specifier: ~29.7.0
         version: 29.7.0(@types/node@20.12.7)(ts-node@10.9.2)
@@ -117,7 +117,7 @@ importers:
         version: 18.2.0(react@18.2.0)
       react-mock-component:
         specifier: ~3.1.0
-        version: 3.1.1(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)
+        version: 3.1.1(@types/react@18.2.76)(react-dom@18.2.0)(react@18.2.0)
       strip-ansi:
         specifier: ~6.0.0
         version: 6.0.1
@@ -2465,7 +2465,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.24.1
       '@testing-library/dom': 10.0.0
-      '@types/react-dom': 18.2.24
+      '@types/react-dom': 18.2.25
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -2682,13 +2682,13 @@ packages:
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
 
-  /@types/react-dom@18.2.24:
-    resolution: {integrity: sha512-cN6upcKd8zkGy4HU9F1+/s98Hrp6D4MOcippK4PoE8OZRngohHZpbJn1GsaDLz87MqvHNoT13nHvNqM9ocRHZg==}
+  /@types/react-dom@18.2.25:
+    resolution: {integrity: sha512-o/V48vf4MQh7juIKZU2QGDfli6p1+OOi5oXx36Hffpc9adsHeXjVp8rHuPkjd8VT8sOJ2Zp05HR7CdpGTIUFUA==}
     dependencies:
-      '@types/react': 18.2.75
+      '@types/react': 18.2.76
 
-  /@types/react@18.2.75:
-    resolution: {integrity: sha512-+DNnF7yc5y0bHkBTiLKqXFe+L4B3nvOphiMY3tuA5X10esmjqk7smyBZzbGTy2vsiy/Bnzj8yFIBL8xhRacoOg==}
+  /@types/react@18.2.76:
+    resolution: {integrity: sha512-T6z/v7YxpswDM61Vq5KoSPTJqCkroJfsDIsvXCr4+qOY6gik5Ju4w0jf67cpC5z7ydOnp/E0V0W08pDRy8u9Xw==}
     dependencies:
       '@types/prop-types': 15.7.12
       csstype: 3.1.3
@@ -6651,7 +6651,7 @@ packages:
     dependencies:
       '@types/jest': 29.5.12
       jest: 29.7.0(@types/node@20.12.7)(ts-node@10.9.2)
-      react-mock-component: 3.1.1(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0)
+      react-mock-component: 3.1.1(@types/react@18.2.76)(react-dom@18.2.0)(react@18.2.0)
     dev: true
 
   /jest-regex-util@29.6.3:
@@ -9339,14 +9339,14 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
 
-  /react-mock-component@3.1.1(@types/react@18.2.75)(react-dom@18.2.0)(react@18.2.0):
+  /react-mock-component@3.1.1(@types/react@18.2.76)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-cGLxp0hW6z+fVtyAQeBjKhbj7GHkaPPYIcTwBxwvc6PN9HGCbtg0DJs94PlQ/nM3s2Xn6lXH5YhTRaOfkNyodg==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@types/react': 18.2.75
+      '@types/react': 18.2.76
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       sinon: 15.0.4
