@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 import { run as runJest } from 'jest';
 
 const testSuiteNameStack: string[] = [];
@@ -26,7 +25,7 @@ export function runnerDescribe(name: string, definition: () => void) {
  */
 export function runnerIt(
   name: string,
-  definition?: (testName: string) => Promise<unknown> | void
+  definition?: (testName: string) => Promise<unknown> | void,
 ) {
   const testFullName = [...testSuiteNameStack, name].join(' ');
 
@@ -34,7 +33,7 @@ export function runnerIt(
     it(
       name,
       // @ts-expect-error because `definition` returns a union, and `it` is overloaded
-      () => definition(testFullName)
+      () => definition(testFullName),
     );
   } else {
     it.todo(name);

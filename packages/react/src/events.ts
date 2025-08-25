@@ -1,5 +1,7 @@
-import { EventType, fireEvent } from '@testing-library/react/pure';
-import { getDOMElement, Selector } from './find';
+import type { EventType } from '@testing-library/react/pure';
+import { fireEvent } from '@testing-library/react/pure';
+import type { Selector } from './find';
+import { getDOMElement } from './find';
 
 export type FireObject = {
   [E in EventType]: (selector: Selector, options?: object) => void;
@@ -25,7 +27,7 @@ export const $fireEvent: FireObject = Object.keys(fireEvent).reduce(
 
     return acc;
   },
-  {} as FireObject
+  {} as FireObject,
 );
 
 /**
@@ -81,7 +83,7 @@ export function $change(selector: Selector, value: string) {
 export function $keyDown(
   selector: Selector,
   key: string,
-  keyCode: number = key.charCodeAt(0)
+  keyCode: number = key.charCodeAt(0),
 ) {
   fireEvent.keyDown(getDOMElement(selector), {
     key,

@@ -10,7 +10,7 @@
     "version:force": "pnpm run version --force-publish",
     "pub:git": "pnpm run build && lerna publish from-git && pnpm run clean",
     "pub:pkg": "pnpm run build && lerna publish from-package && pnpm run clean",
-    "lint": "eslint --ext ts,tsx,js .",
+    "lint": "eslint .",
     "test": "pnpm run -r test",
     "ts-node": "ts-node -O '{\"target\": \"es6\"}'",
     "selenium": "pnpm exec ts-node packages/selenium/src/bin/index.ts start --port 4444 --retries 30",
@@ -21,12 +21,14 @@
     "@commitlint/config-conventional": "~19.1.0",
     "@commitlint/config-lerna-scopes": "~19.0.0",
     "@commitlint/cli": "~19.2.0",
-    "@nighttrax/eslint-config-tsx": "~12.0.0-alpha.0",
-    "eslint": "~8.57.0",
+    "@nighttrax/eslint-config-tsx": "~12.0.1",
+    "eslint": "~9.34.0",
+    "prettier": "~3.6.2",
     "lerna": "~6.6.0",
     "@types/jest": "~29.5.0",
     "@types/node": "~20.12.0",
     "ts-node": "~10.9.0",
     "typescript": "~5.4.0"
-  }
+  },
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
 }

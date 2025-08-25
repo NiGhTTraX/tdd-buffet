@@ -32,7 +32,7 @@ export type Selector = string | HTMLElement | JQuery;
  */
 export function $getByTestId(
   id: string,
-  container: Selector = getJQueryContainer()
+  container: Selector = getJQueryContainer(),
 ): JQuery {
   return $(getByTestId(getDOMElement(container), id, {}));
 }
@@ -57,7 +57,7 @@ export function $getByTestId(
  */
 export function $getAllByTestId(
   id: string,
-  container: Selector = getJQueryContainer()
+  container: Selector = getJQueryContainer(),
 ): JQuery {
   return $(getAllByTestId(getDOMElement(container), id, {}));
 }
@@ -82,10 +82,10 @@ export function $getAllByTestId(
  * $render(<button data-test="submit">Click me</button>);
  * $getAllByTestId('submit').length === 1
  */
-export function $queryByTestId(
+export const $queryByTestId = (
   id: string,
-  container: Selector = getJQueryContainer()
-): JQuery | null {
+  container: Selector = getJQueryContainer(),
+): JQuery | null => {
   const elements = queryByTestId(getDOMElement(container), id, {});
 
   if (!elements) {
@@ -93,7 +93,7 @@ export function $queryByTestId(
   }
 
   return $(elements);
-}
+};
 
 /**
  * Find an element in the currently rendered component that contains the given text.
@@ -129,7 +129,7 @@ export function $getByText(matches: RegExp, container?: Selector): JQuery;
 
 export function $getByText(
   match: string | RegExp,
-  container: Selector = getJQueryContainer()
+  container: Selector = getJQueryContainer(),
 ): JQuery {
   return $(getByText(getDOMElement(container), match, { exact: false }));
 }
@@ -152,7 +152,7 @@ export function $getByText(
  */
 export function $queryByText(
   contains: string,
-  container?: Selector
+  container?: Selector,
 ): JQuery | null;
 
 /**
@@ -173,12 +173,13 @@ export function $queryByText(
  */
 export function $queryByText(
   matches: RegExp,
-  container?: Selector
+  container?: Selector,
 ): JQuery | null;
 
+// eslint-disable-next-line react/function-component-definition
 export function $queryByText(
   match: string | RegExp,
-  container: Selector = getJQueryContainer()
+  container: Selector = getJQueryContainer(),
 ): JQuery | null {
   const element = queryByText(getDOMElement(container), match, {
     exact: false,
@@ -226,7 +227,7 @@ ${prettyDOM()}`);
  */
 export function $find(
   selector: Selector,
-  container: Selector = getJQueryContainer()
+  container: Selector = getJQueryContainer(),
 ): JQuery {
   return $(getDOMElement(container)).find(selector);
 }
@@ -238,10 +239,8 @@ export function getDOMElement(selector: Selector): HTMLElement {
   let element: HTMLElement;
 
   if (typeof selector === 'string') {
-    // eslint-disable-next-line prefer-destructuring
     element = getJQueryContainer().find(selector)[0];
   } else {
-    // eslint-disable-next-line prefer-destructuring
     element = $(selector)[0];
   }
 
@@ -269,7 +268,7 @@ export function getDOMElement(selector: Selector): HTMLElement {
  */
 export function $prettyDOM(
   selector: Selector = getJQueryContainer(),
-  maxLength?: number
+  maxLength?: number,
 ): string {
   return (
     prettyDOM(getDOMElement(selector), maxLength) ||

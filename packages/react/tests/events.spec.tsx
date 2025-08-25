@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { mock, verify, when } from 'strong-mock';
 import { describe, it } from 'tdd-buffet/suite/node';
 import { $change, $click, $fireEvent, $keyDown, $submit } from '../src/events';
@@ -13,7 +12,7 @@ describe('Firing events', () => {
       $render(
         <button type="button" onClick={() => cb()}>
           click me
-        </button>
+        </button>,
       );
 
       $click('button');
@@ -26,7 +25,7 @@ describe('Firing events', () => {
       when(() => cb(true)).thenReturn(undefined);
 
       $render(
-        <input type="checkbox" onChange={(e) => cb(e.currentTarget.checked)} />
+        <input type="checkbox" onChange={(e) => cb(e.currentTarget.checked)} />,
       );
 
       $click('input');
@@ -43,7 +42,7 @@ describe('Firing events', () => {
           type="checkbox"
           checked
           onChange={(e) => cb(e.currentTarget.checked)}
-        />
+        />,
       );
 
       $click('input');
@@ -56,7 +55,7 @@ describe('Firing events', () => {
       when(() => cb(true)).thenReturn(undefined);
 
       $render(
-        <input type="radio" onChange={(e) => cb(e.currentTarget.checked)} />
+        <input type="radio" onChange={(e) => cb(e.currentTarget.checked)} />,
       );
 
       $click('input');
@@ -82,7 +81,7 @@ describe('Firing events', () => {
       when(() => cb('foobar')).thenReturn(undefined);
 
       $render(
-        <input type="text" onChange={(e) => cb(e.currentTarget.value)} />
+        <input type="text" onChange={(e) => cb(e.currentTarget.value)} />,
       );
 
       $change('input', 'foobar');
@@ -94,7 +93,7 @@ describe('Firing events', () => {
   it('keydown', () => {
     const cb = mock<(char: string, which: number) => void>();
 
-    $render(<div onKeyDown={(e) => cb(e.key, e.which)} />);
+    $render(<input onKeyDown={(e) => cb(e.key, e.which)} />);
 
     when(() => cb('A', 65)).thenReturn(undefined);
     $keyDown('div', 'A');
@@ -118,7 +117,7 @@ describe('Firing events', () => {
     $render(
       <button type="button" onDragCapture={cb}>
         Click me
-      </button>
+      </button>,
     );
 
     $fireEvent.drag('button');
@@ -134,7 +133,7 @@ describe('Firing events', () => {
       $render(
         <form onSubmit={cb}>
           <button type="submit">submit</button>
-        </form>
+        </form>,
       );
 
       $submit('button');
@@ -163,7 +162,7 @@ describe('Firing events', () => {
           <button form="form" type="submit">
             submit
           </button>
-        </>
+        </>,
       );
 
       $submit('button');

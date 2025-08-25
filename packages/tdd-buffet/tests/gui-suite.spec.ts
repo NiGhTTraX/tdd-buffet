@@ -1,8 +1,8 @@
 import { expect } from 'tdd-buffet/expect/chai';
+import type { Page } from '../src/suite/gui';
 import {
   beforeEach,
   bindPage,
-  Page,
   describe,
   it,
   setViewportSize,
@@ -36,8 +36,8 @@ describe('Gui suite', () => {
         document.body.textContent = `${a + b}`;
       },
       x,
-      y
-    )
+      y,
+    ),
   );
 
   it('should bind the page to a helper', async (page) => {
@@ -45,7 +45,7 @@ describe('Gui suite', () => {
 
     const body = await page.$('body');
     expect(
-      await (await body?.getProperty('textContent'))?.jsonValue()
+      await (await body?.getProperty('textContent'))?.jsonValue(),
     ).to.equal('3');
   });
 

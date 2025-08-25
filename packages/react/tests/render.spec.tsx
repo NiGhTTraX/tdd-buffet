@@ -1,6 +1,5 @@
-// eslint-disable-next-line max-classes-per-file
 import { screen } from '@testing-library/react';
-import React, { useEffect, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import createReactMock from 'react-mock-component';
 import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
@@ -56,7 +55,7 @@ describe('$render', () => {
 
   let rerendered;
 
-  class Rerenderable extends React.Component {
+  class Rerenderable extends Component {
     render() {
       return null;
     }

@@ -1,4 +1,4 @@
-import { describe, beforeEach } from 'tdd-buffet/suite/gui';
+import { beforeEach, describe } from 'tdd-buffet/suite/gui';
 import { vit } from '../src/index';
 
 describe('Visual suite', () => {
@@ -31,6 +31,6 @@ describe('Visual suite', () => {
 `;
       });
     },
-    '[data-testid="second"]'
+    '[data-testid="second"]',
   );
 });

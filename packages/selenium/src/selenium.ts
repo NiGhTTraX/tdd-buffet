@@ -1,6 +1,6 @@
 /* istanbul ignore file */
 import { execaCommand } from 'execa';
-/* eslint-disable no-console, no-await-in-loop */
+// eslint-disable-next-line import-x/no-named-as-default
 import got from 'got';
 import path from 'path';
 import ProgressBar from 'progress';
@@ -21,7 +21,7 @@ async function getCurrentlyConnectedNodes(port: number) {
 async function waitForNodes(
   expectedNodes: number,
   retries: number,
-  port: number
+  port: number,
 ) {
   let pings = 0;
 
@@ -31,7 +31,7 @@ async function waitForNodes(
       total: retries,
       width: 60,
       clear: true,
-    }
+    },
   );
 
   // Show the initial empty bar.
@@ -79,7 +79,7 @@ async function up(
   services: string,
   port: number,
   expectedNodes: number,
-  retries: number
+  retries: number,
 ) {
   try {
     await execaCommand(`docker-compose -f ${configPath} up -d ${services}`, {
@@ -106,7 +106,7 @@ export async function start(nodes: number, retries: number, port: number) {
     `--scale chrome=${nodes} --scale firefox=${nodes} hub`,
     port,
     nodes * 2,
-    retries
+    retries,
   );
 }
 
@@ -123,7 +123,7 @@ export async function debug(retries: number, port: number) {
       'debug_hub',
       port,
       2,
-      retries
+      retries,
     );
   }
 }
@@ -132,13 +132,13 @@ export async function stop() {
   await execaCommand(
     `docker-compose -f ${path.join(
       __dirname,
-      'config/docker-compose.yml'
+      'config/docker-compose.yml',
     )} down -v`,
     {
       env: {
         COMPOSE_PROJECT_NAME,
       },
       stdio: 'inherit',
-    }
+    },
   );
 }

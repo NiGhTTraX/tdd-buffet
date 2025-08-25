@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const { pathExistsSync } = require('fs-extra');
 const path = require('path');
 const { pathsToModuleNameMapper } = require('ts-jest');
@@ -6,12 +7,12 @@ const ts = require('typescript');
 const configName = ts.findConfigFile(process.cwd(), ts.sys.fileExists);
 const { config: configContent } = ts.readConfigFile(
   configName,
-  ts.sys.readFile
+  ts.sys.readFile,
 );
 const { options: compilerOptions } = ts.parseJsonConfigFileContent(
   configContent,
   ts.sys,
-  path.dirname(configName)
+  path.dirname(configName),
 );
 
 // Will be tried in order and the first one that exists will be used.
@@ -22,7 +23,7 @@ const setupTestsFilePaths = [
 ];
 
 const setupTestsFile = setupTestsFilePaths.find((filePath) =>
-  pathExistsSync(filePath)
+  pathExistsSync(filePath),
 );
 
 module.exports = {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /* istanbul ignore file */
-/* eslint-disable no-console */
+
 import meow from 'meow';
 import { debug, start, stop } from '../selenium';
 
@@ -27,7 +27,7 @@ const cli = meow(
         default: 15,
       },
     },
-  }
+  },
 );
 
 (async () => {
@@ -38,7 +38,7 @@ const cli = meow(
       await start(
         parseInt(cli.input[1] || '1', 10),
         cli.flags.retries,
-        cli.flags.port
+        cli.flags.port,
       );
       break;
     case 'stop':

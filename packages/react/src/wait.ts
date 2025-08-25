@@ -19,7 +19,7 @@ import { getJQueryContainer } from './render';
  */
 export function $wait(
   cb: ($container: JQuery) => unknown,
-  timeout?: number
+  timeout?: number,
 ): Promise<void>;
 
 /**
@@ -39,13 +39,13 @@ export function $wait(
 export function $wait(
   cb: ($container: JQuery) => unknown,
   message?: string,
-  timeout?: number
+  timeout?: number,
 ): Promise<void>;
 
 export function $wait(
   cb: ($container: JQuery) => unknown,
   timeoutOrMessage?: number | string,
-  maybeTimeout = 1500
+  maybeTimeout = 1500,
 ): Promise<void> {
   return rtlWaitFor(
     () => {
@@ -65,14 +65,14 @@ export function $wait(
         throw new Error(
           typeof timeoutOrMessage === 'string'
             ? timeoutOrMessage
-            : 'Condition not met'
+            : 'Condition not met',
         );
       }
     },
     {
       timeout:
         typeof timeoutOrMessage === 'number' ? timeoutOrMessage : maybeTimeout,
-    }
+    },
   );
 }
 
@@ -93,7 +93,7 @@ export function $wait(
  */
 export function $waitForElement(
   selector: string,
-  timeout?: number
+  timeout?: number,
 ): Promise<unknown>;
 
 /**
@@ -115,7 +115,7 @@ export function $waitForElement(
 export function $waitForElement(
   selector: string,
   message: string,
-  timeout?: number
+  timeout?: number,
 ): Promise<unknown>;
 
 /**
@@ -137,7 +137,7 @@ export function $waitForElement(
  */
 export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
-  timeout?: number
+  timeout?: number,
 ): Promise<unknown>;
 
 /**
@@ -161,13 +161,13 @@ export function $waitForElement(
 export function $waitForElement(
   cb: ($container: JQuery) => JQuery,
   message: string,
-  timeout?: number
+  timeout?: number,
 ): Promise<unknown>;
 
 export function $waitForElement(
   cbOrSelector: string | (($container: JQuery) => JQuery),
   messageOrTimeout?: string | number,
-  maybeTimeout = 1500
+  maybeTimeout = 1500,
 ): Promise<unknown> {
   const errorMessagePrefix =
     typeof messageOrTimeout === 'string' ? `${messageOrTimeout}: ` : '';
@@ -177,7 +177,7 @@ export function $waitForElement(
       if (typeof cbOrSelector === 'string') {
         if (!getJQueryContainer().find(cbOrSelector).length) {
           throw new Error(
-            `${errorMessagePrefix}Waited for '${cbOrSelector}' to appear, but it never did`
+            `${errorMessagePrefix}Waited for '${cbOrSelector}' to appear, but it never did`,
           );
         }
       } else if (!cbOrSelector(getJQueryContainer()).length) {
@@ -190,6 +190,6 @@ export function $waitForElement(
       timeout:
         typeof messageOrTimeout === 'number' ? messageOrTimeout : maybeTimeout,
       container: getJQueryContainer()[0],
-    }
+    },
   );
 }

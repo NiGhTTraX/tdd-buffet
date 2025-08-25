@@ -1,4 +1,3 @@
-import * as React from 'react';
 import stripAnsi from 'strip-ansi';
 import { expect } from 'tdd-buffet/expect/jest';
 import { describe, it } from 'tdd-buffet/suite/node';
@@ -46,7 +45,7 @@ describe('Finding elements', () => {
         <>
           <p id="1">p1</p>
           <p id="2">p2</p>
-        </>
+        </>,
       );
 
       expect(getDOMElement('p').id).toEqual('1');
@@ -57,7 +56,7 @@ describe('Finding elements', () => {
         <>
           <p id="1">p1</p>
           <p id="2">p2</p>
-        </>
+        </>,
       );
 
       expect(getDOMElement($container.find('p')).id).toEqual('1');
@@ -81,7 +80,7 @@ describe('Finding elements', () => {
       const $container = $render(
         <div>
           <span>foobar</span>
-        </div>
+        </div>,
       );
 
       expect(stripAnsi($prettyDOM($container.find('span')))).toEqual(`<span>
@@ -100,7 +99,7 @@ describe('Finding elements', () => {
         <>
           <p>p1</p>
           <p>p2</p>
-        </>
+        </>,
       );
 
       expect($find('p').text()).toEqual('p1p2');
@@ -111,7 +110,7 @@ describe('Finding elements', () => {
         <>
           <p>p1</p>
           <p>p2</p>
-        </>
+        </>,
       );
 
       expect($find('p').get(1).textContent).toEqual('p2');
@@ -128,7 +127,7 @@ describe('Finding elements', () => {
       <>
         <span data-testid="foo">bar</span>
         <span data-testid="foo">baz</span>
-      </>
+      </>,
     );
 
     expect(() => $getByTestId('foo')).toThrow();
@@ -139,7 +138,7 @@ describe('Finding elements', () => {
       <>
         <span data-testid="foo">bar</span>
         <span data-testid="foo">baz</span>
-      </>
+      </>,
     );
 
     expect($getAllByTestId('foo')).toHaveLength(2);
@@ -156,7 +155,7 @@ describe('Finding elements', () => {
       <>
         <span data-testid="foo">bar</span>
         <span data-testid="foo">baz</span>
-      </>
+      </>,
     );
 
     expect(() => $queryByTestId('foo')).toThrow();
@@ -173,7 +172,7 @@ describe('Finding elements', () => {
       <>
         <span>foobar</span>
         <span>foobar</span>
-      </>
+      </>,
     );
 
     expect(() => $getByText('foo')).toThrow();
@@ -196,7 +195,7 @@ describe('Finding elements', () => {
       <>
         <span>foobar</span>
         <span>foobar</span>
-      </>
+      </>,
     );
 
     expect(() => $queryByText('foobar')).toThrow();

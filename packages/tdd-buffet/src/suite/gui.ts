@@ -1,10 +1,10 @@
-/* eslint-disable no-underscore-dangle */
-import puppeteer, {
+import type {
   Browser,
   BrowserLaunchArgumentOptions,
   LaunchOptions,
   Page,
 } from 'puppeteer';
+import { launch } from 'puppeteer';
 import {
   runnerAfter,
   runnerBefore,
@@ -42,7 +42,7 @@ let rootSuitePage: Page;
  * ```
  */
 export function bindPage<A extends unknown[], R>(
-  cb: (page: Page, ...args: A) => R
+  cb: (page: Page, ...args: A) => R,
 ) {
   return (...args: A) => cb(rootSuitePage, ...args);
 }
@@ -55,7 +55,7 @@ export type HookDefinition = (page: Page) => Promise<unknown> | void;
  */
 export type TestDefinition = (
   page: Page,
-  testName: string
+  testName: string,
 ) => Promise<unknown> | void;
 
 /* istanbul ignore next */
@@ -98,7 +98,7 @@ export async function setViewportSize(width: number, height: number) {
 export function describe(
   name: string,
   definition: () => void,
-  options?: PuppeteerOptions
+  options?: PuppeteerOptions,
 ) {
   suiteNesting++;
 
@@ -141,7 +141,7 @@ export function it(name: string, definition?: TestDefinition) {
 
 function setupHooks(options?: PuppeteerOptions) {
   runnerBefore(async function startBrowser() {
-    rootSuiteBrowser = await puppeteer.launch(options);
+    rootSuiteBrowser = await launch(options);
     rootSuitePage = await rootSuiteBrowser.newPage();
 
     return rootSuitePage;

@@ -1,7 +1,8 @@
 import { PuppeteerAdapter } from '@mugshot/puppeteer';
 import { Mugshot } from 'mugshot';
 import path from 'path';
-import { it, Page, TestDefinition } from 'tdd-buffet/suite/gui';
+import type { Page, TestDefinition } from 'tdd-buffet/suite/gui';
+import { it } from 'tdd-buffet/suite/gui';
 
 /**
  * Perform a visual test alongside a normal test.
@@ -16,7 +17,7 @@ import { it, Page, TestDefinition } from 'tdd-buffet/suite/gui';
 export function vit(
   name: string,
   definition: TestDefinition,
-  selector = 'body > *:first-child'
+  selector = 'body > *:first-child',
 ) {
   it(name, async (page, testName) => {
     await definition(page, testName);
@@ -28,13 +29,13 @@ export function vit(
 async function checkForVisualChanges(
   page: Page,
   name: string,
-  selector: string
+  selector: string,
 ) {
   const adapter = new PuppeteerAdapter(page);
 
   const mugshot = new Mugshot(
     adapter,
-    path.join(process.cwd(), `tests/gui/screenshots`)
+    path.join(process.cwd(), `tests/gui/screenshots`),
   );
 
   const result = await mugshot.check(getSafeFilename(name), selector);
@@ -42,7 +43,7 @@ async function checkForVisualChanges(
   /* istanbul ignore next because it's hard to test this through vit */
   if (!result.matches) {
     throw new Error(
-      `Visual changes detected. Check diff at '${result.diffName}'`
+      `Visual changes detected. Check diff at '${result.diffName}'`,
     );
   }
 }

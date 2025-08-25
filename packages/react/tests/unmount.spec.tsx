@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { Component, useEffect } from 'react';
 import { $render, $unmount } from '../src/render';
 
 describe('unmount', () => {
@@ -10,7 +10,7 @@ describe('unmount', () => {
   it('should unmount component', () => {
     let unmounted = false;
 
-    class Unmountable extends React.Component {
+    class Unmountable extends Component {
       render() {
         return null;
       }
@@ -29,6 +29,7 @@ describe('unmount', () => {
   it('should recreate container after unmounting', () => {
     const $container = $render(<span>bar</span>);
     $unmount();
+
     const $newContainer = $render(<span>baz</span>);
 
     expect($container.text()).toHaveLength(0);

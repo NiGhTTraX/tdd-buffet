@@ -1,5 +1,4 @@
-/* eslint-disable react/no-multi-comp */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { expect } from 'tdd-buffet/expect/chai';
 import { expect as jExpect } from 'tdd-buffet/expect/jest';
 import { afterEach, beforeEach, describe, it } from 'tdd-buffet/suite/node';
@@ -39,7 +38,7 @@ describe('wait', () => {
     await jExpect(
       $wait(() => {
         expect(1).to.equal(2);
-      }, 10)
+      }, 10),
     ).rejects.toThrow();
   });
 
@@ -66,8 +65,8 @@ describe('wait', () => {
           throw error;
         },
         'custom',
-        10
-      )
+        10,
+      ),
     ).rejects.toThrow('custom: original');
   });
 
@@ -80,8 +79,8 @@ describe('wait', () => {
           throw error;
         },
         'custom',
-        10
-      )
+        10,
+      ),
     ).rejects.toThrow(error);
   });
 
@@ -147,25 +146,25 @@ describe('waitForElement', () => {
 
   it('should throw for an element that does not appear', async () => {
     await jExpect($waitForElement('.not-found', 10)).rejects.toThrow(
-      "Waited for '.not-found' to appear, but it never did"
+      "Waited for '.not-found' to appear, but it never did",
     );
 
     await jExpect(
-      $waitForElement(($container) => $container.find('.not-found'), 10)
+      $waitForElement(($container) => $container.find('.not-found'), 10),
     ).rejects.toThrow('The collection was empty');
   });
 
   it('should throw a custom error message', async () => {
     await jExpect($waitForElement('.not-found', 'foobar', 10)).rejects.toThrow(
-      "foobar: Waited for '.not-found' to appear, but it never did"
+      "foobar: Waited for '.not-found' to appear, but it never did",
     );
 
     await jExpect(
       $waitForElement(
         ($container) => $container.find('.not-found'),
         'foobar',
-        10
-      )
+        10,
+      ),
     ).rejects.toThrow('foobar: The collection was empty');
   });
 });
